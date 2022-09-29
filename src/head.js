@@ -2,6 +2,7 @@ import "./head.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faGlobe, faCircleUser, faBars, faDrawPolygon } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Head = () => {
@@ -71,7 +72,7 @@ const Head = () => {
                         <div><FontAwesomeIcon style={{color:"black"}} icon={faGlobe}/></div>
                     </div >
                     <div className="nav_right">
-                        <button onClick={() => setOpen_drop(true)} onBlur={() => setOpen_drop(false)}>
+                        <button onClick={() => setOpen_drop(true)}>
                             <div><FontAwesomeIcon style={{color:"gray"}} size={"l"} icon={faBars}/></div>
                             <div><FontAwesomeIcon style={{color:"gray"}} size={"2xl"} icon={faCircleUser}/></div>
                         </button>
@@ -79,9 +80,9 @@ const Head = () => {
                             <div className="nav_right_drp">
                             <div style={{ fontWeight:"600"}}><a href="">Sign up</a></div>
                             <div><a href="">Log in</a></div>
-                            <div><a href="">Host your home</a></div>
-                            <div><a href="">Host an experience</a></div>
-                            <div><a href="">Help</a></div>
+                            <div><Link to="/host/homes">Host your home</Link></div>
+                            <div><Link to="/host/experiences">Host an experience</Link></div>
+                            <div><Link to="/help">Help</Link></div>
                         </div>
                         : null}
                     </div>
