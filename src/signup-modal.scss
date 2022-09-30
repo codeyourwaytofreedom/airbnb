@@ -1,3 +1,25 @@
+$b: 1px solid black;
+@mixin  gc {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+} 
+
+@mixin  fc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fnt($w) {
+    font-size: 14px;
+    font-weight: $w;
+    line-height: 18px;
+    color: black;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+}
+
 .md-bg {
     position:fixed;
     display: grid;
@@ -7,23 +29,68 @@
     left:0;
     bottom:0;
     right:0;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
     overflow: auto;
+    padding: 40px 0;
+
+
+    
 }
 
 .md-bg-inner{
-    z-index: 101;
-    width: 550px;
-    height: auto;
-    border: 2px solid red;
+    width: 600px;
+    height: 600px;
     background-color: white;
     border-radius: 20px;
     padding: 30px;
     display: grid;
+    row-gap: 20px;
+    font-size: 16px;
+    overflow-y: auto;
+
     &_title{
-        display: grid;
-        
+        @include fc;
+        position: relative;
+        height: 50px;
+        button {
+            position: absolute;
+            left:0;
+        }
     }
+    &_form{
+
+        @include gc;
+        &_select {
+            width: 490px;
+            height: 50px;
+        }
+        &_input {
+            width: 490px;
+            height: 50px;
+        }
+        button{
+            width: 490px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            background-image: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%) !important;
+            @include fnt(600);
+            color: white;
+        }
+
+    }
+    &_cont{
+        @include gc;
+        padding: 20px 0px;
+        row-gap: 10px;
+        button {
+            height: 45px;
+            width: 490px;
+            border: $b;
+            border-radius: 10px;
+            @include fnt(400);
+            
+        }
+    }
+    
 }

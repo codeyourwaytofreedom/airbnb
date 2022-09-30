@@ -28,16 +28,15 @@ const Signup = ({setSM}) => {
     return ( 
         <div className="md-bg">
                 <div className="md-bg-inner" ref={modal_ref}>
-                        <div className="md-bg-inner-title">
+                        <div className="md-bg-inner_title">
                             <button onClick={()=> setSM(false)}>X</button>
                             <h3>Log in or Sign up!</h3>
                         </div>
+                        <div className="md-bg-inner_welc"><h3>Welcome to Airbnb</h3></div>
 
-                        <div className="md-bg-inner-welc"><h3>Welcome to Airbnb</h3></div>
-
-                        <div className="md-bg-inner-form">
+                        <div className="md-bg-inner_form">
                             <form action="">
-                                <select>
+                                <select className="md-bg-inner_form_select">
                                     <option value="A">A</option>
                                     <option value="B">B</option>
                                     <option value="C">C</option>
@@ -45,13 +44,15 @@ const Signup = ({setSM}) => {
                                     <option value="B">B</option>
                                     <option value="C">C</option>
                                 </select> <br></br>
-                                <input type="text" />
+                                
+                                <input className="md-bg-inner_form_input" type="text" />
+                                <div>hhhhhhhhhhhhhhhhhhhhhhh</div>
                                 <button type="submit">Continue</button>
                             </form>
                         </div>
                         
 
-                        <div className="md-bg-inner-cont">
+                        <div className="md-bg-inner_cont">
                             <button>Continue with XXXXXXXXXX</button>
                             <button>Continue with XXXXXXXXXX</button>
                             <button>Continue with XXXXXXXXXX</button>
