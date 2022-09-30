@@ -1,24 +1,28 @@
 .md-bg {
-    position:fixed;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 100;
-    overflow: auto;
+  position: fixed;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 100;
+  overflow: auto;
 }
 
-.md-bg-inner{
-    z-index: 101;
-    width: 550px;
-    height: auto;
-    border: 2px solid red;
-    background-color: white;
-    border-radius: 20px;
-    padding: 30px;
+.md-bg-inner {
+  z-index: 101;
+  width: 550px;
+  height: auto;
+  border: 2px solid red;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: grid;
 }
+.md-bg-inner_title {
+  display: grid;
+}/*# sourceMappingURL=signup-modal.css.map */

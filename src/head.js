@@ -10,16 +10,21 @@ const Head = () => {
     const [open_drop, setOpen_drop] = useState(false);
     const [signup_modal, setSM] = useState(false)
 
-    const outside_modal = () => {
-        setSM(false);
+    const handle_drop_click = () => {
+                setSM(true);
+                setOpen_drop(false)
     }
+
+
 
     let drop_down_ref = useRef();
 
     useEffect( () => {
         const outclickhandler = (event) => {
                                 if (!drop_down_ref.current.contains(event.target))
-                                {setOpen_drop(false);}
+                                {
+                                    setOpen_drop(false);
+                                }
                             }
 
         document.addEventListener("mousedown", outclickhandler );
@@ -91,7 +96,7 @@ const Head = () => {
             <div className="hd_user">
                 <nav className="nav">
                     <div className="nav_left">
-                        <a href="">Become a host</a>
+                        <Link to="/">Become a host</Link>
                         <div><FontAwesomeIcon style={{color:"black"}} icon={faGlobe}/></div>
                     </div >
                     <div className="nav_right">
@@ -101,8 +106,8 @@ const Head = () => {
                         </button>
                         { open_drop ?
                             <div className="nav_right_drp" ref={drop_down_ref}>
-                            <div onClick={() => setSM(true)} style={{ fontWeight:"600"}}>Sign up</div>
-                            <div>Log in </div>
+                            <div onClick={() => handle_drop_click()} style={{ fontWeight:"600"}}><Link>Sign up</Link></div>
+                            <div><Link>Log in</Link></div>
                             <div><Link to="/host/homes">Host your home</Link></div>
                             <div><Link to="/host/experiences">Host an experience</Link></div>
                             <div><Link to="/help">Help</Link></div>
