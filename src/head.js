@@ -1,7 +1,7 @@
 import "./head.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faGlobe, faCircleUser, faBars, faDrawPolygon } from '@fortawesome/free-solid-svg-icons';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Signup from "./signup-modal";
 
@@ -9,6 +9,27 @@ import Signup from "./signup-modal";
 const Head = () => {
     const [open_drop, setOpen_drop] = useState(false);
     const [signup_modal, setSM] = useState(false)
+
+    const outside_modal = () => {
+        setSM(false);
+    }
+
+    let drop_down_ref = useRef();
+
+    useEffect( () => {
+        const outclickhandler = (event) => {
+                                if (!drop_down_ref.current.contains(event.target))
+                                {setOpen_drop(false);}
+                            }
+
+        document.addEventListener("mousedown", outclickhandler );
+
+        return () => {
+            document.removeEventListener("mousedown", outclickhandler)
+        }
+
+        });
+
     return ( 
     <div className="head">
         <div className="hd">
@@ -74,12 +95,12 @@ const Head = () => {
                         <div><FontAwesomeIcon style={{color:"black"}} icon={faGlobe}/></div>
                     </div >
                     <div className="nav_right">
-                        <button onClick={() => setOpen_drop(true)}>
+                        <button onClick={() => setOpen_drop(!open_drop)}>
                             <div><FontAwesomeIcon style={{color:"gray"}} size={"l"} icon={faBars}/></div>
                             <div><FontAwesomeIcon style={{color:"gray"}} size={"2xl"} icon={faCircleUser}/></div>
                         </button>
                         { open_drop ?
-                            <div className="nav_right_drp">
+                            <div className="nav_right_drp" ref={drop_down_ref}>
                             <div onClick={() => setSM(true)} style={{ fontWeight:"600"}}>Sign up</div>
                             <div>Log in </div>
                             <div><Link to="/host/homes">Host your home</Link></div>
@@ -93,7 +114,7 @@ const Head = () => {
         </div>
                             {
                                 signup_modal &&
-                                    <Signup/>
+                                    <Signup setSM={setSM}/>
                             }
                             
     </div>

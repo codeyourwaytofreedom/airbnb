@@ -1,10 +1,11 @@
 import "./signup-modal.css";
 
 
-const Signup = () => {
+const Signup = ({setSM}) => {
     return ( 
         <div className="md-bg">
                 <div className="md-bg-inner">
+                    <button onClick={()=> setSM(false)}>Close</button>
                         <div><h3>Log in or Sign up!</h3></div>
                         <div><h3>Welcome to Airbnb</h3></div>
                         <form action="">
