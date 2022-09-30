@@ -128,6 +128,7 @@
     font-weight: 400;
     line-height: 18px;
     color: #222222;
+    cursor: pointer;
   }
   .hd_user .nav_right_drp div a {
     text-decoration: none;

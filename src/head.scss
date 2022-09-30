@@ -119,11 +119,13 @@ $bbb: 1px solid green;
                 background-color: white;
                 border-radius: 24px;
                 border: 1px solid #DDDDDD;
+
                 div{
                     width: 220px; height: 35px;
                     display: grid;
                     align-content: center;
                     @include fnt(400);
+                    cursor: pointer;
                     a{
                         text-decoration: none;
                         color:black;

@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faGlobe, faCircleUser, faBars, faDrawPolygon } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Signup from "./signup-modal";
 
 
 const Head = () => {
     const [open_drop, setOpen_drop] = useState(false);
+    const [signup_modal, setSM] = useState(false)
     return ( 
     <div className="head">
         <div className="hd">
@@ -78,8 +80,8 @@ const Head = () => {
                         </button>
                         { open_drop ?
                             <div className="nav_right_drp">
-                            <div style={{ fontWeight:"600"}}><a href="">Sign up</a></div>
-                            <div><a href="">Log in</a></div>
+                            <div onClick={() => setSM(true)} style={{ fontWeight:"600"}}>Sign up</div>
+                            <div>Log in </div>
                             <div><Link to="/host/homes">Host your home</Link></div>
                             <div><Link to="/host/experiences">Host an experience</Link></div>
                             <div><Link to="/help">Help</Link></div>
@@ -89,6 +91,11 @@ const Head = () => {
                 </nav>
             </div>
         </div>
+                            {
+                                signup_modal &&
+                                    <Signup/>
+                            }
+                            
     </div>
     
 
