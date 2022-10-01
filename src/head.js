@@ -1,6 +1,6 @@
 import "./head.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faGlobe, faCircleUser, faBars, faDrawPolygon } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faGlobe, faCircleUser, faBars } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Signup from "./signup-modal";

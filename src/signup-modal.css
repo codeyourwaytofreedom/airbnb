@@ -17,6 +17,7 @@
 .md-bg-inner {
   width: 570px;
   height: 580px;
+  min-height: 350px;
   background-color: white;
   border-radius: 10px;
 }
@@ -30,7 +31,7 @@
 }
 .md-bg-inner_welc {
   color: #222222;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 400;
   width: 500px;
   height: 70px;
@@ -145,6 +146,18 @@
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 9fr;
+  background: transparent;
+}
+.md-bg-inner_cont button span {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: black;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  color: #222222;
 }
 
 .or {
@@ -170,4 +183,8 @@
   display: grid;
   justify-content: center;
   align-items: center;
+}
+
+.md-bg-inner_form_input:focus + .md-bg-inner_form_input_phone {
+  font-size: 55px;
 }/*# sourceMappingURL=signup-modal.css.map */

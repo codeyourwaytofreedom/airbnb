@@ -41,6 +41,7 @@ $b: 1px solid black;
 .md-bg-inner{
     width: 570px;
     height: 580px;
+    min-height: 350px;
     background-color: white;
     border-radius: 10px;
 
@@ -55,7 +56,7 @@ $b: 1px solid black;
     }
     &_welc{
         color: #222222;
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 400;
         width: 500px;
         height: 70px;
@@ -125,11 +126,9 @@ $b: 1px solid black;
                 color: gray;
                 pointer-events: none !important;
             }
-
         }
 
         
-
         button{
             width: 500px;
             height: 50px;
@@ -160,6 +159,12 @@ $b: 1px solid black;
             display: grid;
             align-items: center;
             grid-template-columns: 1fr 9fr;
+            background: transparent;
+            span{
+                @include gc;
+                @include fnt(600);
+                color: #222222;
+            }
             
         }
     }
@@ -188,4 +193,8 @@ $b: 1px solid black;
         @include gc;
 
     }
+}
+
+.md-bg-inner_form_input:focus + .md-bg-inner_form_input_phone {
+    font-size: 55px;
 }
