@@ -72,7 +72,7 @@ $b: 1px solid black;
         font-size: 16px;
         font-weight: 600;
         color: #222222;
-        border-bottom: 1px solid rgb(223, 221, 221);
+        border-bottom: 1px solid rgb(223, 221, 221);  //önemli ders
         button {
             position: absolute;
             left:30px;
@@ -103,6 +103,7 @@ $b: 1px solid black;
             font-size: 16px;
             padding-left: 10px;
             padding-top: 9px;
+            margin-bottom: 1px;
             &_country{
                 padding-left: 15px;
                 padding-bottom: 9px;
@@ -112,20 +113,56 @@ $b: 1px solid black;
                 color: gray;
             }
         }
-        &_input {
+        &_input_triple {
             width: 500px;
             height: 50px;
-            border: none;
-            background: transparent;
-            padding: 10px;
+            padding-left:10px;
+            // padding-top: 30px;
+            // padding-bottom:20px;
+            position: relative;
+            display: flex;
+            input{
+                font-size: 18px;
+                margin-left: 2px;
+                order: 3;
+                display: flex;
+                border: none;
+                padding-top: 10px;
+            }
+            &_code{
+                display: none !important;
+                color: gray;
+                margin-top: 3px !important;
+                order: 2;
+                align-items: center;
+                padding-top: 10px;
+
+            }
             &_phone {
-                position: relative;
-                top: 65px;
-                padding: 10px;
                 font-weight: 200;
                 color: gray;
-                pointer-events: none !important;
+                pointer-events: none !important;        //önemli ders
+                order:1;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                top:15px;
+               
             }
+        }
+        input:focus + .md-bg-inner_form_input_triple_phone {
+                top:5px;
+                font-size: 12px;
+                align-items:flex-start;
+                
+        }
+        input:focus ~ .md-bg-inner_form_input_triple_code {
+            display: flex !important;
+            
+        }
+
+        input:focus {
+            outline: none;          //önemli ders
         }
 
         
@@ -195,6 +232,3 @@ $b: 1px solid black;
     }
 }
 
-.md-bg-inner_form_input:focus + .md-bg-inner_form_input_phone {
-    font-size: 55px;
-}

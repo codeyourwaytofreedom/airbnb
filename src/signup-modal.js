@@ -10,6 +10,11 @@ import codes from "./CountryCodes.json";
 
 const Signup = ({setSM}) => {
 
+    function handle_code(e) {
+        setContry("+"+e.target.value.match(/(\d+)/)[0])
+        console.log((e.target.value).match(/(\d+)/)[0])
+    }
+
     let modal_ref = useRef();
     const [selected_cont, setContry] = useState("")
 
@@ -45,7 +50,7 @@ const Signup = ({setSM}) => {
                                     <form action="">
                                         <div className="md-bg-inner_form_double">
                                             <span className="md-bg-inner_form_select_country">Country/Region</span>
-                                            <select onChange={(e) => setContry(e.target.value)} className="md-bg-inner_form_select">
+                                            <select onChange={(e) => handle_code(e)} className="md-bg-inner_form_select">
                                                     {
                                                         codes.map((c) => (
 
@@ -54,9 +59,13 @@ const Signup = ({setSM}) => {
                                                         ))
                                                     }
                                                 </select> <br></br>
-                                            <span  className="md-bg-inner_form_input_phone">Phone number</span>
-                                            <span>{selected_cont}</span>
-                                            <input className="md-bg-inner_form_input" type="text" />
+                                            
+                                            <div className="md-bg-inner_form_input_triple">
+                                                <input className="md-bg-inner_form_input_triple_input" type="text" />
+                                                <div  className="md-bg-inner_form_input_triple_phone">Phone number</div>
+                                                <div className="md-bg-inner_form_input_triple_code">{selected_cont}</div>
+                                            </div>
+                                            
                                         </div>
                                         <div className="md-bg-inner_form_reminder">We'll call or text you to confirm your number. Standard message and data rates apply. 
                                         <span> <u> <b>Privacy Policy</b> </u></span> </div>

@@ -81,6 +81,7 @@
   font-size: 16px;
   padding-left: 10px;
   padding-top: 9px;
+  margin-bottom: 1px;
 }
 .md-bg-inner_form_select_country {
   padding-left: 15px;
@@ -90,20 +91,49 @@
   font-weight: 200;
   color: gray;
 }
-.md-bg-inner_form_input {
+.md-bg-inner_form_input_triple {
   width: 500px;
   height: 50px;
-  border: none;
-  background: transparent;
-  padding: 10px;
-}
-.md-bg-inner_form_input_phone {
+  padding-left: 10px;
   position: relative;
-  top: 65px;
-  padding: 10px;
+  display: flex;
+}
+.md-bg-inner_form_input_triple input {
+  font-size: 18px;
+  margin-left: 2px;
+  order: 3;
+  display: flex;
+  border: none;
+  padding-top: 10px;
+}
+.md-bg-inner_form_input_triple_code {
+  display: none !important;
+  color: gray;
+  margin-top: 3px !important;
+  order: 2;
+  align-items: center;
+  padding-top: 10px;
+}
+.md-bg-inner_form_input_triple_phone {
   font-weight: 200;
   color: gray;
   pointer-events: none !important;
+  order: 1;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+}
+.md-bg-inner_form input:focus + .md-bg-inner_form_input_triple_phone {
+  top: 5px;
+  font-size: 12px;
+  align-items: flex-start;
+}
+.md-bg-inner_form input:focus ~ .md-bg-inner_form_input_triple_code {
+  display: flex !important;
+}
+.md-bg-inner_form input:focus {
+  outline: none;
 }
 .md-bg-inner_form button {
   width: 500px;
@@ -183,8 +213,4 @@
   display: grid;
   justify-content: center;
   align-items: center;
-}
-
-.md-bg-inner_form_input:focus + .md-bg-inner_form_input_phone {
-  font-size: 55px;
 }/*# sourceMappingURL=signup-modal.css.map */
