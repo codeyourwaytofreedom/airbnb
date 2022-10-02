@@ -81,7 +81,6 @@
   font-size: 16px;
   padding-left: 10px;
   padding-top: 9px;
-  margin-bottom: 1px;
 }
 .md-bg-inner_form_select_country {
   padding-left: 15px;
@@ -97,17 +96,18 @@
   padding-left: 10px;
   position: relative;
   display: flex;
+  cursor: text;
 }
 .md-bg-inner_form_input_triple input {
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 2px;
   order: 3;
   display: flex;
   border: none;
   padding-top: 10px;
+  color: #222222;
 }
 .md-bg-inner_form_input_triple_code {
-  display: none !important;
   color: gray;
   margin-top: 3px !important;
   order: 2;
@@ -120,17 +120,10 @@
   pointer-events: none !important;
   order: 1;
   display: flex;
-  align-items: center;
   position: absolute;
-  top: 15px;
 }
 .md-bg-inner_form input:focus + .md-bg-inner_form_input_triple_phone {
-  top: 5px;
   font-size: 12px;
-  align-items: flex-start;
-}
-.md-bg-inner_form input:focus ~ .md-bg-inner_form_input_triple_code {
-  display: flex !important;
 }
 .md-bg-inner_form input:focus {
   outline: none;

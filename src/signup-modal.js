@@ -15,8 +15,42 @@ const Signup = ({setSM}) => {
         console.log((e.target.value).match(/(\d+)/)[0])
     }
 
+
+
+    // function handle_input_change(e){
+    //     if(e.target.value.length>0)
+    //     { setFill(false) }
+    // }
+
+    // onChange={(e)=> handle_input_change(e)} 
+
     let modal_ref = useRef();
     const [selected_cont, setContry] = useState("")
+
+    const fcs = useRef();
+    const [focused, setFocus] = useState(false)
+
+    function handle_focus (){
+        console.log("clicked");
+        fcs.current.focus();
+        setFocus(true);
+        console.log(fcs.current.value.length)
+        
+    };
+    const [input_empty, setFill] = useState(false);
+    function input_focus(e){
+            setFill(true)
+            if(e.target.value.length>0)
+            {setFill(true)}
+    }
+    function input_blur(e){
+        if(e.target.value.length===0)
+        {setFill(false)}
+        else{setFill(true)}
+        setFocus(false);
+        console.log()
+
+    }
 
     useEffect( () => {
     const outclickhandler = (event) => {
@@ -25,6 +59,10 @@ const Signup = ({setSM}) => {
                             {
                                 setSM(false);
                             }
+                            // if (!fcs.current.contains(event.target))
+                            // {
+                            //     setFocus(false);
+                            // }
                         }
 
     document.addEventListener("mousedown", outclickhandler );
@@ -60,10 +98,14 @@ const Signup = ({setSM}) => {
                                                     }
                                                 </select> <br></br>
                                             
-                                            <div className="md-bg-inner_form_input_triple">
-                                                <input className="md-bg-inner_form_input_triple_input" type="text" />
-                                                <div  className="md-bg-inner_form_input_triple_phone">Phone number</div>
-                                                <div className="md-bg-inner_form_input_triple_code">{selected_cont}</div>
+                                            <div className="md-bg-inner_form_input_triple" onClick={handle_focus} 
+                                                style={{border:focused ? "2px solid black" : "none",
+                                                        borderRadius: focused ? "10px" : "0"}}>
+                                                <input onFocus={ (e)=>input_focus(e)} onBlur={(e)=>input_blur(e)} className="md-bg-inner_form_input_triple_input" type="text" ref={fcs} />
+                                                <div  style={{top: focused===true ? "5px" : input_empty===true ? "5px" : "15px",
+                                                                alignItems: focused ? "flex-start" : "center"}}
+                                                      className="md-bg-inner_form_input_triple_phone">Phone number</div>
+                                                <div style={{display: input_empty===false ? "none" : "flex"}} className="md-bg-inner_form_input_triple_code">{selected_cont}</div>
                                             </div>
                                             
                                         </div>
