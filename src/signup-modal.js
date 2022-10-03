@@ -25,31 +25,28 @@ const Signup = ({setSM}) => {
     // onChange={(e)=> handle_input_change(e)} 
 
     let modal_ref = useRef();
-    const [selected_cont, setContry] = useState("")
+    const [selected_cont, setContry] = useState("+93")
 
     const fcs = useRef();
     const [focused, setFocus] = useState(false)
 
     function handle_focus (){
-        console.log("clicked");
         fcs.current.focus();
         setFocus(true);
-        console.log(fcs.current.value.length)
         
     };
-    const [input_empty, setFill] = useState(false);
+    const [input_length, setLength] = useState(0);
+
     function input_focus(e){
-            setFill(true)
-            if(e.target.value.length>0)
-            {setFill(true)}
+        setLength(e.target.value.length);
     }
     function input_blur(e){
-        if(e.target.value.length===0)
-        {setFill(false)}
-        else{setFill(true)}
+        setLength(e.target.value.length);
         setFocus(false);
-        console.log()
+    }
 
+    function input_change(e){
+        setLength(e.target.value.length);
     }
 
     useEffect( () => {
@@ -101,11 +98,17 @@ const Signup = ({setSM}) => {
                                             <div className="md-bg-inner_form_input_triple" onClick={handle_focus} 
                                                 style={{border:focused ? "2px solid black" : "none",
                                                         borderRadius: focused ? "10px" : "0"}}>
-                                                <input onFocus={ (e)=>input_focus(e)} onBlur={(e)=>input_blur(e)} className="md-bg-inner_form_input_triple_input" type="text" ref={fcs} />
-                                                <div  style={{top: focused===true ? "5px" : input_empty===true ? "5px" : "15px",
-                                                                alignItems: focused ? "flex-start" : "center"}}
+                                                <input onFocus={ (e)=>input_focus(e)} onBlur={(e)=>input_blur(e)}
+                                                        onChange={ (e)=>input_change(e)}
+                                                        className="md-bg-inner_form_input_triple_input" type="text" ref={fcs} />
+                                                <div  style={{top: focused===true ? "5px" : input_length>0 ?  "5px" : "15px",
+                                                                alignItems: focused ? "flex-start" : "center",
+                                                            fontSize: focused===true ? "12px" : input_length>0 ? "12px": "14px"
+                                                            }}
                                                       className="md-bg-inner_form_input_triple_phone">Phone number</div>
-                                                <div style={{display: input_empty===false ? "none" : "flex"}} className="md-bg-inner_form_input_triple_code">{selected_cont}</div>
+                                                <div style={{display: focused ? "flex" : input_length>0 ? "flex": "none",
+                                                            color: input_length>0 ? "#222222": "gray"
+                                                            }} className="md-bg-inner_form_input_triple_code">{selected_cont}</div>
                                             </div>
                                             
                                         </div>

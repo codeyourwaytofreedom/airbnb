@@ -32,10 +32,6 @@ $b: 1px solid black;
     bottom:0;
     right:0;
     background-color: rgba(0, 0, 0, 0.5);
-
-
-
-    
 }
 
 .md-bg-inner{
@@ -129,6 +125,9 @@ $b: 1px solid black;
                 border: none;
                 padding-top: 10px;
                 color: #222222;
+                position: relative;
+                height: 50%;
+                top: 30%;
             }
             &_code{
                 color: gray;
@@ -144,16 +143,12 @@ $b: 1px solid black;
                 pointer-events: none !important;        //önemli ders
                 order:1;
                 display: flex;
-                // align-items: center;
                 position: absolute;
-                // top:15px;
                
             }
         }
         input:focus + .md-bg-inner_form_input_triple_phone {
-                // top:5px;
                 font-size: 12px;
-                // align-items:flex-start;
                 
         }
 
