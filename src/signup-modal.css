@@ -124,6 +124,7 @@
   order: 1;
   display: flex;
   position: absolute;
+  transition: 0.2s;
 }
 .md-bg-inner_form input:focus + .md-bg-inner_form_input_triple_phone {
   font-size: 12px;
@@ -143,14 +144,25 @@
   color: black;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   color: white;
+  cursor: pointer;
 }
 .md-bg-inner_form_reminder {
   font-size: 12px;
   color: #222222;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 .md-bg-inner_form_reminder span {
   display: block;
+}
+.md-bg-inner_form_number-required {
+  font-size: 12px;
+  color: rgb(146, 2, 2);
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+}
+.md-bg-inner_form_number-required div {
+  padding-left: 9px;
 }
 .md-bg-inner_cont {
   display: grid;

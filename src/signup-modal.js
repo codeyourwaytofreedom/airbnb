@@ -1,7 +1,7 @@
 import "./signup-modal.css";
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faEnvelope,faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import codes from "./CountryCodes.json";
 
 
@@ -37,16 +37,22 @@ const Signup = ({setSM}) => {
     };
     const [input_length, setLength] = useState(0);
 
-    function input_focus(e){
-        setLength(e.target.value.length);
-    }
     function input_blur(e){
-        setLength(e.target.value.length);
         setFocus(false);
     }
 
     function input_change(e){
         setLength(e.target.value.length);
+        if (e.target.value.length >0)
+        {setWarning(false)}
+    }
+
+    const [warning, setWarning] = useState(false);
+    function handle_submit (e){
+        if(input_length===0)
+        {e.preventDefault();}
+        setWarning(true);
+        
     }
 
     useEffect( () => {
@@ -98,7 +104,7 @@ const Signup = ({setSM}) => {
                                             <div className="md-bg-inner_form_input_triple" onClick={handle_focus} 
                                                 style={{border:focused ? "2px solid black" : "none",
                                                         borderRadius: focused ? "10px" : "0"}}>
-                                                <input onFocus={ (e)=>input_focus(e)} onBlur={(e)=>input_blur(e)}
+                                                <input  onBlur={(e)=>input_blur(e)}
                                                         onChange={ (e)=>input_change(e)}
                                                         className="md-bg-inner_form_input_triple_input" type="text" ref={fcs} />
                                                 <div  style={{top: focused===true ? "5px" : input_length>0 ?  "5px" : "15px",
@@ -112,9 +118,15 @@ const Signup = ({setSM}) => {
                                             </div>
                                             
                                         </div>
-                                        <div className="md-bg-inner_form_reminder">We'll call or text you to confirm your number. Standard message and data rates apply. 
+                                        <div className="md-bg-inner_form_reminder" 
+                                            style={{display: warning ? "none" : "block"}}>We'll call or text you to confirm your number. Standard message and data rates apply. 
                                         <span> <u> <b>Privacy Policy</b> </u></span> </div>
-                                        <button type="submit">Continue</button>
+                                        <div className="md-bg-inner_form_number-required"
+                                             style={{display: warning ? "flex" : "none"}}   >
+                                                <FontAwesomeIcon style={{color:"rgb(146, 2, 2)"}} size={"xl"} icon={faCircleExclamation}/>
+                                                <div>Phone number is required</div>
+                                        </div>
+                                        <button onClick={(e)=>handle_submit(e) } type="submit">Continue</button>
                                         <div className="or">
                                             <span className="or_line"></span>
                                             <span className="or_or">or</span>
