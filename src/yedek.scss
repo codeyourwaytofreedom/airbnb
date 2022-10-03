@@ -42,11 +42,10 @@ $b: 1px solid black;
     border-radius: 10px;
 
     &_down{
-        height: 90%;
-        width: 100%;
+        height: 510px;
+        bottom: 0;
         overflow-y: scroll;
-        padding-left: 4%;
-        padding-right: 4%;
+        padding: 20px auto;
         display: grid;
         justify-items: center;
         
@@ -55,18 +54,21 @@ $b: 1px solid black;
         color: #222222;
         font-size: 19px;
         font-weight: 400;
+        width: 500px;
         height: 70px;
+        display: grid;
+        align-content: center;
     }
 
     &_title{
         @include fc;
+        position: relative;
         height: 50px;
         padding: 30px 30px;
         font-size: 16px;
         font-weight: 600;
         color: #222222;
         border-bottom: 1px solid rgb(223, 221, 221);  //önemli ders
-        position: relative;
         button {
             position: absolute;
             left:30px;
@@ -77,10 +79,9 @@ $b: 1px solid black;
         }
     }
     &_form{
-        width: 100%;
-        display: grid;
+
+        @include gc;
         &_double{
-            width: 100%;
             border: 1px solid gray;
             border-radius: 10px;
             position: relative;
@@ -90,7 +91,7 @@ $b: 1px solid black;
             }
         }
         &_select {
-            width: 100%;
+            width: 500px;
             height: 60px;
             border: none;
             background: transparent;
@@ -108,9 +109,11 @@ $b: 1px solid black;
             }
         }
         &_input_triple {
-            width: 100%;
+            width: 500px;
             height: 50px;
             padding-left:10px;
+            // padding-top: 30px;
+            // padding-bottom:20px;
             position: relative;
             display: flex;
             cursor: text;
@@ -142,7 +145,12 @@ $b: 1px solid black;
                 display: flex;
                 position: absolute;
                 transition: 0.2s;
+               
             }
+        }
+        input:focus + .md-bg-inner_form_input_triple_phone {
+                font-size: 12px;
+                
         }
 
         input:focus {
@@ -151,7 +159,7 @@ $b: 1px solid black;
 
         
         button{
-            width: 100%;
+            width: 500px;
             height: 50px;
             border-radius: 10px;
             border: none;
@@ -174,15 +182,15 @@ $b: 1px solid black;
             padding: 15px 0;
             div{padding-left: 9px}
         }
+
     }
     &_cont{
-        display: grid;
+        @include gc;
         padding: 20px 0px;
         row-gap: 20px;
-        width: 100%;
         button {
             height: 50px;
-            width: 100%;
+            width: 500px;
             border: $b;
             border-radius: 10px;
             @include fnt(400);
@@ -195,8 +203,10 @@ $b: 1px solid black;
                 @include fnt(600);
                 color: #222222;
             }
+            
         }
     }
+    
 }
 
 .or{
@@ -224,16 +234,8 @@ $b: 1px solid black;
 
 
 
-
 @media (max-width: 575.98px) { 
 
-    .md-bg-inner{
-        width: 100vw;
-        height: 100vh;
-        &_title{
-            padding: 0;
-        }
-    
-    }
+
 
 }
