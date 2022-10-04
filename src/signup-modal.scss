@@ -27,10 +27,7 @@ $b: 1px solid black;
     display: grid;
     justify-content: center;
     align-items: center;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
+    top:0; left:0; bottom:0; right:0;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -45,8 +42,7 @@ $b: 1px solid black;
         height: 90%;
         width: 100%;
         overflow-y: scroll;
-        padding-left: 4%;
-        padding-right: 4%;
+        padding: 0 4%;
         display: grid;
         justify-items: center;
         
@@ -56,6 +52,7 @@ $b: 1px solid black;
         font-size: 19px;
         font-weight: 400;
         height: 70px;
+        width: 100%;
     }
 
     &_title{
@@ -72,13 +69,11 @@ $b: 1px solid black;
             left:30px;
             background: transparent;
             border: none;
-            font-size: 16px;
             cursor: pointer;
         }
     }
     &_form{
         width: 100%;
-        display: grid;
         &_double{
             width: 100%;
             border: 1px solid gray;
@@ -132,7 +127,6 @@ $b: 1px solid black;
                 order: 2;
                 align-items: center;
                 padding-top: 10px;
-
             }
             &_phone {
                 font-weight: 200;
@@ -144,12 +138,9 @@ $b: 1px solid black;
                 transition: 0.2s;
             }
         }
-
         input:focus {
             outline: none;          //önemli ders
         }
-
-        
         button{
             width: 100%;
             height: 50px;
@@ -222,18 +213,12 @@ $b: 1px solid black;
     }
 }
 
-
-
-
 @media (max-width: 575.98px) { 
-
     .md-bg-inner{
         width: 100vw;
         height: 100vh;
         &_title{
             padding: 0;
         }
-    
     }
-
 }

@@ -1,8 +1,14 @@
 import Head from "./head";
+import Top_roll from "./Top_roll";
 
 const Home = () => {
     return ( 
-        <Head></Head>
+        <div>
+            <Head></Head>
+            <Top_roll></Top_roll>
+        </div>
+        
+
      );
 }
  

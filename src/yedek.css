@@ -22,10 +22,10 @@
   border-radius: 10px;
 }
 .md-bg-inner_down {
-  height: 90%;
-  width: 100%;
+  height: 510px;
+  bottom: 0;
   overflow-y: scroll;
-  padding: 0 4%;
+  padding: 20px auto;
   display: grid;
   justify-items: center;
 }
@@ -33,33 +33,37 @@
   color: #222222;
   font-size: 19px;
   font-weight: 400;
+  width: 500px;
   height: 70px;
-  width: 100%;
+  display: grid;
+  align-content: center;
 }
 .md-bg-inner_title {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   height: 50px;
   padding: 30px 30px;
   font-size: 16px;
   font-weight: 600;
   color: #222222;
   border-bottom: 1px solid rgb(223, 221, 221);
-  position: relative;
 }
 .md-bg-inner_title button {
   position: absolute;
   left: 30px;
   background: transparent;
   border: none;
+  font-size: 16px;
   cursor: pointer;
 }
 .md-bg-inner_form {
-  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 .md-bg-inner_form_double {
-  width: 100%;
   border: 1px solid gray;
   border-radius: 10px;
   position: relative;
@@ -69,7 +73,7 @@
   position: absolute;
 }
 .md-bg-inner_form_select {
-  width: 100%;
+  width: 500px;
   height: 60px;
   border: none;
   background: transparent;
@@ -87,7 +91,7 @@
   color: gray;
 }
 .md-bg-inner_form_input_triple {
-  width: 100%;
+  width: 500px;
   height: 50px;
   padding-left: 10px;
   position: relative;
@@ -122,11 +126,14 @@
   position: absolute;
   transition: 0.2s;
 }
+.md-bg-inner_form input:focus + .md-bg-inner_form_input_triple_phone {
+  font-size: 12px;
+}
 .md-bg-inner_form input:focus {
   outline: none;
 }
 .md-bg-inner_form button {
-  width: 100%;
+  width: 500px;
   height: 50px;
   border-radius: 10px;
   border: none;
@@ -159,13 +166,14 @@
 }
 .md-bg-inner_cont {
   display: grid;
+  justify-content: center;
+  align-items: center;
   padding: 20px 0px;
   row-gap: 20px;
-  width: 100%;
 }
 .md-bg-inner_cont button {
   height: 50px;
-  width: 100%;
+  width: 500px;
   border: 1px solid black;
   border-radius: 10px;
   font-size: 14px;
@@ -213,14 +221,4 @@
   display: grid;
   justify-content: center;
   align-items: center;
-}
-
-@media (max-width: 575.98px) {
-  .md-bg-inner {
-    width: 100vw;
-    height: 100vh;
-  }
-  .md-bg-inner_title {
-    padding: 0;
-  }
-}/*# sourceMappingURL=signup-modal.css.map */
+}/*# sourceMappingURL=yedek.css.map */

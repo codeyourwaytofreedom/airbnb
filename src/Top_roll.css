@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box; /* Safari/Chrome, other WebKit */ /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+.top_roll {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 100px;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr 1fr;
+  align-items: center;
+}
+.top_roll_left-shield {
+  height: 100%;
+  z-index: 9;
+}
+.top_roll_right-shield {
+  height: 100%;
+  z-index: 9;
+}
+.top_roll_content {
+  height: 100%;
+  display: flex;
+  width: 80vw !important;
+  align-items: flex-end;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  overflow: visible;
+  position: relative;
+  background-color: transparent;
+  z-index: 5 !important;
+  overflow: hidden;
+}
+.top_roll_content_test {
+  display: flex;
+  position: relative;
+  z-index: 5;
+  justify-content: space-evenly;
+}
+.top_roll_content_back {
+  position: absolute;
+  left: 0;
+  bottom: 30%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  z-index: 9;
+}
+.top_roll_content_forth {
+  position: absolute;
+  right: 0;
+  bottom: 30%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  z-index: 9;
+}
+.top_roll_content_button {
+  height: 80%;
+  min-width: 100px !important;
+  border: none;
+  background: transparent;
+  border: 2px solid red;
+  font-size: 12px !important;
+  font-weight: 600;
+  color: gray;
+  display: grid;
+  justify-content: flex-start;
+  align-items: flex-end;
+  opacity: 0.5;
+  padding: 0;
+}
+.top_roll_content_button_kernel {
+  display: grid;
+  justify-content: center;
+  row-gap: 10px;
+}
+.top_roll_content_button_kernel_icon {
+  height: 25px;
+  width: 25px;
+}
+.top_roll_content_button_kernel_icon img {
+  width: 100%;
+  height: 100%;
+}
+.top_roll_content_button_kernel_text {
+  padding-bottom: 10px;
+  color: black;
+}
+.top_roll_content_button:focus {
+  opacity: 1;
+}
+.top_roll_control {
+  height: 100%;
+  position: relative;
+  z-index: 9;
+}/*# sourceMappingURL=Top_roll.css.map */
