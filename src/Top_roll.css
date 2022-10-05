@@ -4,12 +4,11 @@
 }
 
 .top_roll {
-  position: -webkit-sticky;
-  position: sticky;
+  position: relative;
   height: 100px;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 9fr 1fr 1fr;
+  grid-template-columns: 4fr 20fr 1fr 1fr 5fr 5fr;
   align-items: center;
 }
 .top_roll_left-shield {
@@ -23,8 +22,8 @@
 .top_roll_content {
   height: 100%;
   display: flex;
-  width: 80vw !important;
-  align-items: flex-end;
+  width: 75vw !important;
+  align-items: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
   overflow: visible;
@@ -40,9 +39,6 @@
   justify-content: space-evenly;
 }
 .top_roll_content_back {
-  position: absolute;
-  left: 0;
-  bottom: 30%;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -50,12 +46,12 @@
   border-radius: 50%;
   width: 25px;
   height: 25px;
-  z-index: 9;
+  z-index: 99;
+  position: absolute;
+  left: 6%;
+  top: 30px;
 }
 .top_roll_content_forth {
-  position: absolute;
-  right: 0;
-  bottom: 30%;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -63,26 +59,29 @@
   border-radius: 50%;
   width: 25px;
   height: 25px;
-  z-index: 9;
+  z-index: 99;
+  position: absolute;
+  right: 16%;
+  top: 30px;
 }
 .top_roll_content_button {
   height: 80%;
-  min-width: 100px !important;
+  min-width: 109px !important;
   border: none;
   background: transparent;
-  border: 2px solid red;
   font-size: 12px !important;
   font-weight: 600;
   color: gray;
   display: grid;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
   opacity: 0.5;
   padding: 0;
+  cursor: pointer;
 }
 .top_roll_content_button_kernel {
   display: grid;
-  justify-content: center;
+  justify-items: center;
   row-gap: 10px;
 }
 .top_roll_content_button_kernel_icon {
@@ -96,12 +95,41 @@
 .top_roll_content_button_kernel_text {
   padding-bottom: 10px;
   color: black;
+  border-bottom: 2px solid white;
 }
 .top_roll_content_button:focus {
   opacity: 1;
+}
+.top_roll_content_button:focus .top_roll_content_button_kernel_text {
+  border-bottom: 2px solid black;
 }
 .top_roll_control {
   height: 100%;
   position: relative;
   z-index: 9;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.shadow_left {
+  width: 50px;
+  height: 80px;
+  position: absolute;
+  left: 5%;
+  top: 7px;
+  box-shadow: inset 4px 11px 73px white;
+  z-index: 9;
+  border-radius: 50%;
+}
+
+.shadow_right {
+  width: 50px;
+  height: 80px;
+  position: absolute;
+  right: 17%;
+  top: 7px;
+  box-shadow: inset 4px 11px 73px white;
+  z-index: 9;
+  border-radius: 50%;
 }/*# sourceMappingURL=Top_roll.css.map */
