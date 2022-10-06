@@ -34,9 +34,10 @@
 }
 .top_roll_content_test {
   display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
   position: relative;
   z-index: 5;
-  justify-content: space-evenly;
 }
 .top_roll_content_back {
   display: grid;
@@ -66,7 +67,7 @@
 }
 .top_roll_content_button {
   height: 80%;
-  min-width: 109px !important;
+  min-width: 8vw !important;
   border: none;
   background: transparent;
   font-size: 12px !important;

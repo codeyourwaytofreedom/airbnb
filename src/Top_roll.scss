@@ -47,9 +47,10 @@
 
         &_test{
             display: flex;
+            flex-shrink: 0;
+            flex-grow: 0;
             position: relative;
             z-index: 5;
-            justify-content: space-evenly;            
         }
 
         &_back{
@@ -72,7 +73,7 @@
         }
         &_button{
             height: 80%;
-            min-width: 109px !important;
+            min-width: 8vw !important;
             border: none;
             background: transparent;
             // border: 2px solid red;
@@ -123,19 +124,6 @@
     }
 
 
-    
-
-    // &_fixed-arrow{
-    //     position: absolute;
-    //     right: 150px;
-    //     border:2px solid magenta !important;
-    // }
-    // &_fixed-filter{
-    //     position: absolute;
-    //     right: 80px;
-    //     border:2px solid navy !important;
-    //     height: 50% !important;
-    // }
 }
 
 
