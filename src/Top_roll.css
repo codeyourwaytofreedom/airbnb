@@ -23,9 +23,7 @@
   height: 100%;
   display: flex;
   width: 75vw !important;
-  align-items: center;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  align-items: flex-end;
   overflow: visible;
   position: relative;
   background-color: transparent;
@@ -34,10 +32,9 @@
 }
 .top_roll_content_test {
   display: flex;
-  flex-shrink: 0;
-  flex-grow: 0;
   position: relative;
   z-index: 5;
+  left: -2vw;
 }
 .top_roll_content_back {
   display: grid;
@@ -67,7 +64,7 @@
 }
 .top_roll_content_button {
   height: 80%;
-  min-width: 8vw !important;
+  min-width: 100px !important;
   border: none;
   background: transparent;
   font-size: 12px !important;
@@ -86,8 +83,8 @@
   row-gap: 10px;
 }
 .top_roll_content_button_kernel_icon {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
 }
 .top_roll_content_button_kernel_icon img {
   width: 100%;
@@ -133,4 +130,13 @@
   box-shadow: inset 4px 11px 73px white;
   z-index: 9;
   border-radius: 50%;
+}
+
+@media (max-width: 744.98px) {
+  .top_roll_content_back {
+    display: none;
+  }
+  .top_roll_content_forth {
+    display: none;
+  }
 }/*# sourceMappingURL=Top_roll.css.map */

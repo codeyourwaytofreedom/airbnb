@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 4fr 20fr 1fr 1fr  5fr 5fr;
     align-items: center;
+    // direction: rtl;
     // transition: 5s;
     &_left-shield{
         height: 100%;
@@ -37,20 +38,19 @@
         height: 100%;
         display: flex;
         width: 75vw !important;
-        align-items: center;
-        column-gap: 20px;
+        align-items: flex-end;
         overflow:visible;
         position: relative;
         background-color:transparent;
         z-index: 5 !important;
-        overflow: hidden;        
+        overflow: hidden;   
+
 
         &_test{
             display: flex;
-            flex-shrink: 0;
-            flex-grow: 0;
             position: relative;
             z-index: 5;
+            left:-2vw;
         }
 
         &_back{
@@ -73,7 +73,7 @@
         }
         &_button{
             height: 80%;
-            min-width: 8vw !important;
+            min-width: 100px !important;
             border: none;
             background: transparent;
             // border: 2px solid red;
@@ -91,7 +91,7 @@
                 justify-items: center;
                 row-gap: 10px;
                 &_icon{
-                    height: 25px; width: 25px;
+                    height: 30px; width: 30px;
                     img{
                         width: 100%;
                         height: 100%;
@@ -149,4 +149,34 @@
     box-shadow: inset 4px 11px 73px white;
     z-index: 9;
     border-radius: 50%;
+}
+
+
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+
+    // .top_roll{
+    //     grid-template-columns: 3fr 20fr 1fr 1fr  5fr 5fr;
+    // }
+    // .top_roll_content_test{
+    //     left:-6vw;
+    // }
+
+
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 744.98px) { 
+    
+    .top_roll_content_back{
+        display: none;
+    }
+    .top_roll_content_forth{
+        display: none;
+    }
+    
+
+
 }

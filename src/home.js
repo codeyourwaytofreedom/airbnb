@@ -1,5 +1,6 @@
 import Head from "./head";
 import Top_roll from "./Top_roll";
+import Test from "./test";
 
 const Home = () => {
     return ( 
