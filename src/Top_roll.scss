@@ -47,7 +47,8 @@
 
 
         &_test{
-            display: flex;
+            display: grid;
+            // grid-template-columns: repeat(6, 1fr);
             position: relative;
             z-index: 5;
             left:-2vw;

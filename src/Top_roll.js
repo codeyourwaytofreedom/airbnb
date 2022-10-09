@@ -7,16 +7,28 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 const Top_roll = () => {
 
     const [step,setStep] = useState(0);
+    const { innerWidth: width, innerHeight: height } = window;
+    const [hm, sethm] = useState(parseInt(width*0.75/100)+1);
+    const e = "repeat(" + hm + ", 1fr)"
+    const [alert, setalert] = useState(step+hm);
 
-    const[ww, setWW] = useState();
-    const [hm, setHm] = useState();
-    
-    
     function get_positions() {
-            const { innerWidth: width, innerHeight: height } = window;
-            setWW(width);
-            setHm(parseInt(width*0.75/90));
-            setStep(step)
+        const { innerWidth: width, innerHeight: height } = window;
+        setalert(parseInt(width*0.75/100)+1-hm)
+        sethm(parseInt(width*0.75/100)+1);
+        setStep(rolling_options.length-hm);
+        console.log(parseInt(width*0.75/100)+1);
+        console.log(step);
+        if(hm+step >24)
+        {
+            console.log("24 ü geçti");
+            // setStep(step-(parseInt(width*0.75/100)+1-hm));
+            console.log(step-alert);   
+            setStep(rolling_options.length-hm-(parseInt(width*0.75/100)+1-hm));
+
+        }
+
+
           
     }
 
@@ -30,18 +42,22 @@ const Top_roll = () => {
 
     
     const handle_index_left = () => {
-        setStep(step-1)
+        if(step===0)
+        {setStep(0)}
+        else{setStep(step-1);}
+            
+            // sethm(hm-1)
     }
 
     const handle_index_right = () => {
-        if(step+hm===24)
-        {setStep(step);  
+        if(hm+step+1===25)
+        {setStep(step);
+        sethm(hm);
         }
         else{setStep(step+1)}
-        
     }
 
-
+    // step + hm = 23 ise sağı kapat
     return ( 
         <div className="top_roll">
             <div className="top_roll_left-shield"></div>
@@ -50,11 +66,13 @@ const Top_roll = () => {
 
 
                 <div className="top_roll_content_test" 
-                style={{ transitionDelay:"0.2s"}}
+                style={{ transitionDelay:"0.4s",
+                        gridTemplateColumns:e
+                    }}
                     >
                         
                     {
-                    rolling_options.slice(step,hm+step).map((o) => (
+                    rolling_options.slice(step,step+hm).map((o) => (
                         <button className="top_roll_content_button">
                             <div className="top_roll_content_button_kernel">
                                 <span className="top_roll_content_button_kernel_icon">
@@ -96,20 +114,24 @@ const Top_roll = () => {
             
             
             <h1 style={{position:"absolute",top:"200px", left:"20%"}}>
-                     Ekran boyutu: {ww}
+                  HM:  {hm}
             </h1>
 
             <h1 style={{position:"absolute",top:"240px", left:"20%"}}>
-                     Sığan öğe sayısı: {hm}
+                 Step:   {step}
             </h1>
 
             <h1 style={{position:"absolute",top:"280px", left:"20%"}}>
-                     {step} ile {step+hm} arasını gösteriyor
+               Change:  {alert}
             </h1>
 
             <h1 style={{position:"absolute",top:"320px", left:"20%"}}>
-                     Step: {step}
             </h1>
+
+            <h1 style={{position:"absolute",top:"360px", left:"20%"}}>
+
+            </h1>
+            
 
             
 
