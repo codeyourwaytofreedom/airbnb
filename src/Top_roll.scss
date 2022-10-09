@@ -19,8 +19,6 @@
     display: grid;
     grid-template-columns: 4fr 20fr 1fr 1fr  5fr 5fr;
     align-items: center;
-    // direction: rtl;
-    // transition: 5s;
     &_left-shield{
         height: 100%;
         // background-color: red;
@@ -47,11 +45,10 @@
 
 
         &_test{
-            display: grid;
+            display: flex;
             // grid-template-columns: repeat(6, 1fr);
             position: relative;
             z-index: 5;
-            left:-2vw;
         }
 
         &_back{

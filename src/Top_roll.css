@@ -31,10 +31,9 @@
   overflow: hidden;
 }
 .top_roll_content_test {
-  display: grid;
+  display: flex;
   position: relative;
   z-index: 5;
-  left: -2vw;
 }
 .top_roll_content_back {
   display: grid;
