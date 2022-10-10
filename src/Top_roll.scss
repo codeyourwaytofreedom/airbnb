@@ -1,5 +1,5 @@
 *{box-sizing: border-box;
-
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
      box-sizing: border-box;         /* Opera/IE 8+ */
@@ -13,11 +13,12 @@
 
 .top_roll{
     position: relative;
-    // border-bottom:2px solid magenta;
+    // border-bottom:2px solid black;
     height: 100px;
     width: 100vw;
     display: grid;
-    grid-template-columns: 4fr 20fr 1fr 1fr  5fr 5fr;
+    grid-template-columns: 6.5vw 77vw 140px 6.5vw;
+
     align-items: center;
     &_left-shield{
         height: 100%;
@@ -35,7 +36,7 @@
         // border: 2px solid magenta;
         height: 100%;
         display: flex;
-        width: 75vw !important;
+        // width: 78vw !important;
         align-items: flex-end;
         overflow:visible;
         position: relative;
@@ -49,6 +50,7 @@
             // grid-template-columns: repeat(6, 1fr);
             position: relative;
             z-index: 5;
+            left: -1vw;
         }
 
         &_back{
@@ -58,16 +60,7 @@
             width: 25px; height: 25px;
             z-index: 99;
             position: absolute;
-            left:6%; top:30px;
-        }
-        &_forth{
-            @include grid-center;
-            border: 1px solid black;
-            border-radius: 50%;
-            width: 25px; height: 25px;
-            z-index: 99;
-            position: absolute;
-            right:16%; top:30px;
+            left:80px; top:30px;
         }
         &_button{
             height: 80%;
@@ -119,19 +112,62 @@
         position: relative;
         z-index: 9;
         @include grid-center;
-    }
+        width: 140px;
+        grid-template-columns: 45px 95px;
+        // justify-content: end;
+        &_arrow{
+            // border: 2px solid red;
+            height: 100%;
+            @include grid-center;
+            justify-content: start;
+            &_forth{
+            @include grid-center;
+            border: 1px solid silver;
+            border-radius: 50%;
+            width: 29px; height: 29px;
+            }
+        }
 
-
+        &_filter{
+            border:1px solid silver;
+            border-radius: 12px;
+            height: 50%;
+            padding: 0 10px;
+            @include grid-center;
+            grid-template-columns: 1fr 2fr;
+            &_icon{
+                // border: 2px solid blue;
+                height: 25px;
+                @include grid-center;
+                img{
+                    width:90%;
+                    height: 99%;
+                }
+            }
+            &_text{
+                // border: 2px solid green;
+                height: 25px;
+                @include grid-center;
+                font-size: 12px;
+                font-weight: 600;
+                color: #222222;
+            }
+            
+        }
+        }
 }
+
+
+
 
 
 .shadow_left{
     width: 50px;
-    height: 80px;
+    height: 100%;
     // border: 1px solid red;
     position: absolute;
-    left: 5%;
-    top: 7px;
+    left: 5vw;
+    top: 0;
     box-shadow: inset 4px 11px 73px white;
     z-index: 9;
     border-radius: 50%;
@@ -142,7 +178,7 @@
     height: 80px;
     // border: 1px solid red;
     position: absolute;
-    right: 17%;
+    right: 17vw;
     top: 7px;
     box-shadow: inset 4px 11px 73px white;
     z-index: 9;
@@ -151,30 +187,59 @@
 
 
 
-
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) { 
+@media (max-width: 1124.98px) { 
 
-    // .top_roll{
-    //     grid-template-columns: 3fr 20fr 1fr 1fr  5fr 5fr;
-    // }
-    // .top_roll_content_test{
-    //     left:-6vw;
-    // }
+    .top_roll{
+        grid-template-columns: 4vw auto 140px 4vw;
+    }
 
+    .shadow_left{
+        width: 50px;
+        height: 100%;
+        // border: 1px solid red;
+        position: absolute;
+        left: 1.5vw;
+        top: 0;
+        box-shadow: inset 4px 11px 73px white;
+        z-index: 8;
+        border-radius: 50%;
+    }
+    
+    .shadow_right{
+        width: 50px;
+        height: 80px;
+        // border: 1px solid red;
+        position: absolute;
+        right: 15vw;
+        top: 7px;
+        box-shadow: inset 4px 11px 73px white;
+        z-index: 9;
+        border-radius: 50%;
+    }
 
 }
+
+
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 744.98px) { 
     
-    .top_roll_content_back{
-        display: none;
-    }
-    .top_roll_content_forth{
-        display: none;
-    }
-    
-
-
 }

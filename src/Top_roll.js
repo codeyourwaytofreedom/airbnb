@@ -2,62 +2,81 @@ import { useRef, useState, useEffect } from "react";
 import "./Top_roll.css";
 import rolling_options from "./Top_roll_options";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleDown, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import Filters from "./filters_modal";
 
 const Top_roll = () => {
 
     const [copy_array, setCopy] = useState(rolling_options);
+    const [show_filters, setShow] = useState(false);
+    // const [times_clicked, setClick] = useState(0);
+    // const [screen_wid, setWidth] = useState(window.innerWidth);
+    // const [hm, setHM] = useState(parseInt(screen_wid*0.75/100));
+    // const[change_in_hm, setChange] = useState(hm-parseInt(screen_wid*0.75/100));
+    // const [w_size_change, setWchange] = useState(0)
 
-    function get_positions() {
-          
-    }
 
-    function moveElementsToEndOfArray() {
-      
+    const moveElementsToEndOfArray = () => {
         let n = copy_array.length;
-      
-      
-        let first_3_elements = copy_array.slice(0, 3);
-      
-        let remaining_elements = copy_array.slice(3, n);
-      
-        setCopy([...remaining_elements, ...first_3_elements]);
-      
-        console.log(copy_array);
-    }
+        let first_2_elements = copy_array.slice(0, 2);
+        let remaining_elements = copy_array.slice(2, n);   
+        setCopy([...remaining_elements, ...first_2_elements]);
+        }
+
+        const moveElementsTobeginningofArray = () => {
+        let n = copy_array.length;
+        let last_2_elements = copy_array.slice(n-2, n);
+        let remaining_elements = copy_array.slice(0, n-2);
+        setCopy([ ...last_2_elements, ...remaining_elements]);
+        }
+
+        // const screen_operations = () => {
+        //     setWchange(0);
+        //     console.log(window.innerWidth-screen_wid)
+        //     setWchange(window.innerWidth-screen_wid);
+        //     setWidth(window.innerWidth);
+        //     setChange(parseInt(window.innerWidth*0.75/100)-hm);
+        //     setHM(parseInt(window.innerWidth*0.75/100));
+        //     console.log(times_clicked, "kez basildi");
+            
+        //     if(parseInt(window.innerWidth*0.75/100)+times_clicked-23>0)
+        //     {
+        //         console.log("geçti",parseInt(window.innerWidth*0.75/100)+times_clicked-23);
+        //         moveElementsTobeginningofArray();
+        //     };           
+
+        // }
 
 
 
-
-
-      useEffect(() => {
-            // moveElementsToEndOfArray();
-        }, []);
+        // useEffect(() => {
+        //     window.addEventListener('resize', screen_operations);
+        //   }, []);
         
-        useEffect(() => {
-            window.addEventListener("resize", get_positions);
-          }, []);
+        
+
 
     
     const handle_index_left = () => {
+        moveElementsTobeginningofArray();
+        // setClick(times_clicked-1);
+
 
     }
 
     const handle_index_right = () => {
-        moveElementsToEndOfArray();
-    }
+                moveElementsToEndOfArray();
+                // setClick(times_clicked+1);
+        }
 
     return ( 
         <div className="top_roll">
+
             <div className="top_roll_left-shield"></div>
-            <div className="top_roll_content" 
-            >   
 
+            <div className="top_roll_content">   
 
-                <div className="top_roll_content_test" 
-
-                    >
-                        
+                <div className="top_roll_content_test">
                     {
                     copy_array.map((o,index) => (
                         <button className="top_roll_content_button">
@@ -70,55 +89,42 @@ const Top_roll = () => {
                         </button>
                     ))
                     }
-                    
                 </div>
-                
             </div>
                     
-            <div className="top_roll_content_back" onClick={handle_index_left}
-                style={{opacity:5===20 ? "0" : "1"}}
-                
-            >
+            <div className="top_roll_content_back" onClick={handle_index_left}>
                 <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
             </div>
-            <div className="shadow_left" style={{display:5===0 ? "none" : "block"}}>
-            </div>
-
-            <div className="top_roll_content_forth" onClick={handle_index_right}
-                
-                style={{opacity:5===-107 ? "0" : "1"}}
-            >
-                <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
-            </div>
-            <div className="shadow_right" style={{display:5===24 ? "none" : "block"}}>
-            </div>
+            
+            {/* shadows */}
+            <div className="shadow_left"></div>
+            <div className="shadow_right"></div>
+            
             
             <div className="top_roll_control">
+
+                        <div className="top_roll_control_arrow">
+                            <div className="top_roll_control_arrow_forth" onClick={handle_index_right}>
+                                <FontAwesomeIcon style={{color:"black"}} size={"xs"} icon={faChevronRight}/>
+                            </div>
+                        </div>
+
+                        <div className="top_roll_control_filter" onClick={() => {setShow(true)}}>                                
+                                <div className="top_roll_control_filter_icon">
+                                    <img src={require("./filter.png")} alt="xx" />
+                                </div>
+                                <div className="top_roll_control_filter_text">Filters</div>    
+                        </div>
             </div>
 
             <div className="top_roll_right-shield"></div>
             
+            {
+                show_filters &&
+                <Filters setShow={setShow}></Filters>
+            }
             
             
-            <h1 style={{position:"absolute",top:"200px", left:"20%"}}>
-            </h1>
-
-            <h1 style={{position:"absolute",top:"240px", left:"20%"}}>
-            </h1>
-
-            <h1 style={{position:"absolute",top:"280px", left:"20%"}}>
-            </h1>
-
-            <h1 style={{position:"absolute",top:"320px", left:"20%"}}>
-            </h1>
-
-            <h1 style={{position:"absolute",top:"360px", left:"20%"}}>
-
-            </h1>
-            
-
-            
-
         </div>
      );
 }
