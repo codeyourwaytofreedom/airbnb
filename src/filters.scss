@@ -65,6 +65,36 @@
                     }
                     &_slider{
                         border: 2px solid blue;
+                        input{
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+                            appearance: none;
+                        }
+                    }
+                    &_inputs{
+                        display: grid;
+                        grid-template-columns: 48% 4% 48%;
+                        &_min, &_max{
+                            border: 2px solid red;
+                            height: 50px;
+                            @include grid-center;
+                            grid-template-columns: 90%;
+                        }
+                        &_min_kernel, &_max_kernel {
+                            border: 2px solid gray;
+                            height: 100%;
+                            display: flex;
+                            span{
+                                border: 2px solid blue;
+                                @include grid-center;
+                            }
+                            div{
+                                @include grid-center;
+                                border: 2px solid greenyellow;
+                            }
+                        }
+
                     }
                 }
             

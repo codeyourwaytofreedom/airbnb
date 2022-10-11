@@ -6,7 +6,8 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 const Filters = ({setShow}) => {
 
     const core = useRef();
-    const [price, setPrice] = useState();
+    const [pricemin, setPricemin] = useState(9);
+    const [pricemax, setPricemax] = useState(1000);
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -33,21 +34,38 @@ const Filters = ({setShow}) => {
                                 <h2>Price range</h2>
                                 <h3>The average nightly price is £25</h3>
                                 <div className="panel_shell_options--priceRange_slider">
-                                    <input type="range" min={9} max={1000}
-                                        onChange={(event) => {setPrice(event.target.value)}}
+                                    <input type="range" min={9} max={1000} value={pricemin}
+                                        onChange={(event) => {setPricemin(event.target.value)}}
+                                    />
+                                    <input type="range" min={9} max={1000} value={pricemax}
+                                        onChange={(event) => {setPricemax(event.target.value)}}
                                     />
                                 </div>
                                 <div className="panel_shell_options--priceRange_inputs">
-                                    <div>
-                                        <div>
-                                            <span>£</span>
-                                            <input type="text" value={price}/>
+                                
+                                        <div className="panel_shell_options--priceRange_inputs_min">
+                                            <div className="panel_shell_options--priceRange_inputs_min_kernel">
+                                                <span>£</span>
+                                                <div>
+                                                    <input type="text"  value={pricemin}
+                                                    onChange={(event)=> setPricemin(event.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <span>£</span>
-                                            <input type="text" value={price}/>
+                                        <div>---</div>
+                                        <div className="panel_shell_options--priceRange_inputs_max">
+                                            <div className="panel_shell_options--priceRange_inputs_max_kernel">
+                                                <span>£</span>
+                                                <div>
+                                                    <input type="text" value={pricemax}
+                                                    onChange={(event)=> setPricemax(event.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                               
+                                        
 
                                 </div>
                             </div>

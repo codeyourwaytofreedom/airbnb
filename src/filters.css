@@ -63,6 +63,43 @@
 .panel_shell_options--priceRange_slider {
   border: 2px solid blue;
 }
+.panel_shell_options--priceRange_slider input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.panel_shell_options--priceRange_inputs {
+  display: grid;
+  grid-template-columns: 48% 4% 48%;
+}
+.panel_shell_options--priceRange_inputs_min, .panel_shell_options--priceRange_inputs_max {
+  border: 2px solid red;
+  height: 50px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 90%;
+}
+.panel_shell_options--priceRange_inputs_min_kernel, .panel_shell_options--priceRange_inputs_max_kernel {
+  border: 2px solid gray;
+  height: 100%;
+  display: flex;
+}
+.panel_shell_options--priceRange_inputs_min_kernel span, .panel_shell_options--priceRange_inputs_max_kernel span {
+  border: 2px solid blue;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.panel_shell_options--priceRange_inputs_min_kernel div, .panel_shell_options--priceRange_inputs_max_kernel div {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid greenyellow;
+}
 .panel_shell_clear {
   position: absolute;
   bottom: 0;
