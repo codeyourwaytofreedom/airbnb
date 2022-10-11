@@ -54,14 +54,18 @@
 .panel_shell_options--priceRange h2, .panel_shell_options--priceRange h3 {
   margin: 5px 0;
   font-size: 22px;
+  color: #222222;
 }
 .panel_shell_options--priceRange h3 {
   color: gray;
   font-weight: 400;
   font-size: 16px;
+  margin-bottom: 39px;
 }
 .panel_shell_options--priceRange_slider {
   border: 2px solid blue;
+  position: relative;
+  margin-bottom: 39px;
 }
 .panel_shell_options--priceRange_slider input {
   width: 100%;
@@ -70,6 +74,27 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  outline: none;
+  position: absolute;
+  background: transparent;
+  pointer-events: none;
+}
+.panel_shell_options--priceRange_slider input::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+          appearance: none;
+}
+.panel_shell_options--priceRange_slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  background-color: aqua;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -9px;
+}
+.panel_shell_options--priceRange_slider input:active::-webkit-slider-thumb {
+  background-color: red;
 }
 .panel_shell_options--priceRange_inputs {
   display: grid;
@@ -77,28 +102,38 @@
 }
 .panel_shell_options--priceRange_inputs_min, .panel_shell_options--priceRange_inputs_max {
   border: 2px solid red;
-  height: 50px;
+  height: 60px;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: 90%;
 }
 .panel_shell_options--priceRange_inputs_min_kernel, .panel_shell_options--priceRange_inputs_max_kernel {
-  border: 2px solid gray;
+  border: 1px solid gray;
   height: 100%;
   display: flex;
+  border-radius: 10px;
 }
 .panel_shell_options--priceRange_inputs_min_kernel span, .panel_shell_options--priceRange_inputs_max_kernel span {
   border: 2px solid blue;
+  font-size: 16px;
   display: grid;
   align-items: center;
   justify-content: center;
+}
+.panel_shell_options--priceRange_inputs_min_kernel span.max, .panel_shell_options--priceRange_inputs_min_kernel .min, .panel_shell_options--priceRange_inputs_max_kernel span.max, .panel_shell_options--priceRange_inputs_max_kernel .min {
+  font-size: 12px;
+  color: gray;
+  position: absolute;
 }
 .panel_shell_options--priceRange_inputs_min_kernel div, .panel_shell_options--priceRange_inputs_max_kernel div {
   display: grid;
   align-items: center;
   justify-content: center;
   border: 2px solid greenyellow;
+}
+.panel_shell_options--priceRange_inputs_min_kernel input, .panel_shell_options--priceRange_inputs_max_kernel input {
+  font-size: 16px;
 }
 .panel_shell_clear {
   position: absolute;
