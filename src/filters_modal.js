@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./filters.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,7 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 const Filters = ({setShow}) => {
 
     const core = useRef();
+    const [price, setPrice] = useState();
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -18,48 +19,67 @@ const Filters = ({setShow}) => {
 
     return ( 
 
-            <div className="filters_modal_panel">
+            <div className="panel">
                 
-                <div className="filters_modal_panel_shell" ref={core}>
-                    <div className="filters_modal_panel_shell_title">
+                <div className="panel_shell" ref={core}>
+                    <div className="panel_shell_title">
                         <button onClick={() => {setShow(false)}}>
                             <FontAwesomeIcon style={{color:"gray"}} size={"xl"} icon={faClose}/>
                         </button>
-                        <div className="filters_modal_panel_shell_title_text">Filters</div>
+                        <div className="panel_shell_title_text">Filters</div>
                     </div>
-                    <div className="filters_modal_panel_shell_options">
-                            <div className="filters_modal_panel_shell_options--priceRange">
-                                Price Range
+                    <div className="panel_shell_options">
+                            <div className="panel_shell_options--priceRange">
+                                <h2>Price range</h2>
+                                <h3>The average nightly price is £25</h3>
+                                <div className="panel_shell_options--priceRange_slider">
+                                    <input type="range" min={9} max={1000}
+                                        onChange={(event) => {setPrice(event.target.value)}}
+                                    />
+                                </div>
+                                <div className="panel_shell_options--priceRange_inputs">
+                                    <div>
+                                        <div>
+                                            <span>£</span>
+                                            <input type="text" value={price}/>
+                                        </div>
+                                        <div>
+                                            <span>£</span>
+                                            <input type="text" value={price}/>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
-                            <div className="filters_modal_panel_shell_options--type">
+                            <div className="panel_shell_options--type">
                                 Type of place
                             </div>
-                            <div className="filters_modal_panel_shell_options--roombed">
+                            <div className="panel_shell_options--roombed">
                                 Rooms and beds
                             </div>
-                            <div className="filters_modal_panel_shell_options--propertytype">
+                            <div className="panel_shell_options--propertytype">
                                 Property type
                             </div>
-                            <div className="filters_modal_panel_shell_options--amenities">
+                            <div className="panel_shell_options--amenities">
                                 Amenities
                             </div>
-                            <div className="filters_modal_panel_shell_options--bookingoptions">
+                            <div className="panel_shell_options--bookingoptions">
                                 Booking options
                             </div>
-                            <div className="filters_modal_panel_shell_options--accessibility">
+                            <div className="panel_shell_options--accessibility">
                                 Accessibility features
                             </div>
-                            <div className="filters_modal_panel_shell_options--parking">
+                            <div className="panel_shell_options--parking">
                                 Guest entrance and parking
                             </div>
-                            <div className="filters_modal_panel_shell_options--toptier">
+                            <div className="panel_shell_options--toptier">
                                 Top-tier stays
                             </div>
-                            <div className="filters_modal_panel_shell_options--language">
+                            <div className="panel_shell_options--language">
                                 Host language
                             </div>
                     </div>
-                    <div className="filters_modal_panel_shell_clear">
+                    <div className="panel_shell_clear">
                                     Clear All ---  Show
                     </div>
                     

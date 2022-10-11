@@ -4,7 +4,7 @@
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
-.filters_modal_panel {
+.panel {
   position: fixed;
   display: grid;
   justify-content: center;
@@ -16,14 +16,14 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 99;
 }
-.filters_modal_panel_shell {
+.panel_shell {
   width: 770px;
   height: 90vh;
   background-color: white;
   border-radius: 10px;
   position: relative;
 }
-.filters_modal_panel_shell_title {
+.panel_shell_title {
   position: relative;
   display: grid;
   align-items: center;
@@ -31,29 +31,39 @@
   border-bottom: 1px solid rgb(235, 235, 235);
   height: 60px;
 }
-.filters_modal_panel_shell_title button {
+.panel_shell_title button {
   position: absolute;
   left: 20px;
   border: none;
   background: transparent;
 }
-.filters_modal_panel_shell_title_text {
+.panel_shell_title_text {
   font-weight: 600;
 }
-.filters_modal_panel_shell_options {
+.panel_shell_options {
   overflow-y: scroll;
   height: 69vh;
   padding: 0 20px;
   border: 3px solid green;
 }
-.filters_modal_panel_shell_options div {
+.panel_shell_options--priceRange {
+  height: auto;
   padding: 20px 0;
   border-bottom: 1px solid rgb(235, 235, 235);
 }
-.filters_modal_panel_shell_options--priceRange {
-  height: 120px;
+.panel_shell_options--priceRange h2, .panel_shell_options--priceRange h3 {
+  margin: 5px 0;
+  font-size: 22px;
 }
-.filters_modal_panel_shell_clear {
+.panel_shell_options--priceRange h3 {
+  color: gray;
+  font-weight: 400;
+  font-size: 16px;
+}
+.panel_shell_options--priceRange_slider {
+  border: 2px solid blue;
+}
+.panel_shell_clear {
   position: absolute;
   bottom: 0;
   height: 80px;
