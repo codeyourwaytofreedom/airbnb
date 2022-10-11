@@ -18,6 +18,7 @@
     width: 100vw;
     display: grid;
     grid-template-columns: 6.5vw 77vw 140px 6.5vw;
+    overflow-x: hidden;
 
     align-items: center;
     &_left-shield{
@@ -114,6 +115,7 @@
         @include grid-center;
         width: 140px;
         grid-template-columns: 45px 95px;
+        user-select: none;       //önemli 
         // justify-content: end;
         &_arrow{
             // border: 2px solid red;
@@ -125,6 +127,7 @@
             border: 1px solid silver;
             border-radius: 50%;
             width: 29px; height: 29px;
+            cursor: pointer;
             }
         }
 
@@ -135,6 +138,7 @@
             padding: 0 10px;
             @include grid-center;
             grid-template-columns: 1fr 2fr;
+            cursor: pointer;
             &_icon{
                 // border: 2px solid blue;
                 height: 25px;

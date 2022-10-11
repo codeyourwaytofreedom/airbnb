@@ -10,6 +10,7 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 6.5vw 77vw 140px 6.5vw;
+  overflow-x: hidden;
   align-items: center;
 }
 .top_roll_left-shield {
@@ -97,6 +98,10 @@
   justify-content: center;
   width: 140px;
   grid-template-columns: 45px 95px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .top_roll_control_arrow {
   height: 100%;
@@ -113,6 +118,7 @@
   border-radius: 50%;
   width: 29px;
   height: 29px;
+  cursor: pointer;
 }
 .top_roll_control_filter {
   border: 1px solid silver;
@@ -123,6 +129,7 @@
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 2fr;
+  cursor: pointer;
 }
 .top_roll_control_filter_icon {
   height: 25px;
