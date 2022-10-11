@@ -10,6 +10,8 @@
     justify-content: center;
 }
 
+
+
 .panel {
     position:fixed;
     display: grid;
@@ -46,27 +48,32 @@
             height: 69vh;
             padding: 0 20px;
             border: 3px solid green;
+
+            h2,h3{
+                margin: 5px 0;
+                font-size: 22px;
+                color:#222222;
+            }
+            h3{
+                color: gray;
+                font-weight: 400;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
             @mixin option_outline {
-                    padding: 20px 0;
+                    padding: 25px 0;
                     border-bottom: 1px solid rgb(235, 235, 235);
             }
             
                 &--priceRange{
-                    height: auto;
                     @include option_outline;
-                    h2,h3{
-                        margin: 5px 0;
-                        font-size: 22px;
-                        color:#222222;
-                    }
-                    h3{
-                        color: gray;
-                        font-weight: 400;
-                        font-size: 16px;
-                        margin-bottom: 39px;
+                    &_chart{
+                        background-color: aquamarine;
+                        height: 80px;
                     }
                     &_slider{
-                        border: 2px solid blue;
+                        border: 2px solid transparent;
                         position: relative;
                         margin-bottom: 39px;
                         input{
@@ -84,14 +91,20 @@
                         }
                         input::-webkit-slider-thumb {
                             appearance: none;
-                            background-color: aqua;
-                            height: 20px; width: 20px;
+                            height: 30px; width: 30px;
+                            border-radius: 50%;
+                            // background-color: white;
+                            background-image: url("./images/bed_and_breakfast.jpg");
+                            background-color: white;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            border: 1px solid gray;
                             cursor: pointer;
                             pointer-events: all;
-                            margin-top: -9px;
+                            margin-top: -12px;
                         }
                         input:active::-webkit-slider-thumb {
-                            background-color: red;
+                            // background-color: red;
                         }
 
                     }
@@ -99,47 +112,98 @@
                         display: grid;
                         grid-template-columns: 48% 4% 48%;
                         &_min, &_max{
-                            border: 2px solid red;
+                            // border: 2px solid red;
                             height: 60px;
                             @include grid-center;
                             grid-template-columns: 90%;
+                            &_kernel {
+                                border: 1px solid gray;
+                                height: 100%;
+                                display: flex;
+                                border-radius: 10px;
+                                padding-left: 10px;
+                                padding-top: 10px;
+                                position: relative;
+                                span{
+                                    // border: 2px solid blue;
+                                    font-size: 16px;
+                                    @include grid-center;
+                                    margin-right: 2px;
+                                }
+                                span.max, .min{
+                                    font-size: 12px;
+                                    color:gray;
+                                    position: absolute;
+                                    top:8px;
+    
+                                }
+                                div{
+                                    @include grid-center;
+                                    // border: 2px solid greenyellow;
+                                }
+                                input{
+                                    font-size: 16px;
+                                    border: none;
+                                }
+                                input:focus{
+                                    outline: none;
+                                }
+                            }
                         }
-                        &_min_kernel, &_max_kernel {
-                            border: 1px solid gray;
-                            height: 100%;
-                            display: flex;
-                            border-radius: 10px;
-                            span{
-                                border: 2px solid blue;
-                                font-size: 16px;
-                                @include grid-center;
-                            }
-                            span.max, .min{
-                                font-size: 12px;
-                                color:gray;
-                                position: absolute;
-                            }
-                            div{
-                                @include grid-center;
-                                border: 2px solid greenyellow;
-                            }
-                            input{
-                                font-size: 16px;
-                            }
+                        &_min {
+                            justify-content: end;
+                        }
+                        &_max{
+                            justify-content: start;
+                        }
+
+                        &_dash{
+                            // border: 2px solid black;
+                            @include grid-center;
                         }
 
                     }
+
                 }
-            
+                &--type{
+                    @include option_outline;
+                    &_types{
+                        border:2px solid black;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        row-gap: 25px;
+                        padding: 25px 0;
+                        div{
+                            border: 2px solid yellow;
+                            display: flex;
+                            div{
+                                display: grid;
+                            }
+                        }
+                        #cbox{
+                            background-color: rebeccapurple;
+                        }
+                        #place-type{
+                            background-color: green;
+                        }
+                    }
+                }
         }
+            
+    }
 
         &_clear{
             position: absolute;
             bottom: 0;
             height: 80px;
         }
-    }
-  }
+}
+  
+// media queries   // media queries   // media queries   // media queries   // media queries
+// media queries   // media queries   // media queries   // media queries   // media queries
+// media queries   // media queries   // media queries   // media queries   // media queries
+// media queries   // media queries   // media queries   // media queries   // media queries
+// media queries   // media queries   // media queries   // media queries   // media queries
 
   @media (max-width:860px){
     .filters_modal_panel {

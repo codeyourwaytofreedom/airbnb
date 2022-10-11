@@ -42,6 +42,9 @@ const Filters = ({setShow}) => {
                             <div className="panel_shell_options--priceRange">
                                 <h2>Price range</h2>
                                 <h3>The average nightly price is £25</h3>
+                                <div className="panel_shell_options--priceRange_chart">
+                                    Chart
+                                </div>
                                 <div className="panel_shell_options--priceRange_slider">
                                     <input type="range" min={9} max={1000} value={pricemin} 
                                         onChange={(event)=>handle_price_min(event)}
@@ -63,7 +66,7 @@ const Filters = ({setShow}) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div>---</div>
+                                        <div className="panel_shell_options--priceRange_inputs_dash">−</div>
                                         <div className="panel_shell_options--priceRange_inputs_max">
                                             <div className="panel_shell_options--priceRange_inputs_max_kernel">
                                                 <span>£</span>
@@ -81,7 +84,31 @@ const Filters = ({setShow}) => {
                                 </div>
                             </div>
                             <div className="panel_shell_options--type">
-                                Type of place
+                                <h2>Type of place</h2>
+                                <div className="panel_shell_options--type_types">
+                                        <div>
+                                            <div id="cbox">CB</div>
+                                            <div>
+                                                <div id="place-type">Entire place</div>
+                                                <div>A place all to yourself</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div id="cbox">CB</div>
+                                            <div>
+                                                <div id="place-type">Private room</div>
+                                                <div>Your own room in a home or a hotel, plus some shared common spaces</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div id="cbox">CB</div>
+                                            <div>
+                                                <div id="place-type">Shared room</div>
+                                                <div>A sleeping space and common areas that may be shared with others</div>
+                                            </div>
+                                        </div>
+                                </div>
+                                
                             </div>
                             <div className="panel_shell_options--roombed">
                                 Rooms and beds

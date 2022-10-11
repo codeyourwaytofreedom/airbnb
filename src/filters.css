@@ -46,24 +46,27 @@
   padding: 0 20px;
   border: 3px solid green;
 }
-.panel_shell_options--priceRange {
-  height: auto;
-  padding: 20px 0;
-  border-bottom: 1px solid rgb(235, 235, 235);
-}
-.panel_shell_options--priceRange h2, .panel_shell_options--priceRange h3 {
+.panel_shell_options h2, .panel_shell_options h3 {
   margin: 5px 0;
   font-size: 22px;
   color: #222222;
 }
-.panel_shell_options--priceRange h3 {
+.panel_shell_options h3 {
   color: gray;
   font-weight: 400;
   font-size: 16px;
-  margin-bottom: 39px;
+  margin-bottom: 20px;
+}
+.panel_shell_options--priceRange {
+  padding: 25px 0;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+.panel_shell_options--priceRange_chart {
+  background-color: aquamarine;
+  height: 80px;
 }
 .panel_shell_options--priceRange_slider {
-  border: 2px solid blue;
+  border: 2px solid transparent;
   position: relative;
   margin-bottom: 39px;
 }
@@ -86,22 +89,23 @@
 .panel_shell_options--priceRange_slider input::-webkit-slider-thumb {
   -webkit-appearance: none;
           appearance: none;
-  background-color: aqua;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-image: url("./images/bed_and_breakfast.jpg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid gray;
   cursor: pointer;
   pointer-events: all;
-  margin-top: -9px;
-}
-.panel_shell_options--priceRange_slider input:active::-webkit-slider-thumb {
-  background-color: red;
+  margin-top: -12px;
 }
 .panel_shell_options--priceRange_inputs {
   display: grid;
   grid-template-columns: 48% 4% 48%;
 }
 .panel_shell_options--priceRange_inputs_min, .panel_shell_options--priceRange_inputs_max {
-  border: 2px solid red;
   height: 60px;
   display: grid;
   align-items: center;
@@ -113,29 +117,71 @@
   height: 100%;
   display: flex;
   border-radius: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  position: relative;
 }
 .panel_shell_options--priceRange_inputs_min_kernel span, .panel_shell_options--priceRange_inputs_max_kernel span {
-  border: 2px solid blue;
   font-size: 16px;
   display: grid;
   align-items: center;
   justify-content: center;
+  margin-right: 2px;
 }
 .panel_shell_options--priceRange_inputs_min_kernel span.max, .panel_shell_options--priceRange_inputs_min_kernel .min, .panel_shell_options--priceRange_inputs_max_kernel span.max, .panel_shell_options--priceRange_inputs_max_kernel .min {
   font-size: 12px;
   color: gray;
   position: absolute;
+  top: 8px;
 }
 .panel_shell_options--priceRange_inputs_min_kernel div, .panel_shell_options--priceRange_inputs_max_kernel div {
   display: grid;
   align-items: center;
   justify-content: center;
-  border: 2px solid greenyellow;
 }
 .panel_shell_options--priceRange_inputs_min_kernel input, .panel_shell_options--priceRange_inputs_max_kernel input {
   font-size: 16px;
+  border: none;
 }
-.panel_shell_clear {
+.panel_shell_options--priceRange_inputs_min_kernel input:focus, .panel_shell_options--priceRange_inputs_max_kernel input:focus {
+  outline: none;
+}
+.panel_shell_options--priceRange_inputs_min {
+  justify-content: end;
+}
+.panel_shell_options--priceRange_inputs_max {
+  justify-content: start;
+}
+.panel_shell_options--priceRange_inputs_dash {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.panel_shell_options--type {
+  padding: 25px 0;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+.panel_shell_options--type_types {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 25px;
+  padding: 25px 0;
+}
+.panel_shell_options--type_types div {
+  border: 2px solid yellow;
+  display: flex;
+}
+.panel_shell_options--type_types div div {
+  display: grid;
+}
+.panel_shell_options--type_types #cbox {
+  background-color: rebeccapurple;
+}
+.panel_shell_options--type_types #place-type {
+  background-color: green;
+}
+.panel_clear {
   position: absolute;
   bottom: 0;
   height: 80px;
