@@ -62,8 +62,14 @@
   border-bottom: 1px solid rgb(235, 235, 235);
 }
 .panel_shell_options--priceRange_chart {
-  background-color: aquamarine;
   height: 80px;
+  display: grid;
+  grid-template-columns: repeat(50, 1fr);
+  align-items: end;
+}
+.panel_shell_options--priceRange_chart div {
+  background-color: brown;
+  align-content: center;
 }
 .panel_shell_options--priceRange_slider {
   border: 2px solid transparent;

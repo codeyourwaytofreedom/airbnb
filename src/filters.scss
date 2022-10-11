@@ -69,8 +69,12 @@
                 &--priceRange{
                     @include option_outline;
                     &_chart{
-                        background-color: aquamarine;
+                        // background-color: aquamarine;
                         height: 80px;
+                        display: grid;
+                        grid-template-columns: repeat(50, 1fr);
+                        align-items: end;
+                        div{background-color: brown; align-content: center;}
                     }
                     &_slider{
                         border: 2px solid transparent;
