@@ -14,7 +14,10 @@ const Filters = ({setShow}) => {
 
 
     const handle_price_min = (event) => {
-        setPricemin(event.target.value)
+        if(event.target.value>pricemax)
+        {event.target.value=pricemin}
+        else{setPricemin(event.target.value)}
+        
     }
 
     const handle_price_max = (event) => {
@@ -33,11 +36,19 @@ const Filters = ({setShow}) => {
             console.log("must stop here");
             console.log(pricemax)
             event.target.value = pricemax;
-            
-        
         }
 
     }
+
+    // const handle_keydown_min = (event) => {
+        
+    // }
+
+    // const handle_keydown_max = (event) => {
+        
+    // }
+
+
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -66,7 +77,9 @@ const Filters = ({setShow}) => {
                                 <div className="panel_shell_options--priceRange_chart">
                                 {
                                     repetition_array.map((o) => (
-                                             <div style={{ height:o }}>
+                                             <div style={{ 
+                                                        height:o}}
+                                             >
                                                 
                                             </div>
                                     ))
@@ -76,10 +89,12 @@ const Filters = ({setShow}) => {
                                     <input type="range" min={9} max={1000} value={pricemin} 
                                         onChange={(event)=>handle_price_min(event)}
                                         onInput={(event)=>handle_input_min(event)}
+                                        // onKeyDown={(event)=>handle_keydown_min(event)}
                                     />
                                     <input type="range" min={9} max={1000} value={pricemax}
                                         onChange={(event)=>handle_price_max(event)}
                                         onInput={(event)=>handle_input_max(event)}
+                                        // onKeyDown={(event)=>handle_keydown_max(event)}
                                     />
                                 </div>
                                 <div className="panel_shell_options--priceRange_inputs">
