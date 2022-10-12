@@ -2,22 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import "./filters.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
-import {repetition_array} from "./test";
+import {repetition_array, min, max, av} from "./test";
 
 
 const Filters = ({setShow}) => {
 
     const core = useRef();
-    const [pricemin, setPricemin] = useState(9);
-    const [pricemax, setPricemax] = useState(1000);
+    const [pricemin, setPricemin] = useState(min);
+    const [pricemax, setPricemax] = useState(max);
     let gap = 10;
 
 
     const handle_price_min = (event) => {
-        if(event.target.value>pricemax)
-        {event.target.value=pricemin}
-        else{setPricemin(event.target.value)}
-        
+        setPricemin(event.target.value)
     }
 
     const handle_price_max = (event) => {
@@ -39,14 +36,6 @@ const Filters = ({setShow}) => {
         }
 
     }
-
-    // const handle_keydown_min = (event) => {
-        
-    // }
-
-    // const handle_keydown_max = (event) => {
-        
-    // }
 
 
 
@@ -73,7 +62,7 @@ const Filters = ({setShow}) => {
                     <div className="panel_shell_options">
                             <div className="panel_shell_options--priceRange">
                                 <h2>Price range</h2>
-                                <h3>The average nightly price is £25</h3>
+                                <h3>The average nightly price is £{av}</h3>
                                 <div className="panel_shell_options--priceRange_chart">
                                 {
                                     repetition_array.map((o) => (
@@ -86,15 +75,13 @@ const Filters = ({setShow}) => {
                                 }
                                 </div>
                                 <div className="panel_shell_options--priceRange_slider">
-                                    <input type="range" min={9} max={1000} value={pricemin} 
+                                    <input type="range" min={min} max={max} value={pricemin} 
                                         onChange={(event)=>handle_price_min(event)}
                                         onInput={(event)=>handle_input_min(event)}
-                                        // onKeyDown={(event)=>handle_keydown_min(event)}
                                     />
-                                    <input type="range" min={9} max={1000} value={pricemax}
+                                    <input type="range" min={min} max={max} value={pricemax}
                                         onChange={(event)=>handle_price_max(event)}
                                         onInput={(event)=>handle_input_max(event)}
-                                        // onKeyDown={(event)=>handle_keydown_max(event)}
                                     />
                                 </div>
                                 <div className="panel_shell_options--priceRange_inputs">

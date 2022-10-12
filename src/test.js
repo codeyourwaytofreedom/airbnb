@@ -12,7 +12,7 @@ const create_test_array = () =>{
         }
         for(var i=0; i<100; i++)
         {
-            price_array.push(randomNumberInRange(90,200)); 
+            price_array.push(randomNumberInRange(90,140)); 
         }
         for(var i=0; i<20; i++)
         {
@@ -48,5 +48,17 @@ const calc_price_repetition = (array) => {
 
 
 // export const prices = create_test_array();
-export const repetition_array = calc_price_repetition(create_test_array());
+const test = create_test_array()
+
+let average = 0;
+test.forEach((price)=>{
+        average=average+price
+})
+
+export const av = Math.floor(average/test.length);
+
+export const repetition_array = calc_price_repetition(test);
+
+export const min = Math.min(...test);
+export const max = Math.max(...test);
 
