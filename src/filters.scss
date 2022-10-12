@@ -9,7 +9,32 @@
     align-items: center;
     justify-content: center;
 }
-
+@mixin checkbox {
+    input[type=checkbox] {
+        position: relative;
+        appearance: none;
+        cursor: pointer;
+    }
+    
+    input[type=checkbox]:after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top:-2px;
+        border-radius: 4px;
+        border: 1px solid gray;
+        cursor: pointer;
+    }
+    
+    input[type=checkbox]:checked:after {
+        @include grid-center;
+        content: "\2714";
+        font-size: 20px;
+        background-color: black;
+        color: white;
+    }
+}
 
 
 .panel {
@@ -47,7 +72,7 @@
             overflow-y: scroll;
             height: 69vh;
             padding: 0 20px;
-            border: 3px solid green;
+            // border: 3px solid green;
 
             h2,h3{
                 margin: 5px 0;
@@ -181,35 +206,41 @@
                 &--type{
                     @include option_outline;
                     &_types{
-                        border:2px solid black;
+                        // border:2px solid black;
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         row-gap: 25px;
                         padding: 25px 0;
-                        div{
-                            border: 2px solid yellow;
+                        &_cell{
+                            // border: 2px solid yellow;
                             display: flex;
+                            column-gap: 40px;
                             div{
                                 display: grid;
+                                row-gap: 5px;
                             }
                         }
                         #cbox{
-                            background-color: rebeccapurple;
+                           @include checkbox;
                         }
                         #place-type{
-                            background-color: green;
+                            // background-color: green;
                         }
                     }
                 }
         }
-            
-    }
-
-        &_clear{
-            position: absolute;
+     &_clear{
+            position: relative;
             bottom: 0;
             height: 80px;
-        }
+            display: grid;
+            align-items: center;
+            justify-content: start;
+            padding-left: 20px;
+        }       
+    }
+
+        
 }
   
 // media queries   // media queries   // media queries   // media queries   // media queries

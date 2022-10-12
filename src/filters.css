@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   padding: 0;
@@ -44,7 +45,6 @@
   overflow-y: scroll;
   height: 69vh;
   padding: 0 20px;
-  border: 3px solid green;
 }
 .panel_shell_options h2, .panel_shell_options h3 {
   margin: 5px 0;
@@ -177,29 +177,54 @@
   border-bottom: 1px solid rgb(235, 235, 235);
 }
 .panel_shell_options--type_types {
-  border: 2px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 25px;
   padding: 25px 0;
 }
-.panel_shell_options--type_types div {
-  border: 2px solid yellow;
+.panel_shell_options--type_types_cell {
   display: flex;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
 }
-.panel_shell_options--type_types div div {
+.panel_shell_options--type_types_cell div {
   display: grid;
+  row-gap: 5px;
 }
-.panel_shell_options--type_types #cbox {
-  background-color: rebeccapurple;
+.panel_shell_options--type_types #cbox input[type=checkbox] {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
 }
-.panel_shell_options--type_types #place-type {
-  background-color: green;
-}
-.panel_clear {
+.panel_shell_options--type_types #cbox input[type=checkbox]:after {
+  content: "";
   position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -2px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.panel_shell_options--type_types #cbox input[type=checkbox]:checked:after {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  content: "✔";
+  font-size: 20px;
+  background-color: black;
+  color: white;
+}
+.panel_shell_clear {
+  position: relative;
   bottom: 0;
   height: 80px;
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  padding-left: 20px;
 }
 
 @media (max-width: 860px) {
