@@ -12,15 +12,20 @@ const Filters = ({setShow}) => {
     const [pricemax, setPricemax] = useState(1000);
 
 
-    console.log(repetition_array)
-
-
     const handle_price_min = (event) => {
         setPricemin(event.target.value)
     }
 
     const handle_price_max = (event) => {
         setPricemax(event.target.value)
+    }
+
+    const handle_input_min = (event) => {
+        console.log("min price slider",event.target.value)
+    }
+
+    const handle_input_max = (event) => {
+        console.log("max price slider",event.target.value)
     }
 
     useEffect(()=>{
@@ -59,9 +64,11 @@ const Filters = ({setShow}) => {
                                 <div className="panel_shell_options--priceRange_slider">
                                     <input type="range" min={9} max={1000} value={pricemin} 
                                         onChange={(event)=>handle_price_min(event)}
+                                        onInput={(event)=>handle_input_min(event)}
                                     />
                                     <input type="range" min={9} max={1000} value={pricemax}
                                         onChange={(event)=>handle_price_max(event)}
+                                        onInput={(event)=>handle_input_max(event)}
                                     />
                                 </div>
                                 <div className="panel_shell_options--priceRange_inputs">

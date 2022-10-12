@@ -74,6 +74,9 @@
                         grid-template-columns: repeat(50, 1fr);
                         column-gap: 1px;
                         align-items: end;
+                        // border: 2px solid red;
+                        width: 90%;
+                        margin-left: 5%;
                         div{background-color: rgb(180, 180, 180); 
                             align-content: center;                           
                             border-top-left-radius: 3px;
@@ -81,9 +84,11 @@
                         }
                     }
                     &_slider{
-                        border: 1px solid gray;
+                        border: 1px solid rgb(180, 180, 180);
                         position: relative;
                         margin-bottom: 39px;
+                        width: 90%;
+                        margin-left: 5%;
                         input{
                             width: 100%;
                             margin: 0;
