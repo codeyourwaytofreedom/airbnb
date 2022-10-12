@@ -10,6 +10,7 @@ const Filters = ({setShow}) => {
     const core = useRef();
     const [pricemin, setPricemin] = useState(9);
     const [pricemax, setPricemax] = useState(1000);
+    let gap = 10;
 
 
     const handle_price_min = (event) => {
@@ -21,11 +22,21 @@ const Filters = ({setShow}) => {
     }
 
     const handle_input_min = (event) => {
-        console.log("min price slider",event.target.value)
+        if(pricemax- event.target.value < gap) 
+        {event.target.value=pricemin}
     }
 
     const handle_input_max = (event) => {
-        console.log("max price slider",event.target.value)
+        console.log(event.target.value)
+        if(event.target.value-pricemin < gap)
+        {
+            console.log("must stop here");
+            console.log(pricemax)
+            event.target.value = pricemax;
+            
+        
+        }
+
     }
 
     useEffect(()=>{
