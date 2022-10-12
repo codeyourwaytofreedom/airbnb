@@ -2,17 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import "./filters.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
-import test_array from "./test";
+import {repetition_array} from "./test";
+
+
 const Filters = ({setShow}) => {
 
     const core = useRef();
     const [pricemin, setPricemin] = useState(9);
     const [pricemax, setPricemax] = useState(1000);
-    // let test_array = [];
 
-    let repetition_array = [];
-    
-    
+
+    console.log(repetition_array)
+
 
     const handle_price_min = (event) => {
         setPricemin(event.target.value)
@@ -21,38 +22,6 @@ const Filters = ({setShow}) => {
     const handle_price_max = (event) => {
         setPricemax(event.target.value)
     }
-
-    function randomNumberInRange(min, max) {
-        // 👇️ get number between min (inclusive) and max (inclusive)
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-
-      for(var i=0; i<645; i++)
-      {
-            test_array.push(randomNumberInRange(9,999));
-
-      }
-
-
-      for(var i=0; i<50; i++)
-      {
-        var range_start = 9+(1000-9)/50*i
-        var range_end = (1000-9)/50*(i+1);
-        
-        let how_many = 0;
-
-        test_array.forEach(element => {
-            if(element>range_start && element<=range_end )
-            {how_many++}
-            // if (9<element<=29)
-            // {how_many++} 
-        });
-        repetition_array.push(how_many);
-
-        console.log(i, ".ci aralıkta", how_many, "adet öğe var")
-        }
-            
-    
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -81,7 +50,7 @@ const Filters = ({setShow}) => {
                                 <div className="panel_shell_options--priceRange_chart">
                                 {
                                     repetition_array.map((o) => (
-                                             <div style={{ height:o, maxHeight:o }}>
+                                             <div style={{ height:o }}>
                                                 
                                             </div>
                                     ))

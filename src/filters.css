@@ -65,14 +65,18 @@
   height: 80px;
   display: grid;
   grid-template-columns: repeat(50, 1fr);
+  -moz-column-gap: 1px;
+       column-gap: 1px;
   align-items: end;
 }
 .panel_shell_options--priceRange_chart div {
-  background-color: brown;
+  background-color: rgb(180, 180, 180);
   align-content: center;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .panel_shell_options--priceRange_slider {
-  border: 2px solid transparent;
+  border: 1px solid gray;
   position: relative;
   margin-bottom: 39px;
 }

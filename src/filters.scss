@@ -69,15 +69,19 @@
                 &--priceRange{
                     @include option_outline;
                     &_chart{
-                        // background-color: aquamarine;
                         height: 80px;
                         display: grid;
                         grid-template-columns: repeat(50, 1fr);
+                        column-gap: 1px;
                         align-items: end;
-                        div{background-color: brown; align-content: center;}
+                        div{background-color: rgb(180, 180, 180); 
+                            align-content: center;                           
+                            border-top-left-radius: 3px;
+                            border-top-right-radius: 3px;
+                        }
                     }
                     &_slider{
-                        border: 2px solid transparent;
+                        border: 1px solid gray;
                         position: relative;
                         margin-bottom: 39px;
                         input{
