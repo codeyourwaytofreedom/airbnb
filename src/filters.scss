@@ -9,6 +9,16 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin rooms_beds{
+    display: grid;
+    justify-content: start;
+    align-content: center;
+    h3{color: #222222;}
+}
+
+
+
 @mixin checkbox {
     input[type=checkbox] {
         position: relative;
@@ -238,18 +248,18 @@
                 &--roombed{
                     @include option_outline;
                     // background-color: palegreen;
+                    
                     #bedroom_double{
-                        // background-color: aquamarine;
-                        display: grid;
-                        justify-content: start;
-                        align-content: center;
-                        h3{color: #222222;}
+                        @include rooms_beds;
                     }
                     #beds_double{
-                        background-color: lightcoral;
+                        @include rooms_beds;
+                        margin-top: 15px;
+
                     }
                     #bathrooms_double{
-                        background-color: orange;
+                        @include rooms_beds;
+                        margin-top: 15px;
                     }
                     #number{
                         display: flex;
@@ -286,14 +296,24 @@
                             border-radius: 25px;
                             cursor: pointer;
                             position: relative;
+                            user-select: none;
                             span{
                                 position: absolute;
                                 left:25px;
                                 top:10px;
                                 z-index: 9;
+                                font-size: 14px;
                             }
                         }
-
+                        #any{
+                            width: 80px;
+                        }
+                        #any_radiobutton:after{
+                            width: 80px;
+                        }
+                        #any_span{
+                            left:25px;
+                        }
                     }
 
 

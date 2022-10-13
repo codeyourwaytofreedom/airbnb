@@ -240,10 +240,22 @@
   color: #222222;
 }
 .panel_shell_options--roombed #beds_double {
-  background-color: lightcoral;
+  display: grid;
+  justify-content: start;
+  align-content: center;
+  margin-top: 15px;
+}
+.panel_shell_options--roombed #beds_double h3 {
+  color: #222222;
 }
 .panel_shell_options--roombed #bathrooms_double {
-  background-color: orange;
+  display: grid;
+  justify-content: start;
+  align-content: center;
+  margin-top: 15px;
+}
+.panel_shell_options--roombed #bathrooms_double h3 {
+  color: #222222;
 }
 .panel_shell_options--roombed #number {
   display: flex;
@@ -280,12 +292,26 @@
   border-radius: 25px;
   cursor: pointer;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .panel_shell_options--roombed #number .radio_button span {
   position: absolute;
   left: 25px;
   top: 10px;
   z-index: 9;
+  font-size: 14px;
+}
+.panel_shell_options--roombed #number #any {
+  width: 80px;
+}
+.panel_shell_options--roombed #number #any_radiobutton:after {
+  width: 80px;
+}
+.panel_shell_options--roombed #number #any_span {
+  left: 25px;
 }
 .panel_shell_clear {
   position: relative;
