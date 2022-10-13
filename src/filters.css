@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid rgb(235, 235, 235);
-  height: 60px;
+  height: 70px;
 }
 .panel_shell_title button {
   position: absolute;
@@ -62,7 +62,7 @@
   border-bottom: 1px solid rgb(235, 235, 235);
 }
 .panel_shell_options--priceRange_chart {
-  height: 80px;
+  height: 99px;
   display: grid;
   grid-template-columns: repeat(50, 1fr);
   -moz-column-gap: 1px;
@@ -184,12 +184,15 @@
 }
 .panel_shell_options--type_types_cell {
   display: flex;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
 }
-.panel_shell_options--type_types_cell div {
+.panel_shell_options--type_types_cell #place_double {
   display: grid;
   row-gap: 5px;
+  justify-items: start;
+  align-content: start;
+  height: 100%;
 }
 .panel_shell_options--type_types #cbox input[type=checkbox] {
   position: relative;
@@ -201,9 +204,9 @@
 .panel_shell_options--type_types #cbox input[type=checkbox]:after {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
-  top: -2px;
+  width: 22px;
+  height: 22px;
+  top: -10px;
   border-radius: 4px;
   border: 1px solid gray;
   cursor: pointer;
@@ -217,6 +220,35 @@
   background-color: black;
   color: white;
 }
+.panel_shell_options--type_types #place-type {
+  color: #222222;
+}
+.panel_shell_options--type_types #place-detail {
+  color: gray;
+  font-size: 14px;
+}
+.panel_shell_options--roombed {
+  padding: 25px 0;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+.panel_shell_options--roombed #bedroom_double {
+  background-color: aquamarine;
+  display: grid;
+  justify-content: start;
+  align-content: center;
+}
+.panel_shell_options--roombed #bedroom_double h3 {
+  color: #222222;
+}
+.panel_shell_options--roombed #beds_double {
+  background-color: lightcoral;
+}
+.panel_shell_options--roombed #bathrooms_double {
+  background-color: orange;
+}
+.panel_shell_options--roombed #number {
+  display: flex;
+}
 .panel_shell_clear {
   position: relative;
   bottom: 0;
@@ -225,6 +257,7 @@
   align-items: center;
   justify-content: start;
   padding-left: 20px;
+  border-top: 1px solid rgb(235, 235, 235);
 }
 
 @media (max-width: 860px) {

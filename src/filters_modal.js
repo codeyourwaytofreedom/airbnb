@@ -119,30 +119,53 @@ const Filters = ({setShow}) => {
                                 <div className="panel_shell_options--type_types">
                                         <div className="panel_shell_options--type_types_cell">
                                             <div id="cbox"><input type="checkbox" /></div>
-                                            <div>
+                                            <div id="place_double">
                                                 <div id="place-type">Entire place</div>
-                                                <div>A place all to yourself</div>
+                                                <div id="place-detail">A place all to yourself     </div>
                                             </div>
                                         </div>
                                         <div className="panel_shell_options--type_types_cell">
                                             <div id="cbox"><input type="checkbox" /></div>
-                                            <div>
+                                            <div id="place_double">
                                                 <div id="place-type">Private room</div>
-                                                <div>Your own room in a home or a hotel, plus some shared common spaces</div>
+                                                <div id="place-detail">Your own room in a home or a hotel, plus some shared common spaces</div>
                                             </div>
                                         </div>
                                         <div className="panel_shell_options--type_types_cell">
                                             <div id="cbox"><input type="checkbox" /></div>
-                                            <div>
+                                            <div id="place_double">
                                                 <div id="place-type">Shared room</div>
-                                                <div>A sleeping space and common areas that may be shared with others</div>
+                                                <div id="place-detail">A sleeping space and common areas that may be shared with others</div>
                                             </div>
                                         </div>
                                 </div>
                                 
                             </div>
                             <div className="panel_shell_options--roombed">
-                                Rooms and beds
+                            <h2>Rooms and beds</h2>
+                            <br />
+                            <div id="bedroom_double">
+                                <div id="bedroom_title"><h3>Bedrooms</h3></div>
+                                <div id="number">
+                                    <input type="radio" />
+                                    <input type="radio" />
+                                    <input type="radio" />
+                                    <input type="radio" />
+                                    <input type="radio" />
+                                    <input type="radio" />
+                                    <input type="radio" />
+                                    <input type="radio" />
+                                </div>
+                            </div>
+                            <div id="beds_double">
+                                <div id="bedroom_title"><h3>Beds</h3></div>
+                                <div id="number">1 2 3 4 5 6 7 8+</div>
+                            </div>
+                            <div id="bathrooms_double">
+                                <div id="bedroom_title"><h3>Bathrooms</h3></div>
+                                <div id="number">1 2 3 4 5 6 7 8+</div>
+                            </div>
+                                
                             </div>
                             <div className="panel_shell_options--propertytype">
                                 Property type
