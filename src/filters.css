@@ -232,7 +232,6 @@
   border-bottom: 1px solid rgb(235, 235, 235);
 }
 .panel_shell_options--roombed #bedroom_double {
-  background-color: aquamarine;
   display: grid;
   justify-content: start;
   align-content: center;
@@ -248,6 +247,45 @@
 }
 .panel_shell_options--roombed #number {
   display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.panel_shell_options--roombed #number input[type=radio] {
+  visibility: hidden;
+}
+.panel_shell_options--roombed #number input[type=radio]:checked {
+  visibility: visible;
+}
+.panel_shell_options--roombed #number input[type=radio]:after {
+  border: 1px solid black;
+  height: 40px;
+  width: 60px;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: black;
+  display: block;
+  content: " ";
+  left: -5px;
+  top: -5px;
+  position: relative;
+  z-index: 8;
+}
+.panel_shell_options--roombed #number input[type=radio]:checked + span {
+  color: white;
+}
+.panel_shell_options--roombed #number .radio_button {
+  border: 1px solid silver;
+  height: 40px;
+  width: 60px;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+}
+.panel_shell_options--roombed #number .radio_button span {
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  z-index: 9;
 }
 .panel_shell_clear {
   position: relative;

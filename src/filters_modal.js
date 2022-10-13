@@ -8,6 +8,7 @@ import {repetition_array, min, max, av} from "./test";
 const Filters = ({setShow}) => {
 
     const core = useRef();
+    const cb = useRef();
     const [pricemin, setPricemin] = useState(min);
     const [pricemax, setPricemax] = useState(max);
     let gap = 10;
@@ -147,14 +148,21 @@ const Filters = ({setShow}) => {
                             <div id="bedroom_double">
                                 <div id="bedroom_title"><h3>Bedrooms</h3></div>
                                 <div id="number">
-                                    <input type="radio" />
-                                    <input type="radio" />
-                                    <input type="radio" />
-                                    <input type="radio" />
-                                    <input type="radio" />
-                                    <input type="radio" />
-                                    <input type="radio" />
-                                    <input type="radio" />
+                                    <label className="radio_button">
+                                        
+                                        <input type="radio" name="bedroom" ref={cb}/>
+                                        <span>1</span>
+                                    </label>
+                                    <label className="radio_button">
+                                        <input type="radio" name="bedroom"/>
+                                        <span>2</span>
+                                    </label>
+
+                                    <label className="radio_button">
+                                        <input type="radio" name="bedroom"/>
+                                        <span>3</span>
+                                    </label>
+                                    
                                 </div>
                             </div>
                             <div id="beds_double">

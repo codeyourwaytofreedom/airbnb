@@ -239,7 +239,7 @@
                     @include option_outline;
                     // background-color: palegreen;
                     #bedroom_double{
-                        background-color: aquamarine;
+                        // background-color: aquamarine;
                         display: grid;
                         justify-content: start;
                         align-content: center;
@@ -253,6 +253,47 @@
                     }
                     #number{
                         display: flex;
+                        column-gap: 10px;
+
+                        input[type="radio"]{
+                            visibility:hidden;
+                        }
+                        input[type="radio"]:checked{
+                            visibility:visible;
+                        }
+
+                        input[type="radio"]:after{
+                            border: 1px solid black;
+                            height: 40px;
+                            width: 60px;
+                            border-radius: 25px;
+                            cursor: pointer;
+                            background-color: black;
+                            display: block;
+                            content: " ";
+                            left:-5px;
+                            top:-5px;
+                            position: relative;
+                            z-index: 8;
+                         }
+                        input[type="radio"]:checked + span{
+                            color: white;
+                        }
+                        .radio_button{
+                            border: 1px solid silver;
+                            height: 40px;
+                            width: 60px;
+                            border-radius: 25px;
+                            cursor: pointer;
+                            position: relative;
+                            span{
+                                position: absolute;
+                                left:25px;
+                                top:10px;
+                                z-index: 9;
+                            }
+                        }
+
                     }
 
 
