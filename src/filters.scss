@@ -318,6 +318,23 @@
 
 
                 }
+                &--propertytype{
+                    @include option_outline;
+                    display: grid;
+                    .four_types{
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        div{
+                            border:1px solid gray;
+                            padding: 10px;
+                            img{
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+
+                }
         }
      &_clear{
             position: relative;

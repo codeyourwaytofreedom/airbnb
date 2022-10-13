@@ -293,7 +293,23 @@ const Filters = ({setShow}) => {
                                 
                             </div>
                             <div className="panel_shell_options--propertytype">
-                                Property type
+                                <h2>Property type</h2>
+                                <br />
+                                <div className="four_types">
+                                    <div>
+                                        <div>
+                                            <img src={require("./images/house.jpg")} alt="a" />
+                                        </div>
+                                        <div>
+                                            House
+                                        </div>
+                                    </div>
+                                    <div>2</div>
+                                    <div>3</div>
+                                    <div>4</div>
+                                </div>
+                                
+                                
                             </div>
                             <div className="panel_shell_options--amenities">
                                 Amenities

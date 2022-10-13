@@ -313,6 +313,23 @@
 .panel_shell_options--roombed #number #any_span {
   left: 25px;
 }
+.panel_shell_options--propertytype {
+  padding: 25px 0;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  display: grid;
+}
+.panel_shell_options--propertytype .four_types {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.panel_shell_options--propertytype .four_types div {
+  border: 1px solid gray;
+  padding: 10px;
+}
+.panel_shell_options--propertytype .four_types div img {
+  width: 40px;
+  height: 40px;
+}
 .panel_shell_clear {
   position: relative;
   bottom: 0;
