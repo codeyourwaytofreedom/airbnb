@@ -400,7 +400,35 @@ const Filters = ({setShow}) => {
                                 
                             </div>
                             <div className="panel_shell_options--amenities">
-                                Amenities
+                                <h2>Amenities</h2>
+                                <br />
+                                <h3>Essentials</h3>
+                                <div className="essentials">
+                                        <div className="essentials_cell">
+                                            <div id="cbox"><input type="checkbox" /></div>
+                                            <div id="place-type">Wifi</div>
+                                        </div>
+                                        <div className="essentials_cell">
+                                            <div id="cbox"><input type="checkbox" /></div>
+                                            <div id="place-type">Kitchen</div>
+                                        </div>
+                                        <div className="essentials_cell">
+                                            <div id="cbox"><input type="checkbox" /></div>
+                                            <div id="place-type">Washing machine</div>
+                                        </div>
+                                        <div className="essentials_cell">
+                                            <div id="cbox"><input type="checkbox" /></div>
+                                            <div id="place-type">Dryer</div>
+                                        </div>
+                                        <div className="essentials_cell">
+                                            <div id="cbox"><input type="checkbox" /></div>
+                                            <div id="place-type">Air conditioning</div>
+                                        </div>
+                                        <div className="essentials_cell">
+                                            <div id="cbox"><input type="checkbox" /></div>
+                                            <div id="place-type">Heating</div>
+                                        </div>
+                                </div>
                             </div>
                             <div className="panel_shell_options--bookingoptions">
                                 Booking options
