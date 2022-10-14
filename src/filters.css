@@ -321,14 +321,35 @@
 .panel_shell_options--propertytype .four_types {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 2%;
+       column-gap: 2%;
+  padding-right: 2%;
 }
-.panel_shell_options--propertytype .four_types div {
+.panel_shell_options--propertytype .four_types .button_capsule {
+  height: 120px;
+}
+.panel_shell_options--propertytype .four_types button {
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  outline: none;
   border: 1px solid gray;
+  border-radius: 10px;
+  transition: 0.21s;
+}
+.panel_shell_options--propertytype .four_types button:active {
+  width: 98%;
+  height: 98%;
+}
+.panel_shell_options--propertytype .four_types .img_in_button, .panel_shell_options--propertytype .four_types .text_in_button {
+  display: grid;
+  justify-content: start;
   padding: 10px;
 }
-.panel_shell_options--propertytype .four_types div img {
-  width: 40px;
-  height: 40px;
+.panel_shell_options--propertytype .four_types .img_in_button img, .panel_shell_options--propertytype .four_types .text_in_button img {
+  width: 30px;
+  height: 30px;
 }
 .panel_shell_clear {
   position: relative;

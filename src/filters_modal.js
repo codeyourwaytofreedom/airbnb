@@ -8,9 +8,8 @@ import {repetition_array, min, max, av} from "./test";
 const Filters = ({setShow}) => {
 
     const core = useRef();
-    const [bedrooms_any, setBedrooms_any] = useState("bedrooms any");
-    const [beds_any, setBeds_any] = useState("beds any");
-    const [bathroom_any, setBathroom_any] = useState("bathrooms any");
+    const[type_house, addTypeHouse] = useState(false);
+    
     const [pricemin, setPricemin] = useState(min);
     const [pricemax, setPricemax] = useState(max);
     let gap = 10;
@@ -40,6 +39,11 @@ const Filters = ({setShow}) => {
 
     }
 
+    const handle_house_type = () => {
+        if(type_house===false)
+        {addTypeHouse(true)}
+        else{addTypeHouse(false)}
+    }
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -296,17 +300,77 @@ const Filters = ({setShow}) => {
                                 <h2>Property type</h2>
                                 <br />
                                 <div className="four_types">
-                                    <div>
-                                        <div>
-                                            <img src={require("./images/house.jpg")} alt="a" />
-                                        </div>
-                                        <div>
-                                            House
-                                        </div>
+                                    <div className="button_capsule">
+                                        <button 
+                                        onClick={handle_house_type} 
+                                        className="house_type_button"
+                                        style={{border: type_house ? "2px solid black" 
+                                                    : "1px solid gray",
+                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                "white" }}   
+                                        >
+                                            <div className="img_in_button">
+                                                <img src={require("./images/house.jpg")} alt="a" />
+                                            </div>
+                                            <div className="text_in_button">
+                                                House
+                                            </div>
+                                        </button>
                                     </div>
-                                    <div>2</div>
-                                    <div>3</div>
-                                    <div>4</div>
+                                    
+                                    <div className="button_capsule">
+                                        <button 
+                                        onClick={handle_house_type} 
+                                        className="house_type_button"
+                                        style={{border: type_house ? "2px solid black" 
+                                                    : "1px solid gray",
+                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                "white" }}   
+                                        >
+                                            <div className="img_in_button">
+                                                <img src={require("./images/house.jpg")} alt="a" />
+                                            </div>
+                                            <div className="text_in_button">
+                                                House
+                                            </div>
+                                        </button>
+                                    </div>
+
+                                    <div className="button_capsule">
+                                        <button 
+                                        onClick={handle_house_type} 
+                                        className="house_type_button"
+                                        style={{border: type_house ? "2px solid black" 
+                                                    : "1px solid gray",
+                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                "white" }}   
+                                        >
+                                            <div className="img_in_button">
+                                                <img src={require("./images/house.jpg")} alt="a" />
+                                            </div>
+                                            <div className="text_in_button">
+                                                House
+                                            </div>
+                                        </button>
+                                    </div>
+
+                                    <div className="button_capsule">
+                                        <button 
+                                        onClick={handle_house_type} 
+                                        className="house_type_button"
+                                        style={{border: type_house ? "2px solid black" 
+                                                    : "1px solid gray",
+                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                "white" }}   
+                                        >
+                                            <div className="img_in_button">
+                                                <img src={require("./images/house.jpg")} alt="a" />
+                                            </div>
+                                            <div className="text_in_button">
+                                                House
+                                            </div>
+                                        </button>
+                                    </div>
                                 </div>
                                 
                                 
