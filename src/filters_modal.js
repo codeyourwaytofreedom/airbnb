@@ -9,6 +9,12 @@ const Filters = ({setShow}) => {
 
     const core = useRef();
     const[type_house, addTypeHouse] = useState(false);
+    const[type_flat, addTypeFlat] = useState(false);
+    const[type_ghouse, addTypeGhouse] = useState(false);
+    const[type_hotel, addTypeHotel] = useState(false);
+
+
+
     
     const [pricemin, setPricemin] = useState(min);
     const [pricemax, setPricemax] = useState(max);
@@ -43,6 +49,24 @@ const Filters = ({setShow}) => {
         if(type_house===false)
         {addTypeHouse(true)}
         else{addTypeHouse(false)}
+    }
+
+    const handle_flat_type = () => {
+        if(type_flat===false)
+        {addTypeFlat(true)}
+        else{addTypeFlat(false)}
+    }
+
+    const handle_ghouse_type = () => {
+        if(type_ghouse===false)
+        {addTypeGhouse(true)}
+        else{addTypeGhouse(false)}
+    }
+
+    const handle_hotel_type = () => {
+        if(type_hotel===false)
+        {addTypeHotel(true)}
+        else{addTypeHotel(false)}
     }
 
     useEffect(()=>{
@@ -320,54 +344,54 @@ const Filters = ({setShow}) => {
                                     
                                     <div className="button_capsule">
                                         <button 
-                                        onClick={handle_house_type} 
-                                        className="house_type_button"
-                                        style={{border: type_house ? "2px solid black" 
+                                        onClick={handle_flat_type} 
+                                        className="flat_type_button"
+                                        style={{border: type_flat ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                backgroundColor: type_flat ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
                                                 <img src={require("./images/house.jpg")} alt="a" />
                                             </div>
                                             <div className="text_in_button">
-                                                House
+                                                Flat
                                             </div>
                                         </button>
                                     </div>
 
                                     <div className="button_capsule">
                                         <button 
-                                        onClick={handle_house_type} 
-                                        className="house_type_button"
-                                        style={{border: type_house ? "2px solid black" 
+                                        onClick={handle_ghouse_type} 
+                                        className="ghouse_type_button"
+                                        style={{border: type_ghouse ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                backgroundColor: type_ghouse ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
                                                 <img src={require("./images/house.jpg")} alt="a" />
                                             </div>
                                             <div className="text_in_button">
-                                                House
+                                                Guest House
                                             </div>
                                         </button>
                                     </div>
 
                                     <div className="button_capsule">
                                         <button 
-                                        onClick={handle_house_type} 
-                                        className="house_type_button"
-                                        style={{border: type_house ? "2px solid black" 
+                                        onClick={handle_hotel_type} 
+                                        className="hotel_type_button"
+                                        style={{border: type_hotel ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                backgroundColor: type_hotel ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
                                                 <img src={require("./images/house.jpg")} alt="a" />
                                             </div>
                                             <div className="text_in_button">
-                                                House
+                                                Hotel
                                             </div>
                                         </button>
                                     </div>
