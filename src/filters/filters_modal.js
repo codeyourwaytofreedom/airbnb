@@ -8,6 +8,7 @@ import Roomsbeds from "./roomsbeds";
 import Type from "./type";
 import Pricerange from "./pricerange";
 import Amenities from "./amenities";
+import Bookingoptions from "../bookingoptions";
 
 
 const Filters = ({setShow}) => {
@@ -119,6 +120,7 @@ const Filters = ({setShow}) => {
                                 type_hotel={type_hotel}
                             />
                             <Amenities/>
+                            <Bookingoptions/>
 
 
                             <div className="panel_shell_options--bookingoptions">

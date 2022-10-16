@@ -88,7 +88,7 @@ const Propertytype = ({ handle_house_type,
                                 </div>
                                 
                                 
-                            </div>
+        </div>
 
      );
 }

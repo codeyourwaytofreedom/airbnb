@@ -397,6 +397,34 @@
                         }
                     }
                 }
+                &--bookingoptions{
+                    @include option_outline;
+                    #booking_triple{
+                        display: flex;
+                        position: relative;
+                    }
+                    #place_double{
+                        display: grid;
+                        row-gap: 5px;
+                        justify-items: start;
+                        align-content: start;
+                        height: 100%;
+                    }
+                    #booking-type{
+                        color:#222222;
+                    }
+                    #booking-detail{
+                        color:gray;
+                        font-size: 14px;
+                    }
+                    #booking-switch{
+                        @include grid-center;
+                        position: absolute;
+                        right: 20px;
+                        border: 2px solid red;
+                    }
+
+                }
         }
      &_clear{
             position: relative;
