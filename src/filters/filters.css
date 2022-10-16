@@ -106,7 +106,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-image: url("./images/slider_pound.svg");
+  background-image: url("../images/slider_pound.svg");
   background-color: white;
   background-repeat: no-repeat;
   background-size: 40%;
@@ -381,18 +381,18 @@
   background-color: black;
   color: white;
 }
-.panel_shell_options--amenities .essentials {
+.panel_shell_options--amenities .essentials, .panel_shell_options--amenities .features, .panel_shell_options--amenities .location, .panel_shell_options--amenities .safety {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 25px;
   padding: 25px 0;
 }
-.panel_shell_options--amenities .essentials_cell {
+.panel_shell_options--amenities .essentials_cell, .panel_shell_options--amenities .features_cell, .panel_shell_options--amenities .location_cell, .panel_shell_options--amenities .safety_cell {
   display: flex;
   -moz-column-gap: 35px;
        column-gap: 35px;
 }
-.panel_shell_options--amenities .essentials_cell #place-type {
+.panel_shell_options--amenities .essentials_cell #place-type, .panel_shell_options--amenities .features_cell #place-type, .panel_shell_options--amenities .location_cell #place-type, .panel_shell_options--amenities .safety_cell #place-type {
   color: #222222;
   display: grid;
   align-items: center;
@@ -404,6 +404,19 @@
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 0;
+}
+.panel_shell_options--amenities .show_more, .panel_shell_options--amenities .show_less {
+  background: transparent;
+  border: none;
+  display: grid;
+  justify-content: start;
+  cursor: pointer;
+}
+.panel_shell_options--amenities .show_more span, .panel_shell_options--amenities .show_less span {
+  font-size: 16px;
+  color: #222222;
+  font-weight: 600;
+  text-decoration: underline;
 }
 .panel_shell_clear {
   position: relative;

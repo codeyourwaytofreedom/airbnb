@@ -1,109 +1,107 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouseChimney, faHouseCrack, faMillSign, faRocket, faShuttleSpace, faSpaceShuttle, faUmbrellaBeach, faWarehouse } from '@fortawesome/free-solid-svg-icons';
 
 const rolling_options = 
 [ 
     {
         text:"Design",
-        icon: require("./images/design.jpg")
+        icon: require("../images/design.jpg")
     },
     {
         text:"Arctic",
-        icon: require("./images/arctic.jpg")
+        icon: require("../images/arctic.jpg")
     },
     {
         text:"Tiny homes",
-        icon:  require("./images/tiny_homes.jpg")
+        icon:  require("../images/tiny_homes.jpg")
     },
     {
         text:"Windmills",
-        icon:  require("./images/windmills.jpg")
+        icon:  require("../images/windmills.jpg")
     },
     {
         text:"Castles",
-        icon:  require("./images/castles.jpg")
+        icon:  require("../images/castles.jpg")
     },
     {
         text:"OMG",
-        icon:  require("./images/omg.jpg")
+        icon:  require("../images/omg.jpg")
     },
     {
         text:"National parks",
-        icon:  require("./images/national_parks.jpg")
+        icon:  require("../images/national_parks.jpg")
     },
     {
         text:"A-frames",
-        icon:  require("./images/a-frames.jpg")
+        icon:  require("../images/a-frames.jpg")
     },
     {
         text:"Islands",
-        icon:  require("./images/islands.jpg")
+        icon:  require("../images/islands.jpg")
     },
     {
         text:"Beaches",
-        icon:  require("./images/beaches.jpg")
+        icon:  require("../images/beaches.jpg")
     },
     {
         text:"Cabins",
-        icon:  require("./images/cabins.jpg")
+        icon:  require("../images/cabins.jpg")
     },
     {
         text:"Lakefront",
-        icon:  require("./images/lakefront.jpg")
+        icon:  require("../images/lakefront.jpg")
     },
     {
         text:"Surfing",
-        icon:  require("./images/surfing.jpg")
+        icon:  require("../images/surfing.jpg")
     },
     {
         text:"Amazing pools",
-        icon:  require("./images/amazing_pools.jpg")
+        icon:  require("../images/amazing_pools.jpg")
     },
     {
         text:"Caves",
-        icon:  require("./images/caves.jpg")
+        icon:  require("../images/caves.jpg")
     },
     {
         text:"Campervans",
-        icon:  require("./images/campervans.jpg")
+        icon:  require("../images/campervans.jpg")
     },
     {
         text:"Shared homes",
-        icon:  require("./images/shared_homes.jpg")
+        icon:  require("../images/shared_homes.jpg")
     },
     
     {
         text:"Earth homes",
-        icon:  require("./images/earth_homes.jpg")
+        icon:  require("../images/earth_homes.jpg")
     },
     
     {
         text:"Skiing",
-        icon:  require("./images/skiing.jpg")
+        icon:  require("../images/skiing.jpg")
     },
     
     {
         text:"Bed & Breakfasts",
-        icon:  require("./images/bed_and_breakfast.jpg")
+        icon:  require("../images/bed_and_breakfast.jpg")
     },
     
     {
         text:"Luxe",
-        icon:  require("./images/luxe.jpg")
+        icon:  require("../images/luxe.jpg")
     },
     
     {
         text:"Tropical",
-        icon:  require("./images/tropical.jpg")
+        icon:  require("../images/tropical.jpg")
     },
     
     {
         text:"Countryside",
-        icon:  require("./images/countryside.jpg")
+        icon:  require("../images/countryside.jpg")
     },
     {
         text:"END",
-        icon:  require("./images/countryside.jpg")
+        icon:  require("../images/countryside.jpg")
     },
     
 ]

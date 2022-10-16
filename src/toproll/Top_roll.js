@@ -1,9 +1,9 @@
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import "./Top_roll.css";
 import rolling_options from "./Top_roll_options";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleDown, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import Filters from "./filters_modal";
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import Filters from "../filters/filters_modal";
 
 const Top_roll = () => {
 
@@ -111,7 +111,7 @@ const Top_roll = () => {
 
                         <div className="top_roll_control_filter" onClick={() => {setShow(true)}}>                                
                                 <div className="top_roll_control_filter_icon">
-                                    <img src={require("./filter.png")} alt="xx" />
+                                    <img src={require("../filters/filter.png")} alt="xx" />
                                 </div>
                                 <div className="top_roll_control_filter_text">Filters</div>    
                         </div>

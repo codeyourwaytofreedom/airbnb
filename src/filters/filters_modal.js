@@ -19,8 +19,6 @@ const Filters = ({setShow}) => {
     const[type_hotel, addTypeHotel] = useState(false);
 
 
-
-    
     const [pricemin, setPricemin] = useState(min);
     const [pricemax, setPricemax] = useState(max);
     let gap = 10;

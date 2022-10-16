@@ -141,7 +141,7 @@
                             appearance: none;
                             height: 30px; width: 30px;
                             border-radius: 50%;
-                            background-image: url("./images/slider_pound.svg");
+                            background-image: url("../images/slider_pound.svg");
                             background-color: white;
                             background-repeat: no-repeat;
                             background-size: 40%;
@@ -359,7 +359,7 @@
                 &--amenities{
                     @include option_outline;
                     @include checkbox;
-                    .essentials{
+                    .essentials, .features, .location, .safety{
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         row-gap: 25px;
@@ -383,7 +383,19 @@
                         font-size: 16px;
                         margin-bottom: 0;
                     }
-
+                    .show_more, .show_less{
+                        background: transparent;
+                        border: none;
+                        display: grid;
+                        justify-content: start;
+                        cursor: pointer;
+                        span{
+                            font-size: 16px;
+                            color: #222222;
+                            font-weight: 600;
+                            text-decoration: underline;
+                        }
+                    }
                 }
         }
      &_clear{

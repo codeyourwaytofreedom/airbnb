@@ -1,9 +1,9 @@
-import "./head.css";
+import "../head/head.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faGlobe, faCircleUser, faBars } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Signup from "./signup-modal";
+import Signup from "./signup/signup-modal";
 
 
 const Head = () => {
