@@ -351,18 +351,18 @@
   width: 30px;
   height: 30px;
 }
-.panel_shell_options--amenities {
+.panel_shell_options--amenities, .panel_shell_options--accessibility {
   padding: 25px 0;
   border-bottom: 1px solid rgb(235, 235, 235);
 }
-.panel_shell_options--amenities input[type=checkbox] {
+.panel_shell_options--amenities input[type=checkbox], .panel_shell_options--accessibility input[type=checkbox] {
   position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   cursor: pointer;
 }
-.panel_shell_options--amenities input[type=checkbox]:after {
+.panel_shell_options--amenities input[type=checkbox]:after, .panel_shell_options--accessibility input[type=checkbox]:after {
   content: "";
   position: absolute;
   width: 22px;
@@ -372,7 +372,7 @@
   border: 1px solid gray;
   cursor: pointer;
 }
-.panel_shell_options--amenities input[type=checkbox]:checked:after {
+.panel_shell_options--amenities input[type=checkbox]:checked:after, .panel_shell_options--accessibility input[type=checkbox]:checked:after {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -381,38 +381,44 @@
   background-color: black;
   color: white;
 }
-.panel_shell_options--amenities .essentials, .panel_shell_options--amenities .features, .panel_shell_options--amenities .location, .panel_shell_options--amenities .safety {
+.panel_shell_options--amenities .essentials, .panel_shell_options--amenities .features, .panel_shell_options--amenities .location, .panel_shell_options--amenities .safety, .panel_shell_options--amenities .parking, .panel_shell_options--amenities .bedroom, .panel_shell_options--amenities .bathroom,
+.panel_shell_options--amenities .equipment, .panel_shell_options--accessibility .essentials, .panel_shell_options--accessibility .features, .panel_shell_options--accessibility .location, .panel_shell_options--accessibility .safety, .panel_shell_options--accessibility .parking, .panel_shell_options--accessibility .bedroom, .panel_shell_options--accessibility .bathroom,
+.panel_shell_options--accessibility .equipment {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 25px;
   padding: 25px 0;
 }
-.panel_shell_options--amenities .essentials_cell, .panel_shell_options--amenities .features_cell, .panel_shell_options--amenities .location_cell, .panel_shell_options--amenities .safety_cell {
+.panel_shell_options--amenities .essentials_cell, .panel_shell_options--amenities .features_cell, .panel_shell_options--amenities .location_cell, .panel_shell_options--amenities .safety_cell, .panel_shell_options--amenities .parking_cell, .panel_shell_options--amenities .bedroom_cell, .panel_shell_options--amenities .bathroom_cell,
+.panel_shell_options--amenities .equipment_cell, .panel_shell_options--accessibility .essentials_cell, .panel_shell_options--accessibility .features_cell, .panel_shell_options--accessibility .location_cell, .panel_shell_options--accessibility .safety_cell, .panel_shell_options--accessibility .parking_cell, .panel_shell_options--accessibility .bedroom_cell, .panel_shell_options--accessibility .bathroom_cell,
+.panel_shell_options--accessibility .equipment_cell {
   display: flex;
   -moz-column-gap: 35px;
        column-gap: 35px;
 }
-.panel_shell_options--amenities .essentials_cell #place-type, .panel_shell_options--amenities .features_cell #place-type, .panel_shell_options--amenities .location_cell #place-type, .panel_shell_options--amenities .safety_cell #place-type {
+.panel_shell_options--amenities .essentials_cell #place-type, .panel_shell_options--amenities .features_cell #place-type, .panel_shell_options--amenities .location_cell #place-type, .panel_shell_options--amenities .safety_cell #place-type, .panel_shell_options--amenities .parking_cell #place-type, .panel_shell_options--amenities .bedroom_cell #place-type, .panel_shell_options--amenities .bathroom_cell #place-type,
+.panel_shell_options--amenities .equipment_cell #place-type, .panel_shell_options--accessibility .essentials_cell #place-type, .panel_shell_options--accessibility .features_cell #place-type, .panel_shell_options--accessibility .location_cell #place-type, .panel_shell_options--accessibility .safety_cell #place-type, .panel_shell_options--accessibility .parking_cell #place-type, .panel_shell_options--accessibility .bedroom_cell #place-type, .panel_shell_options--accessibility .bathroom_cell #place-type,
+.panel_shell_options--accessibility .equipment_cell #place-type {
   color: #222222;
   display: grid;
   align-items: center;
   justify-content: center;
   height: 25px;
 }
-.panel_shell_options--amenities h3 {
+.panel_shell_options--amenities h3, .panel_shell_options--accessibility h3 {
   color: #222222;
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 0;
 }
-.panel_shell_options--amenities .show_more, .panel_shell_options--amenities .show_less {
+.panel_shell_options--amenities .show_more, .panel_shell_options--amenities .show_less, .panel_shell_options--accessibility .show_more, .panel_shell_options--accessibility .show_less {
   background: transparent;
   border: none;
   display: grid;
   justify-content: start;
   cursor: pointer;
 }
-.panel_shell_options--amenities .show_more span, .panel_shell_options--amenities .show_less span {
+.panel_shell_options--amenities .show_more span, .panel_shell_options--amenities .show_less span, .panel_shell_options--accessibility .show_more span, .panel_shell_options--accessibility .show_less span {
   font-size: 16px;
   color: #222222;
   font-weight: 600;

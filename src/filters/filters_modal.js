@@ -9,6 +9,7 @@ import Type from "./type";
 import Pricerange from "./pricerange";
 import Amenities from "./amenities";
 import Bookingoptions from "../bookingoptions";
+import Accessibility from "./accessibility";
 
 
 const Filters = ({setShow}) => {
@@ -121,12 +122,15 @@ const Filters = ({setShow}) => {
                             />
                             <Amenities/>
                             <Bookingoptions/>
+                            <Accessibility/>
 
 
 
                             <div className="panel_shell_options--accessibility">
                                 Accessibility features
                             </div>
+
+
                             <div className="panel_shell_options--parking">
                                 Guest entrance and parking
                             </div>
