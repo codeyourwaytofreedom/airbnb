@@ -11,6 +11,7 @@ import Amenities from "./amenities";
 import Bookingoptions from "./bookingoptions";
 import Accessibility from "./accessibility";
 import Toptier from "./toptier";
+import Hostlanguage from "./hostlanguage";
 
 
 const Filters = ({setShow}) => {
@@ -125,14 +126,10 @@ const Filters = ({setShow}) => {
                             <Bookingoptions/>
                             <Accessibility/>
                             <Toptier/>
+                            <Hostlanguage/>
 
 
-                            <div className="panel_shell_options--toptier">
-                                Top-tier stays
-                            </div>
-                            <div className="panel_shell_options--language">
-                                Host language
-                            </div>
+                            
                     </div>
                     <div className="panel_shell_clear">
                         <div> <b><u>Clear All</u> </b>  </div>
