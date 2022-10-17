@@ -424,29 +424,29 @@
   font-weight: 600;
   text-decoration: underline;
 }
-.panel_shell_options--bookingoptions {
+.panel_shell_options--bookingoptions, .panel_shell_options--toptier {
   padding: 25px 0;
   border-bottom: 1px solid rgb(235, 235, 235);
 }
-.panel_shell_options--bookingoptions #booking_triple {
+.panel_shell_options--bookingoptions #booking_triple, .panel_shell_options--toptier #booking_triple {
   display: flex;
   position: relative;
 }
-.panel_shell_options--bookingoptions #booking_double {
+.panel_shell_options--bookingoptions #booking_double, .panel_shell_options--toptier #booking_double {
   display: grid;
   row-gap: 5px;
   justify-items: start;
   align-content: start;
   height: 100%;
 }
-.panel_shell_options--bookingoptions #booking-type {
+.panel_shell_options--bookingoptions #booking-type, .panel_shell_options--toptier #booking-type {
   color: #222222;
 }
-.panel_shell_options--bookingoptions #booking-detail {
+.panel_shell_options--bookingoptions #booking-detail, .panel_shell_options--toptier #booking-detail {
   color: gray;
   font-size: 14px;
 }
-.panel_shell_options--bookingoptions #booking-switch {
+.panel_shell_options--bookingoptions #booking-switch, .panel_shell_options--toptier #booking-switch {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -454,18 +454,18 @@
   right: 20px;
   /* Rounded sliders */
 }
-.panel_shell_options--bookingoptions #booking-switch .switch {
+.panel_shell_options--bookingoptions #booking-switch .switch, .panel_shell_options--toptier #booking-switch .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
-.panel_shell_options--bookingoptions #booking-switch .switch input {
+.panel_shell_options--bookingoptions #booking-switch .switch input, .panel_shell_options--toptier #booking-switch .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-.panel_shell_options--bookingoptions #booking-switch .slider {
+.panel_shell_options--bookingoptions #booking-switch .slider, .panel_shell_options--toptier #booking-switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -475,7 +475,7 @@
   background-color: #ccc;
   transition: 0.4s;
 }
-.panel_shell_options--bookingoptions #booking-switch .slider:before {
+.panel_shell_options--bookingoptions #booking-switch .slider:before, .panel_shell_options--toptier #booking-switch .slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -486,10 +486,10 @@
   transition: 0.4s;
   content: "";
 }
-.panel_shell_options--bookingoptions #booking-switch input:checked + .slider {
+.panel_shell_options--bookingoptions #booking-switch input:checked + .slider, .panel_shell_options--toptier #booking-switch input:checked + .slider {
   background-color: black;
 }
-.panel_shell_options--bookingoptions #booking-switch input:checked + .slider:before {
+.panel_shell_options--bookingoptions #booking-switch input:checked + .slider:before, .panel_shell_options--toptier #booking-switch input:checked + .slider:before {
   transform: translateX(26px);
   position: absolute;
   display: grid;
@@ -497,17 +497,17 @@
   justify-content: center;
   content: "✔";
 }
-.panel_shell_options--bookingoptions #booking-switch input:checked + .slider:after {
+.panel_shell_options--bookingoptions #booking-switch input:checked + .slider:after, .panel_shell_options--toptier #booking-switch input:checked + .slider:after {
   transform: translateX(26px);
   transition: 0.4s;
 }
-.panel_shell_options--bookingoptions #booking-switch input:checked + .slider:after input:checked + .slider:before {
+.panel_shell_options--bookingoptions #booking-switch input:checked + .slider:after input:checked + .slider:before, .panel_shell_options--toptier #booking-switch input:checked + .slider:after input:checked + .slider:before {
   transform: translateX(26px);
 }
-.panel_shell_options--bookingoptions #booking-switch .slider.round {
+.panel_shell_options--bookingoptions #booking-switch .slider.round, .panel_shell_options--toptier #booking-switch .slider.round {
   border-radius: 34px;
 }
-.panel_shell_options--bookingoptions #booking-switch .slider.round:before {
+.panel_shell_options--bookingoptions #booking-switch .slider.round:before, .panel_shell_options--toptier #booking-switch .slider.round:before {
   border-radius: 50%;
 }
 .panel_shell_clear {

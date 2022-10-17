@@ -398,7 +398,7 @@
                         }
                     }
                 }
-                &--bookingoptions{
+                &--bookingoptions, &--toptier{
                     @include option_outline;
                     #booking_triple{
                         display: flex;
