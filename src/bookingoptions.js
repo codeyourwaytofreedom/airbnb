@@ -11,8 +11,26 @@ const Bookingoptions = () => {
                                         <div id="booking-detail">Listings you can book without waiting for host approval
                                         </div>
                                     </div>
-                                    <div id="booking-switch">Button</div>
-                                </div>                          
+                                    <div id="booking-switch">
+                                    <label class="switch">
+                                        <input type="checkbox"/>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    </div>
+                                </div>        
+                                <br />
+                                <div id="booking_triple">
+                                    <div id="booking_double">
+                                        <div id="booking-type">Self check-in</div>
+                                        <div id="booking-detail">Easy access to the property once you arrive</div>
+                                    </div>
+                                    <div id="booking-switch">
+                                    <label class="switch">
+                                        <input type="checkbox"/>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    </div>
+                                </div>                    
         </div>
 
      );

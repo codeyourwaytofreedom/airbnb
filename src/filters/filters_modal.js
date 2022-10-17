@@ -123,9 +123,7 @@ const Filters = ({setShow}) => {
                             <Bookingoptions/>
 
 
-                            <div className="panel_shell_options--bookingoptions">
-                                Booking options
-                            </div>
+
                             <div className="panel_shell_options--accessibility">
                                 Accessibility features
                             </div>
