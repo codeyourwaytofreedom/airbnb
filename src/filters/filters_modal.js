@@ -127,9 +127,6 @@ const Filters = ({setShow}) => {
                             <Accessibility/>
                             <Toptier/>
                             <Hostlanguage/>
-
-
-                            
                     </div>
                     <div className="panel_shell_clear">
                         <div> 
