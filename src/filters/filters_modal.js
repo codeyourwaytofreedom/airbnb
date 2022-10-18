@@ -132,8 +132,11 @@ const Filters = ({setShow}) => {
                             
                     </div>
                     <div className="panel_shell_clear">
-                        <div> <b><u>Clear All</u> </b>  </div>
-                                 
+                        <div> 
+                            
+                            <button className="clear_all"><b><u>Clear all</u> </b>  </button>
+                            <button className="show_options"><b>Show {min} homes </b>  </button>
+                        </div>
                     </div>
                     
                 </div>

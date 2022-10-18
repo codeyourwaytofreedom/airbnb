@@ -24,7 +24,8 @@ const Toptier = () => {
                 <div id="booking_double">
                     <div id="booking-type">Airbnb Plus</div>
                     <div id="booking-detail">A selection of places to stay verified for quality and design</div>
-                    <div><Link to="/help">Learn more</Link></div>
+                    <div><Link to="/help" style={{ color: 'black', fontSize:"14px", 
+                        fontWeight:"600"     }}>Learn more</Link></div>
                 </div>
                 <div id="booking-switch">
                 <label class="switch">

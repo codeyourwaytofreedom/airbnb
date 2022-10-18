@@ -43,7 +43,7 @@
 }
 .panel_shell_options {
   overflow-y: scroll;
-  height: 69vh;
+  height: 68vh;
   padding: 0 20px;
 }
 .panel_shell_options h2, .panel_shell_options h3 {
@@ -516,12 +516,34 @@
 .panel_shell_clear {
   position: relative;
   bottom: 0;
-  height: 80px;
+  height: 70px;
   display: grid;
   align-items: center;
   justify-content: start;
   padding-left: 20px;
   border-top: 1px solid rgb(235, 235, 235);
+}
+.panel_shell_clear .clear_all, .panel_shell_clear .show_options {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #222222;
+  cursor: pointer;
+  padding: 10px;
+}
+.panel_shell_clear .clear_all:hover {
+  background-color: rgb(241, 241, 241);
+  border-radius: 10px;
+}
+.panel_shell_clear .show_options {
+  position: absolute;
+  right: 30px;
+  background-color: black;
+  border-radius: 10px;
+  height: 50px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (max-width: 860px) {
