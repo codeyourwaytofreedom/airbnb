@@ -1,6 +1,6 @@
 import "./content.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const handle_index_left = () => {
         console.log("hello")
@@ -26,10 +26,13 @@ const Content = () => {
                     </div>
                 </div>
                 <div className="property_details">
-                        <div>Kartepe, Turkey</div>
-                        <div>Individual Host</div>
-                        <div>30 Oct - 4 Nov</div>
-                        <div>£500 Total</div>
+                        <div className="property_details_location">
+                            <div className="property_details_location_loc">Kartepe, Turkey</div>
+                            <div className="property_details_location_rating"><FontAwesomeIcon style={{color:"purple"}} size={"s"} icon={faStar}/> New</div>
+                        </div>
+                        <div className="property_details_hosttype">Hosted by Can</div>
+                        <div className="property_details_date">30 Oct - 4 Nov . Individual Host</div>
+                        <div className="property_details_total"><u><b>£500 </b> Total</u></div>
                 </div>
             </div>
             <div className="property">

@@ -49,6 +49,31 @@
   top: 40%;
   background-color: white;
 }
-.content .property .property_image .property_details {
+.content .property .property_details {
   display: grid;
+  border: 2px solid red;
+}
+.content .property .property_details_location {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222222;
+  padding-bottom: 3px;
+  display: flex;
+  position: relative;
+}
+.content .property .property_details_location_rating {
+  position: absolute;
+  right: 0;
+  font-weight: 400;
+}
+.content .property .property_details_hosttype, .content .property .property_details_date {
+  font-weight: 200;
+  color: gray;
+  font-size: 15px;
+  padding-bottom: 2px;
+}
+.content .property .property_details_total {
+  font-size: 15px;
+  color: #222222;
+  padding-top: 5px;
 }/*# sourceMappingURL=content.css.map */

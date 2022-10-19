@@ -46,11 +46,36 @@
                 right:10px; top:40%;
                 background-color: white;
             }
-            .property_details{
+        }
+        .property_details{
 
-                display: grid;
-
+            display: grid;
+            border: 2px solid red;
+            &_location{
+                font-weight: 600;
+                font-size: 15px;
+                color: #222222;
+                padding-bottom: 3px;
+                display: flex;
+                position: relative;
+                &_rating{
+                    position: absolute;
+                    right: 0;
+                    font-weight: 400;
+                }
             }
+            &_hosttype, &_date{
+                font-weight: 200;
+                color: gray;
+                font-size: 15px;
+                padding-bottom: 2px;
+            }
+            &_total{
+                font-size: 15px;
+                color: #222222;
+                padding-top: 5px;
+            }
+
         }
     }
 }
