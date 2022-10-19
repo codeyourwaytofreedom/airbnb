@@ -9,16 +9,19 @@
   padding: 20px 40px;
 }
 .content .property {
-  border: 2px solid black;
   width: 280px;
 }
 .content .property .property_image {
   position: relative;
   align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .content .property .property_image img {
   width: 100%;
-  height: auto;
+  height: 280px;
   border-radius: 15px;
 }
 .content .property .property_image .back {
@@ -34,13 +37,15 @@
   left: 10px;
   top: 40%;
   background-color: white;
+  cursor: pointer;
+  display: none;
 }
 .content .property .property_image .forth {
   position: absolute;
   display: grid;
   align-items: center;
   justify-content: center;
-  border: 1px solid silver;
+  border: 1px solid black;
   border-radius: 50%;
   width: 29px;
   height: 29px;
@@ -48,15 +53,16 @@
   right: 10px;
   top: 40%;
   background-color: white;
+  display: none;
 }
 .content .property .property_details {
   display: grid;
-  border: 2px solid red;
 }
 .content .property .property_details_location {
   font-weight: 600;
   font-size: 15px;
   color: #222222;
+  padding-top: 10px;
   padding-bottom: 3px;
   display: flex;
   position: relative;
@@ -76,4 +82,10 @@
   font-size: 15px;
   color: #222222;
   padding-top: 5px;
+}
+.content .property:hover .back {
+  display: grid;
+}
+.content .property:hover .forth {
+  display: grid;
 }/*# sourceMappingURL=content.css.map */

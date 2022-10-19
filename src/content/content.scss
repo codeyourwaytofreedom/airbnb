@@ -14,15 +14,16 @@
     grid-template-columns: repeat(4, 1fr);
     padding:20px 40px;
     .property{
-        border: 2px solid black;
+        // border: 2px solid black;
         width: 280px;
         // height: 360px;
         .property_image{
             position: relative;
             align-items: center;
+            user-select: none;
             img{
                 width: 100%;
-                height: auto;
+                height: 280px;
                 border-radius: 15px;
             }
             .back{
@@ -34,27 +35,31 @@
                 position: absolute;
                 left:10px; top:40%;
                 background-color: white;
+                cursor: pointer;
+                display: none;
             }
 
             .forth{
                 position: absolute;
                 @include grid-center;
-                border: 1px solid silver;
+                border: 1px solid black;
                 border-radius: 50%;
                 width: 29px; height: 29px;
                 cursor: pointer;
                 right:10px; top:40%;
                 background-color: white;
+                display: none;
             }
         }
         .property_details{
 
             display: grid;
-            border: 2px solid red;
+            // border: 2px solid red;
             &_location{
                 font-weight: 600;
                 font-size: 15px;
                 color: #222222;
+                padding-top: 10px;
                 padding-bottom: 3px;
                 display: flex;
                 position: relative;
@@ -76,6 +81,14 @@
                 padding-top: 5px;
             }
 
+        }
+    }
+    .property:hover{
+        .back{
+            display: grid;
+        }
+        .forth{
+            display: grid;
         }
     }
 }
