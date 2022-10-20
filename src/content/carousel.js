@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
 
-const Carousel = ({images}) => {
+const Carousel = ({images, location, hosttype, dates, total}) => {
 
         const [img_index, setIndex] = useState(0);
     
@@ -39,12 +39,12 @@ const Carousel = ({images}) => {
         </div>
         <div className="property_details">
                 <div className="property_details_location">
-                    <div className="property_details_location_loc">Kartepe, Turkey</div>
+                    <div className="property_details_location_loc">{location}</div>
                     <div className="property_details_location_rating"><FontAwesomeIcon style={{color:"black"}} size={"xs"} icon={faStar}/> New</div>
                 </div>
-                <div className="property_details_hosttype">Hosted by Can</div>
-                <div className="property_details_date">30 Oct - 4 Nov . Individual Host</div>
-                <div className="property_details_total"><u><b>£500 </b> Total</u></div>
+                <div className="property_details_hosttype">{hosttype}</div>
+                <div className="property_details_date">{dates}</div>
+                <div className="property_details_total"><u><b>£{total} </b> Total</u></div>
         </div>
     </div>
 

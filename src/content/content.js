@@ -1,9 +1,9 @@
 import "./content.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faBasketShopping, faChevronLeft, faChevronRight, faCircle, faComputer, faDroplet, faHouse, faPencil, faRainbow, faSquare, faStar, faTelevision } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import Carousel from "./carousel";
-
+import { all_property_details } from "../all_properties/all_properties";
 
 const images = [
     require("../images/property/property1/1.webp"),
@@ -23,27 +23,26 @@ const images = [
 
 const Content = () => {
 
-    const [img_index, setIndex] = useState(0);
-
-    const handle_index_left = () => {
-        if(img_index===0)
-        {setIndex(0)}
-        else{setIndex(img_index-1)}
-        
-    }
-
-    const handle_index_right = () => {
-        if(img_index===9)
-        {setIndex(9)}
-        else{setIndex(img_index+1)}
-    }
-
 
     return ( 
         <div className="content">
 
-            <Carousel images={images}/>  
-            <Carousel images={images}/>                
+            <Carousel 
+                images={all_property_details[0].images}
+                location={all_property_details[0].location}
+                hosttype={all_property_details[0].hosttype}
+                dates={all_property_details[0].dates}
+                total={all_property_details[0].total}
+            
+            />  
+            <Carousel 
+                images={all_property_details[1].images}
+                location={all_property_details[1].location}
+                hosttype={all_property_details[1].hosttype}
+                dates={all_property_details[1].dates}
+                total={all_property_details[1].total}
+            
+            />   
             
         </div>
      );
