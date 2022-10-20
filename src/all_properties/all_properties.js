@@ -38,7 +38,49 @@ export const all_property_details =
             total:310
 
 
-    }
+    },
+
+    {
+        images:[
+            require("../images/property/property3/1.webp"),
+            require("../images/property/property3/2.webp"),
+            require("../images/property/property3/3.webp"),
+            require("../images/property/property3/4.webp"),
+            require("../images/property/property3/5.webp"),
+            require("../images/property/property3/6.webp"),
+            require("../images/property/property3/7.webp"),
+            require("../images/property/property3/8.webp"),
+            require("../images/property/property3/9.webp"),
+            require("../images/property/property3/10.webp")    
+        ],
+        location:"Akyaka, Turkey",
+        hosttype: "Individual Host",
+        dates:"20-25 Oct",
+        total:336
+
+
+    },
+    {
+        images:[
+            require("../images/property/property4/1.webp"),
+            require("../images/property/property4/2.webp"),
+            require("../images/property/property4/3.webp"),
+            require("../images/property/property4/4.webp"),
+            require("../images/property/property4/5.webp"),
+            require("../images/property/property4/6.webp"),
+            require("../images/property/property4/7.webp"),
+            require("../images/property/property4/8.webp"),
+            require("../images/property/property4/9.webp"),
+            require("../images/property/property4/10.webp")    
+        ],
+        location:"Sapanca, Turkey",
+        hosttype: "Individual Host",
+        dates:"20-25 Oct",
+        total:336
+
+
+    },
+
 
 ]
 

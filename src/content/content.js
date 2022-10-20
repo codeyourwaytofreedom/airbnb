@@ -43,6 +43,22 @@ const Content = () => {
                 total={all_property_details[1].total}
             
             />   
+            <Carousel 
+                images={all_property_details[2].images}
+                location={all_property_details[2].location}
+                hosttype={all_property_details[2].hosttype}
+                dates={all_property_details[2].dates}
+                total={all_property_details[2].total}
+            
+            /> 
+            <Carousel 
+                images={all_property_details[3].images}
+                location={all_property_details[3].location}
+                hosttype={all_property_details[3].hosttype}
+                dates={all_property_details[3].dates}
+                total={all_property_details[3].total}
+            
+            /> 
             
         </div>
      );
