@@ -17,7 +17,8 @@ export const all_property_details =
         location:"Muğla, Turkey",
         hosttype: "Individual Host",
         dates:"20-25 Oct",
-        total:237
+        total:237, 
+        type_of_place: "entire place"
     },
     {
             images:[
@@ -35,7 +36,8 @@ export const all_property_details =
             location:"Kartepe, Turkey",
             hosttype: "Individual Host",
             dates:"20-25 Oct",
-            total:310
+            total:310,
+            type_of_place: "entire place"
 
 
     },
@@ -56,7 +58,8 @@ export const all_property_details =
         location:"Akyaka, Turkey",
         hosttype: "Individual Host",
         dates:"20-25 Oct",
-        total:336
+        total:336,
+        type_of_place: "private room"
 
 
     },
@@ -76,7 +79,8 @@ export const all_property_details =
         location:"Sapanca, Turkey",
         hosttype: "Individual Host",
         dates:"20-25 Oct",
-        total:336
+        total:336,
+        type_of_place: "private room"
 
 
     },

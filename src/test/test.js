@@ -55,6 +55,8 @@ test.forEach((price)=>{
         average=average+price
 })
 
+export let numOfproperties = test.length;
+
 export const av = Math.floor(average/test.length);
 
 export const repetition_array = calc_price_repetition(test);
