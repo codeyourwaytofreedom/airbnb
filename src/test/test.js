@@ -89,23 +89,25 @@ export
 const calc_price_repetition = (array) => {
 
         let repetition_array = [];
-        const min_price = array.reduce((previous, current) => {
-            return current.price < previous.price ? current : previous;
-          });
-        
-        const max_price = array.reduce((previous, current) => {
-        return current.price > previous.price ? current : previous;
-        });
+
 
         for(var i=0; i<50; i++)
         {
+            const min_price = array.reduce((previous, current) => {
+                return current.price < previous.price ? current : previous;
+              }).price;
+            
+            const max_price = array.reduce((previous, current) => {
+            return current.price > previous.price ? current : previous;
+            }).price;
+
             var range_start = 
                     // Math.min(...array)+(Math.max(...array)-Math.min(...array))/50*i;
-                    min_price+ (max_price-min_price)/50*i;
+                    min_price + (max_price-min_price)/50*i;
 
             var range_end = 
                             // (Math.max(...array)-Math.min(...array))/50*(i+1);
-                            min_price+(max_price-min_price)/50*(i+1);
+                            (max_price-min_price)/50*(i+1);
 
             
             let how_many = 0;

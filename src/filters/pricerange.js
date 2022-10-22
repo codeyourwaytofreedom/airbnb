@@ -3,6 +3,7 @@ const Pricerange = ({av, repetition_array, min,
                     handle_input_min, handle_input_max,
                     handle_price_min, handle_price_max
                 }) => {
+                    console.log(repetition_array)
     return ( 
 
         <div className="panel_shell_options--priceRange">
