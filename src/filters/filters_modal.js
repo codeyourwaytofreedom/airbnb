@@ -85,7 +85,7 @@ const Filters = ({setShow}) => {
 
     },[]);
 
-    const shadow = test;
+    const [shadow, setShadow] = useState(test);
     
     
     return ( 
@@ -113,7 +113,7 @@ const Filters = ({setShow}) => {
                                 handle_price_min={handle_price_min}
                                 handle_price_max={handle_price_max}
                             />
-                            <Type shadow={shadow}></Type>
+                            <Type shadow={shadow} setShadow={setShadow}></Type>
                             <Roomsbeds/>
                             <Propertytype 
                                 handle_hotel_type={handle_hotel_type}
@@ -135,7 +135,7 @@ const Filters = ({setShow}) => {
                         <div> 
                             
                             <button className="clear_all"><b><u>Clear all</u> </b>  </button>
-                            <button className="show_options"><b>Show {test.length} homes </b>  </button>
+                            <button className="show_options"><b>Show {shadow.length} homes </b>  </button>
                         </div>
                     </div>
                     

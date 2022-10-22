@@ -1,13 +1,25 @@
-import {repetition_array, min, max, av, test} from "../test/test";
+import {test} from "../test/test";
 
-const Type = () => {
+const options = [];
+const Type = ({setShadow}) => {
+
     const filter_by_type = (e) => {
         if(e.target.checked)
         {
-            console.log(test.filter(property => property.type === e.target.value))}
-            console.log(test.length)
+            options.push(e.target.value)
+            setShadow(test.filter(property => options.includes(property.type)));
+            console.log("checked",options)
+        }
+        else
+        {
+            const position = options.indexOf(e.target.value);
+            options.splice(position,1)
+            setShadow(test.filter(property => options.includes(property.type)));
+            console.log("unchecked",options)
 
         }
+
+    }
     
     return ( 
 
