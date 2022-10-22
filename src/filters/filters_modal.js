@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./filters.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
-import {repetition_array, min, max, av, numOfproperties} from "../test/test";
+import {repetition_array, min, max, av, test} from "../test/test";
 import Propertytype from "./propertytype";
 import Roomsbeds from "./roomsbeds";
 import Type from "./type";
@@ -85,6 +85,9 @@ const Filters = ({setShow}) => {
 
     },[]);
 
+    const shadow = test;
+    
+    
     return ( 
 
             <div className="panel">
@@ -110,7 +113,7 @@ const Filters = ({setShow}) => {
                                 handle_price_min={handle_price_min}
                                 handle_price_max={handle_price_max}
                             />
-                            <Type></Type>
+                            <Type shadow={shadow}></Type>
                             <Roomsbeds/>
                             <Propertytype 
                                 handle_hotel_type={handle_hotel_type}
@@ -132,7 +135,7 @@ const Filters = ({setShow}) => {
                         <div> 
                             
                             <button className="clear_all"><b><u>Clear all</u> </b>  </button>
-                            <button className="show_options"><b>Show {numOfproperties} homes </b>  </button>
+                            <button className="show_options"><b>Show {test.length} homes </b>  </button>
                         </div>
                     </div>
                     

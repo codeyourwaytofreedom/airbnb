@@ -15,7 +15,7 @@ const create_test_array = () =>{
 
             const property = {
                 price: 0,
-                type: String,
+                type: "place",
                 numberofrooms:0,
                 numberofbeds:0,
                 numberofbathrooms:0
@@ -58,7 +58,6 @@ const create_test_array = () =>{
             pro.numberofrooms=numberofrooms;
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
-            console.log(typeof(pro), pro)
 
             price_array.push(pro); 
         }
@@ -123,7 +122,7 @@ const calc_price_repetition = (array) => {
 
 
 // export const prices = create_test_array();
-const test = create_test_array()
+export const test = create_test_array();
 
 let average = 0;
 test.forEach((price)=>{

@@ -6,8 +6,6 @@ import Carousel from "./carousel";
 import { all_property_details } from "../all_properties/all_properties";
 
 
-
-
 const Content = () => {
 
 
