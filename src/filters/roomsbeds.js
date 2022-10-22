@@ -1,4 +1,9 @@
-const Roomsbeds = () => {
+const Roomsbeds = ({shadow, setShadow}) => {
+
+    const filter_by_room = (e) => {
+            console.log(e.target.value)
+    }
+
     return ( 
 
         <div className="panel_shell_options--roombed">
@@ -9,45 +14,63 @@ const Roomsbeds = () => {
             <div id="number">
                 <label className="radio_button" id="any">
                     
-                    <input type="radio" name="bedroom" id="any_radiobutton" defaultChecked/>
+                    <input type="radio" name="bedroom" id="any_radiobutton" 
+                    defaultChecked value={"any"} onChange={(e) => filter_by_room(e)}
+                    />
                     <span id="any_span">Any</span>
                 </label>
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={1} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>1</span>
                 </label>
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={2} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>2</span>
                 </label>
 
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={3} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>3</span>
                 </label>
 
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={4} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>4</span>
                 </label>
 
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={5} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>5</span>
                 </label>
 
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={6} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>6</span>
                 </label>
 
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={7} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>7</span>
                 </label>
 
                 <label className="radio_button">
-                    <input type="radio" name="bedroom"/>
+                    <input type="radio" name="bedroom"
+                    value={8} onChange={(e) => filter_by_room(e)}
+                    />
                     <span>8+</span>
                 </label>
                 

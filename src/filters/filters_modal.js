@@ -114,7 +114,7 @@ const Filters = ({setShow}) => {
                                 handle_price_max={handle_price_max}
                             />
                             <Type shadow={shadow} setShadow={setShadow}></Type>
-                            <Roomsbeds/>
+                            <Roomsbeds shadow={shadow} setShadow={setShadow}/>
                             <Propertytype 
                                 handle_hotel_type={handle_hotel_type}
                                 handle_flat_type={handle_flat_type}
