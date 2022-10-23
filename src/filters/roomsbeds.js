@@ -1,16 +1,16 @@
+import { useState } from "react";
 import {test} from "../test/test";
 
-const Roomsbeds = ({shadow, setShadow}) => {
+
+const Roomsbeds = ({shadow, setShadow, filters_in_place,setFilters}) => {
 
     const filter_by_numbers = (e) => {
         if(e.target.name ==="numberofrooms")
         {
-
+            const room_filter = {filter_name: "numberofrooms", filter_value: e.target.value}
+            console.log(e.target.value)
             const neww = test.filter( property => property.numberofrooms == e.target.value)
             setShadow(neww)
-            if (e.target.value==="any")
-            {setShadow(shadow)}
-            console.log(neww)
         }
         if(e.target.name ==="numberofbeds")
         {

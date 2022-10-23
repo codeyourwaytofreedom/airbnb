@@ -86,7 +86,7 @@ const Filters = ({setShow}) => {
     },[]);
 
     const [shadow, setShadow] = useState(test);
-    
+    const [filters_in_place, setFilters] = useState(0);    
     
     return ( 
 
@@ -114,7 +114,10 @@ const Filters = ({setShow}) => {
                                 handle_price_max={handle_price_max}
                             />
                             <Type shadow={shadow} setShadow={setShadow}></Type>
-                            <Roomsbeds shadow={shadow} setShadow={setShadow}/>
+                            <Roomsbeds shadow={shadow} setShadow={setShadow}
+                            filters_in_place={filters_in_place}
+                            setFilters={setFilters}
+                            />
                             <Propertytype 
                                 handle_hotel_type={handle_hotel_type}
                                 handle_flat_type={handle_flat_type}
