@@ -12,10 +12,14 @@ import Bookingoptions from "./bookingoptions";
 import Accessibility from "./accessibility";
 import Toptier from "./toptier";
 import Hostlanguage from "./hostlanguage";
+import { useSelector,useDispatch } from 'react-redux';
+
 
 
 const Filters = ({setShow}) => {
-
+    const count = useSelector((state) => state.roomsSlice.value)
+    console.log(count)
+    
     const core = useRef();
     const[type_house, addTypeHouse] = useState(false);
     const[type_flat, addTypeFlat] = useState(false);

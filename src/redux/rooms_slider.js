@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: [],
+  value:0,
 }
 
 export const roomsSlice = createSlice({
@@ -9,7 +9,7 @@ export const roomsSlice = createSlice({
   initialState,
   reducers: {
     add_filter: (state, payload) => {
-        state.value.push(payload)
+        state.value =payload;
     }
   },
 })
