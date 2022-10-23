@@ -85,8 +85,9 @@ const Filters = ({setShow}) => {
 
     },[]);
 
+    const [filters_in_place, setFilters] = useState(null);    
+
     const [shadow, setShadow] = useState(test);
-    const [filters_in_place, setFilters] = useState(0);    
     
     return ( 
 

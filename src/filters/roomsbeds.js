@@ -1,14 +1,19 @@
 import { useState } from "react";
 import {test} from "../test/test";
+import { useSelector,useDispatch } from 'react-redux';
+import { add_filter } from "../redux/rooms_slider";
 
 
-const Roomsbeds = ({shadow, setShadow, filters_in_place,setFilters}) => {
+const Roomsbeds = ({shadow, setShadow}) => {
+    
+    const count = useSelector((state) => state.roomsSlice.value)
+    const dispatch = useDispatch()
 
     const filter_by_numbers = (e) => {
         if(e.target.name ==="numberofrooms")
         {
             const room_filter = {filter_name: "numberofrooms", filter_value: e.target.value}
-            console.log(e.target.value)
+
             const neww = test.filter( property => property.numberofrooms == e.target.value)
             setShadow(neww)
         }
@@ -29,9 +34,7 @@ const Roomsbeds = ({shadow, setShadow, filters_in_place,setFilters}) => {
             {setShadow(shadow)}
 
             console.log(neww)
-        }
-        
-            
+        } 
 
     }
 
