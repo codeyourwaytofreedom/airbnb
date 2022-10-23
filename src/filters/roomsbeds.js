@@ -1,25 +1,27 @@
 import { useState } from "react";
 import {test} from "../test/test";
 import { useSelector,useDispatch } from 'react-redux';
-import { add_filter } from "../redux/rooms_slider";
+import { add_filter_by_rooms, add_filter_by_beds,add_filter_by_bathrooms } from "../redux/rooms_slider";
 
 
 const Roomsbeds = ({shadow, setShadow}) => {
     
-    const count = useSelector((state) => state.roomsSlice.value)
+    const rooms_beds_filters = useSelector((state) => state.roomsSlice.value)
     const dispatch = useDispatch()
 
     const filter_by_numbers = (e) => {
         if(e.target.name ==="numberofrooms")
         {
             const room_filter = {filter_name: "numberofrooms", filter_value: e.target.value}
-            dispatch(add_filter(e.target.value))
+            dispatch(add_filter_by_rooms(e.target.value))
 
             const neww = test.filter( property => property.numberofrooms == e.target.value)
             setShadow(neww)
         }
         if(e.target.name ==="numberofbeds")
         {
+            const beds_filter = {filter_name: "numberofbeds", filter_value: e.target.value}
+            dispatch(add_filter_by_beds(e.target.value))
 
             const neww = test.filter( property => property.numberofbeds == e.target.value)
             setShadow(neww)
@@ -29,6 +31,9 @@ const Roomsbeds = ({shadow, setShadow}) => {
         }
         if(e.target.name ==="numberofbathrooms")
         {
+            const bathrooms_filter = {filter_name: "numberofbathrooms", filter_value: e.target.value}
+            dispatch(add_filter_by_bathrooms(e.target.value))
+
             const neww = test.filter( property => property.numberofbathrooms == e.target.value)
             setShadow(neww)
             if (e.target.value==="any")

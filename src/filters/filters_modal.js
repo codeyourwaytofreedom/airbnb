@@ -17,8 +17,15 @@ import { useSelector,useDispatch } from 'react-redux';
 
 
 const Filters = ({setShow}) => {
-    const count = useSelector((state) => state.roomsSlice.value)
-    console.log(count)
+    const nu_room = useSelector((state) => state.roomsSlice.nu_room)
+    const nu_beds = useSelector((state) => state.roomsSlice.nu_beds)
+    const nu_bathrooms = useSelector((state) => state.roomsSlice.nu_bathrooms)
+
+
+    console.log("nu_room",nu_room)
+    console.log("nu_beds",nu_beds)
+    console.log("nu_bathrooms",nu_bathrooms)
+    
     
     const core = useRef();
     const[type_house, addTypeHouse] = useState(false);
