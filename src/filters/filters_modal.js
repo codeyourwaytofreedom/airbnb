@@ -17,32 +17,23 @@ import Hostlanguage from "./hostlanguage";
 
 const Filters = ({setShow}) => {
     
-    const[number_of_rooms, setRoom] = useState(null);
+    // const[number_of_rooms, setRoom] = useState(null);
     const[number_of_beds, setBeds] = useState(null);
     const[number_of_bathrooms, setBathrooms] = useState(null);
     const [selected_place_types, setSelectedPlacetypes] = useState([]);
     const [selected_property_types, setSelectedPropertytypes] = useState([]);
     const[selected_amenities, setSelectedAmenities] = useState([]);
-    
-//     if(number_of_rooms)
-//    { console.log("number_of_rooms",number_of_rooms);}
-//    if(number_of_beds)
-//     {console.log("number_of_beds",number_of_beds);}
-//     if(number_of_bathrooms)
-//     {console.log("number_of_bathrooms",number_of_bathrooms);}
-//     if(selected_place_types.length>0)
-//     {console.log("selected place types",selected_place_types)}
-//     if(selected_property_types.length>0)
-//     {console.log("selected place types",selected_property_types)}
-    
-//     console.log("selecteds", selected_property_types)
 
-    console.log("amenities", selected_amenities)
+    const [shadow, setShadow] = useState(test);
 
 
-    useEffect(()=>{        
+    const[number_of_rooms, setRoom] = useState(null);
 
-    },[]);
+    useEffect(()=>{    
+
+        setShadow(test.filter(property => property.numberofrooms === parseInt(number_of_rooms)))
+        
+    },[number_of_rooms]);
     
 
     const core = useRef();
@@ -57,7 +48,7 @@ const Filters = ({setShow}) => {
     },[]);
 
 
-    const [shadow, setShadow] = useState(test);
+   
     
     return ( 
 
