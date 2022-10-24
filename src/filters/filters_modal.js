@@ -22,19 +22,24 @@ const Filters = ({setShow}) => {
     const[number_of_bathrooms, setBathrooms] = useState(null);
     const [selected_place_types, setSelectedPlacetypes] = useState([]);
     const [selected_property_types, setSelectedPropertytypes] = useState([]);
+    const[selected_amenities, setSelectedAmenities] = useState([]);
     
-    if(number_of_rooms)
-   { console.log("number_of_rooms",number_of_rooms);}
-   if(number_of_beds)
-    {console.log("number_of_beds",number_of_beds);}
-    if(number_of_bathrooms)
-    {console.log("number_of_bathrooms",number_of_bathrooms);}
-    if(selected_place_types.length>0)
-    {console.log("selected place types",selected_place_types)}
-    if(selected_property_types.length>0)
-    {console.log("selected place types",selected_property_types)}
+//     if(number_of_rooms)
+//    { console.log("number_of_rooms",number_of_rooms);}
+//    if(number_of_beds)
+//     {console.log("number_of_beds",number_of_beds);}
+//     if(number_of_bathrooms)
+//     {console.log("number_of_bathrooms",number_of_bathrooms);}
+//     if(selected_place_types.length>0)
+//     {console.log("selected place types",selected_place_types)}
+//     if(selected_property_types.length>0)
+//     {console.log("selected place types",selected_property_types)}
     
-    console.log("selecteds", selected_property_types)
+//     console.log("selecteds", selected_property_types)
+
+    console.log("amenities", selected_amenities)
+
+
     useEffect(()=>{        
 
     },[]);
@@ -83,7 +88,10 @@ const Filters = ({setShow}) => {
                             selected_property_types={selected_property_types}
                             setSelectedPropertytypes={setSelectedPropertytypes}
                             />
-                            <Amenities/>
+                            <Amenities
+                            selected_amenities={selected_amenities}
+                            setSelectedAmenities={setSelectedAmenities}
+                            />
                             <Bookingoptions/>
                             <Accessibility/>
                             <Toptier/>
