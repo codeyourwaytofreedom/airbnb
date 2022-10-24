@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-const Propertytype = ({ 
-                    }) => {
+const Propertytype = () => {
 
     const[type_house, addTypeHouse] = useState(false);
     const[type_flat, addTypeFlat] = useState(false);

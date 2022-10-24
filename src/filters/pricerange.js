@@ -1,9 +1,7 @@
-import {repetition_array, min, max, av, test} from "../test/test";
-import { useEffect, useRef, useState } from "react";
+import {repetition_array, min, max, av} from "../test/test";
+import { useState } from "react";
 
-const Pricerange = ({
-
-                }) => {
+const Pricerange = () => {
     
     const [pricemin, setPricemin] = useState(min);
     const [pricemax, setPricemax] = useState(max);

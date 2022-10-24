@@ -1,13 +1,6 @@
-import { useState } from "react";
-import {test} from "../test/test";
-import { useSelector,useDispatch } from 'react-redux';
-import { add_filter_by_rooms, add_filter_by_beds,add_filter_by_bathrooms } from "../redux/rooms_slider";
-
 
 const Roomsbeds = ({setRoom,setBeds,setBathrooms}) => {
     
-    const rooms_beds_filters = useSelector((state) => state.roomsSlice.value)
-    const dispatch = useDispatch()
 
     const filter_by_numbers = (e) => {
         if(e.target.name ==="numberofrooms")

@@ -1,22 +1,17 @@
 import {test} from "../test/test";
 
 const options = [];
-const Type = ({setShadow}) => {
+const Type = ({setSelectedtypes, selected_property_types}) => {
 
     const filter_by_type = (e) => {
         if(e.target.checked)
         {
-            options.push(e.target.value)
-            setShadow(test.filter(property => options.includes(property.type)));
-            console.log("checked",options)
+            if(!selected_property_types.includes(e.target.value))
+            {setSelectedtypes([...selected_property_types, e.target.value])}
         }
-        else
+        if(!e.target.checked)
         {
-            const position = options.indexOf(e.target.value);
-            options.splice(position,1)
-            setShadow(test.filter(property => options.includes(property.type)));
-            console.log("unchecked",options)
-
+            setSelectedtypes(selected_property_types.filter(type => type!= e.target.value))
         }
 
     }

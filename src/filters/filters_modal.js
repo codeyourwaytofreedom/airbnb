@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./filters.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
-import {repetition_array, min, max, av, test} from "../test/test";
+import {test} from "../test/test";
 import Propertytype from "./propertytype";
 import Roomsbeds from "./roomsbeds";
 import Type from "./type";
@@ -20,10 +20,13 @@ const Filters = ({setShow}) => {
     const[number_of_rooms, setRoom] = useState(null);
     const[number_of_beds, setBeds] = useState(null);
     const[number_of_bathrooms, setBathrooms] = useState(null);
+    const [selected_property_types, setSelectedtypes] = useState([]);
+    
+    // console.log("number_of_rooms",number_of_rooms);
+    // console.log("number_of_beds",number_of_beds);
+    // console.log("number_of_bathrooms",number_of_bathrooms);
 
-    console.log("number_of_rooms",number_of_rooms);
-    console.log("number_of_beds",number_of_beds);
-    console.log("number_of_bathrooms",number_of_bathrooms);
+    console.log(selected_property_types)
     
     useEffect(()=>{        
 
@@ -58,7 +61,10 @@ const Filters = ({setShow}) => {
                     <div className="panel_shell_options">
 
                             <Pricerange/>
-                            <Type shadow={shadow} setShadow={setShadow}></Type>
+                            <Type shadow={shadow} setShadow={setShadow}
+                            setSelectedtypes={setSelectedtypes}
+                            selected_property_types={selected_property_types}
+                            ></Type>
 
                             <Roomsbeds shadow={shadow} setShadow={setShadow}
                             number_of_rooms={number_of_rooms}
