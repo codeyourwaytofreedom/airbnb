@@ -1,35 +1,19 @@
 import { useState } from "react";
 
-const Propertytype = () => {
+const Propertytype = ({setSelectedPropertytypes,selected_property_types}) => {
 
-    const[type_house, addTypeHouse] = useState(false);
-    const[type_flat, addTypeFlat] = useState(false);
-    const[type_ghouse, addTypeGhouse] = useState(false);
-    const[type_hotel, addTypeHotel] = useState(false);
 
-    const handle_house_type = () => {
-        if(type_house===false)
-        {addTypeHouse(true)}
-        else{addTypeHouse(false)}
+
+    const handle_property_type = (e) => {
+
+            if(!selected_property_types.includes(e.currentTarget.value))
+            {setSelectedPropertytypes([...selected_property_types,e.currentTarget.value])}
+        
+            else{
+            setSelectedPropertytypes(selected_property_types.filter(type=> type!=e.currentTarget.value))
+            }
     }
 
-    const handle_flat_type = () => {
-        if(type_flat===false)
-        {addTypeFlat(true)}
-        else{addTypeFlat(false)}
-    }
-
-    const handle_ghouse_type = () => {
-        if(type_ghouse===false)
-        {addTypeGhouse(true)}
-        else{addTypeGhouse(false)}
-    }
-
-    const handle_hotel_type = () => {
-        if(type_hotel===false)
-        {addTypeHotel(true)}
-        else{addTypeHotel(false)}
-    }                  
     return ( 
         <div className="panel_shell_options--propertytype">
                                 <h2>Property type</h2>
@@ -37,14 +21,15 @@ const Propertytype = () => {
                                 <div className="four_types">
                                     <div className="button_capsule">
                                         <button 
-                                        onClick={handle_house_type} 
+                                        value={"house"}
+                                        onClick={(e)=>handle_property_type(e)}
                                         className="house_type_button"
-                                        style={{border: type_house ? "2px solid black" 
+                                        style={{border: selected_property_types.includes("house") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: type_house ? "rgb(245,245,245)" :
+                                                backgroundColor: selected_property_types.includes("house") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
-                                            <div className="img_in_button">
+                                            <div className="img_in_button" value={"house"}>
                                                 <img src={require("../images/house.jpg")} alt="a" />
                                             </div>
                                             <div className="text_in_button">
@@ -55,11 +40,12 @@ const Propertytype = () => {
                                     
                                     <div className="button_capsule">
                                         <button 
-                                        onClick={handle_flat_type} 
+                                        value={"flat"}
+                                        onClick={(e)=>handle_property_type(e)}
                                         className="flat_type_button"
-                                        style={{border: type_flat ? "2px solid black" 
+                                        style={{border: selected_property_types.includes("flat") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: type_flat ? "rgb(245,245,245)" :
+                                                backgroundColor: selected_property_types.includes("flat") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
@@ -73,11 +59,12 @@ const Propertytype = () => {
 
                                     <div className="button_capsule">
                                         <button 
-                                        onClick={handle_ghouse_type} 
+                                        value={"guesthouse"}
+                                        onClick={(e)=>handle_property_type(e)}
                                         className="ghouse_type_button"
-                                        style={{border: type_ghouse ? "2px solid black" 
+                                        style={{border: selected_property_types.includes("guesthouse") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: type_ghouse ? "rgb(245,245,245)" :
+                                                backgroundColor: selected_property_types.includes("guesthouse") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
@@ -91,11 +78,12 @@ const Propertytype = () => {
 
                                     <div className="button_capsule">
                                         <button 
-                                        onClick={handle_hotel_type} 
+                                        value={"hotel"}
+                                        onClick={(e)=>handle_property_type(e)} 
                                         className="hotel_type_button"
-                                        style={{border: type_hotel ? "2px solid black" 
+                                        style={{border: selected_property_types.includes("hotel") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: type_hotel ? "rgb(245,245,245)" :
+                                                backgroundColor: selected_property_types.includes("hotel") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">

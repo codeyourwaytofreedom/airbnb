@@ -39,8 +39,6 @@ const create_test_array = () =>{
             pro.numberofrooms=numberofrooms;
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
-            console.log(typeof(pro), pro)
-
             price_array.push(pro); 
         }
         for(var i=0; i<100; i++)
@@ -76,11 +74,8 @@ const create_test_array = () =>{
             pro.numberofrooms=numberofrooms;
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
-            console.log(typeof(pro), pro)
-
             price_array.push(pro); 
             }
-        console.log(price_array)
 
     return price_array;
 } 

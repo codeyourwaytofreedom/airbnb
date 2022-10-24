@@ -1,19 +1,17 @@
 import {test} from "../test/test";
 
-const options = [];
-const Type = ({setSelectedtypes, selected_property_types}) => {
+const Type = ({setSelectedPlacetypes, selected_place_types}) => {
 
     const filter_by_type = (e) => {
         if(e.target.checked)
         {
-            if(!selected_property_types.includes(e.target.value))
-            {setSelectedtypes([...selected_property_types, e.target.value])}
+            if(!selected_place_types.includes(e.target.value))
+            {setSelectedPlacetypes([...selected_place_types, e.target.value])}
         }
         if(!e.target.checked)
         {
-            setSelectedtypes(selected_property_types.filter(type => type!= e.target.value))
+            setSelectedPlacetypes(selected_place_types.filter(type => type!= e.target.value))
         }
-
     }
     
     return ( 

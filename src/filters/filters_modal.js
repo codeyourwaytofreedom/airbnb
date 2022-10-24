@@ -20,14 +20,21 @@ const Filters = ({setShow}) => {
     const[number_of_rooms, setRoom] = useState(null);
     const[number_of_beds, setBeds] = useState(null);
     const[number_of_bathrooms, setBathrooms] = useState(null);
-    const [selected_property_types, setSelectedtypes] = useState([]);
+    const [selected_place_types, setSelectedPlacetypes] = useState([]);
+    const [selected_property_types, setSelectedPropertytypes] = useState([]);
     
-    // console.log("number_of_rooms",number_of_rooms);
-    // console.log("number_of_beds",number_of_beds);
-    // console.log("number_of_bathrooms",number_of_bathrooms);
-
-    console.log(selected_property_types)
+    if(number_of_rooms)
+   { console.log("number_of_rooms",number_of_rooms);}
+   if(number_of_beds)
+    {console.log("number_of_beds",number_of_beds);}
+    if(number_of_bathrooms)
+    {console.log("number_of_bathrooms",number_of_bathrooms);}
+    if(selected_place_types.length>0)
+    {console.log("selected place types",selected_place_types)}
+    if(selected_property_types.length>0)
+    {console.log("selected place types",selected_property_types)}
     
+    console.log("selecteds", selected_property_types)
     useEffect(()=>{        
 
     },[]);
@@ -62,8 +69,8 @@ const Filters = ({setShow}) => {
 
                             <Pricerange/>
                             <Type shadow={shadow} setShadow={setShadow}
-                            setSelectedtypes={setSelectedtypes}
-                            selected_property_types={selected_property_types}
+                            setSelectedPlacetypes={setSelectedPlacetypes}
+                            selected_place_types={selected_place_types}
                             ></Type>
 
                             <Roomsbeds shadow={shadow} setShadow={setShadow}
@@ -72,7 +79,10 @@ const Filters = ({setShow}) => {
                             setBeds={setBeds}
                             setBathrooms={setBathrooms}
                             />
-                            <Propertytype/>
+                            <Propertytype
+                            selected_property_types={selected_property_types}
+                            setSelectedPropertytypes={setSelectedPropertytypes}
+                            />
                             <Amenities/>
                             <Bookingoptions/>
                             <Accessibility/>
