@@ -1,14 +1,36 @@
+import { useState } from "react";
 
-const Propertytype = ({ handle_house_type, 
-                        handle_flat_type, 
-                        handle_ghouse_type, 
-                        handle_hotel_type,
-                        type_flat,
-                        type_ghouse,
-                        type_hotel,
-                        type_house
+const Propertytype = ({ 
                     }) => {
 
+    const[type_house, addTypeHouse] = useState(false);
+    const[type_flat, addTypeFlat] = useState(false);
+    const[type_ghouse, addTypeGhouse] = useState(false);
+    const[type_hotel, addTypeHotel] = useState(false);
+
+    const handle_house_type = () => {
+        if(type_house===false)
+        {addTypeHouse(true)}
+        else{addTypeHouse(false)}
+    }
+
+    const handle_flat_type = () => {
+        if(type_flat===false)
+        {addTypeFlat(true)}
+        else{addTypeFlat(false)}
+    }
+
+    const handle_ghouse_type = () => {
+        if(type_ghouse===false)
+        {addTypeGhouse(true)}
+        else{addTypeGhouse(false)}
+    }
+
+    const handle_hotel_type = () => {
+        if(type_hotel===false)
+        {addTypeHotel(true)}
+        else{addTypeHotel(false)}
+    }                  
     return ( 
         <div className="panel_shell_options--propertytype">
                                 <h2>Property type</h2>

@@ -1,8 +1,36 @@
-const Pricerange = ({av, repetition_array, min, 
-                    max, pricemin, pricemax,
-                    handle_input_min, handle_input_max,
-                    handle_price_min, handle_price_max
+import {repetition_array, min, max, av, test} from "../test/test";
+import { useEffect, useRef, useState } from "react";
+
+const Pricerange = ({
+
                 }) => {
+    
+    const [pricemin, setPricemin] = useState(min);
+    const [pricemax, setPricemax] = useState(max);
+    let gap = 10;
+    const handle_price_min = (event) => {
+        setPricemin(event.target.value)
+    }
+
+    const handle_price_max = (event) => {
+        setPricemax(event.target.value)
+    }
+
+    const handle_input_min = (event) => {
+        if(pricemax- event.target.value < gap) 
+        {event.target.value=pricemin}
+    }
+
+    const handle_input_max = (event) => {
+        console.log(event.target.value)
+        if(event.target.value-pricemin < gap)
+        {
+            console.log("must stop here");
+            console.log(pricemax)
+            event.target.value = pricemax;
+        }
+
+    }
     return ( 
 
         <div className="panel_shell_options--priceRange">

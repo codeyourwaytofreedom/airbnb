@@ -12,80 +12,25 @@ import Bookingoptions from "./bookingoptions";
 import Accessibility from "./accessibility";
 import Toptier from "./toptier";
 import Hostlanguage from "./hostlanguage";
-import { useSelector,useDispatch } from 'react-redux';
 
 
 
 const Filters = ({setShow}) => {
-    const nu_room = useSelector((state) => state.roomsSlice.nu_room)
-    const nu_beds = useSelector((state) => state.roomsSlice.nu_beds)
-    const nu_bathrooms = useSelector((state) => state.roomsSlice.nu_bathrooms)
-
-
-    console.log("nu_room",nu_room)
-    console.log("nu_beds",nu_beds)
-    console.log("nu_bathrooms",nu_bathrooms)
     
+    const[number_of_rooms, setRoom] = useState(null);
+    const[number_of_beds, setBeds] = useState(null);
+    const[number_of_bathrooms, setBathrooms] = useState(null);
+
+    console.log("number_of_rooms",number_of_rooms);
+    console.log("number_of_beds",number_of_beds);
+    console.log("number_of_bathrooms",number_of_bathrooms);
     
+    useEffect(()=>{        
+
+    },[]);
+    
+
     const core = useRef();
-    const[type_house, addTypeHouse] = useState(false);
-    const[type_flat, addTypeFlat] = useState(false);
-    const[type_ghouse, addTypeGhouse] = useState(false);
-    const[type_hotel, addTypeHotel] = useState(false);
-
-
-    const [pricemin, setPricemin] = useState(min);
-    const [pricemax, setPricemax] = useState(max);
-    let gap = 10;
-
-
-    const handle_price_min = (event) => {
-        setPricemin(event.target.value)
-    }
-
-    const handle_price_max = (event) => {
-        setPricemax(event.target.value)
-    }
-
-    const handle_input_min = (event) => {
-        if(pricemax- event.target.value < gap) 
-        {event.target.value=pricemin}
-    }
-
-    const handle_input_max = (event) => {
-        console.log(event.target.value)
-        if(event.target.value-pricemin < gap)
-        {
-            console.log("must stop here");
-            console.log(pricemax)
-            event.target.value = pricemax;
-        }
-
-    }
-
-    const handle_house_type = () => {
-        if(type_house===false)
-        {addTypeHouse(true)}
-        else{addTypeHouse(false)}
-    }
-
-    const handle_flat_type = () => {
-        if(type_flat===false)
-        {addTypeFlat(true)}
-        else{addTypeFlat(false)}
-    }
-
-    const handle_ghouse_type = () => {
-        if(type_ghouse===false)
-        {addTypeGhouse(true)}
-        else{addTypeGhouse(false)}
-    }
-
-    const handle_hotel_type = () => {
-        if(type_hotel===false)
-        {addTypeHotel(true)}
-        else{addTypeHotel(false)}
-    }
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -96,7 +41,6 @@ const Filters = ({setShow}) => {
 
     },[]);
 
-    const [filters_in_place, setFilters] = useState(null);    
 
     const [shadow, setShadow] = useState(test);
     
@@ -113,33 +57,16 @@ const Filters = ({setShow}) => {
                     </div>
                     <div className="panel_shell_options">
 
-                            <Pricerange
-                                av={av}
-                                repetition_array={repetition_array}
-                                min={min}
-                                max={max}
-                                pricemin={pricemin}
-                                pricemax={pricemax}
-                                handle_input_min={handle_input_min}
-                                handle_input_max={handle_input_max}
-                                handle_price_min={handle_price_min}
-                                handle_price_max={handle_price_max}
-                            />
+                            <Pricerange/>
                             <Type shadow={shadow} setShadow={setShadow}></Type>
+
                             <Roomsbeds shadow={shadow} setShadow={setShadow}
-                            filters_in_place={filters_in_place}
-                            setFilters={setFilters}
+                            number_of_rooms={number_of_rooms}
+                            setRoom={setRoom}
+                            setBeds={setBeds}
+                            setBathrooms={setBathrooms}
                             />
-                            <Propertytype 
-                                handle_hotel_type={handle_hotel_type}
-                                handle_flat_type={handle_flat_type}
-                                handle_ghouse_type={handle_ghouse_type}
-                                handle_house_type={handle_house_type}
-                                type_flat={type_flat}
-                                type_house={type_house}
-                                type_ghouse={type_ghouse}
-                                type_hotel={type_hotel}
-                            />
+                            <Propertytype/>
                             <Amenities/>
                             <Bookingoptions/>
                             <Accessibility/>
