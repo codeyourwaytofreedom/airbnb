@@ -25,7 +25,6 @@ const Filters = ({setShow}) => {
     const[selected_amenities, setSelectedAmenities] = useState([]);
 
     const [shadow, setShadow] = useState(test);
-    const neww = test;
 
 
     useEffect(()=>{    
@@ -35,6 +34,7 @@ const Filters = ({setShow}) => {
             let eligible_by_room = true;
             let eligible_by_beds = true;
             let eligible_by_bathrooms = true;
+            let eligible_by_place_type = true;
 
             if(number_of_rooms && property.numberofrooms !== parseInt(number_of_rooms))
             {
@@ -48,15 +48,20 @@ const Filters = ({setShow}) => {
             {
                 eligible_by_bathrooms= false;
             }
-            if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms)
+            if(selected_place_types.length>0 && !selected_place_types.includes(property.type))
+            {eligible_by_place_type=false}
+
+            if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms && eligible_by_place_type)
             {filtered_properties.push(property)}
+            
         });
         setShadow(filtered_properties)
+        console.log(filtered_properties)
 
 
         
         
-    },[number_of_rooms,number_of_beds,number_of_bathrooms]);
+    },[number_of_rooms,number_of_beds,number_of_bathrooms, selected_place_types]);
     
 
     const core = useRef();
