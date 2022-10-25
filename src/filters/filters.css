@@ -271,7 +271,7 @@
 .panel_shell_options--roombed #number input[type=radio]:after {
   border: 1px solid black;
   height: 40px;
-  width: 60px;
+  width: 62px;
   border-radius: 25px;
   cursor: pointer;
   background-color: black;
@@ -305,13 +305,14 @@
   font-size: 14px;
 }
 .panel_shell_options--roombed #number #any {
-  width: 80px;
+  width: 70px;
 }
 .panel_shell_options--roombed #number #any_radiobutton:after {
-  width: 80px;
+  width: 70px;
+  left: -3px;
 }
 .panel_shell_options--roombed #number #any_span {
-  left: 25px;
+  left: 20px;
 }
 .panel_shell_options--propertytype {
   padding: 25px 0;

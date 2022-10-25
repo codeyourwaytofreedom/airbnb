@@ -275,7 +275,7 @@
                         input[type="radio"]:after{
                             border: 1px solid black;
                             height: 40px;
-                            width: 60px;
+                            width: 62px;
                             border-radius: 25px;
                             cursor: pointer;
                             background-color: black;
@@ -306,13 +306,14 @@
                             }
                         }
                         #any{
-                            width: 80px;
+                            width: 70px;
                         }
                         #any_radiobutton:after{
-                            width: 80px;
+                            width: 70px;
+                            left:-3px;
                         }
                         #any_span{
-                            left:25px;
+                            left:20px;
                         }
                     }
 

@@ -5,15 +5,20 @@ import { useSelector } from "react-redux";
 import { test } from "../test/test";
 
 const Content = () => {
+    const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
+    const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
+    const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
 
-    // const filtered_items = useSelector(state=> state.filteredItemsSlice.filtered_properties)
-    // console.log("from content component", filtered_items)
 
+
+
+
+    
     return ( 
         <div className="content">
 
-            {   
-                test.map(
+            {/* {   
+                 test.map(
                     element => 
                         <Carousel
                             images={element.images}
@@ -22,9 +27,12 @@ const Content = () => {
                             dates={"ddd"}
                             total={"530"}
                         />
-                )
-            }
-            
+                ) 
+            } */}
+
+            {"Rooms: "+number_of_rooms} <br></br>
+            {"Beds: "+ number_of_beds}  <br></br>
+            {"Bathrooms: "+number_of_bathrooms}  <br></br>
         </div>
      );
 }

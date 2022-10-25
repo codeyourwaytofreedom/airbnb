@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  nu_room:null,
-  nu_beds:null,
-  nu_bathrooms:null
+  nu_room:0,
+  nu_beds:0,
+  nu_bathrooms:0,
 }
 
 export const roomsSlice = createSlice({

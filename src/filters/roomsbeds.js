@@ -1,19 +1,21 @@
+import { useDispatch } from "react-redux";
+import { add_filter_by_rooms, add_filter_by_beds, add_filter_by_bathrooms } from "../redux/rooms_slider";
 
-const Roomsbeds = ({setRoom,setBeds,setBathrooms}) => {
-    
-
+const Roomsbeds = () => {
+    const dispatch = useDispatch();
     const filter_by_numbers = (e) => {
         if(e.target.name ==="numberofrooms")
         {
-            setRoom(e.target.value)
+            dispatch(add_filter_by_rooms(e.target.value))
+
         }
         if(e.target.name ==="numberofbeds")
         {
-            setBeds(e.target.value)
+            dispatch(add_filter_by_beds(e.target.value))
         }
         if(e.target.name ==="numberofbathrooms")
         {
-            setBathrooms(e.target.value)
+            dispatch(add_filter_by_bathrooms(e.target.value))
         } 
 
 

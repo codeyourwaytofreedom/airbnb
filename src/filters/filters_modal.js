@@ -17,22 +17,20 @@ import { updated_filtered_items } from "../redux/filteredItemsSlice";
 
 const Filters = ({setShow}) => {
     
-    const[number_of_rooms, setRoom] = useState(null);
-    const[number_of_beds, setBeds] = useState(null);
-    const[number_of_bathrooms, setBathrooms] = useState(null);
     const [selected_place_types, setSelectedPlacetypes] = useState([]);
     const [selected_property_types, setSelectedPropertytypes] = useState([]);
     const[selected_amenities, setSelectedAmenities] = useState([]);
 
+    const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
+    const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
+    const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
+
+
     const [shadow, setShadow] = useState(test);
 
-    // const filtered_items = useSelector(state => state.filteredItemsSlice.filtered_properties)
-    const dispatch = useDispatch();
-
-    // console.log(filtered_items, "coming from redux")
+    const filtered_properties = [];
 
     useEffect(()=>{    
-        const filtered_properties = [];
 
         test.forEach(property => {
             let eligible_by_room = true;
@@ -65,7 +63,6 @@ const Filters = ({setShow}) => {
             
         });
         setShadow(filtered_properties)
-        dispatch(updated_filtered_items(filtered_properties))
 
 
         
@@ -84,6 +81,9 @@ const Filters = ({setShow}) => {
 
     },[]);
 
+    const handle_show = () => {
+        setShow(false)
+    }
 
    
     
@@ -106,12 +106,7 @@ const Filters = ({setShow}) => {
                             selected_place_types={selected_place_types}
                             ></Type>
 
-                            <Roomsbeds shadow={shadow} setShadow={setShadow}
-                            number_of_rooms={number_of_rooms}
-                            setRoom={setRoom}
-                            setBeds={setBeds}
-                            setBathrooms={setBathrooms}
-                            />
+                            <Roomsbeds/>
                             <Propertytype
                             selected_property_types={selected_property_types}
                             setSelectedPropertytypes={setSelectedPropertytypes}
@@ -129,7 +124,9 @@ const Filters = ({setShow}) => {
                         <div> 
                             
                             <button className="clear_all"><b><u>Clear all</u> </b>  </button>
-                            <button className="show_options"><b>Show {shadow.length} homes </b>  </button>
+                            <button 
+                            onClick={handle_show}
+                            className="show_options"><b>Show {shadow.length} homes </b>  </button>
                         </div>
                     </div>
                     
