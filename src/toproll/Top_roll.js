@@ -28,35 +28,8 @@ const Top_roll = () => {
         let last_2_elements = copy_array.slice(n-2, n);
         let remaining_elements = copy_array.slice(0, n-2);
         setCopy([ ...last_2_elements, ...remaining_elements]);
-        }
-
-        // const screen_operations = () => {
-        //     setWchange(0);
-        //     console.log(window.innerWidth-screen_wid)
-        //     setWchange(window.innerWidth-screen_wid);
-        //     setWidth(window.innerWidth);
-        //     setChange(parseInt(window.innerWidth*0.75/100)-hm);
-        //     setHM(parseInt(window.innerWidth*0.75/100));
-        //     console.log(times_clicked, "kez basildi");
-            
-        //     if(parseInt(window.innerWidth*0.75/100)+times_clicked-23>0)
-        //     {
-        //         console.log("geçti",parseInt(window.innerWidth*0.75/100)+times_clicked-23);
-        //         moveElementsTobeginningofArray();
-        //     };           
-
-        // }
-
-
-
-        // useEffect(() => {
-        //     window.addEventListener('resize', screen_operations);
-        //   }, []);
+        }    
         
-        
-
-
-    
     const handle_index_left = () => {
         moveElementsTobeginningofArray();
         // setClick(times_clicked-1);

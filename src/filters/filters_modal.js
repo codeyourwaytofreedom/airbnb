@@ -12,8 +12,8 @@ import Bookingoptions from "./bookingoptions";
 import Accessibility from "./accessibility";
 import Toptier from "./toptier";
 import Hostlanguage from "./hostlanguage";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { updated_filtered_items } from "../redux/filteredItemsSlice";
 
 const Filters = ({setShow}) => {
     
@@ -26,6 +26,9 @@ const Filters = ({setShow}) => {
 
     const [shadow, setShadow] = useState(test);
 
+    const filtered_items = useSelector(state => state.filteredItemsSlice.filtered_properties)
+    const dispatch = useDispatch();
+    console.log(filtered_items, "coming from redux")
 
     useEffect(()=>{    
         const filtered_properties = [];
@@ -61,7 +64,7 @@ const Filters = ({setShow}) => {
             
         });
         setShadow(filtered_properties)
-        console.log(filtered_properties)
+        dispatch(updated_filtered_items(filtered_properties))
 
 
         
