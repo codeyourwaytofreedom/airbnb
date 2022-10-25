@@ -17,7 +17,7 @@ import Hostlanguage from "./hostlanguage";
 
 const Filters = ({setShow}) => {
     
-    // const[number_of_rooms, setRoom] = useState(null);
+    const[number_of_rooms, setRoom] = useState(null);
     const[number_of_beds, setBeds] = useState(null);
     const[number_of_bathrooms, setBathrooms] = useState(null);
     const [selected_place_types, setSelectedPlacetypes] = useState([]);
@@ -25,15 +25,38 @@ const Filters = ({setShow}) => {
     const[selected_amenities, setSelectedAmenities] = useState([]);
 
     const [shadow, setShadow] = useState(test);
+    const neww = test;
 
-
-    const[number_of_rooms, setRoom] = useState(null);
 
     useEffect(()=>{    
+        const filtered_properties = [];
 
-        setShadow(test.filter(property => property.numberofrooms === parseInt(number_of_rooms)))
+        test.forEach(property => {
+            let eligible_by_room = true;
+            let eligible_by_beds = true;
+            let eligible_by_bathrooms = true;
+
+            if(number_of_rooms && property.numberofrooms !== parseInt(number_of_rooms))
+            {
+                eligible_by_room=false
+            }
+            if(number_of_beds && property.numberofbeds !== parseInt(number_of_beds))
+            {
+                eligible_by_beds=false;
+            }
+            if(number_of_bathrooms && property.numberofbathrooms !== parseInt(number_of_bathrooms))
+            {
+                eligible_by_bathrooms= false;
+            }
+            if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms)
+            {filtered_properties.push(property)}
+        });
+        setShadow(filtered_properties)
+
+
         
-    },[number_of_rooms]);
+        
+    },[number_of_rooms,number_of_beds,number_of_bathrooms]);
     
 
     const core = useRef();

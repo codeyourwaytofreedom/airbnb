@@ -30,7 +30,7 @@ const Roomsbeds = ({setRoom,setBeds,setBathrooms}) => {
                 <label className="radio_button" id="any">
                     
                     <input type="radio" name="numberofrooms" id="any_radiobutton" 
-                    defaultChecked value={"any"} onInput={(e) => filter_by_numbers(e)}
+                    defaultChecked value={null} onInput={(e) => filter_by_numbers(e)}
                     />
                     <span id="any_span">Any</span>
                 </label>
@@ -96,7 +96,7 @@ const Roomsbeds = ({setRoom,setBeds,setBathrooms}) => {
             <div id="number">
             <label className="radio_button" id="any">
                     <input type="radio" name="numberofbeds" id="any_radiobutton" 
-                    defaultChecked value={"any"} onChange={(e) => filter_by_numbers(e)}
+                    defaultChecked value={null} onChange={(e) => filter_by_numbers(e)}
                     />
                     <span id="any_span">Any</span>
                 </label>
@@ -162,7 +162,7 @@ const Roomsbeds = ({setRoom,setBeds,setBathrooms}) => {
             <label className="radio_button" id="any">
                     
                     <input type="radio" name="numberofbathrooms" id="any_radiobutton" defaultChecked
-                    value={"any"} onChange={(e) => filter_by_numbers(e)}
+                    value={null} onChange={(e) => filter_by_numbers(e)}
                     />
                     <span id="any_span">Any</span>
                 </label>
