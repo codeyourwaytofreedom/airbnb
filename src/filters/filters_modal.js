@@ -17,7 +17,6 @@ import { updated_filtered_items } from "../redux/filteredItemsSlice";
 
 const Filters = ({setShow}) => {
     
-    const [selected_property_types, setSelectedPropertytypes] = useState([]);
     const[selected_amenities, setSelectedAmenities] = useState([]);
 
     const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
@@ -25,7 +24,7 @@ const Filters = ({setShow}) => {
     const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
 
     const selected_place_types = useSelector(state => state.placeTypeSlice.selected_place_types);
-
+    const selected_property_types = useSelector(state => state.propertyTypeSlice.selected_property_types);
 
     const [shadow, setShadow] = useState(test);
 
@@ -63,15 +62,20 @@ const Filters = ({setShow}) => {
                 if (!arr.includes(property.type))
                 {eligible_by_place_type=false}
             }
+
+
+            if(selected_property_types.length>0)
+            {
+                const arr = [];
+                selected_property_types.forEach(element => {
+                    arr.push(element.payload)
+                });
+                if (!arr.includes(property.propertytype))
+                {eligible_by_property_type=false}
+            }
             
 
 
-
-            // if(selected_place_types.length>0 && !selected_place_types.includes(property.type))
-            // {eligible_by_place_type=false}
-
-            if(selected_property_types.length>0 && !selected_property_types.includes(property.propertytype))
-            {eligible_by_property_type=false}
 
 
             if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms 
@@ -122,13 +126,8 @@ const Filters = ({setShow}) => {
                             ></Type>
 
                             <Roomsbeds/>
-                            <Propertytype
-                            selected_property_types={selected_property_types}
-                            setSelectedPropertytypes={setSelectedPropertytypes}
-                            />
+                            <Propertytype/>
                             <Amenities
-                            selected_amenities={selected_amenities}
-                            setSelectedAmenities={setSelectedAmenities}
                             />
                             <Bookingoptions/>
                             <Accessibility/>

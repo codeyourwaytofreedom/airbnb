@@ -1,17 +1,34 @@
-import { useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { add_property_type, remove_property_type } from "../redux/propertyTypeSlice";
 
-const Propertytype = ({setSelectedPropertytypes,selected_property_types}) => {
+const Propertytype = () => {
 
+    const selected_property_types = useSelector(state => state.propertyTypeSlice.selected_property_types);
 
+    const dispatch = useDispatch();
 
     const handle_property_type = (e) => {
 
-            if(!selected_property_types.includes(e.currentTarget.value))
-            {setSelectedPropertytypes([...selected_property_types,e.currentTarget.value])}
+
+    const arr = [];
+    selected_property_types.forEach(element => {
+        arr.push(element.payload)
+    });
+    if (!arr.includes(e.currentTarget.value))
+
+    {dispatch(add_property_type(e.currentTarget.value))}
+
+    else{
+        dispatch(remove_property_type(e.currentTarget.value))
+    }
+            
+
+            // if(!selected_property_types.includes(e.currentTarget.value))
+            // {setSelectedPropertytypes([...selected_property_types,e.currentTarget.value])}
         
-            else{
-            setSelectedPropertytypes(selected_property_types.filter(type=> type!=e.currentTarget.value))
-            }
+            // else{
+            // setSelectedPropertytypes(selected_property_types.filter(type=> type!=e.currentTarget.value))
+            // }
     }
 
     return ( 
