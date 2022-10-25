@@ -18,20 +18,24 @@ const create_test_array = () =>{
                 type: "place",
                 numberofrooms:0,
                 numberofbeds:0,
-                numberofbathrooms:0
+                numberofbathrooms:0,
+                propertytype:"type"
                 };
               
 
         const price_array = [];
 
+        const types = ["entire place", "private room", "shared room"];
+        const proptypes = ["house", "flat", "hotel", "guesthouse"];
+
         for(var i=0; i<500; i++)
         {
-            const types = ["entire place", "private room", "shared room"]
             let price = randomNumberInRange(9,90);
             let type = types[randomNumberInRange(0,2)]
             let numberofrooms = randomNumberInRange(1,8)
             let numberofbeds = randomNumberInRange(1,8)
             let numberofbathrooms = randomNumberInRange(1,8)
+            let propertytype = proptypes[randomNumberInRange(0,3)]
 
             const pro = Object.create(property);
             pro.price= price;
@@ -39,16 +43,18 @@ const create_test_array = () =>{
             pro.numberofrooms=numberofrooms;
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
+            pro.propertytype = propertytype;
             price_array.push(pro); 
         }
         for(var i=0; i<100; i++)
         {
-            const types = ["entire place", "private room", "shared room"]
             let price = randomNumberInRange(90,140);
             let type = types[randomNumberInRange(0,2)]
             let numberofrooms = randomNumberInRange(1,8)
             let numberofbeds = randomNumberInRange(1,8)
             let numberofbathrooms = randomNumberInRange(1,8)
+            let propertytype = proptypes[randomNumberInRange(0,3)]
+
 
             const pro = Object.create(property);
             pro.price= price;
@@ -56,17 +62,18 @@ const create_test_array = () =>{
             pro.numberofrooms=numberofrooms;
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
+            pro.propertytype = propertytype;
 
             price_array.push(pro); 
         }
         for(var i=0; i<20; i++)
         {
-            const types = ["entire place", "private room", "shared room"]
             let price = randomNumberInRange(200,800);
             let type = types[randomNumberInRange(0,2)]
             let numberofrooms = randomNumberInRange(1,8)
             let numberofbeds = randomNumberInRange(1,8)
             let numberofbathrooms = randomNumberInRange(1,8)
+            let propertytype = proptypes[randomNumberInRange(0,3)]
 
             const pro = Object.create(property);
             pro.price= price;
@@ -74,6 +81,7 @@ const create_test_array = () =>{
             pro.numberofrooms=numberofrooms;
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
+            pro.propertytype = propertytype;
             price_array.push(pro); 
             }
 

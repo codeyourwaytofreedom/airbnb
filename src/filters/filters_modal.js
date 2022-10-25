@@ -35,6 +35,7 @@ const Filters = ({setShow}) => {
             let eligible_by_beds = true;
             let eligible_by_bathrooms = true;
             let eligible_by_place_type = true;
+            let eligible_by_property_type = true;
 
             if(number_of_rooms && property.numberofrooms !== parseInt(number_of_rooms))
             {
@@ -50,8 +51,12 @@ const Filters = ({setShow}) => {
             }
             if(selected_place_types.length>0 && !selected_place_types.includes(property.type))
             {eligible_by_place_type=false}
+            if(selected_property_types.length>0 && !selected_property_types.includes(property.propertytype))
+            {eligible_by_property_type=false}
 
-            if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms && eligible_by_place_type)
+
+            if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms 
+                && eligible_by_place_type && eligible_by_property_type)
             {filtered_properties.push(property)}
             
         });
@@ -61,7 +66,7 @@ const Filters = ({setShow}) => {
 
         
         
-    },[number_of_rooms,number_of_beds,number_of_bathrooms, selected_place_types]);
+    },[number_of_rooms,number_of_beds,number_of_bathrooms, selected_place_types, selected_property_types]);
     
 
     const core = useRef();
