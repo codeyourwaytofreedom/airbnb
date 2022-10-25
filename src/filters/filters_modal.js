@@ -17,13 +17,14 @@ import { updated_filtered_items } from "../redux/filteredItemsSlice";
 
 const Filters = ({setShow}) => {
     
-    const [selected_place_types, setSelectedPlacetypes] = useState([]);
     const [selected_property_types, setSelectedPropertytypes] = useState([]);
     const[selected_amenities, setSelectedAmenities] = useState([]);
 
     const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
     const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
     const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
+
+    const selected_place_types = useSelector(state => state.placeTypeSlice.selected_place_types);
 
 
     const [shadow, setShadow] = useState(test);
@@ -51,8 +52,24 @@ const Filters = ({setShow}) => {
             {
                 eligible_by_bathrooms= false;
             }
-            if(selected_place_types.length>0 && !selected_place_types.includes(property.type))
-            {eligible_by_place_type=false}
+
+
+            if(selected_place_types.length>0)
+            {
+                const arr = [];
+                selected_place_types.forEach(element => {
+                    arr.push(element.payload)
+                });
+                if (!arr.includes(property.type))
+                {eligible_by_place_type=false}
+            }
+            
+
+
+
+            // if(selected_place_types.length>0 && !selected_place_types.includes(property.type))
+            // {eligible_by_place_type=false}
+
             if(selected_property_types.length>0 && !selected_property_types.includes(property.propertytype))
             {eligible_by_property_type=false}
 
@@ -102,8 +119,6 @@ const Filters = ({setShow}) => {
 
                             <Pricerange/>
                             <Type shadow={shadow} setShadow={setShadow}
-                            setSelectedPlacetypes={setSelectedPlacetypes}
-                            selected_place_types={selected_place_types}
                             ></Type>
 
                             <Roomsbeds/>

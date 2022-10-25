@@ -1,16 +1,20 @@
 import {test} from "../test/test";
+import { useDispatch, useSelector } from "react-redux";
+import { add_place_type, remove_place_type} from "../redux/placeTypeSlice";
 
-const Type = ({setSelectedPlacetypes, selected_place_types}) => {
+const Type = () => {
+    
+    const aa = useSelector(state => state.placeTypeSlice.selected_place_types);
+    const dispatch = useDispatch();
 
     const filter_by_type = (e) => {
         if(e.target.checked)
         {
-            if(!selected_place_types.includes(e.target.value))
-            {setSelectedPlacetypes([...selected_place_types, e.target.value])}
+            dispatch(add_place_type(e.target.value))
         }
         if(!e.target.checked)
         {
-            setSelectedPlacetypes(selected_place_types.filter(type => type!= e.target.value))
+            dispatch(remove_place_type(e.target.value))
         }
     }
     
