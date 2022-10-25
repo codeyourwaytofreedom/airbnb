@@ -5,28 +5,76 @@ const create_test_array = () =>{
             return Math.floor(Math.random() * (max - min + 1)) + min;
             }
 
-        // const property = (price, type, numberofrooms,numberofbeds, numberofbathrooms) => {
-        //     this.price = price;
-        //     this.type = type;
-        //     this.numberofrooms = numberofrooms;
-        //     this.numberofbeds = numberofbeds;
-        //     this.numberofbathrooms = numberofbathrooms;
-        //     }
 
-            const property = {
-                price: 0,
-                type: "place",
-                numberofrooms:0,
-                numberofbeds:0,
-                numberofbathrooms:0,
-                propertytype:"type"
-                };
+
+        const property = {
+            price: 0,
+            type: "place",
+            numberofrooms:0,
+            numberofbeds:0,
+            numberofbathrooms:0,
+            propertytype:"type",
+            images:[],
+            location:"location"
+            };
               
 
         const price_array = [];
-
+        const images = [
+            [
+                require("../images/property/property1/1.webp"),
+                require("../images/property/property1/2.webp"),
+                require("../images/property/property1/3.webp"),
+                require("../images/property/property1/4.webp"),
+                require("../images/property/property1/5.webp"),
+                require("../images/property/property1/6.webp"),
+                require("../images/property/property1/7.webp"),
+                require("../images/property/property1/8.webp"),
+                require("../images/property/property1/9.webp"),
+                require("../images/property/property1/10.webp")    
+            ],
+            [
+                require("../images/property/property2/1.webp"),
+                require("../images/property/property2/2.webp"),
+                require("../images/property/property2/3.webp"),
+                require("../images/property/property2/4.webp"),
+                require("../images/property/property2/5.webp"),
+                require("../images/property/property2/6.webp"),
+                require("../images/property/property2/7.webp"),
+                require("../images/property/property2/8.webp"),
+                require("../images/property/property2/9.webp"),
+                require("../images/property/property2/10.webp")    
+            ],
+            [
+                require("../images/property/property3/1.webp"),
+                require("../images/property/property3/2.webp"),
+                require("../images/property/property3/3.webp"),
+                require("../images/property/property3/4.webp"),
+                require("../images/property/property3/5.webp"),
+                require("../images/property/property3/6.webp"),
+                require("../images/property/property3/7.webp"),
+                require("../images/property/property3/8.webp"),
+                require("../images/property/property3/9.webp"),
+                require("../images/property/property3/10.webp")    
+            ],
+            [
+                require("../images/property/property4/1.webp"),
+                require("../images/property/property4/2.webp"),
+                require("../images/property/property4/3.webp"),
+                require("../images/property/property4/4.webp"),
+                require("../images/property/property4/5.webp"),
+                require("../images/property/property4/6.webp"),
+                require("../images/property/property4/7.webp"),
+                require("../images/property/property4/8.webp"),
+                require("../images/property/property4/9.webp"),
+                require("../images/property/property4/10.webp")    
+            ]
+        ]
         const types = ["entire place", "private room", "shared room"];
         const proptypes = ["house", "flat", "hotel", "guesthouse"];
+        const locations = ["Ankara", "Istanbul", "Konya", "Antalya","Yozgat","Mugla",
+                            "Bolu", "Edirne", "Manisa", "Denizli", "Amasya"
+                            ]
 
         for(var i=0; i<500; i++)
         {
@@ -36,6 +84,8 @@ const create_test_array = () =>{
             let numberofbeds = randomNumberInRange(1,8)
             let numberofbathrooms = randomNumberInRange(1,8)
             let propertytype = proptypes[randomNumberInRange(0,3)]
+            let imgs = images[randomNumberInRange(0,3)]
+            let location = locations[randomNumberInRange(0,10)]
 
             const pro = Object.create(property);
             pro.price= price;
@@ -44,6 +94,8 @@ const create_test_array = () =>{
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
             pro.propertytype = propertytype;
+            pro.images=imgs;
+            pro.location=location;
             price_array.push(pro); 
         }
         for(var i=0; i<100; i++)
@@ -54,6 +106,8 @@ const create_test_array = () =>{
             let numberofbeds = randomNumberInRange(1,8)
             let numberofbathrooms = randomNumberInRange(1,8)
             let propertytype = proptypes[randomNumberInRange(0,3)]
+            let imgs = images[randomNumberInRange(0,3)]
+            let location = locations[randomNumberInRange(0,10)]
 
 
             const pro = Object.create(property);
@@ -63,7 +117,8 @@ const create_test_array = () =>{
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
             pro.propertytype = propertytype;
-
+            pro.images=imgs
+            pro.location=location
             price_array.push(pro); 
         }
         for(var i=0; i<20; i++)
@@ -74,6 +129,8 @@ const create_test_array = () =>{
             let numberofbeds = randomNumberInRange(1,8)
             let numberofbathrooms = randomNumberInRange(1,8)
             let propertytype = proptypes[randomNumberInRange(0,3)]
+            let imgs = images[randomNumberInRange(0,3)]
+            let location = locations[randomNumberInRange(0,10)]
 
             const pro = Object.create(property);
             pro.price= price;
@@ -82,6 +139,8 @@ const create_test_array = () =>{
             pro.numberofbeds=numberofbeds;
             pro.numberofbathrooms=numberofbathrooms;
             pro.propertytype = propertytype;
+            pro.images=imgs
+            pro.location=location
             price_array.push(pro); 
             }
 

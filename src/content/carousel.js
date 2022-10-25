@@ -40,7 +40,7 @@ const Carousel = ({images, location, hosttype, dates, total}) => {
         <div className="property_details">
                 <div className="property_details_location">
                     <div className="property_details_location_loc">{location}</div>
-                    <div className="property_details_location_rating"><FontAwesomeIcon style={{color:"black"}} size={"xs"} icon={faStar}/> New</div>
+                    <div className="property_details_location_rating"><FontAwesomeIcon style={{color:"black"}} size={"xs"} icon={faStar}/> 4.5</div>
                 </div>
                 <div className="property_details_hosttype">{hosttype}</div>
                 <div className="property_details_date">{dates}</div>

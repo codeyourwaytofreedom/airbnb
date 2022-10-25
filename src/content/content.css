@@ -7,9 +7,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 20px 40px;
-}
-.content .property {
-  width: 280px;
+  row-gap: 30px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .content .property .property_image {
   position: relative;
@@ -21,7 +21,7 @@
 }
 .content .property .property_image img {
   width: 100%;
-  height: 280px;
+  height: 40vh;
   border-radius: 15px;
 }
 .content .property .property_image .back {

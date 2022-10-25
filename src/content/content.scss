@@ -13,17 +13,16 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding:20px 40px;
+    row-gap: 30px;
+    column-gap: 20px;
     .property{
-        // border: 2px solid black;
-        width: 280px;
-        // height: 360px;
         .property_image{
             position: relative;
             align-items: center;
             user-select: none;
             img{
                 width: 100%;
-                height: 280px;
+                height: 40vh;
                 border-radius: 15px;
             }
             .back{

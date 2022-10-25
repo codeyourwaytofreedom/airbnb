@@ -26,9 +26,10 @@ const Filters = ({setShow}) => {
 
     const [shadow, setShadow] = useState(test);
 
-    const filtered_items = useSelector(state => state.filteredItemsSlice.filtered_properties)
+    // const filtered_items = useSelector(state => state.filteredItemsSlice.filtered_properties)
     const dispatch = useDispatch();
-    console.log(filtered_items, "coming from redux")
+
+    // console.log(filtered_items, "coming from redux")
 
     useEffect(()=>{    
         const filtered_properties = [];
