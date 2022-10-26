@@ -13,12 +13,15 @@ import Accessibility from "./accessibility";
 import Toptier from "./toptier";
 import Hostlanguage from "./hostlanguage";
 import { useDispatch, useSelector } from "react-redux";
-import { updated_filtered_items } from "../redux/filteredItemsSlice";
-import { approve_filters } from "../redux/approveFiltersSlice";
+import { update_place_types } from "../redux/placeTypeSlice";
+
+
 const Filters = ({setShow}) => {
     
     const dispatch = useDispatch();
     const updated_number = useSelector(state=> state.filteredItemsSlice.filtered_properties)
+
+    const [place_type_filters, setPlaceTypeFilters] = useState(["entire place", "private room", "shared room"]);
 
     const core = useRef();
 
@@ -27,20 +30,18 @@ const Filters = ({setShow}) => {
                     if(!core.current.contains(event.target))
                     {
                         setShow(false)
-                        
-                    
                     }
         }
         document.addEventListener("mousedown", outside_core)
 
     },[]);
 
+
     const handle_show = () => {
         setShow(false)
-        dispatch(approve_filters())
+        // dispatch(update_place_types(place_type_filters))
     }
 
-   
     
     return ( 
 
@@ -56,7 +57,10 @@ const Filters = ({setShow}) => {
                     <div className="panel_shell_options">
 
                             <Pricerange/>
-                            <Type></Type>
+                            <Type
+                                place_type_filters = {place_type_filters}
+                                setPlaceTypeFilters = {setPlaceTypeFilters}
+                            />
                             <Roomsbeds/>
                             <Propertytype/>
                             <Amenities/>

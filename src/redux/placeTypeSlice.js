@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     selected_place_types:[],
-    type_entire:false,
-    type_private:false,
-    type_shared:false,
+    entire:"e",
+    priv:"p",
+    shared:"s"
   }
 
   export const placeTypeSlice = createSlice({
@@ -18,19 +18,22 @@ const initialState = {
             let index = state.selected_place_types.indexOf(payload)
             state.selected_place_types.splice(index,1)
           },
-        set_entire: (state, payload) => {
-          state.type_entire = payload
-        },
-        set_private: (state, payload) => {
-          state.type_private = payload
-        },
-        set_shared: (state, payload) => {
-          state.type_shared = payload
-        },
+          update_place_types: (state, payload) => {
+            state.selected_place_types = payload
+          },
+          set_entire: (state, payload) => {
+            state.entire = payload
+          },
+          set_priv: (state, payload) => {
+            state.priv = payload
+          },
+          set_shared: (state, payload) => {
+            state.shared = payload
+          },
     }
   })
 
 
-  export const { add_place_type, remove_place_type, set_entire, set_private, set_shared } = placeTypeSlice.actions
+  export const { add_place_type, remove_place_type, update_place_types,set_entire,set_priv,set_shared } = placeTypeSlice.actions
 
 export default placeTypeSlice.reducer

@@ -1,49 +1,48 @@
-import { useDispatch, useSelector } from "react-redux";
-import { add_place_type, remove_place_type, set_entire, set_private, set_shared} from "../redux/placeTypeSlice";
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { set_entire,set_priv,set_shared } from "../redux/placeTypeSlice";
 
-const Type = () => {
-    
+const Type = ({place_type_filters, setPlaceTypeFilters}) => {
+
+    const arr = [];
     const dispatch = useDispatch();
-    const [place_types, setTypes] = useState([]);
-
-
-    const selected_place_types = useSelector(state => state.placeTypeSlice.selected_place_types);
-    const entire = useSelector(state => state.placeTypeSlice.type_entire);
-    const pprivate = useSelector(state => state.placeTypeSlice.type_private);
-    const shared = useSelector(state => state.placeTypeSlice.type_shared);
 
 
     const filter_by_type = (e) => {
         if(e.target.checked)
         {
             if(e.target.value === "entire place")
-            {dispatch(set_entire(true))}
-            if(e.target.value === "shared room")
-            {dispatch(set_shared(true))}
-            if(e.target.value === "private room")
-            {dispatch(set_private(true))}
+            {dispatch(set_entire(e.target.value))
+            }
 
-            dispatch(add_place_type(e.target.value))
-            setTypes([...place_types, e.target.value])
+            if(e.target.value === "private room")
+            {dispatch(set_priv(e.target.value))
+            }
+
+            if(e.target.value === "shared room")
+            {dispatch(set_shared(e.target.value))
+            }
+            
+            // setPlaceTypeFilters([...place_type_filters, e.target.value])
+            // dispatch(add_place_type(e.target.value))
         }
 
         if(!e.target.checked)
         {
-            dispatch(remove_place_type(e.target.value))
-            setTypes(place_types.filter(ty => ty !==e.target.value))
+            // setPlaceTypeFilters(place_type_filters.filter(ty => ty !==e.target.value))
+            // dispatch(remove_place_type(e.target.value))
             if(e.target.value === "entire place")
-            {dispatch(set_entire(false))}
-            if(e.target.value === "shared room")
-            {dispatch(set_shared(false))}
+            {dispatch(set_entire("x"))
+            }
+
             if(e.target.value === "private room")
-            {dispatch(set_private(false))}
+            {dispatch(set_priv("x"))
+            }
+
+            if(e.target.value === "shared room")
+            {dispatch(set_shared("x"))
+            }
         }
     }
-
-    console.log(selected_place_types)
-    console.log(place_types)
-    console.log(entire)
     
     return ( 
 
@@ -52,7 +51,6 @@ const Type = () => {
         <div className="panel_shell_options--type_types">
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="a" value={"entire place"} 
-                    defaultChecked={entire.payload ? true : false}
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Entire place</div>
@@ -61,7 +59,6 @@ const Type = () => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="b"   value={"private room"}
-                    defaultChecked={pprivate.payload ? true : false}
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Private room</div>
@@ -70,7 +67,6 @@ const Type = () => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="c"  value={"shared room"}
-                    defaultChecked={shared.payload ? true : false}
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Shared room</div>
