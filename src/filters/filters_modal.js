@@ -14,89 +14,22 @@ import Toptier from "./toptier";
 import Hostlanguage from "./hostlanguage";
 import { useDispatch, useSelector } from "react-redux";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
-
+import { approve_filters } from "../redux/approveFiltersSlice";
 const Filters = ({setShow}) => {
     
-    const[selected_amenities, setSelectedAmenities] = useState([]);
-
-    const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
-    const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
-    const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
-
-    const selected_place_types = useSelector(state => state.placeTypeSlice.selected_place_types);
-    const selected_property_types = useSelector(state => state.propertyTypeSlice.selected_property_types);
-
-    const [shadow, setShadow] = useState(test);
-
-    const filtered_properties = [];
-
-    useEffect(()=>{    
-
-        test.forEach(property => {
-            let eligible_by_room = true;
-            let eligible_by_beds = true;
-            let eligible_by_bathrooms = true;
-            let eligible_by_place_type = true;
-            let eligible_by_property_type = true;
-
-            if(number_of_rooms && property.numberofrooms !== parseInt(number_of_rooms))
-            {
-                eligible_by_room=false
-            }
-            if(number_of_beds && property.numberofbeds !== parseInt(number_of_beds))
-            {
-                eligible_by_beds=false;
-            }
-            if(number_of_bathrooms && property.numberofbathrooms !== parseInt(number_of_bathrooms))
-            {
-                eligible_by_bathrooms= false;
-            }
-
-
-            if(selected_place_types.length>0)
-            {
-                const arr = [];
-                selected_place_types.forEach(element => {
-                    arr.push(element.payload)
-                });
-                if (!arr.includes(property.type))
-                {eligible_by_place_type=false}
-            }
-
-
-            if(selected_property_types.length>0)
-            {
-                const arr = [];
-                selected_property_types.forEach(element => {
-                    arr.push(element.payload)
-                });
-                if (!arr.includes(property.propertytype))
-                {eligible_by_property_type=false}
-            }
-            
-
-
-
-
-            if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms 
-                && eligible_by_place_type && eligible_by_property_type)
-            {filtered_properties.push(property)}
-            
-        });
-        setShadow(filtered_properties)
-
-
-        
-        
-    },[number_of_rooms,number_of_beds,number_of_bathrooms, selected_place_types, selected_property_types]);
-    
+    const dispatch = useDispatch();
+    const updated_number = useSelector(state=> state.filteredItemsSlice.filtered_properties)
 
     const core = useRef();
 
     useEffect(()=>{
         const outside_core = (event) => {
                     if(!core.current.contains(event.target))
-                    {setShow(false)}
+                    {
+                        setShow(false)
+                        
+                    
+                    }
         }
         document.addEventListener("mousedown", outside_core)
 
@@ -104,6 +37,7 @@ const Filters = ({setShow}) => {
 
     const handle_show = () => {
         setShow(false)
+        dispatch(approve_filters())
     }
 
    
@@ -122,13 +56,10 @@ const Filters = ({setShow}) => {
                     <div className="panel_shell_options">
 
                             <Pricerange/>
-                            <Type shadow={shadow} setShadow={setShadow}
-                            ></Type>
-
+                            <Type></Type>
                             <Roomsbeds/>
                             <Propertytype/>
-                            <Amenities
-                            />
+                            <Amenities/>
                             <Bookingoptions/>
                             <Accessibility/>
                             <Toptier/>
@@ -140,7 +71,7 @@ const Filters = ({setShow}) => {
                             <button className="clear_all"><b><u>Clear all</u> </b>  </button>
                             <button 
                             onClick={handle_show}
-                            className="show_options"><b>Show {shadow.length} homes </b>  </button>
+                            className="show_options"><b>Show {updated_number.payload} homes </b>  </button>
                         </div>
                     </div>
                     
