@@ -21,7 +21,7 @@ const Content = () => {
     const filtered_properties = [];
 
     const status = useSelector(state => state.approveFiltersSlice.approval_status)
-    console.log(status)
+    // console.log(status)
 
     const dispatch = useDispatch();
 
