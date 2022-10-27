@@ -41,12 +41,6 @@ const Content = () => {
             }
             });
 
-    
-
-    // console.log(entire.payload)
-    // console.log(priv.payload)
-    // console.log(shared.payload)
-    // console.log(arr)
 
 
     const dispatch = useDispatch();
@@ -127,8 +121,9 @@ const Content = () => {
             {"Bathrooms: "+number_of_bathrooms}  <br></br>
             {"Filtered Total: " + shadow.length}  <br></br>
             </div>
-            {/* {   
-                 test.splice(0,3).map(
+
+            {   
+                 test.slice(0,9).map(
                     element => 
                         <Carousel
                             images={element.images}
@@ -138,7 +133,7 @@ const Content = () => {
                             total={"530"}
                         />
                 ) 
-            } */}
+            }
 
             
         </div>

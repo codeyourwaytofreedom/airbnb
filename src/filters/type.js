@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { set_entire,set_priv,set_shared } from "../redux/placeTypeSlice";
+import { useEffect } from "react";
 
-const Type = () => {
+const Type = ({setTemporaryEntire,setTemporaryPriv,setTemporaryShared}) => {
 
     const dispatch = useDispatch();
 
@@ -25,42 +26,55 @@ const Type = () => {
                 arr2.push(element)
             }
             });
-    // console.log("options to remember",arr2)
+    
 
+    useEffect(()=>{
+
+    },[entire,priv,shared]);
+
+    
 
     const filter_by_type = (e) => {
         if(e.target.checked)
         {
             if(e.target.value === "entire place")
-            {dispatch(set_entire(e.target.value))
+            {
+                // dispatch(set_entire(e.target.value))
+                setTemporaryEntire("entire place")
             }
 
             if(e.target.value === "private room")
-            {dispatch(set_priv(e.target.value))
+            {
+                // dispatch(set_priv(e.target.value))
+                setTemporaryPriv("private room")
             }
 
             if(e.target.value === "shared room")
-            {dispatch(set_shared(e.target.value))
+            {
+                // dispatch(set_shared(e.target.value))
+                setTemporaryShared("shared room")
             }
             
-            // setPlaceTypeFilters([...place_type_filters, e.target.value])
-            // dispatch(add_place_type(e.target.value))
         }
 
         if(!e.target.checked)
         {
-            // setPlaceTypeFilters(place_type_filters.filter(ty => ty !==e.target.value))
-            // dispatch(remove_place_type(e.target.value))
             if(e.target.value === "entire place")
-            {dispatch(set_entire("x"))
+            {
+                // dispatch(set_entire("x"))
+                setTemporaryEntire("x")
             }
 
             if(e.target.value === "private room")
-            {dispatch(set_priv("x"))
+            {
+                // dispatch(set_priv("x"))
+                setTemporaryPriv("x")
             }
 
             if(e.target.value === "shared room")
-            {dispatch(set_shared("x"))
+            {
+                // dispatch(set_shared("x"))
+                setTemporaryShared("x")
             }
         }
     }
@@ -81,7 +95,7 @@ const Type = () => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="b"   value={"private room"}
-                    defaultChecked={arr2.includes('private room') ? true : false} 
+                    // defaultChecked={arr2.includes('private room') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Private room</div>
@@ -90,7 +104,7 @@ const Type = () => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="c"  value={"shared room"}
-                    defaultChecked={arr2.includes('shared room') ? true : false} 
+                    // defaultChecked={arr2.includes('shared room') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Shared room</div>

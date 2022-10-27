@@ -13,7 +13,8 @@ import Accessibility from "./accessibility";
 import Toptier from "./toptier";
 import Hostlanguage from "./hostlanguage";
 import { useDispatch, useSelector } from "react-redux";
-import { update_place_types } from "../redux/placeTypeSlice";
+import { set_entire,set_priv,set_shared } from "../redux/placeTypeSlice";
+
 
 
 const Filters = ({setShow}) => {
@@ -21,9 +22,17 @@ const Filters = ({setShow}) => {
     const dispatch = useDispatch();
     const updated_number = useSelector(state=> state.filteredItemsSlice.filtered_properties)
 
-    const [place_type_filters, setPlaceTypeFilters] = useState(["entire place", "private room", "shared room"]);
 
     const core = useRef();
+
+    const [temporary_entire, setTemporaryEntire] = useState("x");
+    const [temporary_priv, setTemporaryPriv] = useState("x");
+    const [temporary_shared, setTemporaryShared] = useState("x");
+
+    console.log("temporary entire: not applied", temporary_entire)
+    console.log("temporary private: not applied", temporary_priv)
+    console.log("temporary shared: not applied", temporary_shared)
+
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -39,7 +48,12 @@ const Filters = ({setShow}) => {
 
     const handle_show = () => {
         setShow(false)
-        // dispatch(update_place_types(place_type_filters))
+
+        dispatch(set_entire(temporary_entire))
+        dispatch(set_priv(temporary_priv))
+        dispatch(set_shared(temporary_shared))
+
+
     }
 
     
@@ -58,8 +72,12 @@ const Filters = ({setShow}) => {
 
                             <Pricerange/>
                             <Type
-                                place_type_filters = {place_type_filters}
-                                setPlaceTypeFilters = {setPlaceTypeFilters}
+                                temporary_entire={temporary_entire}
+                                setTemporaryEntire = {setTemporaryEntire}
+                                temporary_priv={temporary_priv}
+                                setTemporaryPriv={setTemporaryPriv}
+                                temporary_shared={temporary_shared}
+                                setTemporaryShared={setTemporaryShared}
                             />
                             <Roomsbeds/>
                             <Propertytype/>
@@ -75,7 +93,7 @@ const Filters = ({setShow}) => {
                             <button className="clear_all"><b><u>Clear all</u> </b>  </button>
                             <button 
                             onClick={handle_show}
-                            className="show_options"><b>Show {updated_number.payload} homes </b>  </button>
+                            className="show_options"><b>Show {test.length} homes </b>  </button>
                         </div>
                     </div>
                     
