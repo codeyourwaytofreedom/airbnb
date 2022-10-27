@@ -38,11 +38,68 @@ const Filters = ({setShow}) => {
 
     const [temporary_property_types, setTemporaryPropertyTypes] = useState([]);
 
+    const arr2 = [temporary_entire,temporary_priv,temporary_shared]
+    const [temporary_total, setTemporaryTotal] = useState(620);
 
-    // console.log("temporary entire: not applied", temporary_entire)
-    // console.log("temporary private: not applied", temporary_priv)
-    // console.log("temporary shared: not applied", temporary_shared)
 
+    const filtered_properties = [];
+
+    useEffect(()=>{    
+
+        
+
+        test.forEach(property => {
+            let eligible_by_room = true;
+            let eligible_by_beds = true;
+            let eligible_by_bathrooms = true;
+            let eligible_by_property_type = true;
+            let eligible_by_place_type = true;
+
+            if(temporary_rooms && parseInt(temporary_rooms)!== 0 && property.numberofrooms !== parseInt(temporary_rooms))
+            {
+                eligible_by_room=false
+            }
+            if(temporary_beds && parseInt(temporary_beds)!== 0 && property.numberofbeds !== parseInt(temporary_beds))
+            {
+                eligible_by_beds=false;
+            }
+            if(temporary_bathrooms && parseInt(temporary_bathrooms)!== 0 && property.numberofbathrooms !== parseInt(temporary_bathrooms))
+            {
+                eligible_by_bathrooms= false;
+            }
+
+            let z = 0;
+            arr2.forEach(element => {
+                if(element === "a")
+                {z = z+1}
+            });
+
+            if(z !== 3 && !arr2.includes(property.type))
+            {
+               eligible_by_place_type = false;
+            };
+
+            if(temporary_property_types.length>0 && !temporary_property_types.includes(property.propertytype))
+            {
+                eligible_by_property_type=false
+            }
+            
+
+
+
+
+            if(eligible_by_room  && eligible_by_beds && eligible_by_bathrooms 
+                && eligible_by_place_type && eligible_by_property_type)
+            {filtered_properties.push(property)}
+            
+        });
+        // dispatch(updated_filtered_items(filtered_properties.length))
+
+        // setShadow(filtered_properties)
+        setTemporaryTotal(filtered_properties.length)
+        
+    },[temporary_rooms,temporary_beds,temporary_bathrooms,temporary_entire,temporary_priv,temporary_shared, temporary_property_types]);
+    
 
     useEffect(()=>{
         const outside_core = (event) => {
@@ -80,9 +137,6 @@ const Filters = ({setShow}) => {
   
         }
         
-
-        
-
 
     }
 
@@ -137,7 +191,7 @@ const Filters = ({setShow}) => {
                             <button className="clear_all"><b><u>Clear all</u> </b>  </button>
                             <button 
                             onClick={handle_show}
-                            className="show_options"><b>Show {test.length} homes </b>  </button>
+                            className="show_options"><b>Show {temporary_total} homes </b>  </button>
                         </div>
                     </div>
                     

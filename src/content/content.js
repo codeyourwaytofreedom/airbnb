@@ -117,6 +117,9 @@ const Content = () => {
             {"Rooms: "+number_of_rooms} <br></br>
             {"Beds: "+ number_of_beds}  <br></br>
             {"Bathrooms: "+number_of_bathrooms}  <br></br>
+            {"Entire: "+entire.payload}  <br></br>
+            {"Private: "+priv.payload}  <br></br>
+            {"Shared: "+shared.payload}  <br></br>
             {"Filtered Total: " + shadow.length}  <br></br>
             </div>
 
