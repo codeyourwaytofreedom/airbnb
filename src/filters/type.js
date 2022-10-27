@@ -81,6 +81,7 @@ const Type = () => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="b"   value={"private room"}
+                    defaultChecked={arr2.includes('private room') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Private room</div>
@@ -89,6 +90,7 @@ const Type = () => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="c"  value={"shared room"}
+                    defaultChecked={arr2.includes('shared room') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Shared room</div>
