@@ -86,7 +86,7 @@ const Type = ({setTemporaryEntire,setTemporaryPriv,setTemporaryShared}) => {
         <div className="panel_shell_options--type_types">
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="a" value={"entire place"}
-                    defaultChecked={arr2.includes('entire place') ? true : false} 
+                    defaultChecked={arr.includes('entire place') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Entire place</div>
@@ -95,7 +95,7 @@ const Type = ({setTemporaryEntire,setTemporaryPriv,setTemporaryShared}) => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="b"   value={"private room"}
-                    // defaultChecked={arr2.includes('private room') ? true : false} 
+                    defaultChecked={arr.includes('private room') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Private room</div>
@@ -104,7 +104,7 @@ const Type = ({setTemporaryEntire,setTemporaryPriv,setTemporaryShared}) => {
                 </div>
                 <div className="panel_shell_options--type_types_cell">
                     <div id="cbox"><input type="checkbox" id="c"  value={"shared room"}
-                    // defaultChecked={arr2.includes('shared room') ? true : false} 
+                    defaultChecked={arr.includes('shared room') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Shared room</div>

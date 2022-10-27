@@ -25,9 +25,9 @@ const Filters = ({setShow}) => {
 
     const core = useRef();
 
-    const [temporary_entire, setTemporaryEntire] = useState("x");
-    const [temporary_priv, setTemporaryPriv] = useState("x");
-    const [temporary_shared, setTemporaryShared] = useState("x");
+    const [temporary_entire, setTemporaryEntire] = useState("a");
+    const [temporary_priv, setTemporaryPriv] = useState("a");
+    const [temporary_shared, setTemporaryShared] = useState("a");
 
     console.log("temporary entire: not applied", temporary_entire)
     console.log("temporary private: not applied", temporary_priv)
@@ -48,10 +48,15 @@ const Filters = ({setShow}) => {
 
     const handle_show = () => {
         setShow(false)
-
-        dispatch(set_entire(temporary_entire))
-        dispatch(set_priv(temporary_priv))
-        dispatch(set_shared(temporary_shared))
+        if(temporary_entire!=="a")
+        {dispatch(set_entire(temporary_entire))}
+        if(temporary_priv!=="a")
+        {dispatch(set_priv(temporary_priv))}
+        if(temporary_shared!=="a")
+        {dispatch(set_shared(temporary_shared))}
+        console.log(temporary_entire)
+        console.log(temporary_priv)
+        console.log(temporary_shared)
 
 
     }
