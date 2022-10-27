@@ -2,33 +2,43 @@ import { useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { add_property_type, remove_property_type } from "../redux/propertyTypeSlice";
 
-const Propertytype = () => {
+const Propertytype = ({temporary_property_types,setTemporaryPropertyTypes}) => {
 
     const selected_property_types = useSelector(state => state.propertyTypeSlice.selected_property_types);
     
     
     const dispatch = useDispatch();
     const remembered = []
-    selected_property_types.forEach(element => {
-        remembered.push(element.payload)
-    });
+    // selected_property_types.forEach(element => {
+    //     remembered.push(element.payload)
+    // });
 
-    const handle_property_type = (e) => {
+    const handle_property_type = (e)  => {
             const arr = [];
-            selected_property_types.forEach(element => {
-                arr.push(element.payload)
-            });
+            // selected_property_types.forEach(element => {
+            //     arr.push(element.payload)
+            // });
 
             if (!arr.includes(e.currentTarget.value))
             {   
-                dispatch(add_property_type(e.currentTarget.value))
+                // dispatch(add_property_type(e.currentTarget.value))
                 arr.push(e.currentTarget.value)
             }
             else{
-                dispatch(remove_property_type(e.currentTarget.value))
+                // dispatch(remove_property_type(e.currentTarget.value))
                 arr.splice(arr.indexOf(e.currentTarget.value),1)
             }
+
+            if(!temporary_property_types.includes(e.currentTarget.value))
+            {setTemporaryPropertyTypes([...temporary_property_types, e.currentTarget.value])}
+            else{
+                setTemporaryPropertyTypes(temporary_property_types.filter 
+                    (element => element!== e.currentTarget.value))
+            }
+
+            
     }
+    console.log(temporary_property_types)
 
     return ( 
         <div className="panel_shell_options--propertytype">

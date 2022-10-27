@@ -17,7 +17,6 @@ const Roomsbeds = ({setTemporaryRooms,setTemporaryBeds,
             // dispatch(add_filter_by_rooms(e.target.value))
             setTemporaryRooms(e.target.value)
             console.log(e.target.value)
-            console.log("room no set temporarily")
 
         }
         if(e.target.name ==="numberofbeds")

@@ -9,7 +9,7 @@ export const propertyTypeSlice = createSlice({
     initialState,
     reducers: {
         add_property_type: (state, payload) => {
-            state.selected_property_types.push(payload)
+            state.selected_property_types=payload;
         },
         remove_property_type: (state, payload) => {
             const index = state.selected_property_types.indexOf(payload)

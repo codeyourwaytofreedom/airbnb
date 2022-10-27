@@ -15,6 +15,7 @@ import Hostlanguage from "./hostlanguage";
 import { useDispatch, useSelector } from "react-redux";
 import { set_entire,set_priv,set_shared } from "../redux/placeTypeSlice";
 import { add_filter_by_rooms, add_filter_by_beds, add_filter_by_bathrooms } from "../redux/rooms_slider";
+import { add_property_type } from "../redux/propertyTypeSlice";
 
 
 
@@ -35,9 +36,12 @@ const Filters = ({setShow}) => {
     const [temporary_beds, setTemporaryBeds] = useState(null);
     const [temporary_bathrooms, setTemporaryBathrooms] = useState(null);
 
-    console.log("temporary entire: not applied", temporary_entire)
-    console.log("temporary private: not applied", temporary_priv)
-    console.log("temporary shared: not applied", temporary_shared)
+    const [temporary_property_types, setTemporaryPropertyTypes] = useState([]);
+
+
+    // console.log("temporary entire: not applied", temporary_entire)
+    // console.log("temporary private: not applied", temporary_priv)
+    // console.log("temporary shared: not applied", temporary_shared)
 
 
     useEffect(()=>{
@@ -69,11 +73,15 @@ const Filters = ({setShow}) => {
 
         if(temporary_bathrooms)
         {dispatch(add_filter_by_bathrooms(temporary_bathrooms))}
+
+        if(temporary_property_types.length>0)
+        {
+            dispatch(add_property_type(temporary_property_types))
+  
+        }
         
 
-        console.log(temporary_entire)
-        console.log(temporary_priv)
-        console.log(temporary_shared)
+        
 
 
     }
@@ -113,7 +121,10 @@ const Filters = ({setShow}) => {
                                 temporary_bathrooms={temporary_bathrooms}
                                 setTemporaryBathrooms={setTemporaryBathrooms}
                             />
-                            <Propertytype/>
+                            <Propertytype
+                                    temporary_property_types={temporary_property_types}
+                                    setTemporaryPropertyTypes={setTemporaryPropertyTypes}
+                            />
                             <Amenities/>
                             <Bookingoptions/>
                             <Accessibility/>

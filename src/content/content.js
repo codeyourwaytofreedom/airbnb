@@ -45,6 +45,9 @@ const Content = () => {
 
     const dispatch = useDispatch();
 
+    console.log(selected_property_types.payload)
+
+
     useEffect(()=>{    
         
         test.forEach(property => {
@@ -78,15 +81,9 @@ const Content = () => {
 
 
 
-
-            if(selected_property_types.length>0)
+            if(selected_property_types.payload && !selected_property_types.payload.includes(property.propertytype))
             {
-                const arr = [];
-                selected_property_types.forEach(element => {
-                    arr.push(element.payload)
-                });
-                if (!arr.includes(property.propertytype))
-                {eligible_by_property_type=false}
+                eligible_by_property_type=false
             }
             
 
