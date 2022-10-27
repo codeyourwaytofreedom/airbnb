@@ -81,7 +81,8 @@ const Content = () => {
 
 
 
-            if(selected_property_types.payload && !selected_property_types.payload.includes(property.propertytype))
+            if(selected_property_types.payload && selected_property_types.payload.length>0 && 
+                !selected_property_types.payload.includes(property.propertytype))
             {
                 eligible_by_property_type=false
             }

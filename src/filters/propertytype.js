@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { add_property_type, remove_property_type } from "../redux/propertyTypeSlice";
 
@@ -8,26 +8,36 @@ const Propertytype = ({temporary_property_types,setTemporaryPropertyTypes}) => {
     
     
     const dispatch = useDispatch();
-    const remembered = []
-    // selected_property_types.forEach(element => {
-    //     remembered.push(element.payload)
-    // });
+    let remembered = []
+
+
+    
+
+    useEffect(()=>{
+        if(selected_property_types.payload)
+            {
+                remembered=selected_property_types.payload
+                console.log("tersten yüklendi", remembered)
+                setTemporaryPropertyTypes(selected_property_types.payload)
+            
+            }
+    },[]);
 
     const handle_property_type = (e)  => {
-            const arr = [];
+            // const arr = [];
             // selected_property_types.forEach(element => {
             //     arr.push(element.payload)
             // });
 
-            if (!arr.includes(e.currentTarget.value))
-            {   
-                // dispatch(add_property_type(e.currentTarget.value))
-                arr.push(e.currentTarget.value)
-            }
-            else{
-                // dispatch(remove_property_type(e.currentTarget.value))
-                arr.splice(arr.indexOf(e.currentTarget.value),1)
-            }
+            // if (!arr.includes(e.currentTarget.value))
+            // {   
+            //     // dispatch(add_property_type(e.currentTarget.value))
+            //     arr.push(e.currentTarget.value)
+            // }
+            // else{
+            //     // dispatch(remove_property_type(e.currentTarget.value))
+            //     arr.splice(arr.indexOf(e.currentTarget.value),1)
+            // }
 
             if(!temporary_property_types.includes(e.currentTarget.value))
             {setTemporaryPropertyTypes([...temporary_property_types, e.currentTarget.value])}
@@ -50,9 +60,9 @@ const Propertytype = ({temporary_property_types,setTemporaryPropertyTypes}) => {
                                         value={"house"}
                                         onClick={(e)=>handle_property_type(e)}
                                         className="house_type_button"
-                                        style={{border: remembered.includes("house") ? "2px solid black" 
+                                        style={{border: temporary_property_types.includes("house") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: remembered.includes("house") ? "rgb(245,245,245)" :
+                                                backgroundColor: temporary_property_types.includes("house") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button" value={"house"}>
@@ -69,9 +79,9 @@ const Propertytype = ({temporary_property_types,setTemporaryPropertyTypes}) => {
                                         value={"flat"}
                                         onClick={(e)=>handle_property_type(e)}
                                         className="flat_type_button"
-                                        style={{border: remembered.includes("flat") ? "2px solid black" 
+                                        style={{border: temporary_property_types.includes("flat") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: remembered.includes("flat") ? "rgb(245,245,245)" :
+                                                backgroundColor: temporary_property_types.includes("flat") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
@@ -88,9 +98,9 @@ const Propertytype = ({temporary_property_types,setTemporaryPropertyTypes}) => {
                                         value={"guesthouse"}
                                         onClick={(e)=>handle_property_type(e)}
                                         className="ghouse_type_button"
-                                        style={{border: remembered.includes("guesthouse") ? "2px solid black" 
+                                        style={{border: temporary_property_types.includes("guesthouse") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: remembered.includes("guesthouse") ? "rgb(245,245,245)" :
+                                                backgroundColor: temporary_property_types.includes("guesthouse") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
@@ -107,9 +117,9 @@ const Propertytype = ({temporary_property_types,setTemporaryPropertyTypes}) => {
                                         value={"hotel"}
                                         onClick={(e)=>handle_property_type(e)} 
                                         className="hotel_type_button"
-                                        style={{border: remembered.includes("hotel") ? "2px solid black" 
+                                        style={{border: temporary_property_types.includes("hotel") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: remembered.includes("hotel") ? "rgb(245,245,245)" :
+                                                backgroundColor: temporary_property_types.includes("hotel") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">

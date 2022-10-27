@@ -74,7 +74,7 @@ const Filters = ({setShow}) => {
         if(temporary_bathrooms)
         {dispatch(add_filter_by_bathrooms(temporary_bathrooms))}
 
-        if(temporary_property_types.length>0)
+        if(temporary_property_types)
         {
             dispatch(add_property_type(temporary_property_types))
   
