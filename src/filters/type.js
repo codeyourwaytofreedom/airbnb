@@ -25,7 +25,7 @@ const Type = () => {
                 arr2.push(element)
             }
             });
-    console.log("options to remember",arr2)
+    // console.log("options to remember",arr2)
 
 
     const filter_by_type = (e) => {

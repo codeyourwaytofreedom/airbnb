@@ -5,36 +5,29 @@ import { add_property_type, remove_property_type } from "../redux/propertyTypeSl
 const Propertytype = () => {
 
     const selected_property_types = useSelector(state => state.propertyTypeSlice.selected_property_types);
-
+    
+    
     const dispatch = useDispatch();
-    const [design, setDesign] = useState([]);
-
-    
-    
-    const handle_property_type = (e) => {
-    
-    const arr = [];
-
-    if(!design.includes(e.currentTarget.value))
-    {setDesign([...design,e.currentTarget.value])}
-    else{
-        setDesign(design.filter(element => element!==e.currentTarget.value))
-    }
-    
+    const remembered = []
     selected_property_types.forEach(element => {
-        arr.push(element.payload)
+        remembered.push(element.payload)
     });
-    
 
-        if (!arr.includes(e.currentTarget.value))
+    const handle_property_type = (e) => {
+            const arr = [];
+            selected_property_types.forEach(element => {
+                arr.push(element.payload)
+            });
 
-        {dispatch(add_property_type(e.currentTarget.value))
-        }
-
-        else{
-            dispatch(remove_property_type(e.currentTarget.value))
-        }
-
+            if (!arr.includes(e.currentTarget.value))
+            {   
+                dispatch(add_property_type(e.currentTarget.value))
+                arr.push(e.currentTarget.value)
+            }
+            else{
+                dispatch(remove_property_type(e.currentTarget.value))
+                arr.splice(arr.indexOf(e.currentTarget.value),1)
+            }
     }
 
     return ( 
@@ -47,9 +40,9 @@ const Propertytype = () => {
                                         value={"house"}
                                         onClick={(e)=>handle_property_type(e)}
                                         className="house_type_button"
-                                        style={{border: design.includes("house") ? "2px solid black" 
+                                        style={{border: remembered.includes("house") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: design.includes("house") ? "rgb(245,245,245)" :
+                                                backgroundColor: remembered.includes("house") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button" value={"house"}>
@@ -66,9 +59,9 @@ const Propertytype = () => {
                                         value={"flat"}
                                         onClick={(e)=>handle_property_type(e)}
                                         className="flat_type_button"
-                                        style={{border: design.includes("flat") ? "2px solid black" 
+                                        style={{border: remembered.includes("flat") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: design.includes("flat") ? "rgb(245,245,245)" :
+                                                backgroundColor: remembered.includes("flat") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
@@ -85,9 +78,9 @@ const Propertytype = () => {
                                         value={"guesthouse"}
                                         onClick={(e)=>handle_property_type(e)}
                                         className="ghouse_type_button"
-                                        style={{border: design.includes("guesthouse") ? "2px solid black" 
+                                        style={{border: remembered.includes("guesthouse") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: design.includes("guesthouse") ? "rgb(245,245,245)" :
+                                                backgroundColor: remembered.includes("guesthouse") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
@@ -104,9 +97,9 @@ const Propertytype = () => {
                                         value={"hotel"}
                                         onClick={(e)=>handle_property_type(e)} 
                                         className="hotel_type_button"
-                                        style={{border: design.includes("hotel") ? "2px solid black" 
+                                        style={{border: remembered.includes("hotel") ? "2px solid black" 
                                                     : "1px solid gray",
-                                                backgroundColor: design.includes("hotel") ? "rgb(245,245,245)" :
+                                                backgroundColor: remembered.includes("hotel") ? "rgb(245,245,245)" :
                                                 "white" }}   
                                         >
                                             <div className="img_in_button">
