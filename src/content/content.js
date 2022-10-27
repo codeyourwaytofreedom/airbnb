@@ -35,17 +35,18 @@ const Content = () => {
     const arr2 = [];
             arr.forEach(element => {
                 if(element && element!=="x")
-                {console.log("item: ", element)
+                {
+                    // console.log("item: ", element)
                 arr2.push(element)
             }
             });
 
     
 
-    console.log(entire.payload)
-    console.log(priv.payload)
-    console.log(shared.payload)
-    console.log(arr)
+    // console.log(entire.payload)
+    // console.log(priv.payload)
+    // console.log(shared.payload)
+    // console.log(arr)
 
 
     const dispatch = useDispatch();

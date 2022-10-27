@@ -1,10 +1,31 @@
 import { useSelector, useDispatch } from "react-redux";
 import { set_entire,set_priv,set_shared } from "../redux/placeTypeSlice";
 
-const Type = ({place_type_filters, setPlaceTypeFilters}) => {
+const Type = () => {
 
-    const arr = [];
     const dispatch = useDispatch();
+
+    const entire = useSelector(state => state.placeTypeSlice.entire)
+    const priv = useSelector(state => state.placeTypeSlice.priv)
+    const shared = useSelector(state => state.placeTypeSlice.shared)
+    
+    const arr = []
+
+    if (entire.payload)
+    {arr.push(entire.payload)}
+    if (priv.payload)
+    {arr.push(priv.payload)}
+    if (shared.payload)
+    {arr.push(shared.payload)}
+
+    const arr2 = [];
+            arr.forEach(element => {
+                if(element && element!=="x")
+                {
+                arr2.push(element)
+            }
+            });
+    console.log("options to remember",arr2)
 
 
     const filter_by_type = (e) => {
@@ -50,7 +71,8 @@ const Type = ({place_type_filters, setPlaceTypeFilters}) => {
         <h2>Type of place</h2>
         <div className="panel_shell_options--type_types">
                 <div className="panel_shell_options--type_types_cell">
-                    <div id="cbox"><input type="checkbox" id="a" value={"entire place"} 
+                    <div id="cbox"><input type="checkbox" id="a" value={"entire place"}
+                    defaultChecked={arr2.includes('entire place') ? true : false} 
                     onChange={(e)=>filter_by_type(e)} /></div>
                     <div id="place_double">
                         <div id="place-type">Entire place</div>
