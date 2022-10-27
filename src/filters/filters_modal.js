@@ -14,6 +14,8 @@ import Toptier from "./toptier";
 import Hostlanguage from "./hostlanguage";
 import { useDispatch, useSelector } from "react-redux";
 import { set_entire,set_priv,set_shared } from "../redux/placeTypeSlice";
+import { add_filter_by_rooms, add_filter_by_beds, add_filter_by_bathrooms } from "../redux/rooms_slider";
+
 
 
 
@@ -28,6 +30,10 @@ const Filters = ({setShow}) => {
     const [temporary_entire, setTemporaryEntire] = useState("a");
     const [temporary_priv, setTemporaryPriv] = useState("a");
     const [temporary_shared, setTemporaryShared] = useState("a");
+
+    const [temporary_rooms, setTemporaryRooms] = useState(null);
+    const [temporary_beds, setTemporaryBeds] = useState(null);
+    const [temporary_bathrooms, setTemporaryBathrooms] = useState(null);
 
     console.log("temporary entire: not applied", temporary_entire)
     console.log("temporary private: not applied", temporary_priv)
@@ -54,6 +60,17 @@ const Filters = ({setShow}) => {
         {dispatch(set_priv(temporary_priv))}
         if(temporary_shared!=="a")
         {dispatch(set_shared(temporary_shared))}
+
+        if(temporary_rooms)
+        {dispatch(add_filter_by_rooms(temporary_rooms))}
+
+        if(temporary_beds)
+        {dispatch(add_filter_by_beds(temporary_beds))}
+
+        if(temporary_bathrooms)
+        {dispatch(add_filter_by_bathrooms(temporary_bathrooms))}
+        
+
         console.log(temporary_entire)
         console.log(temporary_priv)
         console.log(temporary_shared)
@@ -83,8 +100,19 @@ const Filters = ({setShow}) => {
                                 setTemporaryPriv={setTemporaryPriv}
                                 temporary_shared={temporary_shared}
                                 setTemporaryShared={setTemporaryShared}
+
+                                
                             />
-                            <Roomsbeds/>
+                            <Roomsbeds
+                                temporary_rooms={temporary_rooms}
+                                setTemporaryRooms={setTemporaryRooms}
+
+                                temporary_beds={temporary_beds}
+                                setTemporaryBeds={setTemporaryBeds}
+
+                                temporary_bathrooms={temporary_bathrooms}
+                                setTemporaryBathrooms={setTemporaryBathrooms}
+                            />
                             <Propertytype/>
                             <Amenities/>
                             <Bookingoptions/>

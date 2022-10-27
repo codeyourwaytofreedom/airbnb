@@ -54,15 +54,15 @@ const Content = () => {
             let eligible_by_property_type = true;
             let eligible_by_place_type = true;
 
-            if(number_of_rooms && property.numberofrooms !== parseInt(number_of_rooms))
+            if(number_of_rooms && parseInt(number_of_rooms)!== 0 && property.numberofrooms !== parseInt(number_of_rooms))
             {
                 eligible_by_room=false
             }
-            if(number_of_beds && property.numberofbeds !== parseInt(number_of_beds))
+            if(number_of_beds && parseInt(number_of_beds)!== 0 && property.numberofbeds !== parseInt(number_of_beds))
             {
                 eligible_by_beds=false;
             }
-            if(number_of_bathrooms && property.numberofbathrooms !== parseInt(number_of_bathrooms))
+            if(number_of_bathrooms && parseInt(number_of_bathrooms)!== 0 && property.numberofbathrooms !== parseInt(number_of_bathrooms))
             {
                 eligible_by_bathrooms= false;
             }
