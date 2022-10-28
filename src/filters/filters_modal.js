@@ -53,14 +53,6 @@ const Filters = ({setShow}) => {
 
     useEffect(()=>{    
 
-        if (entire.payload)
-        {setTemporaryEntire(entire.payload)}
-        if (priv.payload)
-        {setTemporaryPriv(priv.payload)}
-        if (shared.payload)
-        {setTemporaryShared(shared.payload)}
-
-
         test.forEach(property => {
             let eligible_by_room = true;
             let eligible_by_beds = true;
@@ -112,7 +104,8 @@ const Filters = ({setShow}) => {
         setTemporaryTotal(filtered_properties.length)
         
     },[temporary_rooms,temporary_beds,temporary_bathrooms,temporary_entire,
-        temporary_priv,temporary_shared, temporary_property_types]);
+        temporary_priv,temporary_shared, temporary_property_types,
+        entire, priv, shared]);
     
 
     useEffect(()=>{
