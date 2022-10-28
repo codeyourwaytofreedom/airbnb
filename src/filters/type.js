@@ -62,19 +62,20 @@ const Type = ({setTemporaryEntire,setTemporaryPriv,setTemporaryShared}) => {
             if(e.target.value === "entire place")
             {
                 // dispatch(set_entire("x"))
-                setTemporaryEntire("x")
+                setTemporaryEntire("y")
+                
             }
 
             if(e.target.value === "private room")
             {
                 // dispatch(set_priv("x"))
-                setTemporaryPriv("x")
+                setTemporaryPriv("y")
             }
 
             if(e.target.value === "shared room")
             {
                 // dispatch(set_shared("x"))
-                setTemporaryShared("x")
+                setTemporaryShared("y")
             }
         }
     }

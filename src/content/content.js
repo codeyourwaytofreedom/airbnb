@@ -34,7 +34,7 @@ const Content = () => {
 
     const arr2 = [];
             arr.forEach(element => {
-                if(element && element!=="x")
+                if(element && element!=="x" && element!=="y")
                 {
                     // console.log("item: ", element)
                 arr2.push(element)
@@ -45,7 +45,7 @@ const Content = () => {
 
     const dispatch = useDispatch();
 
-    console.log(selected_property_types.payload)
+    // console.log(selected_property_types.payload)
 
 
     useEffect(()=>{    

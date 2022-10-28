@@ -48,15 +48,15 @@ const Filters = ({setShow}) => {
     const [temporary_total, setTemporaryTotal] = useState(620);
 
     const results = useSelector(state => state.filteredItemsSlice.filtered_properties)
-    console.log("in filters modal, results",results.payload)
+    // console.log("in filters modal, results",results.payload)
 
 
     
     const filtered_properties = [];
 
 
-
     let arr2 = [temporary_entire,temporary_priv,temporary_shared]
+
 
     useEffect(()=>{        
         
@@ -66,6 +66,16 @@ const Filters = ({setShow}) => {
             let eligible_by_bathrooms = true;
             let eligible_by_property_type = true;
             let eligible_by_place_type = true;
+
+
+            if (entire.payload && temporary_entire === "a" )
+            {arr2.push(entire.payload)}
+            if (priv.payload && temporary_priv === "a")
+            {arr2.push(priv.payload)}
+            if (shared.payload && temporary_shared === "a")
+            {arr2.push(shared.payload)}
+
+
 
             if(temporary_rooms && parseInt(temporary_rooms)!== 0 && property.numberofrooms !== parseInt(temporary_rooms))
             {
@@ -86,8 +96,8 @@ const Filters = ({setShow}) => {
                 {eligible_by_place_type = false;}
             }
 
-            // if(!arr2.includes("entire place") && !arr2.includes("private room") && !arr2.includes("shared room"))
-            // {eligible_by_place_type=true}
+            if(!arr2.includes("entire place") && !arr2.includes("private room") && !arr2.includes("shared room"))
+            {eligible_by_place_type=true}
 
             if(temporary_property_types.length>0 && !temporary_property_types.includes(property.propertytype))
             {
@@ -107,7 +117,8 @@ const Filters = ({setShow}) => {
 
         // setShadow(filtered_properties)
         setTemporaryTotal(filtered_properties.length)
-        
+        console.log(arr2)
+
         
     },[temporary_rooms,temporary_beds,temporary_bathrooms,temporary_entire,
         temporary_priv,temporary_shared, temporary_property_types,
