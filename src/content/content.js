@@ -96,7 +96,7 @@ const Content = () => {
             {filtered_properties.push(property)}
             
         });
-        dispatch(updated_filtered_items(filtered_properties.length))
+        dispatch(updated_filtered_items(filtered_properties))
 
         setShadow(filtered_properties)
 
@@ -124,14 +124,14 @@ const Content = () => {
             </div>
 
             {   
-                 test.slice(0,9).map(
+                shadow.slice(0,10).map(
                     element => 
                         <Carousel
                             images={element.images}
                             location={element.location+", Turkey"}
-                            hosttype={"hhh"}
-                            dates={"ddd"}
-                            total={"530"}
+                            hosttype={element.type}
+                            dates={element.numberofrooms}
+                            total={element.numberofbeds}
                         />
                 ) 
             }

@@ -17,7 +17,7 @@ const Propertytype = ({temporary_property_types,setTemporaryPropertyTypes}) => {
         if(selected_property_types.payload)
             {
                 remembered=selected_property_types.payload
-                console.log("tersten yüklendi", remembered)
+                // console.log("tersten yüklendi", remembered)
                 setTemporaryPropertyTypes(selected_property_types.payload)
             
             }

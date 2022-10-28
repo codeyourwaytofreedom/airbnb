@@ -23,17 +23,17 @@ import { add_property_type } from "../redux/propertyTypeSlice";
 const Filters = ({setShow}) => {
     
     const dispatch = useDispatch();
-    const updated_number = useSelector(state=> state.filteredItemsSlice.filtered_properties)
 
 
     const core = useRef();
 
     const [temporary_entire, setTemporaryEntire] = useState("a");
     const entire = useSelector(state => state.placeTypeSlice.entire)
-    
+
     
     const [temporary_priv, setTemporaryPriv] = useState("a");
     const priv = useSelector(state => state.placeTypeSlice.priv)
+
 
     const [temporary_shared, setTemporaryShared] = useState("a");
     const shared = useSelector(state => state.placeTypeSlice.shared)
@@ -45,14 +45,21 @@ const Filters = ({setShow}) => {
 
     const [temporary_property_types, setTemporaryPropertyTypes] = useState([]);
 
-    const arr2 = [temporary_entire,temporary_priv,temporary_shared]
     const [temporary_total, setTemporaryTotal] = useState(620);
 
+    const results = useSelector(state => state.filteredItemsSlice.filtered_properties)
+    console.log("in filters modal, results",results.payload)
 
+
+    
     const filtered_properties = [];
 
-    useEffect(()=>{    
 
+
+    let arr2 = [temporary_entire,temporary_priv,temporary_shared]
+
+    useEffect(()=>{        
+        
         test.forEach(property => {
             let eligible_by_room = true;
             let eligible_by_beds = true;
@@ -73,16 +80,14 @@ const Filters = ({setShow}) => {
                 eligible_by_bathrooms= false;
             }
 
-            let z = 0;
-            arr2.forEach(element => {
-                if(element === "a")
-                {z = z+1}
-            });
-
-            if(z !== 3 && !arr2.includes(property.type))
+            if(arr2.includes("entire place") || arr2.includes("private room") || arr2.includes("shared room"))
             {
-               eligible_by_place_type = false;
-            };
+                if(!arr2.includes(property.type))
+                {eligible_by_place_type = false;}
+            }
+
+            // if(!arr2.includes("entire place") && !arr2.includes("private room") && !arr2.includes("shared room"))
+            // {eligible_by_place_type=true}
 
             if(temporary_property_types.length>0 && !temporary_property_types.includes(property.propertytype))
             {
@@ -103,9 +108,13 @@ const Filters = ({setShow}) => {
         // setShadow(filtered_properties)
         setTemporaryTotal(filtered_properties.length)
         
+        
     },[temporary_rooms,temporary_beds,temporary_bathrooms,temporary_entire,
         temporary_priv,temporary_shared, temporary_property_types,
         entire, priv, shared]);
+
+    
+        
     
 
     useEffect(()=>{
@@ -198,7 +207,7 @@ const Filters = ({setShow}) => {
                             <button className="clear_all"><b><u>Clear all</u> </b>  </button>
                             <button 
                             onClick={handle_show}
-                            className="show_options"><b>Show {temporary_total} homes </b>  </button>
+                            className="show_options"><b>Applied: {results.payload.length} Temporary: {temporary_total} </b>  </button>
                         </div>
                     </div>
                     

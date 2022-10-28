@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    filtered_properties:620
+    filtered_properties:[]
   }
 
   export const filteredItemsSlice = createSlice({

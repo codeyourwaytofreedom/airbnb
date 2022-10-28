@@ -10,19 +10,19 @@ const Roomsbeds = ({setTemporaryRooms,setTemporaryBeds,
     const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
     const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
 
-    console.log("tetsing number of rooms",number_of_rooms)
+    // console.log("tetsing number of rooms",number_of_rooms)
     const filter_by_numbers = (e) => {
         if(e.target.name ==="numberofrooms")
         {
             // dispatch(add_filter_by_rooms(e.target.value))
             setTemporaryRooms(e.target.value)
-            console.log(e.target.value)
+            // console.log(e.target.value)
 
         }
         if(e.target.name ==="numberofbeds")
         {
             // dispatch(add_filter_by_beds(e.target.value))
-            console.log(e.target.value)
+            // console.log(e.target.value)
             setTemporaryBeds(e.target.value)
             
         }
