@@ -43,6 +43,8 @@ const Filters = ({setShow}) => {
     const [temporary_beds, setTemporaryBeds] = useState(null);
     const [temporary_bathrooms, setTemporaryBathrooms] = useState(null);
 
+    const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
+
     const [temporary_property_types, setTemporaryPropertyTypes] = useState([]);
 
     const [temporary_total, setTemporaryTotal] = useState(620);
@@ -56,6 +58,14 @@ const Filters = ({setShow}) => {
 
 
     let arr2 = [temporary_entire,temporary_priv,temporary_shared]
+    if (entire.payload && temporary_entire === "a" )
+    {arr2.push(entire.payload)}
+    if (priv.payload && temporary_priv === "a")
+    {arr2.push(priv.payload)}
+    if (shared.payload && temporary_shared === "a")
+    {arr2.push(shared.payload)}
+
+
 
 
     useEffect(()=>{        
@@ -68,19 +78,18 @@ const Filters = ({setShow}) => {
             let eligible_by_place_type = true;
 
 
-            if (entire.payload && temporary_entire === "a" )
-            {arr2.push(entire.payload)}
-            if (priv.payload && temporary_priv === "a")
-            {arr2.push(priv.payload)}
-            if (shared.payload && temporary_shared === "a")
-            {arr2.push(shared.payload)}
-
-
 
             if(temporary_rooms && parseInt(temporary_rooms)!== 0 && property.numberofrooms !== parseInt(temporary_rooms))
             {
                 eligible_by_room=false
             }
+            console.log("comprare", "temporary:",temporary_rooms, "permanent:", number_of_rooms)
+
+            if(!temporary_rooms && number_of_rooms &&  property.numberofrooms !== parseInt(number_of_rooms))
+            {console.log("şimdi uygulayabilir")
+                eligible_by_room=false
+            }
+
             if(temporary_beds && parseInt(temporary_beds)!== 0 && property.numberofbeds !== parseInt(temporary_beds))
             {
                 eligible_by_beds=false;

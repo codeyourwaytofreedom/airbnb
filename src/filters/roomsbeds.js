@@ -32,7 +32,6 @@ const Roomsbeds = ({setTemporaryRooms,setTemporaryBeds,
             setTemporaryBathrooms(e.target.value)
         } 
 
-
     }
 
     return ( 

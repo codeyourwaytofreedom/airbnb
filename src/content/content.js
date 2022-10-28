@@ -34,7 +34,7 @@ const Content = () => {
 
     const arr2 = [];
             arr.forEach(element => {
-                if(element && element!=="x" && element!=="y")
+                if(element && element!=="y")
                 {
                     // console.log("item: ", element)
                 arr2.push(element)
