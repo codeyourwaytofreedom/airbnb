@@ -44,6 +44,9 @@ const Filters = ({setShow}) => {
     const [temporary_bathrooms, setTemporaryBathrooms] = useState(null);
 
     const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
+    const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
+    const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
+
 
     const [temporary_property_types, setTemporaryPropertyTypes] = useState([]);
 
@@ -85,19 +88,34 @@ const Filters = ({setShow}) => {
             }
             console.log("comprare", "temporary:",temporary_rooms, "permanent:", number_of_rooms)
 
-            if(!temporary_rooms && number_of_rooms &&  property.numberofrooms !== parseInt(number_of_rooms))
-            {console.log("şimdi uygulayabilir")
+            if(!temporary_rooms && number_of_rooms && number_of_rooms !== "0" && property.numberofrooms !== parseInt(number_of_rooms))
+            {
                 eligible_by_room=false
             }
+
+
 
             if(temporary_beds && parseInt(temporary_beds)!== 0 && property.numberofbeds !== parseInt(temporary_beds))
             {
                 eligible_by_beds=false;
             }
+            if(!temporary_beds && number_of_beds && number_of_beds !== "0" && property.numberofbeds !== parseInt(number_of_beds))
+            {
+                eligible_by_beds=false;
+            }
+
+
+
             if(temporary_bathrooms && parseInt(temporary_bathrooms)!== 0 && property.numberofbathrooms !== parseInt(temporary_bathrooms))
             {
                 eligible_by_bathrooms= false;
             }
+            if(!temporary_bathrooms && number_of_bathrooms && number_of_bathrooms !== "0" && property.numberofbathrooms !== parseInt(number_of_bathrooms))
+            {
+                eligible_by_bathrooms= false;
+            }
+
+
 
             if(arr2.includes("entire place") || arr2.includes("private room") || arr2.includes("shared room"))
             {
