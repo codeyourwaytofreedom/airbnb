@@ -108,7 +108,7 @@ const Content = () => {
     },[number_of_rooms,number_of_beds,number_of_bathrooms,entire,priv,shared, selected_property_types]);
     
     
-
+let a =5;
 
     
     return ( 
@@ -124,9 +124,10 @@ const Content = () => {
             </div>
 
             {   
-                shadow.slice(0,10).map(
-                    element => 
+                shadow.slice(0,a).map(
+                    (element, index) => 
                         <Carousel
+                        key={index}
                             images={element.images}
                             location={element.location+", Turkey"}
                             hosttype={element.type}

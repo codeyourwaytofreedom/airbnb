@@ -86,7 +86,7 @@ const Filters = ({setShow}) => {
             {
                 eligible_by_room=false
             }
-            console.log("comprare", "temporary:",temporary_rooms, "permanent:", number_of_rooms)
+            // console.log("comprare", "temporary:",temporary_rooms, "permanent:", number_of_rooms)
 
             if(!temporary_rooms && number_of_rooms && number_of_rooms !== "0" && property.numberofrooms !== parseInt(number_of_rooms))
             {
@@ -144,7 +144,7 @@ const Filters = ({setShow}) => {
 
         // setShadow(filtered_properties)
         setTemporaryTotal(filtered_properties.length)
-        console.log(arr2)
+        // console.log(arr2)
 
         
     },[temporary_rooms,temporary_beds,temporary_bathrooms,temporary_entire,
