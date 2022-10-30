@@ -5,6 +5,7 @@ import { test } from "../test/test";
 import { useState, useEffect } from "react";
 import { disapprove_filters } from "../redux/approveFiltersSlice";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
+import Loader from "./loader";
 
 const Content = () => {
 
@@ -105,7 +106,8 @@ const Content = () => {
         
     },[number_of_rooms,number_of_beds,number_of_bathrooms,entire,priv,shared, selected_property_types]);
 
-    const [a, setA] = useState(7)
+    const [a, setA] = useState(11)
+    const [loading, setLoading] = useState(false)
 
 
     const handle_scroll = () => {
@@ -114,17 +116,25 @@ const Content = () => {
         // console.log("From top: ",document.documentElement.scrollTop)
 
         if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight)
-        {setA(a+4)}
-
+        {
+            setA(a+4)
+            setLoading(true)
+        
+        }
+        else{
+            setLoading(false)
+        }
     }
 
     useEffect(()=> {
 
         document.addEventListener("scroll", handle_scroll)
+        return () => window.removeEventListener("scroll", handle_scroll)
 
-    },[a])
+    },[a, loading])
     
     return ( 
+        <>
         <div className="content">
             <div>
             {"Rooms: "+number_of_rooms} <br></br>
@@ -152,6 +162,13 @@ const Content = () => {
 
             
         </div>
+        <div className="loader">
+            {loading ? <Loader/> : " "}
+        </div>
+        
+        
+
+        </>
      );
 }
  

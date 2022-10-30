@@ -9,6 +9,10 @@
     justify-content: center;
 }
 
+.loader{
+    display: grid;
+    justify-content: center;
+}
 .content{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
