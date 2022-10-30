@@ -3,9 +3,7 @@ import Carousel from "./carousel";
 import { useSelector, useDispatch} from "react-redux";
 import { test } from "../test/test";
 import { useState, useEffect } from "react";
-import { disapprove_filters } from "../redux/approveFiltersSlice";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
-import Loader from "./loader";
 
 const Content = () => {
 

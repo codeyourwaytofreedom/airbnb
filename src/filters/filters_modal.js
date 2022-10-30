@@ -20,7 +20,7 @@ import { add_property_type } from "../redux/propertyTypeSlice";
 
 
 
-const Filters = ({setShow}) => {
+const Filters = ({setShow, setHowmany}) => {
     
     const dispatch = useDispatch();
 
@@ -166,30 +166,36 @@ const Filters = ({setShow}) => {
 
     },[]);
 
-
+    
+    let howmany = 0;
     const handle_show = () => {
+        
+        
         setShow(false)
         if(temporary_entire!=="a")
-        {dispatch(set_entire(temporary_entire))}
+        {dispatch(set_entire(temporary_entire)) ; howmany=howmany+1}
         if(temporary_priv!=="a")
-        {dispatch(set_priv(temporary_priv))}
+        {dispatch(set_priv(temporary_priv)) ; howmany=howmany+1}
         if(temporary_shared!=="a")
-        {dispatch(set_shared(temporary_shared))}
+        {dispatch(set_shared(temporary_shared)) ; howmany=howmany+1}
 
         if(temporary_rooms)
-        {dispatch(add_filter_by_rooms(temporary_rooms))}
+        {dispatch(add_filter_by_rooms(temporary_rooms)) ; howmany=howmany+1}
 
         if(temporary_beds)
-        {dispatch(add_filter_by_beds(temporary_beds))}
+        {dispatch(add_filter_by_beds(temporary_beds)) ; howmany=howmany+1}
 
         if(temporary_bathrooms)
-        {dispatch(add_filter_by_bathrooms(temporary_bathrooms))}
+        {dispatch(add_filter_by_bathrooms(temporary_bathrooms)) ; howmany=howmany+1}
 
         if(temporary_property_types)
         {
-            dispatch(add_property_type(temporary_property_types))
+            dispatch(add_property_type(temporary_property_types)); 
+            howmany=howmany+temporary_property_types.length
   
         }
+
+        setHowmany(howmany)
         
 
     }

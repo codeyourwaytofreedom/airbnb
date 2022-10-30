@@ -9,11 +9,9 @@ const Top_roll = () => {
 
     const [copy_array, setCopy] = useState(rolling_options);
     const [show_filters, setShow] = useState(false);
-    // const [times_clicked, setClick] = useState(0);
-    // const [screen_wid, setWidth] = useState(window.innerWidth);
-    // const [hm, setHM] = useState(parseInt(screen_wid*0.75/100));
-    // const[change_in_hm, setChange] = useState(hm-parseInt(screen_wid*0.75/100));
-    // const [w_size_change, setWchange] = useState(0)
+    const [howmany, setHowmany] = useState(null)
+
+
 
 
     const moveElementsToEndOfArray = () => {
@@ -83,7 +81,7 @@ const Top_roll = () => {
                         </div>
 
                         <div className="top_roll_control_filter" onClick={() => {setShow(true)}}>   
-                                <div className="top_roll_control_filter_howmany">2</div>                             
+                                <div className="top_roll_control_filter_howmany">{howmany}</div>                             
                                 <div className="top_roll_control_filter_icon">
                                     <img src={require("../filters/filter.png")} alt="xx" />
                                 </div>
@@ -95,7 +93,10 @@ const Top_roll = () => {
             
             {
                 show_filters &&
-                <Filters setShow={setShow}></Filters>
+                <Filters 
+                        setShow={setShow}
+                        setHowmany={setHowmany}
+                />
             }
             
             
