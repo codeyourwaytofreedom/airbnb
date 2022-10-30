@@ -102,14 +102,27 @@ const Content = () => {
 
 
 
-
-        
         
     },[number_of_rooms,number_of_beds,number_of_bathrooms,entire,priv,shared, selected_property_types]);
-    
-    
-let a =5;
 
+    const [a, setA] = useState(7)
+
+
+    const handle_scroll = () => {
+        // console.log(window.innerHeight)
+        // console.log("Scroll Heigth: ",document.documentElement.scrollHeight)
+        // console.log("From top: ",document.documentElement.scrollTop)
+
+        if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight)
+        {setA(a+4)}
+
+    }
+
+    useEffect(()=> {
+
+        document.addEventListener("scroll", handle_scroll)
+
+    },[a])
     
     return ( 
         <div className="content">
