@@ -107,7 +107,7 @@ const Content = () => {
     },[number_of_rooms,number_of_beds,number_of_bathrooms,entire,priv,shared, selected_property_types]);
 
     const [a, setA] = useState(11)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
 
     const handle_scroll = () => {
@@ -117,12 +117,9 @@ const Content = () => {
 
         if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight)
         {
-            setA(a+4)
+            setA(a+8)
             setLoading(true)
         
-        }
-        else{
-            setLoading(false)
         }
     }
 
@@ -162,9 +159,10 @@ const Content = () => {
 
             
         </div>
-        <div className="loader">
-            {loading ? <Loader/> : " "}
-        </div>
+        
+        {/* <div className="loader" style={{display: loading ? "grid" : "none"}} >
+            <Loader/>
+        </div> */}
         
         
 

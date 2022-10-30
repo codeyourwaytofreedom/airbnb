@@ -130,6 +130,22 @@
   justify-content: center;
   grid-template-columns: 1fr 2fr;
   cursor: pointer;
+  position: relative;
+}
+.top_roll_control_filter_howmany {
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  right: -5px;
+  top: -5px;
+  background-color: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
 }
 .top_roll_control_filter_icon {
   height: 25px;

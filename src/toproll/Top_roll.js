@@ -82,7 +82,8 @@ const Top_roll = () => {
                             </div>
                         </div>
 
-                        <div className="top_roll_control_filter" onClick={() => {setShow(true)}}>                                
+                        <div className="top_roll_control_filter" onClick={() => {setShow(true)}}>   
+                                <div className="top_roll_control_filter_howmany">2</div>                             
                                 <div className="top_roll_control_filter_icon">
                                     <img src={require("../filters/filter.png")} alt="xx" />
                                 </div>
