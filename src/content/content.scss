@@ -1,6 +1,7 @@
 html, body{
     box-sizing: border-box;
     overflow: scroll;
+    overflow-x: hidden;
 }
 // body::-webkit-scrollbar {
 //     display: none;
