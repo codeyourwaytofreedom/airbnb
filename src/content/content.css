@@ -28,8 +28,8 @@ html, body {
   grid-template-columns: repeat(4, 1fr);
   position: relative;
   top: 190px;
-  padding: 20px 40px;
-  row-gap: 30px;
+  padding: 15px 40px;
+  row-gap: 40px;
   -moz-column-gap: 20px;
        column-gap: 20px;
   z-index: 2;
@@ -43,7 +43,7 @@ html, body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  aspect-ratio: 1/1;
+  aspect-ratio: 10/9;
 }
 .content .property .property_image img {
   width: 100%;

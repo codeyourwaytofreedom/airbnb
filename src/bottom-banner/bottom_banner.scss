@@ -1,8 +1,13 @@
-
+*{box-sizing: border-box;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+     box-sizing: border-box;         /* Opera/IE 8+ */
+}
 
 
 .bottom_banner{
-    border: 2px solid blue;
+    // border: 2px solid blue;
     height: 50px;
     width: 100vw;
     background-color: #FFFFFF;
@@ -12,10 +17,35 @@
     grid-template-columns: 5fr 3fr;
     z-index: 50;
     padding: 0 40px;
-    &_left{
+    &_left, &_right{
         display: flex;
+        &_cell{
+            display: grid;
+            justify-content: start;
+            align-content: center;
+            color: #222222;
+            font-size: 14px;
+            &--globe, &--currency, &--support{
+                display: flex;
+                align-items: center;
+                // border: 2px solid red;
+                column-gap: 8px;
+                padding: 0 10px;
+
+            }
+        }
+        span{
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            width: 15px;
+        }
     }
     &_right{
-        display: flex;
+        justify-content: end;
+        font-size: 14px;
+        font-weight: 600;
+        color:#222222;
     }
+
 }
