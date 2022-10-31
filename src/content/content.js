@@ -107,7 +107,7 @@ const Content = () => {
     },[number_of_rooms,number_of_beds,number_of_bathrooms,entire,priv,shared, selected_property_types]);
 
     const [a, setA] = useState(11)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
 
     const handle_scroll = () => {
@@ -118,7 +118,15 @@ const Content = () => {
         if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight)
         {
             setLoading(true)
-            setTimeout(setA(a+8),9000)
+            if(a<shadow.length)
+            {
+                setTimeout(setA(a+8),9000)
+            }
+            else{
+                setLoading(false)
+                console.log("ended loading animation")
+            }
+            
         }
     }
 
@@ -126,6 +134,7 @@ const Content = () => {
 
         document.addEventListener("scroll", handle_scroll)
         return () => window.removeEventListener("scroll", handle_scroll)
+        console.log(a)
 
     },[a, loading])
     
