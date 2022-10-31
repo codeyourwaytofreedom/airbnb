@@ -9,7 +9,7 @@
   height: 100px;
   width: 100vw;
   display: grid;
-  grid-template-columns: 6.5vw 77vw 140px 6.5vw;
+  grid-template-columns: 40px auto 150px 40px;
   overflow-x: hidden;
   align-items: center;
 }
@@ -35,7 +35,7 @@
   display: flex;
   position: relative;
   z-index: 5;
-  left: -1vw;
+  left: -2.5vw;
 }
 .top_roll_content_back {
   display: grid;
@@ -47,8 +47,8 @@
   height: 25px;
   z-index: 99;
   position: absolute;
-  left: 80px;
-  top: 30px;
+  left: 40px;
+  top: 5px;
 }
 .top_roll_content_button {
   height: 80%;
@@ -171,7 +171,7 @@
   width: 50px;
   height: 100%;
   position: absolute;
-  left: 5vw;
+  left: 20px;
   top: 0;
   box-shadow: inset 4px 11px 73px white;
   z-index: 9;

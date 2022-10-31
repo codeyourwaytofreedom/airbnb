@@ -30,7 +30,6 @@ html, body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  border: 2px solid red;
   aspect-ratio: 1/1;
 }
 .content .property .property_image img {

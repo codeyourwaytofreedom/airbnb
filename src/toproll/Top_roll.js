@@ -118,9 +118,9 @@ const Top_roll = () => {
                 <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
             </div>
             
-            {/* shadows */}
+{/* 
             <div className="shadow_left"></div>
-            <div className="shadow_right"></div>
+            <div className="shadow_right"></div> */}
             
             
             <div className="top_roll_control">
