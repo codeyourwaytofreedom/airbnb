@@ -1,7 +1,11 @@
 html, body{
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow: scroll;
 }
+// body::-webkit-scrollbar {
+//     display: none;
+//   }
+
 *{
     padding: 0;
     margin: 0;
@@ -16,17 +20,31 @@ html, body{
     justify-content: center;
 }
 
+.all_kernel{
+    overflow: scroll;
+  }
+
+.all_kernel::-webkit-scrollbar {
+display: none;
+}
+
+
 .loader{
     display: grid;
     justify-content: center;
 }
+
 .content{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    top:190px;
     padding:20px 40px;
-    row-gap: 100px;
+    row-gap: 30px;
     column-gap: 20px;
-    overflow-y: hidden;
+    z-index: 2;
+    overflow: scroll;
+    width: 100vw;
     .property{
         .property_image{
             position: relative;
@@ -105,3 +123,8 @@ html, body{
         }
     }
 }
+
+.content::-webkit-scrollbar {
+    display: none;
+  }
+

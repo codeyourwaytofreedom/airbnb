@@ -11,11 +11,15 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     grid-template-columns: 10fr 11fr 10fr;
     height: 80px;
     padding: 0 40px;
     border-bottom: 1px solid #DDDDDD;
     white-space: nowrap;
+    position: fixed;
+    z-index: 3;
+    background-color: white;
   }
   .hd_search {
     padding: 0 24px;

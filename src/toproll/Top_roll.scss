@@ -18,6 +18,10 @@
     display: grid;
     grid-template-columns: 40px auto 150px 40px;
     overflow-x: hidden;
+    position: fixed;
+    top:80px;
+    z-index: 3;
+    background-color: white;
 
     align-items: center;
     &_left-shield{
