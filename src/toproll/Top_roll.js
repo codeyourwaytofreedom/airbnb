@@ -4,13 +4,25 @@ import rolling_options from "./Top_roll_options";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Filters from "../filters/filters_modal";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Top_roll = () => {
 
     const [copy_array, setCopy] = useState(rolling_options);
     const [show_filters, setShow] = useState(false);
-    const [howmany, setHowmany] = useState(null)
+    const [howmany, setHowmany] = useState(0)
 
+    const entire = useSelector(state => state.placeTypeSlice.entire)
+    
+    let number_of_filters_in_place = 0;
+
+    useEffect(()=> {
+        
+        if(entire.payload)
+        {number_of_filters_in_place++}
+        setHowmany(number_of_filters_in_place)
+    }, [entire])
 
 
 

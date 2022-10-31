@@ -99,6 +99,8 @@ const Content = () => {
 
         setShadow(filtered_properties)
 
+        console.log("geri gelen", arr2.length)
+
 
 
         

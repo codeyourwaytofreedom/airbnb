@@ -152,7 +152,6 @@ const Filters = ({setShow, setHowmany}) => {
         entire, priv, shared]);
 
     
-        
     
 
     useEffect(()=>{
@@ -167,35 +166,30 @@ const Filters = ({setShow, setHowmany}) => {
     },[]);
 
     
-    let howmany = 0;
+    
     const handle_show = () => {
-        
         
         setShow(false)
         if(temporary_entire!=="a")
-        {dispatch(set_entire(temporary_entire)) ; howmany=howmany+1}
+        {dispatch(set_entire(temporary_entire)) ; }
         if(temporary_priv!=="a")
-        {dispatch(set_priv(temporary_priv)) ; howmany=howmany+1}
+        {dispatch(set_priv(temporary_priv)) ; }
         if(temporary_shared!=="a")
-        {dispatch(set_shared(temporary_shared)) ; howmany=howmany+1}
+        {dispatch(set_shared(temporary_shared)) ; }
 
         if(temporary_rooms)
-        {dispatch(add_filter_by_rooms(temporary_rooms)) ; howmany=howmany+1}
+        {dispatch(add_filter_by_rooms(temporary_rooms)) ; }
 
         if(temporary_beds)
-        {dispatch(add_filter_by_beds(temporary_beds)) ; howmany=howmany+1}
+        {dispatch(add_filter_by_beds(temporary_beds)) ;}
 
         if(temporary_bathrooms)
-        {dispatch(add_filter_by_bathrooms(temporary_bathrooms)) ; howmany=howmany+1}
+        {dispatch(add_filter_by_bathrooms(temporary_bathrooms)) ;}
 
         if(temporary_property_types)
         {
-            dispatch(add_property_type(temporary_property_types)); 
-            howmany=howmany+temporary_property_types.length
-  
+            dispatch(add_property_type(temporary_property_types));   
         }
-
-        setHowmany(howmany)
         
 
     }
