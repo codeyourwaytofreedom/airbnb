@@ -4,6 +4,7 @@ import { useSelector, useDispatch} from "react-redux";
 import { test } from "../test/test";
 import { useState, useEffect } from "react";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
+import Loader from "./loader";
 
 const Content = () => {
 
@@ -99,7 +100,6 @@ const Content = () => {
 
         setShadow(filtered_properties)
 
-        console.log("geri gelen", arr2.length)
 
 
 
@@ -117,9 +117,8 @@ const Content = () => {
 
         if(window.innerHeight+document.documentElement.scrollTop+1 >= document.documentElement.scrollHeight)
         {
-            setA(a+8)
             setLoading(true)
-        
+            setTimeout(setA(a+8),9000)
         }
     }
 
@@ -160,9 +159,9 @@ const Content = () => {
             
         </div>
         
-        {/* <div className="loader" style={{display: loading ? "grid" : "none"}} >
+        <div className="loader" style={{display: loading ? "grid" : "none"}} >
             <Loader/>
-        </div> */}
+        </div>
         
         
 
