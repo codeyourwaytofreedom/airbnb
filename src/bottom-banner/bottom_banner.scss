@@ -25,6 +25,13 @@
             align-content: center;
             color: #222222;
             font-size: 14px;
+            a{
+                text-decoration: none;
+                color:#222222;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
             &--globe, &--currency, &--support{
                 display: flex;
                 align-items: center;

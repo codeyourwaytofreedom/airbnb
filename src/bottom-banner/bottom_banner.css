@@ -25,6 +25,13 @@
   color: #222222;
   font-size: 14px;
 }
+.bottom_banner_left_cell a, .bottom_banner_right_cell a {
+  text-decoration: none;
+  color: #222222;
+}
+.bottom_banner_left_cell a:hover, .bottom_banner_right_cell a:hover {
+  text-decoration: underline;
+}
 .bottom_banner_left_cell--globe, .bottom_banner_left_cell--currency, .bottom_banner_left_cell--support, .bottom_banner_right_cell--globe, .bottom_banner_right_cell--currency, .bottom_banner_right_cell--support {
   display: flex;
   align-items: center;

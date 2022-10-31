@@ -11,6 +11,10 @@ function App() {
           <Route path='/host/homes' element={<h1>Host homes page</h1>}/>
           <Route path='/host/experiences' element={<h1>Experiences page</h1>}/>
           <Route path='/help' element={<h1>Help page</h1>}/>
+          <Route path='/privacy' element={<h1>Privacy</h1>}/>
+          <Route path='/terms' element={<h1>Terms</h1>}/>
+          <Route path='/sitemap' element={<h1>Sitemap</h1>}/>
+
         </Routes>
     </Router>
 
