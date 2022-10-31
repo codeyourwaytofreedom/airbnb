@@ -17,6 +17,11 @@ const Top_roll = () => {
     const priv = useSelector(state => state.placeTypeSlice.priv)
     const shared = useSelector(state => state.placeTypeSlice.shared)
 
+    const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
+    const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
+    const number_of_bathrooms = useSelector(state => state.roomsSlice.nu_bathrooms.payload);
+
+    const property_types = useSelector(state => state.propertyTypeSlice.selected_property_types.payload);
     
     let number_of_filters_in_place = 0;
 
@@ -35,9 +40,28 @@ const Top_roll = () => {
             number_of_filters_in_place++
         }
 
+        if(number_of_rooms && number_of_rooms !== "0")
+        {
+            number_of_filters_in_place++
+        }
+        if(number_of_beds && number_of_beds !== "0")
+        {
+            number_of_filters_in_place++
+        }
+        if(number_of_bathrooms && number_of_bathrooms !== "0")
+        {
+            number_of_filters_in_place++
+        }
+        if(property_types)
+        {
+            number_of_filters_in_place= number_of_filters_in_place+property_types.length
+        }
+
+
+
 
         setHowmany(number_of_filters_in_place)
-    }, [entire])
+    }, [entire, priv, shared, number_of_rooms, number_of_beds, number_of_bathrooms, property_types])
 
 
 
