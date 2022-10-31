@@ -14,13 +14,28 @@ const Top_roll = () => {
     const [howmany, setHowmany] = useState(0)
 
     const entire = useSelector(state => state.placeTypeSlice.entire)
+    const priv = useSelector(state => state.placeTypeSlice.priv)
+    const shared = useSelector(state => state.placeTypeSlice.shared)
+
     
     let number_of_filters_in_place = 0;
 
     useEffect(()=> {
         
-        if(entire.payload)
-        {number_of_filters_in_place++}
+        if(entire.payload && entire.payload !== "y")
+        {
+            number_of_filters_in_place++
+        }
+        if(priv.payload && priv.payload !== "y")
+        {
+            number_of_filters_in_place++
+        }
+        if(shared.payload && shared.payload !== "y")
+        {
+            number_of_filters_in_place++
+        }
+
+
         setHowmany(number_of_filters_in_place)
     }, [entire])
 
