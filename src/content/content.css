@@ -1,6 +1,12 @@
+html, body {
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
 * {
   padding: 0;
-  margin: 0;
+  margin: 0; /* Safari/Chrome, other WebKit */ /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
 }
 
 .loader {
@@ -15,6 +21,7 @@
   row-gap: 30px;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  overflow-y: hidden;
 }
 .content .property .property_image {
   position: relative;

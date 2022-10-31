@@ -125,6 +125,7 @@ const Content = () => {
             else
             {
                 setLoading(false)
+                setA(a+8)
                 console.log("ended loading animation")
             }
             
