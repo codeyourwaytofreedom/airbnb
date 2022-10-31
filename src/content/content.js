@@ -136,7 +136,6 @@ const Content = () => {
 
         document.addEventListener("scroll", handle_scroll)
         return () => window.removeEventListener("scroll", handle_scroll)
-        console.log(a)
 
     },[a, loading])
     
@@ -160,9 +159,9 @@ const Content = () => {
                         key={index}
                             images={element.images}
                             location={element.location+", Turkey"}
-                            hosttype={element.type}
-                            dates={element.numberofrooms}
-                            total={element.numberofbeds}
+                            hosttype={"Individual Host"}
+                            dates={"2-7 Nov"}
+                            total={200}
                         />
                 ) 
             }

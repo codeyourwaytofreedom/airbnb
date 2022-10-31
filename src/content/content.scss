@@ -24,7 +24,7 @@ html, body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding:20px 40px;
-    row-gap: 30px;
+    row-gap: 100px;
     column-gap: 20px;
     overflow-y: hidden;
     .property{
@@ -32,9 +32,12 @@ html, body{
             position: relative;
             align-items: center;
             user-select: none;
+            border: 2px solid red;
+            aspect-ratio: 1/1;
             img{
                 width: 100%;
-                height: 40vh;
+                height: 100%;
+                object-fit: cover;
                 border-radius: 15px;
             }
             .back{

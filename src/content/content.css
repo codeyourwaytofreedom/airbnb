@@ -18,7 +18,7 @@ html, body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 20px 40px;
-  row-gap: 30px;
+  row-gap: 100px;
   -moz-column-gap: 20px;
        column-gap: 20px;
   overflow-y: hidden;
@@ -30,10 +30,14 @@ html, body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  border: 2px solid red;
+  aspect-ratio: 1/1;
 }
 .content .property .property_image img {
   width: 100%;
-  height: 40vh;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
 }
 .content .property .property_image .back {
