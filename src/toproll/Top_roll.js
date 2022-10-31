@@ -132,7 +132,10 @@ const Top_roll = () => {
                         </div>
 
                         <div className="top_roll_control_filter" onClick={() => {setShow(true)}}>   
-                                <div className="top_roll_control_filter_howmany">{howmany}</div>                             
+                                <div className="top_roll_control_filter_howmany"
+                                style={{display:howmany !== 0 ? "grid" : "none"}}
+                                >   {howmany}
+                                </div>                             
                                 <div className="top_roll_control_filter_icon">
                                     <img src={require("../filters/filter.png")} alt="xx" />
                                 </div>

@@ -120,9 +120,10 @@ const Content = () => {
             setLoading(true)
             if(a<shadow.length)
             {
-                setTimeout(setA(a+8),9000)
+                setA(a+8)
             }
-            else{
+            else
+            {
                 setLoading(false)
                 console.log("ended loading animation")
             }
