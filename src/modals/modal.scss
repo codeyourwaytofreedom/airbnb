@@ -29,11 +29,12 @@
         background-color: white;
         width: 80vw;
         height: 80vh;
+        overflow-y: scroll;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         .translation{
             // border: 2px solid red;
-            padding: 20px 20px;
+            padding: 35px 20px;
             &_panel{
                 padding: 15px 10px;
                 width: fit-content;
@@ -115,6 +116,39 @@
                   }
             
             }
+        }
+        .language_options{
+          // border: 2px solid red;
+          padding: 20px 20px;
+          // height: 60vh;
+          // overflow-y: scroll;
+          h3{
+            color:#222222;
+            font-size: 21px;
+          }
+          .all_languages{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            row-gap: 10px;
+            padding-top: 20px;
+            gap: 10px;
+            .language{
+              // border: 1px solid black;
+              border-radius: 10px;
+              display: grid;
+              align-items: center;
+              justify-content: start;
+              padding: 10px;
+              font-size: 14px;
+              row-gap: 3px;
+              .up{
+                  color: #222222;
+              }
+              .down{
+                  color:gray;
+              }
+            }
+          }
         }
         
     }  
