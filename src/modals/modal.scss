@@ -23,6 +23,7 @@
             width: fit-content;
             position: relative;
             left: 20px;
+            cursor: pointer;
         }
     } 
     &_language-shell{
@@ -134,6 +135,7 @@
             gap: 10px;
             .language{
               // border: 1px solid black;
+              background: transparent;
               border-radius: 10px;
               display: grid;
               align-items: center;

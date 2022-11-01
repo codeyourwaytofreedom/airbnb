@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Modal from "../modals/modal_component";
 import { useState } from "react";
 import React from "react";
-import { Lan } from "./language_modal";
+import  Lan  from "./language_modal";
 
 
 const Bottom_banner = () => {    
@@ -13,7 +13,7 @@ const Bottom_banner = () => {
     const [show, setShow] = useState(false)
     return ( 
         <>
-        <Modal content={Lan} show={show} setShow={setShow} />
+        <Modal content={<Lan/>} show={show} setShow={setShow} />
         <div className="bottom_banner">
         
             <div className="bottom_banner_left">

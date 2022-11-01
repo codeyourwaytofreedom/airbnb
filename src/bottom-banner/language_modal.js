@@ -1,10 +1,27 @@
+import { useState } from "react";
 import "../modals/modal.css";
 import language_pairs from "./langs.json";
 
 
-const arr = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 
-export const Lan = 
+
+
+
+
+const Lan = () => {
+    const [clicked_one, setClicked] = useState(" ");
+    
+    const handle_click = (e) => {
+        console.log("clicked")
+        setClicked(e)
+        console.log(clicked_one)
+    }
+
+    console.log(clicked_one)
+    
+
+    return ( 
+
                 <div className="modal_panel_language-shell">
                     <div className="translation">
                         <div className="translation_panel">
@@ -31,7 +48,10 @@ export const Lan =
                                 language_pairs.map((element, index) => 
                                
                                     
-                                        <div className="language" key={index}>
+                                        <div className="language" key={index} 
+                                            onClick={()=>setClicked(element.country)}
+                                            style={{border: clicked_one===element.country ? "1px solid #222222" : "1px solid white"}}
+                                            >
                                             <div className="up">{element.lanaguage}</div>
                                             <div className="down">{element.country}</div>
                                         </div>
@@ -44,7 +64,8 @@ export const Lan =
                     
                 </div>
 
-export const Currency =
-                <div>
-                    Hello Currency
-                </div>
+
+     );
+}
+ 
+export default Lan;
