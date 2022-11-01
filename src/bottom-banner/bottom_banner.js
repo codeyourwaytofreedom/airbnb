@@ -2,15 +2,20 @@ import "./bottom_banner.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faChevronUp, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
-import Language from "./language_modal";
 import Modal from "../modal_component";
+import { useState } from "react";
+import React from "react";
+import { Lan } from "./banner-modals/language_modal";
 
-const Bottom_banner = () => {
+
+
+
+const Bottom_banner = () => {    
 
     const [show, setShow] = useState(false)
     return ( 
         <>
-        <Modal content={"hhhh"}/>
+        <Modal content={Lan} show={show} setShow={setShow} />
         <div className="bottom_banner">
         
             <div className="bottom_banner_left">
@@ -32,7 +37,7 @@ const Bottom_banner = () => {
                 
                 <div className="bottom_banner_left_cell--globe">
                     
-                    <button className="button_english">
+                    <button className="button_english" onClick={() => setShow(true)}>
                          <FontAwesomeIcon style={{color:"black"}} icon={faGlobe}/>
                          <div>English (GB)</div>
                     </button>
