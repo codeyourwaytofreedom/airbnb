@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .modal_panel {
   position: fixed;
   display: grid;
@@ -35,4 +36,82 @@
   height: 80vh;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+.modal_panel_language-shell .translation {
+  padding: 20px 20px;
+}
+.modal_panel_language-shell .translation_panel {
+  padding: 15px 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  align-items: center;
+  background-color: rgb(247, 247, 250);
+  border-radius: 5px;
+}
+.modal_panel_language-shell .translation_panel_double {
+  display: grid;
+  row-gap: 5px;
+}
+.modal_panel_language-shell .translation_panel_double_action {
+  color: #222222;
+}
+.modal_panel_language-shell .translation_panel_double_explain {
+  color: gray;
+  font-size: 14px;
+}
+.modal_panel_language-shell .translation .toggle {
+  /* Rounded sliders */
+}
+.modal_panel_language-shell .translation .toggle .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 34px;
+}
+.modal_panel_language-shell .translation .toggle .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.modal_panel_language-shell .translation .toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.modal_panel_language-shell .translation .toggle .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  content: "";
+}
+.modal_panel_language-shell .translation .toggle input:checked + .slider {
+  background-color: #222222;
+}
+.modal_panel_language-shell .translation .toggle input:checked + .slider:before {
+  transform: translateX(17px);
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  content: "✔";
+}
+.modal_panel_language-shell .translation .toggle .slider.round {
+  border-radius: 34px;
+}
+.modal_panel_language-shell .translation .toggle .slider.round:before {
+  border-radius: 50%;
 }/*# sourceMappingURL=modal.css.map */
