@@ -14,7 +14,7 @@
 .modal_panel_shell_title {
   background-color: white;
   width: 80vw;
-  height: 60px;
+  height: 70px;
   border-bottom: 1px solid silver;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -51,11 +51,11 @@
        column-gap: 20px;
   align-items: center;
   background-color: rgb(247, 247, 250);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .modal_panel_language-shell .translation_panel_double {
   display: grid;
-  row-gap: 5px;
+  row-gap: 10px;
 }
 .modal_panel_language-shell .translation_panel_double_action {
   color: #222222;
@@ -138,6 +138,7 @@
   padding: 10px;
   font-size: 14px;
   row-gap: 3px;
+  cursor: pointer;
 }
 .modal_panel_language-shell .language_options .all_languages .language .up {
   color: #222222;

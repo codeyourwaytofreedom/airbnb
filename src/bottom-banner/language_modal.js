@@ -1,8 +1,6 @@
 import "../modals/modal.css";
+import language_pairs from "./langs.json";
 
-const countryCodes = require('country-codes-list')
-
-console.log(typeof(countryCodes))
 
 const arr = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 
@@ -30,12 +28,12 @@ export const Lan =
                             <div className="all_languages">
                                 
                                 {
-                                arr.map((element, index) => 
+                                language_pairs.map((element, index) => 
                                
                                     
                                         <div className="language" key={index}>
-                                            <div className="up">English</div>
-                                            <div className="down">United States</div>
+                                            <div className="up">{element.lanaguage}</div>
+                                            <div className="down">{element.country}</div>
                                         </div>
                                     
 
