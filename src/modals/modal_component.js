@@ -33,9 +33,6 @@ const Modal = ({content, show, setShow}) => {
                     </div>
                     {content}
 
-                    {/* <div className="modal_panel_shell_options">
-                        {content}
-                    </div>                  */}
                 </div>
             </div>
      );

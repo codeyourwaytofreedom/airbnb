@@ -92,6 +92,14 @@ const Top_roll = () => {
         }
 
     return ( 
+        <>
+            {
+                show_filters &&
+                <Filters 
+                        setShow={setShow}
+                        setHowmany={setHowmany}
+                />
+            }
         <div className="top_roll">
 
             <div className="top_roll_left-shield"></div>
@@ -145,16 +153,11 @@ const Top_roll = () => {
 
             <div className="top_roll_right-shield"></div>
             
-            {
-                show_filters &&
-                <Filters 
-                        setShow={setShow}
-                        setHowmany={setHowmany}
-                />
-            }
+            
             
             
         </div>
+        </>
      );
 }
  

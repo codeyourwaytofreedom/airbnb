@@ -19,7 +19,7 @@
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 120;
+  z-index: 10000000020 !important;
 }
 .panel_shell {
   width: 770px;
