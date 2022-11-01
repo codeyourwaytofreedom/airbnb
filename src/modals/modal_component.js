@@ -5,7 +5,7 @@ import "./modal.css"
 
 
 
-const Modal = ({content, show, setShow}) => {
+const Modal = ({content, show, setter}) => {
 
 
     const core = useRef();
@@ -14,7 +14,7 @@ const Modal = ({content, show, setShow}) => {
         const outside_core = (event) => {
                     if(!core.current.contains(event.target))
                     {
-                        setShow(false)
+                        {setter(false)}
                     }
         }
         document.addEventListener("mousedown", outside_core)
@@ -23,11 +23,11 @@ const Modal = ({content, show, setShow}) => {
 
 
     return ( 
-        <div className="modal_panel" style={{ display: show ? "grid" : "none" }}>
+        <div className="modal_panel">
                 
                 <div className="modal_panel_shell" ref={core}>
                     <div className="modal_panel_shell_title">
-                        <button onClick={() => setShow(false)}>
+                        <button onClick={() => {setter(false)}}>
                             <FontAwesomeIcon style={{color:"black"}} size={"xl"} icon={faClose}/>
                         </button>
                     </div>

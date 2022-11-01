@@ -38,6 +38,7 @@
   -moz-column-gap: 8px;
        column-gap: 8px;
   padding: 0 10px;
+  cursor: pointer;
 }
 .bottom_banner_left span, .bottom_banner_right span {
   display: grid;

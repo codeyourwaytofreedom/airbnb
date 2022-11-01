@@ -6,14 +6,29 @@ import Modal from "../modals/modal_component";
 import { useState } from "react";
 import React from "react";
 import  Lan  from "./language_modal";
+import Currency from "./currency_modal";
 
 
 const Bottom_banner = () => {    
 
-    const [show, setShow] = useState(false)
+    const [showLanguage, setShowLanguage] = useState(false)
+    const [showCurrency, setShowCurrency] = useState(false)
+
+    
     return ( 
         <>
-        <Modal content={<Lan/>} show={show} setShow={setShow} />
+        {showLanguage ?
+        <Modal content={<Lan/>} setter={setShowLanguage} />
+        : null}
+
+        {showCurrency ?
+        <Modal content={<Currency/>} setter={setShowCurrency} />
+        : null}
+
+
+
+
+        
         <div className="bottom_banner">
         
             <div className="bottom_banner_left">
@@ -35,13 +50,13 @@ const Bottom_banner = () => {
                 
                 <div className="bottom_banner_left_cell--globe">
                     
-                    <button className="button_english" onClick={() => setShow(true)}>
+                    <button className="button_english" onClick={() => setShowLanguage(true)}>
                          <FontAwesomeIcon style={{color:"black"}} icon={faGlobe}/>
                          <div>English (GB)</div>
                     </button>
                     
                 </div>
-                <div className="bottom_banner_left_cell--currency">
+                <div className="bottom_banner_left_cell--currency" onClick={() => setShowCurrency(true)}>
                     <div>£ </div>  
                     <div>GBP</div>
                     

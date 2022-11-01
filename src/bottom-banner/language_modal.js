@@ -2,23 +2,8 @@ import { useState } from "react";
 import "../modals/modal.css";
 import language_pairs from "./langs.json";
 
-
-
-
-
-
-
 const Lan = () => {
-    const [clicked_one, setClicked] = useState(" ");
-    
-    const handle_click = (e) => {
-        console.log("clicked")
-        setClicked(e)
-        console.log(clicked_one)
-    }
-
-    console.log(clicked_one)
-    
+    const [clicked_one, setClicked] = useState(" ");    
 
     return ( 
 
