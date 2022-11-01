@@ -28,7 +28,7 @@ const Modal = ({content, show, setShow}) => {
                 <div className="modal_panel_shell" ref={core}>
                     <div className="modal_panel_shell_title">
                         <button onClick={() => setShow(false)}>
-                            <FontAwesomeIcon style={{color:"gray"}} size={"xl"} icon={faClose}/>
+                            <FontAwesomeIcon style={{color:"black"}} size={"xl"} icon={faClose}/>
                         </button>
                     </div>
                     {content}

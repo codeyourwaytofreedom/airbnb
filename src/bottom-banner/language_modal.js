@@ -1,5 +1,7 @@
+import "../modals/modal.css";
+
 export const Lan = 
-                <div>
+                <div className="modal_panel_language-shell">
                     Hello World
                     HEllo
                 </div>

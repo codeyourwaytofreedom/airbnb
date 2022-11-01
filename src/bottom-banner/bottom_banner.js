@@ -2,12 +2,10 @@ import "./bottom_banner.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faChevronUp, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
-import Modal from "../modal_component";
+import Modal from "../modals/modal_component";
 import { useState } from "react";
 import React from "react";
-import { Lan } from "./banner-modals/language_modal";
-
-
+import { Lan } from "./language_modal";
 
 
 const Bottom_banner = () => {    
