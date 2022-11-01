@@ -14,6 +14,7 @@ function App() {
           <Route path='/privacy' element={<h1>Privacy</h1>}/>
           <Route path='/terms' element={<h1>Terms</h1>}/>
           <Route path='/sitemap' element={<h1>Sitemap</h1>}/>
+          <Route path='/company-details' element={<h1>Company Details</h1>}/>
 
         </Routes>
     </Router>

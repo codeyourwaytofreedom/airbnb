@@ -50,4 +50,16 @@
   font-size: 14px;
   font-weight: 600;
   color: #222222;
+}
+.bottom_banner_right .button_english {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  padding: 0;
+  cursor: pointer;
+  display: flex !important;
+  border: none;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
 }/*# sourceMappingURL=bottom_banner.css.map */

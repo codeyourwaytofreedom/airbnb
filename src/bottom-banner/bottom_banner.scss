@@ -5,6 +5,11 @@
      box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+@mixin banner-modal-font {
+        font-size: 14px;
+        font-weight: 600;
+        color:#222222;
+}
 
 .bottom_banner{
     // border: 2px solid blue;
@@ -50,9 +55,16 @@
     }
     &_right{
         justify-content: end;
-        font-size: 14px;
-        font-weight: 600;
-        color:#222222;
+        @include banner-modal-font;
+        .button_english{
+            background: transparent;
+            @include banner-modal-font;
+            padding: 0;
+            cursor: pointer;
+            display: flex !important;
+            border: none;
+            column-gap: 5px;            
+        }
     }
 
 }

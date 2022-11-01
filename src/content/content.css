@@ -11,7 +11,9 @@ html, body {
 }
 
 .all_kernel {
-  overflow: scroll;
+  overflow-y: scroll;
+  width: 100vw;
+  z-index: 5;
 }
 
 .all_kernel::-webkit-scrollbar {
