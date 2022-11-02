@@ -37,9 +37,7 @@
 .map {
   position: absolute;
   top: 190px;
-  height: 70vh;
-  border: 2px solid red;
-  background-color: red;
+  height: 71.5vh;
   width: 100vw;
   z-index: 2;
 }/*# sourceMappingURL=show_map.css.map */
