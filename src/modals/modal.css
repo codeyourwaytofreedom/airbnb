@@ -32,11 +32,13 @@
   cursor: pointer;
 }
 .modal_panel_shell_title-support {
-  width: 100vw;
+  width: 98.5vw;
   height: 50px;
   background-color: white;
   display: grid;
   align-items: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .modal_panel_shell_title-support button {
   border: none;
@@ -45,7 +47,7 @@
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
-  left: 20px;
+  left: 30px;
   cursor: pointer;
 }
 .modal_panel_language-shell {
@@ -166,5 +168,25 @@
   color: gray;
 }
 .modal_panel_support-shell {
-  border: 2px solid blue;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 5px 70px;
+  padding-bottom: 70px;
+  background-color: white;
+  color: #222222;
+}
+.modal_panel_support-shell .column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.modal_panel_support-shell .column_title {
+  font-weight: 600;
+  font-size: 14px;
+}
+.modal_panel_support-shell .column a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #222222;
 }/*# sourceMappingURL=modal.css.map */

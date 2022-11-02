@@ -15,6 +15,7 @@ function App() {
           <Route path='/terms' element={<h1>Terms</h1>}/>
           <Route path='/sitemap' element={<h1>Sitemap</h1>}/>
           <Route path='/company-details' element={<h1>Company Details</h1>}/>
+          <Route path='/nagivated-here' element={<h1>Navigated Page</h1>}/>
 
         </Routes>
     </Router>
