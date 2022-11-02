@@ -25,6 +25,7 @@ html, body{
     overflow-y: scroll;
     width: 100vw;
     z-index: 5;
+    display: grid;
   }
 
 .all_kernel::-webkit-scrollbar {

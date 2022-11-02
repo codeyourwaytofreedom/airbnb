@@ -5,6 +5,7 @@ import "../src/content/content.css"
 import Bottom_banner from "./bottom-banner/bottom_banner";
 import Show_map from "./show_map/show_map";
 import { useState } from "react";
+import Map from "./show_map/map";
 
 
 const Home = () => {
@@ -13,9 +14,11 @@ const Home = () => {
         <div className="all_kernel">
             <Head></Head>
             <Top_roll></Top_roll>
-            {!show_map && <Content/>}
+            {!show_map ? <Content/> : <Map/>}
+            
             <Show_map setShowMap={setShowMap} show_map={show_map}/>
-            <Bottom_banner/>
+            {!show_map  && <Bottom_banner/>}
+        
         </div>
         
 
