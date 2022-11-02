@@ -8,6 +8,11 @@
     background-color: rgba(0, 0, 0, 0.5); 
 // base component style for background and shadow
 
+    &_shell-support{
+      position: fixed;
+      bottom: 0;
+    }
+
     &_shell_title{
         background-color: white;
         width: 80vw;
@@ -27,13 +32,13 @@
         }
     } 
     &_shell_title-support{
-      width: 98.5vw;
+      width: 99vw;
       height: 50px;
       background-color: white;
       display: grid;
       align-items: center;
-      border-top-right-radius: 10px;
-      border-top-left-radius: 10px;
+      border-top-right-radius: 15px;
+      border-top-left-radius: 15px;
       button{
         border: none;
         background: transparent;
@@ -193,7 +198,10 @@
           text-decoration: none;
           font-size: 14px;
           color: #222222;
-        }
+          }
+          a:hover{
+              text-decoration: underline;
+          }
       }
       
     }

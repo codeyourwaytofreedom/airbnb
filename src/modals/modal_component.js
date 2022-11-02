@@ -5,7 +5,7 @@ import "./modal.css"
 
 
 
-const Modal = ({content, setter, modify}) => {
+const Modal = ({content, setter, modify, modify_shell}) => {
 
 
     const core = useRef();
@@ -25,7 +25,7 @@ const Modal = ({content, setter, modify}) => {
     return ( 
         <div className="modal_panel">
                 
-                <div className="modal_panel_shell" ref={core}>
+                <div className={"modal_panel_shell"+modify_shell} ref={core}>
                     <div className={"modal_panel_shell_title"+modify} >
                         <button onClick={() => {setter(false)}}>
                             <FontAwesomeIcon style={{color:"black"}} size={"xl"} icon={faClose}/>

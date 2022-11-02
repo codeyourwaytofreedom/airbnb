@@ -20,15 +20,15 @@ const Bottom_banner = () => {
     return ( 
         <>
         {showLanguage ?
-        <Modal content={<Lan/>} setter={setShowLanguage} />
+        <Modal content={<Lan/>} setter={setShowLanguage} modify={""} modify_shell={""}/>
         : null}
 
         {showCurrency ?
-        <Modal content={<Currency/>} setter={setShowCurrency} />
+        <Modal content={<Currency/>} setter={setShowCurrency} modify={""} modify_shell={""}/>
         : null}
 
         {showSupport ?
-        <Modal content={<Support/>} setter={setShowSupport} modify={"-support"}/>
+        <Modal content={<Support/>} setter={setShowSupport} modify={"-support"} modify_shell={"-support"}/>
         :
         null    
         }
