@@ -5,7 +5,7 @@ import "./modal.css"
 
 
 
-const Modal = ({content, show, setter}) => {
+const Modal = ({content, setter}) => {
 
 
     const core = useRef();

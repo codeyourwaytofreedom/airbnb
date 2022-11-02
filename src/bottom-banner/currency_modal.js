@@ -1,14 +1,25 @@
 import language_pairs from "./langs.json";
 import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Currency = () => {
     const [clicked_one, setClicked] = useState(" ");
+    const [currencies, setCurrencies] = useState([]);
+
+    useEffect(() => {
+        axios.get("https://openexchangerates.org/api/currencies.json").then((response) => {
+            setCurrencies(response.data);
+            console.log(response)
+          });
+
+    }, []);
+    
+
     return ( 
-
-
         <div className="modal_panel_language-shell">
         <div className="language_options">
-                <h3>Choose a currency</h3>
+                <h3>Choose a currency{currencies && currencies.length}</h3>
                 <div className="all_languages">
                     
                     {
