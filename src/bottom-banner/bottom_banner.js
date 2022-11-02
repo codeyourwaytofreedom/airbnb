@@ -7,12 +7,14 @@ import { useState } from "react";
 import React from "react";
 import  Lan  from "./language_modal";
 import Currency from "./currency_modal";
+import Support from "./support_modal";
 
 
 const Bottom_banner = () => {    
 
-    const [showLanguage, setShowLanguage] = useState(false)
-    const [showCurrency, setShowCurrency] = useState(false)
+    const [showLanguage, setShowLanguage] = useState(false);
+    const [showCurrency, setShowCurrency] = useState(false);
+    const [showSupport, setShowSupport] = useState(false);
 
     
     return ( 
@@ -24,6 +26,12 @@ const Bottom_banner = () => {
         {showCurrency ?
         <Modal content={<Currency/>} setter={setShowCurrency} />
         : null}
+
+        {showSupport ?
+        <Modal content={<Support/>} setter={setShowSupport} modify={"-support"}/>
+        :
+        null    
+        }
 
 
 
@@ -61,7 +69,7 @@ const Bottom_banner = () => {
                     <div>GBP</div>
                     
                 </div>
-                <div className="bottom_banner_left_cell--support">
+                <div className="bottom_banner_left_cell--support" onClick={() => setShowSupport(true)}>
                     <div>Support & resources</div>
                     <div><FontAwesomeIcon style={{color:"black"}} icon={faChevronUp}/></div>
                 </div>

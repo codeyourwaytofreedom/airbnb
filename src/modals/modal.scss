@@ -26,6 +26,21 @@
             cursor: pointer;
         }
     } 
+    &_shell_title-support{
+      width: 100vw;
+      height: 50px;
+      background-color: white;
+      display: grid;
+      align-items: center;
+      button{
+        border: none;
+        background: transparent;
+        width: fit-content;
+        position: relative;
+        left: 20px;
+        cursor: pointer;
+    }
+    }
     &_language-shell{
         background-color: white;
         width: 80vw;
@@ -155,4 +170,7 @@
         }
         
     }  
+    &_support-shell{
+                border: 2px solid blue;
+    }
 }
