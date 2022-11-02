@@ -9,29 +9,37 @@ const Currency = () => {
 
     useEffect(() => {
         axios.get("https://openexchangerates.org/api/currencies.json").then((response) => {
-            setCurrencies(response.data);
-            console.log(response)
+            
+            let arr = []
+            for (var key in response.data) {
+                if (response.data.hasOwnProperty(key)) 
+                {
+                    arr.push({symbol:key, long:response.data[key]})
+                }
+            }
+            arr.sort()
+            setCurrencies(arr);
           });
 
     }, []);
-    
+
 
     return ( 
         <div className="modal_panel_language-shell">
         <div className="language_options">
-                <h3>Choose a currency{currencies && currencies.length}</h3>
+                <h3>Choose a currency</h3>
                 <div className="all_languages">
                     
                     {
-                    language_pairs.map((element, index) => 
+                    currencies.map((element, index) => 
                    
                         
                             <div className="language" key={index} 
-                                onClick={()=>setClicked(element.country)}
-                                style={{border: clicked_one===element.country ? "1px solid #222222" : "1px solid white"}}
+                                onClick={()=>setClicked(element.long)}
+                                style={{border: clicked_one===element.long ? "1px solid #222222" : "1px solid white"}}
                                 >
-                                <div className="up">{element.lanaguage}</div>
-                                <div className="down">{element.country}</div>
+                                <div className="up">{element.long}</div>
+                                <div className="down">{element.symbol}</div>
                             </div>
                         
 
