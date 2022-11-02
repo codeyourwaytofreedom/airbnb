@@ -48,7 +48,7 @@ const Bottom_banner = () => {
                 <span> . </span>
                 <div className="bottom_banner_left_cell"><Link to='/sitemap'>Sitemap</Link> </div>
                 <span> . </span>
-                <div className="bottom_banner_left_cell"><a href="https://www.npmjs.com/package/react-full-screen">UK Modern Slavery Act</a></div>
+                <div className="bottom_banner_left_cell"><a href="https://www.npmjs.com/package/react-full-screen" target={"_blank"}>UK Modern Slavery Act</a></div>
                 <span> . </span>
                 <div className="bottom_banner_left_cell"><Link to='/company-details'>Company details</Link> </div>
                 <span> . </span>

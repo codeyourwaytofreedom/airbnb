@@ -1,0 +1,36 @@
+.to_center{
+
+    position: fixed;
+    bottom: 15vh;    
+    z-index: 50;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+}
+.show_map_shell{
+    background-color: #222222;
+    border-radius: 50px;
+    z-index: 5;
+    button{
+        // width: 100%;
+        // height: 100%;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        padding: 15px;
+        cursor: pointer;
+        &:hover{
+            padding: 17px;
+            transition: 0.2s;
+        }
+        &:active{
+            padding: 15px;
+        }
+    }
+}
