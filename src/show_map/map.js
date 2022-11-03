@@ -37,11 +37,11 @@ const Map = () => {
               <>
                 <Marker position={{lat:39, lng:33}} label={label} icon={marker_image} />
                 {test_array.map(element =>
-                  <Marker position={{lat: randomNumberInRange(5,60), lng: randomNumberInRange(-50,90) }}/>
+                  <Marker position={{lat: randomNumberInRange(-17,68), lng: randomNumberInRange(-97,123) }}
+                          icon={marker_image} label={label}
+                  />
                   )}
-                {/* <Marker position={{lat:38, lng:42}} label={"547"}/>
-                <Marker position={{lat:36, lng:29}} label={"633"}/>
-                <Marker position={{lat:41, lng:28}} label={"752"}/> */}
+
               </>
             </GoogleMap>
           </LoadScript>
