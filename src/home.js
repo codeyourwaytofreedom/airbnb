@@ -14,8 +14,7 @@ const Home = () => {
         <div className="all_kernel">
             <Head></Head>
             <Top_roll></Top_roll>
-            {!show_map ? <Content/> : <Map/>}
-            
+            <Content show_map={show_map}/>             
             <Show_map setShowMap={setShowMap} show_map={show_map}/>
             {!show_map  && <Bottom_banner/>}
         

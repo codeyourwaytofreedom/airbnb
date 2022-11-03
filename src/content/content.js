@@ -4,9 +4,9 @@ import { useSelector, useDispatch} from "react-redux";
 import { test } from "../test/test";
 import { useState, useEffect } from "react";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
-import Loader from "./loader";
+import Map from "../show_map/map";
 
-const Content = () => {
+const Content = ({show_map}) => {
 
     const number_of_rooms = useSelector(state => state.roomsSlice.nu_room.payload);
     const number_of_beds = useSelector(state => state.roomsSlice.nu_beds.payload);
@@ -139,10 +139,11 @@ const Content = () => {
 
     },[a, loading])
     
+    if(!show_map)
     return ( 
         <>
         <div className="content">
-            <div>
+            {/* <div>
             {"Rooms: "+number_of_rooms} <br></br>
             {"Beds: "+ number_of_beds}  <br></br>
             {"Bathrooms: "+number_of_bathrooms}  <br></br>
@@ -150,7 +151,7 @@ const Content = () => {
             {"Private: "+priv.payload}  <br></br>
             {"Shared: "+shared.payload}  <br></br>
             {"Filtered Total: " + shadow.length}  <br></br>
-            </div>
+            </div> */}
 
             {   
                 shadow.slice(0,a).map(
@@ -171,6 +172,12 @@ const Content = () => {
         
         </>
      );
+    if(show_map)
+    return(
+        <Map/>
+    )
+    
+    
 }
  
 export default Content;

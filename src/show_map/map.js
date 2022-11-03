@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 
 const Map = () => {
 
-  const filtered_properties_from_redux = useSelector(state => state.filteredItemsSlice.filtered_properties.payload)
-  console.log(filtered_properties_from_redux)
+  // const filtered_properties_from_redux = useSelector(state => state.filteredItemsSlice.filtered_properties.payload)
+  // console.log(filtered_properties_from_redux)
+  // console.log(filtered_properties_from_redux.length)
 
   const randomNumberInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -36,7 +37,7 @@ const Map = () => {
             >
               <>
                 <Marker position={{lat:39, lng:33}} label={label} icon={marker_image} />
-                {test_array.map(element =>
+                {test_array && test_array.map(element =>
                   <Marker position={{lat: randomNumberInRange(-17,68), lng: randomNumberInRange(-97,123) }}
                           icon={marker_image} label={label}
                   />
