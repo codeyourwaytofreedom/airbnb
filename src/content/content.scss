@@ -43,8 +43,8 @@ html, body{
 .content{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    position: relative;
-    top:45px;
+    position: absolute;
+    top:190px;
     padding:15px 40px;
     row-gap: 40px;
     column-gap: 20px;

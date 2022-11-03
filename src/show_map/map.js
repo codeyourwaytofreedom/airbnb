@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { test } from "../test/test";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
+import { useRef } from "react";
 
 
 
@@ -112,8 +113,6 @@ const Map = () => {
   const randomNumberInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
-    const test_array = [1,1,1,1,1,1,1]
   
     const center = {
       lat: 23.745,
@@ -128,6 +127,12 @@ const Map = () => {
 
     const marker_image = require("./marker.png")
 
+    const [a, setA] = useState(11); 
+    const [map, setMap] = useState(null)
+
+    const handle_idle = () => {
+        }
+
         return (
           <LoadScript
             googleMapsApiKey="AIzaSyBmI8P3BdqpSutD802D5aFp4O79vc23OHM"
@@ -136,12 +141,14 @@ const Map = () => {
               mapContainerClassName="map"
               center={center}
               zoom={3}
+              onZoomChanged={(a) => console.log(a)}
+              
               
             >
               <>
                 <Marker position={{lat:39, lng:33}} label={label} icon={marker_image} />
 
-                {shadow && shadow.map(element =>
+                {shadow && shadow.slice(0,a).map(element =>
                   <Marker position={{lat: randomNumberInRange(-17,68), lng: randomNumberInRange(-97,123) }}
                           icon={marker_image} label={label}
                   />
