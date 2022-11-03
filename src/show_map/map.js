@@ -1,14 +1,25 @@
 import { GoogleMap, LoadScript,Marker } from "@react-google-maps/api";
+import { useSelector } from "react-redux";
 
 const Map = () => {
-    
+
+  const filtered_properties_from_redux = useSelector(state => state.filteredItemsSlice.filtered_properties.payload)
+  console.log(filtered_properties_from_redux)
+
+  const randomNumberInRange = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const test_array = [1,1,1,1,1,1,1]
+  
     const center = {
       lat: 23.745,
       lng: 17.523
     };
     const label = {
-      text: "Label",
+      text: "$479",
       color: 'red',
+      fontSize: "12px"
     }
 
     const marker_image = require("./marker.png")
@@ -25,6 +36,9 @@ const Map = () => {
             >
               <>
                 <Marker position={{lat:39, lng:33}} label={label} icon={marker_image} />
+                {test_array.map(element =>
+                  <Marker position={{lat: randomNumberInRange(5,60), lng: randomNumberInRange(-50,90) }}/>
+                  )}
                 {/* <Marker position={{lat:38, lng:42}} label={"547"}/>
                 <Marker position={{lat:36, lng:29}} label={"633"}/>
                 <Marker position={{lat:41, lng:28}} label={"752"}/> */}
