@@ -13,6 +13,7 @@ html, body {
 .all_kernel {
   overflow-y: scroll;
   width: 100vw;
+  height: 100vh;
   z-index: 5;
   display: grid;
 }
@@ -30,7 +31,7 @@ html, body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   position: relative;
-  top: 190px;
+  top: 45px;
   padding: 15px 40px;
   row-gap: 40px;
   -moz-column-gap: 20px;
