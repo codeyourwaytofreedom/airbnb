@@ -169,14 +169,17 @@ const Content = () => {
             
         </div>
         
-        {/* <div className="loader" style={{display: loading ? "grid" : "none"}} >
-            <Loader/>
-        </div> */}
-        
-        
-
         </>
      );
 }
  
 export default Content;
+
+
+
+
+
+
+        {/* <div className="loader" style={{display: loading ? "grid" : "none"}} >
+            <Loader/>
+        </div> */}

@@ -6,6 +6,12 @@ const Map = () => {
       lat: 23.745,
       lng: 17.523
     };
+    const label = {
+      text: "Label",
+      color: 'red',
+    }
+
+    const marker_image = require("./marker.png")
 
         return (
           <LoadScript
@@ -18,10 +24,10 @@ const Map = () => {
               
             >
               <>
-                <Marker position={{lat:39, lng:33}} label={"257"} icon={'http://labs.google.com/ridefinder/images/mm_20_yellow.png'}/>
-                <Marker position={{lat:38, lng:42}} label={"547"}/>
+                <Marker position={{lat:39, lng:33}} label={label} icon={marker_image} />
+                {/* <Marker position={{lat:38, lng:42}} label={"547"}/>
                 <Marker position={{lat:36, lng:29}} label={"633"}/>
-                <Marker position={{lat:41, lng:28}} label={"752"}/>
+                <Marker position={{lat:41, lng:28}} label={"752"}/> */}
               </>
             </GoogleMap>
           </LoadScript>
