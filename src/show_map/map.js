@@ -128,10 +128,21 @@ const Map = () => {
     const marker_image = require("./marker.png")
 
     const [a, setA] = useState(11); 
+    const [z, setZ] = useState(null);
     const mp = useRef();
 
-    const handle_idle = () => {
-        }
+    const handle_zoom_change = () => {
+
+      if(mp.current)
+      {console.log(mp.current.zoom)}
+        // console.log("zoomdan", mp.current.zoom)
+    }
+
+    const handle_load = (map) => {
+      mp.current=map
+      // console.log(mp.current)
+      
+    }
 
         return (
           <LoadScript
@@ -141,9 +152,9 @@ const Map = () => {
               mapContainerClassName="map"
               center={center}
               zoom={3}
-              onZoomChanged={() => console.log(mp)}
+              onZoomChanged={handle_zoom_change}
               ref={mp}
-              onLoad={map => mp.current = map}
+              onLoad={map => handle_load(map)}
               
               
             >
