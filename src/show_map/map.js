@@ -1,10 +1,11 @@
-import { GoogleMap, LoadScript,Marker } from "@react-google-maps/api";
+import { GoogleMap, InfoBox, LoadScript,Marker } from "@react-google-maps/api";
 import { useSelector,useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { test } from "../test/test";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
 import { useRef } from "react";
-
+import Carousel from "../content/carousel";
+import "../content/content.css";
 
 
 const Map = () => {
@@ -127,25 +128,29 @@ const Map = () => {
 
     const marker_image = require("./marker.png")
 
-    const [a, setA] = useState(11); 
-    const [z, setZ] = useState(null);
+    const mrk = <button>Hello Marker</button>
+
+    const mp = useRef();
+    const [a, setA] = useState(3); 
+    const [z, setZ] = useState(3);
     const [center, setCenter] = useState({
       lat: 23, 
       lng: 17
-  })
-    const mp = useRef();
+    })
+
+    const [clicked_marker, setClicked_marker] = useState("");
+
+    
 
     const handle_zoom_change = () => {
 
       if(mp.current)
       {
         setZ(mp.current.zoom)
-        console.log(mp.current)
-        console.log(z)
-        
       }
     }
 
+    // on mapload, get an instance of the map to extract map data
     const handle_load = (map) => {
       mp.current=map      
     }
@@ -160,7 +165,8 @@ const Map = () => {
     const handle_drag_end = () => {
       if(mp.current)
       {const newPos = mp.current.getCenter().toJSON();
-        console.log(newPos)
+        console.log(newPos.lat)
+        setCenter(newPos)
       }
     }
 
@@ -171,7 +177,7 @@ const Map = () => {
             <GoogleMap
               mapContainerClassName="map"
               center={center}
-              zoom={3}
+              zoom={z}
               onZoomChanged={handle_zoom_change}
               ref={mp}
               onLoad={map => handle_load(map)}
@@ -183,12 +189,21 @@ const Map = () => {
               
             >
               <>
-                <Marker position={{lat:39, lng:33}} label={label} icon={marker_image} />
+              
+                <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={marker_image}>
+                </Marker>
 
                 {shadow && shadow.slice(0,a).map(element =>
-                  <Marker position={{lat: randomNumberInRange(-17,68), lng: randomNumberInRange(-97,123) }}
-                          icon={marker_image} label={label}
-                  />
+                  <Marker onClick= {() => setClicked_marker(element.propertytype)} position={{lat: randomNumberInRange(35,41), lng: randomNumberInRange(25,44) }}
+                          icon={marker_image} label={center.lat.toString().substring(0,2)+"--"+center.lng.toString().substring(0,2)}
+                  >
+                        <InfoBox position={center}>
+                    <div style={{width:"200px", height:"200px", backgroundColor:"blue", color:"white", fontSize:"18px"}}>
+                                  {clicked_marker}
+                    </div>                    
+                </InfoBox>
+
+                  </Marker>
                   )}
 
               </>
