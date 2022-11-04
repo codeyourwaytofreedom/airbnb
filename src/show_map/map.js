@@ -5,6 +5,9 @@ import { test } from "../test/test";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
 import { useRef } from "react";
 import "./show_map.css";
+import Carousel from "../content/content";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -194,7 +197,27 @@ const Map = () => {
                                   lat: 40.745,
                                   lng: 28.523
                                 }]
-        return (
+        
+        
+                                const [img_index, setIndex] = useState(0);
+    
+                                const handle_index_left = () => {
+                                    if(img_index===0)
+                                    {setIndex(0)}
+                                    else{setIndex(img_index-1)}
+                                    
+                                }
+                            
+                                const handle_index_right = () => {
+                                    if(img_index===9)
+                                    {setIndex(9)}
+                                    else{setIndex(img_index+1)}
+                                }
+
+                                
+        
+                                return (
+          
           <LoadScript
             googleMapsApiKey="AIzaSyBmI8P3BdqpSutD802D5aFp4O79vc23OHM"
           >
@@ -228,8 +251,20 @@ const Map = () => {
                 
                   clicked_marker === index ? 
                 <InfoBox position={{lat:test_positions[index].lat+2, lng:test_positions[index].lng+1}}>
-                            <div style={{color:"white", fontSize:"18px"}} className="infobox">
-                                          5555 {console.log(typeof(test_positions[index].lat))}
+                            <div className="infobox">
+                                <div className="property_image">
+                                    <img src={element.images[img_index]} alt="1" />
+                                    <div className="back" onClick={handle_index_left}
+                                    style={{visibility: img_index===0 ? "hidden" : "visible"}}
+                                    >
+                                        <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
+                                    </div>
+                                    <div className="forth" onClick={handle_index_right}
+                                    style={{visibility: img_index===9 ? "hidden" : "visible"}}
+                                    >
+                                        <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
+                                    </div>
+                                </div>
                             </div>                    
                   </InfoBox>
                   : null
