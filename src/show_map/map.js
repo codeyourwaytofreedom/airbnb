@@ -128,7 +128,7 @@ const Map = () => {
     const marker_image = require("./marker.png")
 
     const [a, setA] = useState(11); 
-    const [map, setMap] = useState(null)
+    const mp = useRef();
 
     const handle_idle = () => {
         }
@@ -141,7 +141,9 @@ const Map = () => {
               mapContainerClassName="map"
               center={center}
               zoom={3}
-              onZoomChanged={(a) => console.log(a)}
+              onZoomChanged={() => console.log(mp)}
+              ref={mp}
+              onLoad={map => mp.current = map}
               
               
             >
