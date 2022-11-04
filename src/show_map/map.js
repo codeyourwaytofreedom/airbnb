@@ -138,7 +138,7 @@ const Map = () => {
       lng: 17
     })
 
-    const [clicked_marker, setClicked_marker] = useState("");
+    const [clicked_marker, setClicked_marker] = useState(null);
 
     
 
@@ -169,7 +169,18 @@ const Map = () => {
         setCenter(newPos)
       }
     }
-
+    const test_positions = [
+                          {
+                          lat: 35.745,
+                          lng: 37.523},
+                            {
+                              lat: 37.745,
+                              lng: 32.523
+                            },
+                            {
+                              lat: 39.745,
+                              lng: 27.523
+                            }]
         return (
           <LoadScript
             googleMapsApiKey="AIzaSyBmI8P3BdqpSutD802D5aFp4O79vc23OHM"
@@ -193,12 +204,12 @@ const Map = () => {
                 <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={marker_image}>
                 </Marker>
 
-                {shadow && shadow.slice(0,a).map(element =>
-                  <Marker onClick= {() => setClicked_marker(element.propertytype)} position={{lat: randomNumberInRange(35,41), lng: randomNumberInRange(25,44) }}
-                          icon={marker_image} label={center.lat.toString().substring(0,2)+"--"+center.lng.toString().substring(0,2)}
+                {shadow && shadow.slice(0,a).map((element, index) =>
+                  <Marker onClick= {() => setClicked_marker(element.propertytype)} position={test_positions[index]}
+                        key={index}  icon={marker_image} label={test_positions[index].lat.toString().substring(0,2)+ " : "+ test_positions[index].lng.toString().substring(0,2)}
                   >
-                        <InfoBox position={center}>
-                    <div style={{width:"200px", height:"200px", backgroundColor:"blue", color:"white", fontSize:"18px"}}>
+                        <InfoBox position={test_positions[index]}>
+                    <div style={{width:"100px", height:"100px", backgroundColor:"blue", color:"white", fontSize:"18px"}}>
                                   {clicked_marker}
                     </div>                    
                 </InfoBox>
@@ -214,3 +225,8 @@ const Map = () => {
     }
  
 export default Map;
+
+
+
+
+// lat: randomNumberInRange(35,41), lng: randomNumberInRange(25,44) 
