@@ -114,7 +114,7 @@ const Map = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
   
-    const center = {
+    const cnt = {
       lat: 23.745,
       lng: 17.523
     };
@@ -129,7 +129,7 @@ const Map = () => {
 
     const [a, setA] = useState(11); 
     const [z, setZ] = useState(null);
-    const [cnt, setCenter] = useState({
+    const [center, setCenter] = useState({
       lat: 23, 
       lng: 17
   })
@@ -151,12 +151,18 @@ const Map = () => {
     }
 
     const handle_center_changed = () => {
-      if (!mp.current) return;
+      // if(mp.current)
+      // {const newPos = mp.current.getCenter().toJSON();
+      //   console.log(newPos)
+      // }
+    }
+
+    const handle_drag_end = () => {
       if(mp.current)
       {const newPos = mp.current.getCenter().toJSON();
         console.log(newPos)
-      // setCenter(newPos);
-    }}
+      }
+    }
 
         return (
           <LoadScript
@@ -164,13 +170,14 @@ const Map = () => {
           >
             <GoogleMap
               mapContainerClassName="map"
-              center={cnt}
+              center={center}
               zoom={3}
               onZoomChanged={handle_zoom_change}
               ref={mp}
               onLoad={map => handle_load(map)}
               onCenterChanged={handle_center_changed}
               zoomControl= {false}
+              onDragEnd={handle_drag_end}
               
               
               
