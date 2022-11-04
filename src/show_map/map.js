@@ -129,20 +129,34 @@ const Map = () => {
 
     const [a, setA] = useState(11); 
     const [z, setZ] = useState(null);
+    const [cnt, setCenter] = useState({
+      lat: 23, 
+      lng: 17
+  })
     const mp = useRef();
 
     const handle_zoom_change = () => {
 
       if(mp.current)
-      {console.log(mp.current.zoom)}
-        // console.log("zoomdan", mp.current.zoom)
+      {
+        setZ(mp.current.zoom)
+        console.log(mp.current)
+        console.log(z)
+        
+      }
     }
 
     const handle_load = (map) => {
-      mp.current=map
-      // console.log(mp.current)
-      
+      mp.current=map      
     }
+
+    const handle_center_changed = () => {
+      if (!mp.current) return;
+      if(mp.current)
+      {const newPos = mp.current.getCenter().toJSON();
+        console.log(newPos)
+      // setCenter(newPos);
+    }}
 
         return (
           <LoadScript
@@ -150,11 +164,14 @@ const Map = () => {
           >
             <GoogleMap
               mapContainerClassName="map"
-              center={center}
+              center={cnt}
               zoom={3}
               onZoomChanged={handle_zoom_change}
               ref={mp}
               onLoad={map => handle_load(map)}
+              onCenterChanged={handle_center_changed}
+              zoomControl= {false}
+              
               
               
             >
