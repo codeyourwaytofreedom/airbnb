@@ -171,7 +171,7 @@ const Map = () => {
     }
     const test_positions = [
                           {
-                          lat: 35.745,
+                          lat: 39.745,
                           lng: 37.523},
                             {
                               lat: 37.745,
@@ -205,12 +205,12 @@ const Map = () => {
                 </Marker>
 
                 {shadow && shadow.slice(0,a).map((element, index) =>
-                  <Marker onClick= {() => setClicked_marker(element.propertytype)} position={test_positions[index]}
+                  <Marker onClick= {() => setClicked_marker(index)} position={test_positions[index]}
                         key={index}  icon={marker_image} label={test_positions[index].lat.toString().substring(0,2)+ " : "+ test_positions[index].lng.toString().substring(0,2)}
                   >
                         <InfoBox position={test_positions[index]}>
-                    <div style={{width:"100px", height:"100px", backgroundColor:"blue", color:"white", fontSize:"18px"}}>
-                                  {clicked_marker}
+                    <div style={{display: clicked_marker === index ? "grid" : "none" , width:"100px", height:"100px", backgroundColor:"blue", color:"white", fontSize:"18px"}}>
+                                  {index}
                     </div>                    
                 </InfoBox>
 
