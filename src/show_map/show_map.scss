@@ -42,3 +42,17 @@
     width: 100vw;
     z-index: 2;
 }
+
+.infobox{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5555 !important;
+}

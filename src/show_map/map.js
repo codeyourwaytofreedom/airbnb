@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { test } from "../test/test";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
 import { useRef } from "react";
-import Carousel from "../content/carousel";
-import "../content/content.css";
+import "./show_map.css";
+
 
 
 const Map = () => {
@@ -116,7 +116,7 @@ const Map = () => {
     }
   
     const cnt = {
-      lat: 23.745,
+      lat: 38.745,
       lng: 17.523
     };
     const label = {
@@ -132,10 +132,10 @@ const Map = () => {
 
     const mp = useRef();
     const [a, setA] = useState(3); 
-    const [z, setZ] = useState(3);
+    const [z, setZ] = useState(6);
     const [center, setCenter] = useState({
-      lat: 23, 
-      lng: 17
+      lat: 39, 
+      lng: 35
     })
 
     const [clicked_marker, setClicked_marker] = useState(null);
@@ -181,6 +181,19 @@ const Map = () => {
                               lat: 39.745,
                               lng: 27.523
                             }]
+                            
+                            const infowin_positions = [
+                              {
+                              lat: 40.745,
+                              lng: 38.523},
+                                {
+                                  lat: 38.745,
+                                  lng: 33.523
+                                },
+                                {
+                                  lat: 40.745,
+                                  lng: 28.523
+                                }]
         return (
           <LoadScript
             googleMapsApiKey="AIzaSyBmI8P3BdqpSutD802D5aFp4O79vc23OHM"
@@ -188,7 +201,7 @@ const Map = () => {
             <GoogleMap
               mapContainerClassName="map"
               center={center}
-              zoom={z}
+              zoom={6}
               onZoomChanged={handle_zoom_change}
               ref={mp}
               onLoad={map => handle_load(map)}
@@ -207,15 +220,22 @@ const Map = () => {
                 {shadow && shadow.slice(0,a).map((element, index) =>
                   <Marker onClick= {() => setClicked_marker(index)} position={test_positions[index]}
                         key={index}  icon={marker_image} label={test_positions[index].lat.toString().substring(0,2)+ " : "+ test_positions[index].lng.toString().substring(0,2)}
-                  >
-                        <InfoBox position={test_positions[index]}>
-                    <div style={{display: clicked_marker === index ? "grid" : "none" , width:"100px", height:"100px", backgroundColor:"blue", color:"white", fontSize:"18px"}}>
-                                  {index}
-                    </div>                    
-                </InfoBox>
-
+                  >                      
                   </Marker>
-                  )}
+                )}
+
+                {shadow && shadow.slice(0,a).map((element, index) =>
+                
+                  clicked_marker === index ? 
+                <InfoBox position={{lat:test_positions[index].lat+2, lng:test_positions[index].lng+1}}>
+                            <div style={{color:"white", fontSize:"18px"}} className="infobox">
+                                          5555 {console.log(typeof(test_positions[index].lat))}
+                            </div>                    
+                  </InfoBox>
+                  : null
+                )
+                }
+                
 
               </>
             </GoogleMap>
