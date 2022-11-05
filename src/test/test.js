@@ -15,7 +15,11 @@ const create_test_array = () =>{
             numberofbathrooms:0,
             propertytype:"type",
             images:[],
-            location:"location"
+            location:"location",
+            position:{
+                lat:0,
+                lng:0
+            }
             };
               
 
@@ -86,6 +90,7 @@ const create_test_array = () =>{
             let propertytype = proptypes[randomNumberInRange(0,3)]
             let imgs = images[randomNumberInRange(0,3)]
             let location = locations[randomNumberInRange(0,10)]
+            let position = {lat: randomNumberInRange(21,59), lng: randomNumberInRange(-9,75) }
 
             const pro = Object.create(property);
             pro.price= price;
@@ -96,6 +101,7 @@ const create_test_array = () =>{
             pro.propertytype = propertytype;
             pro.images=imgs;
             pro.location=location;
+            pro.position=position;
             price_array.push(pro); 
         }
         for(var i=0; i<100; i++)
@@ -108,6 +114,8 @@ const create_test_array = () =>{
             let propertytype = proptypes[randomNumberInRange(0,3)]
             let imgs = images[randomNumberInRange(0,3)]
             let location = locations[randomNumberInRange(0,10)]
+            let position = {lat: randomNumberInRange(21,59), lng: randomNumberInRange(-9,75) }
+
 
 
             const pro = Object.create(property);
@@ -118,7 +126,8 @@ const create_test_array = () =>{
             pro.numberofbathrooms=numberofbathrooms;
             pro.propertytype = propertytype;
             pro.images=imgs
-            pro.location=location
+            pro.location=location;
+            pro.position=position;
             price_array.push(pro); 
         }
         for(var i=0; i<20; i++)
@@ -131,6 +140,8 @@ const create_test_array = () =>{
             let propertytype = proptypes[randomNumberInRange(0,3)]
             let imgs = images[randomNumberInRange(0,3)]
             let location = locations[randomNumberInRange(0,10)]
+            let position = {lat: randomNumberInRange(21,59), lng: randomNumberInRange(-9,75) }
+
 
             const pro = Object.create(property);
             pro.price= price;
@@ -140,7 +151,8 @@ const create_test_array = () =>{
             pro.numberofbathrooms=numberofbathrooms;
             pro.propertytype = propertytype;
             pro.images=imgs
-            pro.location=location
+            pro.location=location;
+            pro.position=position;
             price_array.push(pro); 
             }
 

@@ -255,7 +255,7 @@ const Map = () => {
                
 
                 {shadow && shadow.slice(0,a).map((element, index) =>
-                    <Marker onClick= {() => setClicked_marker(index)} position={test_positions[index]}
+                    <Marker onClick= {() => setClicked_marker(index)} position={element.position}
                         key={index}  icon={marker_image} label={test_positions[index].lat.toString().substring(0,2)+ " : "+ test_positions[index].lng.toString().substring(0,2)}
                   >         
                   </Marker>
@@ -265,9 +265,9 @@ const Map = () => {
                 {shadow && shadow.slice(0,a).map((element, index) =>
                 
                   clicked_marker === index ? 
-                <InfoWindow position={test_positions[index]} key={index}>
+                <InfoWindow position={element.position} key={index}>
                             <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
-                                <div className="property_image" position={test_positions[index]} key={index}>
+                                <div className="property_image" key={index}>
                                     <img src={element.images[img_index]} alt="1" />
                                     <div className="back" onClick={(e)=>handle_index_left(e)}
                                     style={{visibility: img_index===0 ? "hidden" : "visible"}}
@@ -300,4 +300,4 @@ export default Map;
 
 
 
-// lat: randomNumberInRange(35,41), lng: randomNumberInRange(25,44) 
+// lat: randomNumberInRange(21,59), lng: randomNumberInRange(-9,75) 
