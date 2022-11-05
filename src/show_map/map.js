@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { test } from "../test/test";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
 import { useRef } from "react";
+import "./default.css";
 import "./show_map.css";
-import Carousel from "../content/content";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -216,6 +216,10 @@ const Map = () => {
                                     else{setIndex(img_index+1)}
                                 }
 
+                                const handle_infowin_click = (e) => {
+                                  console.log(e)
+                                }
+
                                 
                                 return (
           
@@ -235,18 +239,20 @@ const Map = () => {
               
               
               
-            >
+            > 
               <>
               
                 <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={marker_image
                   }>
                 </Marker>
+               
 
                 {shadow && shadow.slice(0,a).map((element, index) =>
-                  <Marker onClick= {() => setClicked_marker(index)} position={test_positions[index]}
+                    <Marker onClick= {() => setClicked_marker(index)} position={test_positions[index]}
                         key={index}  icon={marker_image} label={test_positions[index].lat.toString().substring(0,2)+ " : "+ test_positions[index].lng.toString().substring(0,2)}
-                  >                      
+                  >         
                   </Marker>
+                  
                 )}
 
                 {shadow && shadow.slice(0,a).map((element, index) =>
@@ -254,7 +260,7 @@ const Map = () => {
                   clicked_marker === index ? 
                 <InfoWindow position={test_positions[index]} key={index}>
                             <div className="infobox">
-                                <div className="property_image">
+                                <div className="property_image" position={test_positions[index]} key={index} onClick={(e)=>handle_infowin_click(e)}>
                                     <img src={element.images[img_index]} alt="1" />
                                     <div className="back" onClick={handle_index_left}
                                     style={{visibility: img_index===0 ? "hidden" : "visible"}}
@@ -268,7 +274,7 @@ const Map = () => {
                                     </div>
                                 </div>
                                 <h1>TEST</h1>
-                            </div>                    
+                            </div>                     
                   </InfoWindow>
                   : null
                 )
