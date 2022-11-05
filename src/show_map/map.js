@@ -8,6 +8,7 @@ import "./default.css";
 import "./show_map.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -203,22 +204,28 @@ const Map = () => {
         
                                 const [img_index, setIndex] = useState(0);
     
-                                const handle_index_left = () => {
+                                const handle_index_left = (e) => {
+                                  e.stopPropagation();
                                     if(img_index===0)
                                     {setIndex(0)}
                                     else{setIndex(img_index-1)}
                                     
                                 }
                             
-                                const handle_index_right = () => {
+                                const handle_index_right = (e) => {
+                                  e.stopPropagation();
                                     if(img_index===9)
                                     {setIndex(9)}
                                     else{setIndex(img_index+1)}
                                 }
-
+                                
+                                const nav_to = useNavigate();
                                 const handle_infowin_click = (e) => {
                                   console.log(e)
+                                  nav_to('/pagefrommapclick');
                                 }
+
+                                
 
                                 
                                 return (
@@ -259,15 +266,15 @@ const Map = () => {
                 
                   clicked_marker === index ? 
                 <InfoWindow position={test_positions[index]} key={index}>
-                            <div className="infobox">
-                                <div className="property_image" position={test_positions[index]} key={index} onClick={(e)=>handle_infowin_click(e)}>
+                            <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
+                                <div className="property_image" position={test_positions[index]} key={index}>
                                     <img src={element.images[img_index]} alt="1" />
-                                    <div className="back" onClick={handle_index_left}
+                                    <div className="back" onClick={(e)=>handle_index_left(e)}
                                     style={{visibility: img_index===0 ? "hidden" : "visible"}}
                                     >
                                         <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
                                     </div>
-                                    <div className="forth" onClick={handle_index_right}
+                                    <div className="forth" onClick={(e)=>handle_index_right(e)}
                                     style={{visibility: img_index===9 ? "hidden" : "visible"}}
                                     >
                                         <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>

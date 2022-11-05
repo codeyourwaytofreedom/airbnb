@@ -16,6 +16,7 @@ function App() {
           <Route path='/sitemap' element={<h1>Sitemap</h1>}/>
           <Route path='/company-details' element={<h1>Company Details</h1>}/>
           <Route path='/nagivated-here' element={<h1>Navigated Page</h1>}/>
+          <Route path='/pagefrommapclick' element={<h1 style={{margin:"25%"}}>Property Page after map click</h1>}/>
 
         </Routes>
     </Router>
