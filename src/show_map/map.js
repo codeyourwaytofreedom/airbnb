@@ -150,8 +150,9 @@ const Map = () => {
 
       if(mp.current)
       {
-        setZ(mp.current.zoom)
+          setZ(mp.current.zoom)
       }
+      console.log(z)
     }
 
     // on mapload, get an instance of the map to extract map data
@@ -246,6 +247,7 @@ const Map = () => {
               
               
               
+              
             > 
               <>
               
@@ -254,15 +256,15 @@ const Map = () => {
                 </Marker>
                
 
-                {shadow && shadow.slice(0,a).map((element, index) =>
+                {shadow && shadow.slice(0,z*4).map((element, index) =>
                     <Marker onClick= {() => setClicked_marker(index)} position={element.position}
-                        key={index}  icon={marker_image} label={test_positions[index].lat.toString().substring(0,2)+ " : "+ test_positions[index].lng.toString().substring(0,2)}
+                        key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
                   >         
                   </Marker>
                   
                 )}
 
-                {shadow && shadow.slice(0,a).map((element, index) =>
+                {shadow && shadow.slice(0,z*4).map((element, index) =>
                 
                   clicked_marker === index ? 
                 <InfoWindow position={element.position} key={index}>
