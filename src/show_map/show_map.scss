@@ -49,17 +49,26 @@
     justify-content: center;
 }
 
+.gm-style-iw-d{
+    border: 7px solid blue;
+}
+.gm-style .gm-style-iw-c{
+    border: 9px solid red;
+}
+
 .infobox{
     background-color: white;
     border:3px solid black;
     height: auto;
-    width: 300px;
+    width: 200px;
     color: red;
     font-size: 18px;
     border-radius: 20px;
     display: grid;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    overflow: hidden;
     h1{margin-left: 37%;}
     .property_image{
         position: relative;

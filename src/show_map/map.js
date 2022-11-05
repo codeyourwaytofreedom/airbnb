@@ -156,6 +156,7 @@ const Map = () => {
     // on mapload, get an instance of the map to extract map data
     const handle_load = (map) => {
       mp.current=map      
+  
     }
 
     const handle_center_changed = () => {
@@ -237,7 +238,8 @@ const Map = () => {
             >
               <>
               
-                <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={{url: "./marker.png"}}>
+                <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={marker_image
+                  }>
                 </Marker>
 
                 {shadow && shadow.slice(0,a).map((element, index) =>
