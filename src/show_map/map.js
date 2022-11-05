@@ -1,4 +1,4 @@
-import { GoogleMap, InfoBox, LoadScript,Marker } from "@react-google-maps/api";
+import { GoogleMap, InfoBox, LoadScript,Marker, InfoWindow } from "@react-google-maps/api";
 import { useSelector,useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { test } from "../test/test";
@@ -197,6 +197,7 @@ const Map = () => {
                                   lat: 40.745,
                                   lng: 28.523
                                 }]
+
         
         
                                 const [img_index, setIndex] = useState(0);
@@ -215,7 +216,6 @@ const Map = () => {
                                 }
 
                                 
-        
                                 return (
           
           <LoadScript
@@ -237,7 +237,7 @@ const Map = () => {
             >
               <>
               
-                <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={marker_image}>
+                <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={{url: "./marker.png"}}>
                 </Marker>
 
                 {shadow && shadow.slice(0,a).map((element, index) =>
@@ -250,7 +250,7 @@ const Map = () => {
                 {shadow && shadow.slice(0,a).map((element, index) =>
                 
                   clicked_marker === index ? 
-                <InfoBox position={{lat:test_positions[index].lat+2, lng:test_positions[index].lng+1}}>
+                <InfoWindow position={test_positions[index]} key={index}>
                             <div className="infobox">
                                 <div className="property_image">
                                     <img src={element.images[img_index]} alt="1" />
@@ -265,8 +265,9 @@ const Map = () => {
                                         <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
                                     </div>
                                 </div>
+                                <h1>TEST</h1>
                             </div>                    
-                  </InfoBox>
+                  </InfoWindow>
                   : null
                 )
                 }
