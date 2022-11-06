@@ -229,7 +229,8 @@ const Map = () => {
                                   west: 10.251
                                 }
                                 
-
+                                const [periphery, setPeriphery] = useState(parseInt(30/z));
+                                
                                 
                                 return (
           
@@ -262,9 +263,9 @@ const Map = () => {
                 </Marker>
                
 
-                {shadow && shadow.slice(0,z*z).map((element, index) =>
-                     center.lat-element.position.lat >= -10 && center.lat-element.position.lat <= 10 
-                     && center.lng-element.position.lng >= -10 && center.lng-element.position.lng <= 10
+                {shadow && shadow.slice(0,z*z*z*z*(1/periphery)).map((element, index) =>
+                     center.lat-element.position.lat >= -periphery && center.lat-element.position.lat <= periphery 
+                     && center.lng-element.position.lng >= -periphery && center.lng-element.position.lng <= periphery
                      ?
                     <Marker onClick= {() => setClicked_marker(index)} position={element.position}
                         key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
