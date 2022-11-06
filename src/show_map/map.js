@@ -256,11 +256,19 @@ const Map = () => {
             <Rectangle
             bounds={bounds}
           />
-              <>
-              
-                <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={marker_image
-                  }>
-                </Marker>
+              <>                
+                  
+
+                
+                
+                              <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} 
+                                  icon={marker_image}
+                                  // icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"}
+
+                                  >
+                              </Marker>
+
+
                
 
                 {shadow && shadow.slice(0,z*z*z*z*(1/periphery)).map((element, index) =>
@@ -270,36 +278,30 @@ const Map = () => {
                     <Marker onClick= {() => setClicked_marker(index)} position={element.position}
                         key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
                   >         
+                      { clicked_marker === index ? 
+                    <InfoWindow position={element.position} key={index}>
+                                <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
+                                    <div className="property_image" key={index}>
+                                        <img src={element.images[img_index]} alt="1" />
+                                        <div className="back" onClick={(e)=>handle_index_left(e)}
+                                        style={{visibility: img_index===0 ? "hidden" : "visible"}}
+                                        >
+                                            <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
+                                        </div>
+                                        <div className="forth" onClick={(e)=>handle_index_right(e)}
+                                        style={{visibility: img_index===9 ? "hidden" : "visible"}}
+                                        >
+                                            <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
+                                        </div>
+                                    </div>
+                                    <h1>TEST</h1>
+                                </div>                     
+                      </InfoWindow>
+                      : null}
                   </Marker>
                   : null
                   
                 )}
-
-                {/* {shadow && shadow.slice(0,z*z).map((element, index) =>
-                
-                  clicked_marker === index ? 
-                <InfoWindow position={element.position} key={index}>
-                            <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
-                                <div className="property_image" key={index}>
-                                    <img src={element.images[img_index]} alt="1" />
-                                    <div className="back" onClick={(e)=>handle_index_left(e)}
-                                    style={{visibility: img_index===0 ? "hidden" : "visible"}}
-                                    >
-                                        <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
-                                    </div>
-                                    <div className="forth" onClick={(e)=>handle_index_right(e)}
-                                    style={{visibility: img_index===9 ? "hidden" : "visible"}}
-                                    >
-                                        <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
-                                    </div>
-                                </div>
-                                <h1>TEST</h1>
-                            </div>                     
-                  </InfoWindow>
-                  : null
-                )
-                } */}
-                
 
               </>
             </GoogleMap>

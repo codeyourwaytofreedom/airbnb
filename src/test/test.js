@@ -79,10 +79,10 @@ const create_test_array = () =>{
         const locations = ["Ankara", "Istanbul", "Konya", "Antalya","Yozgat","Mugla",
                             "Bolu", "Edirne", "Manisa", "Denizli", "Amasya"
                             ]
-        const n = 35
-        const s = 50
-        const e = 50
-        const w = 10
+        const n = 35.4586
+        const s = 50.36874
+        const e = 50.2876
+        const w = 10.1267
 
 
 
