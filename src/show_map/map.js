@@ -1,4 +1,4 @@
-import { GoogleMap, InfoBox, LoadScript,Marker, InfoWindow } from "@react-google-maps/api";
+import { GoogleMap, LoadScript,Marker, InfoWindow,Rectangle } from "@react-google-maps/api";
 import { useSelector,useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { test } from "../test/test";
@@ -135,8 +135,8 @@ const Map = () => {
     const [z, setZ] = useState(6);
 
     const [center, setCenter] = useState({
-      lat: 39, 
-      lng: 35
+      lat: 46, 
+      lng: 30
     })
 
     const [clicked_marker, setClicked_marker] = useState(null);
@@ -222,6 +222,12 @@ const Map = () => {
                                   nav_to('/pagefrommapclick');
                                 }
 
+                                const bounds = {
+                                  north: 35.685,
+                                  south: 50.671,
+                                  east: 50.234,
+                                  west: 10.251
+                                }
                                 
 
                                 
@@ -245,6 +251,10 @@ const Map = () => {
               
               
             > 
+            
+            <Rectangle
+            bounds={bounds}
+          />
               <>
               
                 <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} icon={marker_image
@@ -252,8 +262,10 @@ const Map = () => {
                 </Marker>
                
 
-                {shadow && shadow.slice(0,z*9).map((element, index) =>
-                     center.lat-element.position.lat >= -5 && center.lat-element.position.lat <= 5 ?
+                {shadow && shadow.slice(0,z*z).map((element, index) =>
+                     center.lat-element.position.lat >= -10 && center.lat-element.position.lat <= 10 
+                     && center.lng-element.position.lng >= -10 && center.lng-element.position.lng <= 10
+                     ?
                     <Marker onClick= {() => setClicked_marker(index)} position={element.position}
                         key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
                   >         
@@ -262,7 +274,7 @@ const Map = () => {
                   
                 )}
 
-                {shadow && shadow.slice(0,z*9).map((element, index) =>
+                {/* {shadow && shadow.slice(0,z*z).map((element, index) =>
                 
                   clicked_marker === index ? 
                 <InfoWindow position={element.position} key={index}>
@@ -285,7 +297,7 @@ const Map = () => {
                   </InfoWindow>
                   : null
                 )
-                }
+                } */}
                 
 
               </>
