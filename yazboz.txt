@@ -1,0 +1,94 @@
+
+                                return (
+          
+          // <LoadScript
+          //   googleMapsApiKey="AIzaSyBmI8P3BdqpSutD802D5aFp4O79vc23OHM"
+          // >
+            <GoogleMap
+              mapContainerClassName="map"
+              center={center}
+              zoom={6}
+              onZoomChanged={handle_zoom_change}
+              ref={mp}
+              onLoad={map => handle_load(map)}
+              onCenterChanged={handle_center_changed}
+              zoomControl= {false}
+              onDragEnd={handle_drag_end}
+              
+              
+              
+              
+            > 
+            
+            <Rectangle
+            bounds={bounds}/>
+
+              <>                
+                  
+
+                
+                
+                              <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} 
+                                  icon={marker_image}
+                                  onClick={(e)=> marker_click(e)}
+                                  >
+                              </Marker>
+                              <MarkerWithLabel
+      position={{ lat: -34.397, lng: 150.644 }}
+      labelAnchor={new google.maps.Point(0, 0)}
+      labelStyle={{backgroundColor: "yellow", fontSize: "32px", padding: "16px"}}
+    >
+      <div>Hello There!</div>
+    </MarkerWithLabel>
+                              
+
+
+               
+
+                {/* {shadow && shadow.slice(0,z*z*z*z*(1/periphery)).map((element, index) =>
+                     center.lat-element.position.lat >= -periphery && center.lat-element.position.lat <= periphery 
+                     && center.lng-element.position.lng >= -periphery && center.lng-element.position.lng <= periphery
+                     ?
+                    <Marker onClick= {() => setClicked_marker(index)} position={element.position}
+                        key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
+                  >         
+                      { clicked_marker === index ? 
+
+
+                        <InfoWindow position={element.position} key={index}>
+                                <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
+                                    <div className="property_image" key={index}>
+                                        <img src={element.images[img_index]} alt="1" />
+                                        <div className="back" onClick={(e)=>handle_index_left(e)}
+                                        style={{visibility: img_index===0 ? "hidden" : "visible"}}
+                                        >
+                                            <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
+                                        </div>
+                                        <div className="forth" onClick={(e)=>handle_index_right(e)}
+                                        style={{visibility: img_index===9 ? "hidden" : "visible"}}
+                                        >
+                                            <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
+                                        </div>
+                                    </div>
+                                    <h1>TEST</h1>
+                                </div>                     
+                      </InfoWindow>                    
+                      : null}
+                  </Marker>
+                  : null
+                  
+                )} */}
+
+              </>
+            </GoogleMap>
+          // </LoadScript>
+        )
+      
+    }
+ 
+export default Map;
+
+
+
+
+// lat: randomNumberInRange(21,59), lng: randomNumberInRange(-9,75) 

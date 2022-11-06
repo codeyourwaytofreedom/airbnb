@@ -1,4 +1,4 @@
-import { GoogleMap, LoadScript,Marker, InfoWindow,Rectangle } from "@react-google-maps/api";
+import { GoogleMap, LoadScript,Marker, InfoWindow,Rectangle, InfoBox } from "@react-google-maps/api";
 import { useSelector,useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { test } from "../test/test";
@@ -126,7 +126,7 @@ const Map = () => {
       fontWeight:"600",
     }
 
-    const marker_image = require("./marker.png")
+    const marker_image = require("./marker2.png")
 
     const mrk = <button>Hello Marker</button>
 
@@ -230,8 +230,8 @@ const Map = () => {
                                 }
                                 
                                 const [periphery, setPeriphery] = useState(parseInt(30/z));
-                                
-                                
+
+                            
                                 return (
           
           <LoadScript
@@ -254,8 +254,8 @@ const Map = () => {
             > 
             
             <Rectangle
-            bounds={bounds}
-          />
+            bounds={bounds}/>
+
               <>                
                   
 
@@ -263,15 +263,14 @@ const Map = () => {
                 
                               <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} 
                                   icon={marker_image}
-                                  // icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"}
-
                                   >
                               </Marker>
+                              
 
 
                
 
-                {shadow && shadow.slice(0,z*z*z*z*(1/periphery)).map((element, index) =>
+                {/* {shadow && shadow.slice(0,z*z*z*z*(1/periphery)).map((element, index) =>
                      center.lat-element.position.lat >= -periphery && center.lat-element.position.lat <= periphery 
                      && center.lng-element.position.lng >= -periphery && center.lng-element.position.lng <= periphery
                      ?
@@ -279,7 +278,9 @@ const Map = () => {
                         key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
                   >         
                       { clicked_marker === index ? 
-                    <InfoWindow position={element.position} key={index}>
+
+
+                        <InfoWindow position={element.position} key={index}>
                                 <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
                                     <div className="property_image" key={index}>
                                         <img src={element.images[img_index]} alt="1" />
@@ -296,12 +297,12 @@ const Map = () => {
                                     </div>
                                     <h1>TEST</h1>
                                 </div>                     
-                      </InfoWindow>
+                      </InfoWindow>                    
                       : null}
                   </Marker>
                   : null
                   
-                )}
+                )} */}
 
               </>
             </GoogleMap>
