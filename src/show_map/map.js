@@ -119,10 +119,6 @@ const Map = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
   
-    const cnt = {
-      lat: 38.745,
-      lng: 17.523
-    };
     const label = {
       text: "$479",
       color: 'red',
@@ -137,6 +133,7 @@ const Map = () => {
     const mp = useRef();
     const [a, setA] = useState(3); 
     const [z, setZ] = useState(6);
+
     const [center, setCenter] = useState({
       lat: 39, 
       lng: 35
@@ -152,7 +149,6 @@ const Map = () => {
       {
           setZ(mp.current.zoom)
       }
-      console.log(z)
     }
 
     // on mapload, get an instance of the map to extract map data
@@ -171,7 +167,7 @@ const Map = () => {
     const handle_drag_end = () => {
       if(mp.current)
       {const newPos = mp.current.getCenter().toJSON();
-        console.log(newPos.lat)
+        console.log(newPos.lat, newPos.lng)
         setCenter(newPos)
       }
     }
@@ -256,15 +252,17 @@ const Map = () => {
                 </Marker>
                
 
-                {shadow && shadow.slice(0,z*4).map((element, index) =>
+                {shadow && shadow.slice(0,z*9).map((element, index) =>
+                     center.lat-element.position.lat >= -5 && center.lat-element.position.lat <= 5 ?
                     <Marker onClick= {() => setClicked_marker(index)} position={element.position}
                         key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
                   >         
                   </Marker>
+                  : null
                   
                 )}
 
-                {shadow && shadow.slice(0,z*4).map((element, index) =>
+                {shadow && shadow.slice(0,z*9).map((element, index) =>
                 
                   clicked_marker === index ? 
                 <InfoWindow position={element.position} key={index}>
