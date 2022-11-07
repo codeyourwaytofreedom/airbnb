@@ -53,7 +53,7 @@
     background-color: white;
     border:3px solid black;
     height: auto;
-    width: 200px;
+    width: 250px;
     color: red;
     font-size: 18px;
     border-radius: 20px;
@@ -63,6 +63,7 @@
     margin: 0;
     overflow: hidden;
     cursor: pointer;
+    z-index: 5000;
     h1{margin-left: 37%;}
     .property_image{
         position: relative;
@@ -112,5 +113,22 @@
     }
 }
 
+
+.custom_marker{
+    background-color: red;
+    z-index: 400 !important;
+    padding: 5px;
+    @include grid-center;
+    border-radius: 15px;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    cursor: zoom-in;
+    width: fit-content;
+    &:hover{
+
+        padding: 7px;
+    }
+}
 
 

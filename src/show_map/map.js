@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { test } from "../test/test";
 import { updated_filtered_items } from "../redux/filteredItemsSlice";
 import { useRef } from "react";
-import "./default.css";
 import "./show_map.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
@@ -237,9 +236,9 @@ const Map = () => {
                             
                                 return (
           
-          <LoadScript
-            googleMapsApiKey="AIzaSyBmI8P3BdqpSutD802D5aFp4O79vc23OHM"
-          >
+  <LoadScript
+    googleMapsApiKey="AIzaSyBmI8P3BdqpSutD802D5aFp4O79vc23OHM"
+  >
             <GoogleMap
               mapContainerClassName="map"
               center={center}
@@ -249,78 +248,76 @@ const Map = () => {
               onLoad={map => handle_load(map)}
               onCenterChanged={handle_center_changed}
               zoomControl= {false}
-              onDragEnd={handle_drag_end}
-              
-              
-              
-              
+              onDragEnd={handle_drag_end}           
             > 
             
-            <Rectangle
-            bounds={bounds}/>
+            <Rectangle bounds={bounds}/>
 
               <>                
-                  
 
-                
-                
-                              <Marker position={{lat:39, lng:33}} label={"Zoom: "+z} 
-                                  icon={marker_image}
-                                  >
-                              </Marker>
-                              <OverlayView
-                                  position={center}
-                                  mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-                                >
-                                  <div>
-                                    <h1>OverlayView</h1>
-
-                                    <button>
-                                      Click me
-                                    </button>
-                                  </div>
-                                </OverlayView>
+              <OverlayView
+                  onLoad={(e)=> console.log("overlay: ", e)}
+                  position={{lat:39.93, lng:32.8}}
+                  mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                  getPixelPositionOffset={{x:90, y:90}}
+                >
+                    <div className="custom_marker" onClick={()=> console.log("clicked bingo marker")}>
+                      {"Zoom: "+z}
+                    </div>
+                </OverlayView>
 
 
                
 
-                {/* {shadow && shadow.slice(0,z*z*z*z*(1/periphery)).map((element, index) =>
+                {shadow && shadow.slice(0,z*z*z*(1/periphery)).map((element, index) =>
                      center.lat-element.position.lat >= -periphery && center.lat-element.position.lat <= periphery 
                      && center.lng-element.position.lng >= -periphery && center.lng-element.position.lng <= periphery
                      ?
-                    <Marker onClick= {() => setClicked_marker(index)} position={element.position}
-                        key={index}  icon={marker_image} label={element.position.lat.toString().substring(0,2)+ " : "+ element.position.lng.toString().substring(0,2)}
-                  >         
-                      { clicked_marker === index ? 
-
-
-                        <InfoWindow position={element.position} key={index}>
-                                <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
-                                    <div className="property_image" key={index}>
-                                        <img src={element.images[img_index]} alt="1" />
-                                        <div className="back" onClick={(e)=>handle_index_left(e)}
-                                        style={{visibility: img_index===0 ? "hidden" : "visible"}}
-                                        >
-                                            <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
-                                        </div>
-                                        <div className="forth" onClick={(e)=>handle_index_right(e)}
-                                        style={{visibility: img_index===9 ? "hidden" : "visible"}}
-                                        >
-                                            <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
-                                        </div>
-                                    </div>
-                                    <h1>TEST</h1>
-                                </div>                     
-                      </InfoWindow>                    
-                      : null}
-                  </Marker>
+                  
+                      <OverlayView
+                        onLoad={(e)=> console.log("overlay: ", e)}
+                        position={element.position}
+                        mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                        getPixelPositionOffset={{x:90, y:90}}
+                      >
+                        <>
+                          <div className="custom_marker" onClick= {() => setClicked_marker(index)}>
+                            
+                            {element.position.lat.toString().substring(0,2)
+                              + " : "+ element.position.lng.toString().substring(0,2)}
+                          </div>
+                          
+                          { clicked_marker === index ? 
+                            <InfoWindow position={element.position}>
+                              <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
+                                  <div className="property_image" key={index}>
+                                      <img src={element.images[img_index]} alt="1" />
+                                      <div className="back" onClick={(e)=>handle_index_left(e)}
+                                      style={{visibility: img_index===0 ? "hidden" : "visible"}}
+                                      >
+                                          <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
+                                      </div>
+                                      <div className="forth" onClick={(e)=>handle_index_right(e)}
+                                      style={{visibility: img_index===9 ? "hidden" : "visible"}}
+                                      >
+                                          <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
+                                      </div>
+                                  </div>
+                                  <h1>TEST</h1>
+                              </div>               
+                            </InfoWindow>
+                            :null}
+                        </>
+                          
+                      </OverlayView>
+                      
                   : null
                   
-                )} */}
+                )}
 
               </>
             </GoogleMap>
-          </LoadScript>
+  </LoadScript>
         )
       
     }
@@ -330,4 +327,3 @@ export default Map;
 
 
 
-// lat: randomNumberInRange(21,59), lng: randomNumberInRange(-9,75) 
