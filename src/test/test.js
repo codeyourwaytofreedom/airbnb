@@ -84,6 +84,13 @@ const create_test_array = () =>{
         const e = 50.2876
         const w = 10.1267
 
+        function getRandomFloat(min, max, decimals) {
+            const str = (Math.random() * (max - min) + min).toFixed(decimals);
+          
+            return parseFloat(str);
+        }
+        console.log("float", getRandomFloat(35,50,5))
+
 
 
         for(var i=0; i<500; i++)
@@ -96,7 +103,7 @@ const create_test_array = () =>{
             let propertytype = proptypes[randomNumberInRange(0,3)]
             let imgs = images[randomNumberInRange(0,3)]
             let location = locations[randomNumberInRange(0,10)]
-            let position = {lat: randomNumberInRange(n,s), lng: randomNumberInRange(e,w) }
+            let position = {lat: getRandomFloat(n,s,5), lng: getRandomFloat(e,w,5) }
 
             const pro = Object.create(property);
             pro.price= price;
@@ -120,7 +127,7 @@ const create_test_array = () =>{
             let propertytype = proptypes[randomNumberInRange(0,3)]
             let imgs = images[randomNumberInRange(0,3)]
             let location = locations[randomNumberInRange(0,10)]
-            let position = {lat: randomNumberInRange(n,s), lng: randomNumberInRange(e,w) }
+            let position = {lat: getRandomFloat(n,s,5), lng: getRandomFloat(e,w,5) }
 
 
             const pro = Object.create(property);
@@ -145,7 +152,7 @@ const create_test_array = () =>{
             let propertytype = proptypes[randomNumberInRange(0,3)]
             let imgs = images[randomNumberInRange(0,3)]
             let location = locations[randomNumberInRange(0,10)]
-            let position = {lat: randomNumberInRange(n,s), lng: randomNumberInRange(e,w) }
+            let position = {lat: getRandomFloat(n,s,5), lng: getRandomFloat(e,w,5) }
 
             const pro = Object.create(property);
             pro.price= price;

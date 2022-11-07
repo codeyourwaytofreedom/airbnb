@@ -109,6 +109,45 @@
   background-color: white;
   display: none;
 }
+.infobox .property_details {
+  display: grid;
+}
+.infobox .property_details_location_mini {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222222;
+  padding-top: 10px;
+  padding-bottom: 3px;
+  display: flex;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.infobox .property_details_location_mini_loc_mini {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.infobox .property_details_location_mini_rating {
+  position: absolute;
+  right: 0;
+  font-weight: 400;
+}
+.infobox .property_details_hosttype_mini {
+  font-weight: 600;
+  color: #222222;
+  font-size: 15px;
+  padding-bottom: 2px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.infobox .property_details_total {
+  font-size: 15px;
+  color: #222222;
+  padding-top: 5px;
+}
 
 .infobox:hover .back {
   display: grid;

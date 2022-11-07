@@ -251,25 +251,11 @@ const Map = () => {
               onDragEnd={handle_drag_end}           
             > 
             
-            <Rectangle bounds={bounds}/>
+            {/* <Rectangle bounds={bounds}/> */}
 
               <>                
 
-              <OverlayView
-                  onLoad={(e)=> console.log("overlay: ", e)}
-                  position={{lat:39.93, lng:32.8}}
-                  mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-                  getPixelPositionOffset={{x:90, y:90}}
-                >
-                    <div className="custom_marker" onClick={()=> console.log("clicked bingo marker")}>
-                      {"Zoom: "+z}
-                    </div>
-                </OverlayView>
-
-
-               
-
-                {shadow && shadow.slice(0,z*z*z*(1/periphery)).map((element, index) =>
+                {shadow && shadow.slice(0,z*z*z*z/2*(1/periphery)).map((element, index) =>
                      center.lat-element.position.lat >= -periphery && center.lat-element.position.lat <= periphery 
                      && center.lng-element.position.lng >= -periphery && center.lng-element.position.lng <= periphery
                      ?
@@ -283,10 +269,11 @@ const Map = () => {
                         <>
                           <div className="custom_marker" onClick= {() => setClicked_marker(index)}>
                             
-                            {element.position.lat.toString().substring(0,2)
-                              + " : "+ element.position.lng.toString().substring(0,2)}
+                            {/* {element.position.lat.toString().substring(0,6)
+                              + " : "+ element.position.lng.toString().substring(0,6)} */}
+                              {"£ "+ element.price}
                           </div>
-                          
+
                           { clicked_marker === index ? 
                             <InfoWindow position={element.position}>
                               <div className="infobox" onClick={(e)=>handle_infowin_click(e)}>
@@ -303,7 +290,12 @@ const Map = () => {
                                           <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronRight}/>
                                       </div>
                                   </div>
-                                  <h1>TEST</h1>
+                                  <div className="property_details">
+                                  <div className="property_details_location_mini">
+                                          <div className="property_details_location_loc_mini">{element.location + ", Turkey  "}<FontAwesomeIcon style={{color:"black"}} size={"xs"} icon={faStar}/> 4.5</div>
+                                          </div>
+                                        <div className="property_details_hosttype_mini">£{element.price}</div>
+                                </div>
                               </div>               
                             </InfoWindow>
                             :null}

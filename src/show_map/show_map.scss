@@ -101,6 +101,42 @@
             display: none;
         }
     }
+    .property_details{
+
+        display: grid;
+        // border: 2px solid red;
+        &_location_mini{
+            font-weight: 600;
+            font-size: 15px;
+            color: #222222;
+            padding-top: 10px;
+            padding-bottom: 3px;
+            display: flex;
+            position: relative;
+            @include grid-center;
+            &_loc_mini{
+                width: fit-content;
+            }
+            &_rating{
+                position: absolute;
+                right: 0;
+                font-weight: 400;
+            }
+        }
+        &_hosttype_mini{
+            font-weight: 600;
+            color: #222222;
+            font-size: 15px;
+            padding-bottom: 2px;
+            @include grid-center;
+        }
+        &_total{
+            font-size: 15px;
+            color: #222222;
+            padding-top: 5px;
+        }
+
+    }
     
 }
 
