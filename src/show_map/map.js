@@ -1,4 +1,4 @@
-import { GoogleMap, LoadScript,Marker, InfoWindow,Rectangle, InfoBox } from "@react-google-maps/api";
+import { GoogleMap, LoadScript,Marker, InfoWindow,Rectangle, InfoBox, OverlayView } from "@react-google-maps/api";
 import { useSelector,useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { test } from "../test/test";
@@ -126,6 +126,7 @@ const Map = () => {
       fontWeight:"600",
     }
 
+
     const marker_image = require("./marker2.png")
 
     const mrk = <button>Hello Marker</button>
@@ -231,6 +232,8 @@ const Map = () => {
                                 
                                 const [periphery, setPeriphery] = useState(parseInt(30/z));
 
+
+
                             
                                 return (
           
@@ -265,7 +268,18 @@ const Map = () => {
                                   icon={marker_image}
                                   >
                               </Marker>
-                              
+                              <OverlayView
+                                  position={center}
+                                  mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+                                >
+                                  <div>
+                                    <h1>OverlayView</h1>
+
+                                    <button>
+                                      Click me
+                                    </button>
+                                  </div>
+                                </OverlayView>
 
 
                
