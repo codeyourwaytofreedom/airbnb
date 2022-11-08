@@ -33,8 +33,8 @@ $bbb: 1px solid green;
      @include gc;
      width: 100vw;
      grid-template-columns: 10fr 11fr 10fr;
-     height: 80px;
-     padding: 0 40px;
+    //  height: 80px;
+     padding: 15px 40px;
      border-bottom: 1px solid #DDDDDD;
      white-space: nowrap;
      position: fixed;
@@ -50,6 +50,10 @@ $bbb: 1px solid green;
             border-radius: 24px;
             border: 1px solid #DDDDDD;
             padding: 0 9px;
+            &_click-extension{
+                position: absolute;
+                background-color: #FF385C;
+            }
         }
         &_btn {
             height: 48px;

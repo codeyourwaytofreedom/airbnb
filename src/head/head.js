@@ -69,29 +69,47 @@ const Head = () => {
                 </svg>
             </div>
 
+
+
+
+
+
             <div className="hd_search">
                 <div className="hd_search_shll">
 
-                <button className="hd_search_btn">
-                    <div className="hd_search_btn_tx">Anywhere</div>
-                </button>
-                <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
+                    <button className="hd_search_btn">
+                        <div className="hd_search_btn_tx">Anywhere</div>
+                    </button>
+                    <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
 
-                <button className="hd_search_btn">
-                      <div className="hd_search_btn_tx">Any week</div>
-                </button>
-                <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
+                    <button className="hd_search_btn">
+                        <div className="hd_search_btn_tx">Any week</div>
+                    </button>
+                    <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
 
-                <button style={{fontWeight:"400"}}  className="hd_search_btn">
-                    <div className="hd_search_btn_tx">Add guests</div>
-                </button>
+                    <button style={{fontWeight:"400"}}  className="hd_search_btn">
+                        <div className="hd_search_btn_tx">Add guests</div>
+                    </button>
 
-                    <div className="hd_search_icon">
-                        <FontAwesomeIcon style={{color:"white"}} icon={faSearch}/>
-                    </div>
+                        <div className="hd_search_icon">
+                            <FontAwesomeIcon style={{color:"white"}} icon={faSearch}/>
+                        </div>
+                </div>
+                <div className="hd_search_shll_click-extension">
+                    <div>Hello Extension</div>
+                    <div>Hello Extension</div>
+                    <div>Hello Extension</div>
+                    <div>Hello Extension</div>
                 </div>
                     
             </div>
+
+
+
+
+
+
+
 
             <div className="hd_user">
                 <nav className="nav">
