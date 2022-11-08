@@ -73,7 +73,7 @@ $bbb: 1px solid green;
                 .stays_tab{
                     display: grid;
                     align-items: center;
-                    padding: 10px 20px;
+                    padding: 15px 20px;
                     border-radius: 50px;
                     row-gap: 3px;
                     // border: 2px solid red;
@@ -116,7 +116,7 @@ $bbb: 1px solid green;
                 #who{
                         grid-template-columns: 1fr 1fr;
                         column-gap: 5px;
-                        padding: 5px;
+                        padding: 10px;
                     }
             }
         }

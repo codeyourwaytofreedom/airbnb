@@ -61,7 +61,7 @@
   .hd_search_shll_click-extension .stays_tab {
     display: grid;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 50px;
     row-gap: 3px;
     box-sizing: border-box;
@@ -101,7 +101,7 @@
     grid-template-columns: 1fr 1fr;
     -moz-column-gap: 5px;
          column-gap: 5px;
-    padding: 5px;
+    padding: 10px;
   }
   .hd_search_btn {
     height: 48px;
