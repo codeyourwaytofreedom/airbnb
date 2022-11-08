@@ -119,15 +119,18 @@ $bbb: 1px solid green;
                 @include fc;
                 column-gap: 10px;
                 padding: 0;
+                width: fit-content;
+                justify-self: center;
                 .buffer{
                     width: 1px;
                     height: 24px;
                     background-color: #4e4e4e;
                 }
                 .stays_tab{
+                    position: relative;
                     display: grid;
                     align-items: center;
-                    padding: 15px 20px;
+                    padding: 17px 20px;
                     border-radius: 50px;
                     height: 100%;
                     
@@ -177,7 +180,9 @@ $bbb: 1px solid green;
                         padding: 9px;
                     }
             }
+
         }
+
      }
 
 

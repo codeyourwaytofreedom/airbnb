@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Signup from "./signup/signup-modal";
 import Search_extension from "./search/search_extension";
-
+import Modal from "../modals/modal_component";
 
 const Head = () => {
     const [open_drop, setOpen_drop] = useState(false);
@@ -103,7 +103,7 @@ const Head = () => {
                     <div className="hd_search_icon">
                         <FontAwesomeIcon style={{color:"white"}} icon={faSearch}/>
                     </div>
-            </div>
+                </div>
             
                 :
                 <div className="hd_search_shll_afterclick">
@@ -129,6 +129,9 @@ const Head = () => {
 
 
                 {extension_visible?<Search_extension/>:null}
+
+
+
 
             </div>
 
