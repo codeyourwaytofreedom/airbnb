@@ -23,9 +23,12 @@ const Head = () => {
     const [extension_visible, setExtension_vis] = useState(false)
 
     const handle_search_modal = () =>{
-        if(!extension_visible){setExtension_vis(true)}
-        else{setExtension_vis(false)}
+        // if(!extension_visible){setExtension_vis(true)}
+        // else{setExtension_vis(false)}
+        setExtension_vis(true)
     }
+
+    const [clicked_tab, setTab] = useState("stays")
 
     useEffect( () => {
         const outclickhandler = (event) => {
@@ -80,44 +83,52 @@ const Head = () => {
 
             <div className="hd_search" ref={search} onClick={handle_search_modal}>
 
-                {/* <div className="hd_search_shll">
+                { !extension_visible ?
+                <div className="hd_search_shll">
 
-                    <button className="hd_search_btn">
-                        <div className="hd_search_btn_tx">Anywhere</div>
-                    </button>
-                    <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
+                <button className="hd_search_btn">
+                    <div className="hd_search_btn_tx">Anywhere</div>
+                </button>
+                <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
 
-                    <button className="hd_search_btn">
-                        <div className="hd_search_btn_tx">Any week</div>
-                    </button>
-                    <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
+                <button className="hd_search_btn">
+                    <div className="hd_search_btn_tx">Any week</div>
+                </button>
+                <span style={{width:"1px", height: "24px", backgroundColor:"#DDDDDD"}}></span>
 
-                    <button style={{fontWeight:"400"}}  className="hd_search_btn">
-                        <div className="hd_search_btn_tx">Add guests</div>
-                    </button>
+                <button style={{fontWeight:"400"}}  className="hd_search_btn">
+                    <div className="hd_search_btn_tx">Add guests</div>
+                </button>
 
-                        <div className="hd_search_icon">
-                            <FontAwesomeIcon style={{color:"white"}} icon={faSearch}/>
-                        </div>
-                </div> */}
-
+                    <div className="hd_search_icon">
+                        <FontAwesomeIcon style={{color:"white"}} icon={faSearch}/>
+                    </div>
+            </div>
+            
+                :
                 <div className="hd_search_shll_afterclick">
-                    <div className="x" tabIndex={1}>
-                            <button>Stays</button>
+                    <div onClick={()=> setTab("stays")}>
+                            <button style={{borderBottom: clicked_tab === "stays" ? "2px solid black" : "none"}}>Stays</button>
                     </div>
                             
-                    <div tabIndex={2}>
-                            <button>Experiences</button>
+                    <div onClick={()=> setTab("experiences")}>
+                            <button style={{borderBottom: clicked_tab === "experiences" ? "2px solid black" : "none"}}>Experiences</button>
                     </div>
                     
-                    <div tabIndex={3}>
+                    <div className="link">
                         <Link to={"/nagivated-here"}>Online Experiences</Link>
                     </div>
                 </div>
+                }
+                
 
 
 
-                {/* {extension_visible?<Search_extension/>:null} */}
+                
+
+
+
+                {extension_visible?<Search_extension/>:null}
 
             </div>
 
