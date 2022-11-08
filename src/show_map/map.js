@@ -167,7 +167,7 @@ const Map = () => {
     const handle_drag_end = () => {
       if(mp.current)
       {const newPos = mp.current.getCenter().toJSON();
-        console.log(newPos.lat, newPos.lng)
+        // console.log(newPos.lat, newPos.lng)
         setCenter(newPos)
       }
     }

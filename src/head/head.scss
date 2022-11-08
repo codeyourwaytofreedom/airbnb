@@ -50,16 +50,62 @@ $bbb: 1px solid green;
             border-radius: 24px;
             border: 1px solid #DDDDDD;
             padding: 0 9px;
-            &_extension-center{
-                @include gc;
-                position: absolute;
-                left: 0;
-                border: 2px solid red;
-                width: 100vw;
-                background-color: white;
-                padding: 20px 0;
+        }
+        &_shll_afterclick{
+            display: flex;
+            border-radius: 24px;
+
+            button{
+                background: transparent;
+                border: none;
+                font-size: 16px;
+                color: #222222;
+                cursor: pointer;
             }
-            &_click-extension{
+            div{
+                padding: 5px 15px;
+                cursor: pointer;
+            }
+
+
+
+            a{
+                text-decoration: none;
+                color: #222222;
+            }
+        }
+        &_btn {
+            height: 48px;
+            background: transparent;
+            border: 1px solid transparent;
+            @include fnt(600);
+            line-height: 18px;
+            padding: 0;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+            cursor: pointer;
+
+            &_tx{
+                padding:0 16px;
+            }
+        }
+        &_icon {
+            background-color: #FF385C;
+            height: 32px;
+            width: 32px;
+            border-radius: 50%;
+            @include fc;
+            cursor: pointer;
+        }
+        &_extension_to_center{
+            @include gc;
+            position: absolute;
+            left: 0;
+            border: 2px solid red;
+            width: 100vw;
+            background-color: white;
+            padding: 20px 0;
+
+            .click-extension{
                 background-color: #eeebeb;
                 border: 1px solid silver;
                 border-radius: 50px;
@@ -120,30 +166,8 @@ $bbb: 1px solid green;
                     }
             }
         }
-        &_btn {
-            height: 48px;
-            background: transparent;
-            border: 1px solid transparent;
-            @include fnt(600);
-            line-height: 18px;
-            padding: 0;
-            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-            cursor: pointer;
-
-            &_tx{
-                padding:0 16px;
-            }
-        }
-
-        &_icon {
-            background-color: #FF385C;
-            height: 32px;
-            width: 32px;
-            border-radius: 50%;
-            @include fc;
-            cursor: pointer;
-        }
      }
+
 
      &_user {
         justify-items: end;

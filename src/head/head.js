@@ -19,6 +19,13 @@ const Head = () => {
 
 
     let drop_down_ref = useRef();
+    const search = useRef();
+    const [extension_visible, setExtension_vis] = useState(false)
+
+    const handle_search_modal = () =>{
+        if(!extension_visible){setExtension_vis(true)}
+        else{setExtension_vis(false)}
+    }
 
     useEffect( () => {
         const outclickhandler = (event) => {
@@ -71,12 +78,9 @@ const Head = () => {
             </div>
 
 
+            <div className="hd_search" ref={search} onClick={handle_search_modal}>
 
-
-
-
-            <div className="hd_search">
-                <div className="hd_search_shll">
+                {/* <div className="hd_search_shll">
 
                     <button className="hd_search_btn">
                         <div className="hd_search_btn_tx">Anywhere</div>
@@ -95,12 +99,26 @@ const Head = () => {
                         <div className="hd_search_icon">
                             <FontAwesomeIcon style={{color:"white"}} icon={faSearch}/>
                         </div>
+                </div> */}
+
+                <div className="hd_search_shll_afterclick">
+                    <div className="x" tabIndex={1}>
+                            <button>Stays</button>
+                    </div>
+                            
+                    <div tabIndex={2}>
+                            <button>Experiences</button>
+                    </div>
+                    
+                    <div tabIndex={3}>
+                        <Link to={"/nagivated-here"}>Online Experiences</Link>
+                    </div>
                 </div>
 
-                <Search_extension/>
 
-                
-                    
+
+                {/* {extension_visible?<Search_extension/>:null} */}
+
             </div>
 
 

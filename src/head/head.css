@@ -32,76 +32,24 @@
     border: 1px solid #DDDDDD;
     padding: 0 9px;
   }
-  .hd_search_shll_extension-center {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 0;
-    border: 2px solid red;
-    width: 100vw;
-    background-color: white;
-    padding: 20px 0;
-  }
-  .hd_search_shll_click-extension {
-    background-color: #eeebeb;
-    border: 1px solid silver;
-    border-radius: 50px;
+  .hd_search_shll_afterclick {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    border-radius: 24px;
   }
-  .hd_search_shll_click-extension .buffer {
-    width: 1px;
-    height: 24px;
-    background-color: #4e4e4e;
-  }
-  .hd_search_shll_click-extension .stays_tab {
-    display: grid;
-    align-items: center;
-    padding: 15px 20px;
-    border-radius: 50px;
-    row-gap: 3px;
-    box-sizing: border-box;
-  }
-  .hd_search_shll_click-extension .stays_tab_shell {
-    padding: 5px 15px;
-  }
-  .hd_search_shll_click-extension .stays_tab_search {
-    background-color: #FF385C;
-    border-radius: 50px;
-  }
-  .hd_search_shll_click-extension .stays_tab_search #search_button {
+  .hd_search_shll_afterclick button {
     background: transparent;
     border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
-    color: white;
     font-size: 16px;
-    font-weight: 600;
-    padding: 15px;
+    color: #222222;
+    cursor: pointer;
   }
-  .hd_search_shll_click-extension .stays_tab .bottom {
-    font-size: 14px;
-    font-weight: 400;
+  .hd_search_shll_afterclick div {
+    padding: 5px 15px;
+    cursor: pointer;
   }
-  .hd_search_shll_click-extension .stays_tab .top {
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .hd_search_shll_click-extension .stays_tab:focus {
-    background-color: white;
-  }
-  .hd_search_shll_click-extension #who {
-    grid-template-columns: 1fr 1fr;
-    -moz-column-gap: 5px;
-         column-gap: 5px;
-    padding: 10px;
+  .hd_search_shll_afterclick a {
+    text-decoration: none;
+    color: #222222;
   }
   .hd_search_btn {
     height: 48px;
@@ -128,6 +76,77 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+  }
+  .hd_search_extension_to_center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    border: 2px solid red;
+    width: 100vw;
+    background-color: white;
+    padding: 20px 0;
+  }
+  .hd_search_extension_to_center .click-extension {
+    background-color: #eeebeb;
+    border: 1px solid silver;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .hd_search_extension_to_center .click-extension .buffer {
+    width: 1px;
+    height: 24px;
+    background-color: #4e4e4e;
+  }
+  .hd_search_extension_to_center .click-extension .stays_tab {
+    display: grid;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 50px;
+    row-gap: 3px;
+    box-sizing: border-box;
+  }
+  .hd_search_extension_to_center .click-extension .stays_tab_shell {
+    padding: 5px 15px;
+  }
+  .hd_search_extension_to_center .click-extension .stays_tab_search {
+    background-color: #FF385C;
+    border-radius: 50px;
+  }
+  .hd_search_extension_to_center .click-extension .stays_tab_search #search_button {
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px;
+  }
+  .hd_search_extension_to_center .click-extension .stays_tab .bottom {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .hd_search_extension_to_center .click-extension .stays_tab .top {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .hd_search_extension_to_center .click-extension .stays_tab:focus {
+    background-color: white;
+  }
+  .hd_search_extension_to_center .click-extension #who {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+    padding: 10px;
   }
   .hd_user {
     justify-items: end;
