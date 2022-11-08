@@ -95,12 +95,27 @@ const Head = () => {
                             <FontAwesomeIcon style={{color:"white"}} icon={faSearch}/>
                         </div>
                 </div>
-                <div className="hd_search_shll_click-extension">
-                    <div>Hello Extension</div>
-                    <div>Hello Extension</div>
-                    <div>Hello Extension</div>
-                    <div>Hello Extension</div>
+                <div className="hd_search_shll_extension-center">
+                    <div className="hd_search_shll_click-extension">
+                    <div className="stays_tab">
+                        <div>Where</div>
+                        <div>Search destinations</div>
+                    </div>
+                    <div className="stays_tab">
+                        <div>Check-in</div>
+                        <div>Add dates</div>
+                    </div>
+                    <div className="stays_tab">
+                        <div>Check-out</div>
+                        <div>Add dates</div>
+                    </div>
+                    <div className="stays_tab">
+                        <div>Who</div>
+                        <div>Add guests</div>
+                    </div>
                 </div>
+                </div>
+                
                     
             </div>
 

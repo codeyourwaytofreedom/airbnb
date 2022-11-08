@@ -50,9 +50,30 @@ $bbb: 1px solid green;
             border-radius: 24px;
             border: 1px solid #DDDDDD;
             padding: 0 9px;
-            &_click-extension{
+            &_extension-center{
+                @include gc;
                 position: absolute;
-                background-color: #FF385C;
+                left: 0;
+                border: 2px solid red;
+                width: 100vw;
+                background-color: white;
+                padding: 10px 0;
+            }
+            &_click-extension{
+                background-color: #DDDDDD;
+                border-radius: 50px;
+                font-size: 12px;
+                @include fc;
+                column-gap: 10px;
+                padding: 10px 0;
+                .stays_tab{
+                    display: grid;
+                    align-items: center;
+                    padding: 10px 20px;
+                    border: 2px solid black;
+                    border-radius: 50px;
+                    
+                }
             }
         }
         &_btn {
