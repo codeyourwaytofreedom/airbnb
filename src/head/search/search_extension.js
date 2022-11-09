@@ -1,7 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faGlobe, faCircleUser, faBars } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 const Search_extension = () => {
+
+    const [search_kernel_index, setKernelindex] = useState(1);
+
+    const handle_search_kernel = (e) =>{
+        e.stopPropagation();
+        console.log(e)
+    }
     return ( 
         <>
                 
@@ -9,14 +17,14 @@ const Search_extension = () => {
                     <div>
                         <div className='white_background'>
                            <div className="click-extension">
-                            <div className="stays_tab" tabIndex={1} autofocus>
+                            <div className="stays_tab" tabIndex={1} onClick={() => setKernelindex(1)}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Where</div>
                                     <div className="bottom">Search destinations</div>
                                 </div>                            
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" tabIndex={2}>
+                            <div className="stays_tab" tabIndex={2} onClick={() => setKernelindex(2)}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Check-in</div>
                                     <div className="bottom">Add dates</div>
@@ -24,7 +32,7 @@ const Search_extension = () => {
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" tabIndex={3}>
+                            <div className="stays_tab" tabIndex={3} onClick={() => setKernelindex(3)}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Check-out</div>
                                     <div className="bottom">Add dates</div>
@@ -32,7 +40,7 @@ const Search_extension = () => {
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" id="who" tabIndex={4}>
+                            <div className="stays_tab" id="who" tabIndex={4} onClick={() => setKernelindex(4)}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Who</div>
                                     <div className="bottom">Add guests</div>
@@ -45,58 +53,72 @@ const Search_extension = () => {
                                 </div>
                             </div>                         
                             </div> 
-                            
                         </div>
 
-                        <div className='modal_kernel'>
-                            <div className='modal_kernel_center'>
-                                <div className='where_dropdown'>
-                                    <div>Search by region</div>
-                                    <div className='regions'>
-                                        <div className='region'>
-                                            <div className='image'>
-                                                <img src={require("./flexible.jpg")} alt="flex" />
+                        {search_kernel_index===1 ?
+                            <div className='modal_kernel'>
+                                <div className='modal_kernel_center'>
+                                    <div className='where_dropdown'>
+                                        <div>Search by region</div>
+                                        <div className='regions'>
+                                            <div className='region'>
+                                                <div className='image'>
+                                                    <img src={require("./flexible.jpg")} alt="flex" />
+                                                </div>
+                                                <div className='text'>I am flexible</div> 
                                             </div>
-                                            <div className='text'>I am flexible</div> 
-                                        </div>
-                                        <div className='region'>
-                                            <div className='image'>
-                                                <img src={require("./europe.webp")} alt="flex" />
+                                            <div className='region'>
+                                                <div className='image'>
+                                                    <img src={require("./europe.webp")} alt="flex" />
+                                                </div>
+                                                <div className='text'>Europe</div> 
                                             </div>
-                                            <div className='text'>Europe</div> 
-                                        </div>
-                                        <div className='region'>
-                                            <div className='image'>
-                                                <img src={require("./france.webp")} alt="flex" />
+                                            <div className='region'>
+                                                <div className='image'>
+                                                    <img src={require("./france.webp")} alt="flex" />
+                                                </div>
+                                                <div className='text'>France</div> 
                                             </div>
-                                            <div className='text'>France</div> 
-                                        </div>
-                                        <div className='region'>
-                                            <div className='image'>
-                                                <img src={require("./flexible.jpg")} alt="flex" />
+                                            <div className='region'>
+                                                <div className='image'>
+                                                    <img src={require("./flexible.jpg")} alt="flex" />
+                                                </div>
+                                                <div className='text'>United States</div> 
                                             </div>
-                                            <div className='text'>United States</div> 
-                                        </div>
-                                        <div className='region'>
-                                            <div className='image'>
-                                                <img src={require("./europe.webp")} alt="flex" />
+                                            <div className='region'>
+                                                <div className='image'>
+                                                    <img src={require("./europe.webp")} alt="flex" />
+                                                </div>
+                                                <div className='text'>United Kingdom</div> 
                                             </div>
-                                            <div className='text'>United Kingdom</div> 
-                                        </div>
-                                        <div className='region'>
-                                            <div className='image'>
-                                                <img src={require("./france.webp")} alt="flex" />
+                                            <div className='region'>
+                                                <div className='image'>
+                                                    <img src={require("./france.webp")} alt="flex" />
+                                                </div>
+                                                <div className='text'>South America</div> 
                                             </div>
-                                            <div className='text'>South America</div> 
-                                        </div>
 
 
+                                        </div>
+                                        
                                     </div>
-                                    
                                 </div>
-                                
                             </div>
-                        </div> 
+                        : search_kernel_index===2 ?
+
+                        <div className='modal_kernel'>
+                                <div className='modal_kernel_center'>
+                                    <div className='checkin_dropdown'>
+                                        <div>Hello</div>
+                                        <div>Calendar</div>
+                                        <div>Days</div>
+                                    </div>
+                                </div>
+                            </div>
+                        :
+                        null
+                        }
+                         
                         <div className='modal'></div> 
                           
                     </div>

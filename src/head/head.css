@@ -155,6 +155,12 @@
     width: 100%;
     border-radius: 10px;
   }
+  .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown {
+    display: grid;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 30px;
+  }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;
     border: 1px solid silver;
