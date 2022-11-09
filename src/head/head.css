@@ -106,6 +106,21 @@
     align-items: center;
     padding-bottom: 10px;
     border-bottom: 4px solid white;
+    position: relative;
+  }
+  .hd_search_extension_to_center .modal_kernel {
+    position: absolute;
+    background-color: #FF385C;
+    z-index: 60;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .hd_search_extension_to_center .modal_kernel_center {
+    border: 2px solid black;
+    height: 50px;
+    width: 760px;
   }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;
@@ -117,9 +132,7 @@
     -moz-column-gap: 10px;
          column-gap: 10px;
     padding: 0;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 760px;
     justify-self: center;
   }
   .hd_search_extension_to_center .click-extension .buffer {

@@ -44,10 +44,17 @@ const Search_extension = () => {
                                     </button>
                                 </div>
                             </div>                         
-                        </div> 
+                            </div> 
+                            
                         </div>
-                        
-                        <div className='modal'>HELLO MODAL</div>  
+
+                        <div className='modal_kernel'>
+                            <div className='modal_kernel_center'>
+                                HELLO KERNEL
+                            </div>
+                        </div> 
+                        <div className='modal'></div> 
+                          
                     </div>
                 </div>
                 

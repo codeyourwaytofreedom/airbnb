@@ -118,7 +118,20 @@ $bbb: 1px solid green;
                 @include gc;
                 padding-bottom: 10px;
                 border-bottom: 4px solid white;
-            }
+                position: relative;
+                
+            }.modal_kernel{
+                    position: absolute;
+                    background-color: #FF385C;
+                    z-index: 60;
+                    width: 100vw;
+                    @include gc;
+                    &_center{
+                        border: 2px solid black;
+                        height: 50px;
+                        width: 760px;
+                    }
+                }
 
             .click-extension{
                 background-color: #eeebeb;
@@ -127,7 +140,7 @@ $bbb: 1px solid green;
                 @include fc;
                 column-gap: 10px;
                 padding: 0;
-                width: fit-content;
+                width: 760px;
                 justify-self: center;
                 .buffer{
                     width: 1px;
