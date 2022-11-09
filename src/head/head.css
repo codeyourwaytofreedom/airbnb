@@ -119,8 +119,41 @@
   }
   .hd_search_extension_to_center .modal_kernel_center {
     border: 2px solid black;
-    height: 50px;
     width: 760px;
+    display: grid;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .where_dropdown {
+    width: 450px;
+    background-color: white;
+    border-radius: 30px;
+    display: grid;
+    padding: 30px;
+    row-gap: 30px;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .where_dropdown .regions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-self: start;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .where_dropdown .regions .region {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .where_dropdown .regions .region .image {
+    border: 1px solid silver;
+    border-radius: 10px;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .where_dropdown .regions .region .text {
+    font-size: 15px;
+    color: #222222;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .where_dropdown .regions .region img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
   }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;
@@ -182,6 +215,7 @@
   }
   .hd_search_extension_to_center .click-extension .stays_tab:focus {
     background-color: white;
+    box-shadow: 0px 8px 8px 8px rgb(240, 239, 239);
   }
   .hd_search_extension_to_center .click-extension #who {
     grid-template-columns: 1fr 1fr;

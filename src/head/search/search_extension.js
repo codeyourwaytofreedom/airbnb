@@ -9,7 +9,7 @@ const Search_extension = () => {
                     <div>
                         <div className='white_background'>
                            <div className="click-extension">
-                            <div className="stays_tab" tabIndex={1}>
+                            <div className="stays_tab" tabIndex={1} autofocus>
                                 <div className="stays_tab_shell">
                                     <div className="top">Where</div>
                                     <div className="bottom">Search destinations</div>
@@ -50,7 +50,51 @@ const Search_extension = () => {
 
                         <div className='modal_kernel'>
                             <div className='modal_kernel_center'>
-                                HELLO KERNEL
+                                <div className='where_dropdown'>
+                                    <div>Search by region</div>
+                                    <div className='regions'>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./flexible.jpg")} alt="flex" />
+                                            </div>
+                                            <div className='text'>I am flexible</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./europe.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>Europe</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./france.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>France</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./flexible.jpg")} alt="flex" />
+                                            </div>
+                                            <div className='text'>United States</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./europe.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>United Kingdom</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./france.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>South America</div> 
+                                        </div>
+
+
+                                    </div>
+                                    
+                                </div>
+                                
                             </div>
                         </div> 
                         <div className='modal'></div> 

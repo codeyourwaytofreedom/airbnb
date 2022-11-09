@@ -44,6 +44,7 @@ $bbb: 1px solid green;
 
      &_search {
         padding: 0 24px;
+
         &_shll {
             @include fc;
             grid-template-columns: 2fr 2fr 2fr 1fr;
@@ -55,7 +56,6 @@ $bbb: 1px solid green;
             display: flex;
             border-radius: 24px;
             padding-top: 5px;
-
             button{
                 background: transparent;
                 border: none;
@@ -128,8 +128,41 @@ $bbb: 1px solid green;
                     @include gc;
                     &_center{
                         border: 2px solid black;
-                        height: 50px;
                         width: 760px;
+                        display: grid;
+                        .where_dropdown{
+                            width: 450px;
+                            background-color: white;
+                            border-radius: 30px;
+                            display: grid;
+                            padding: 30px;
+                            row-gap: 30px;
+                            .regions{
+                                display: grid;
+                                grid-template-columns: repeat(3, 1fr);
+                                gap: 10px;
+                                align-self:start;
+                                .region{
+                                    display: grid;
+                                    align-items: center;
+                                    justify-content: center;
+                                    row-gap: 5px;
+                                    .image{
+                                        border: 1px solid silver;
+                                        border-radius: 10px;
+                                    }
+                                    .text{
+                                        font-size: 15px;
+                                        color:#222222;
+                                    }
+                                    img{
+                                        display: block;
+                                        width: 100%;
+                                        border-radius: 10px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -154,6 +187,7 @@ $bbb: 1px solid green;
                     padding: 17px 20px;
                     border-radius: 50px;
                     height: 100%;
+                    
                     
                     // border: 2px solid red;
                     box-sizing: border-box;
@@ -191,6 +225,7 @@ $bbb: 1px solid green;
                     
                     &:focus{
                         background-color: white;
+                        box-shadow: 0px 8px 8px 8px rgb(240, 239, 239);
                     }
 
                     
