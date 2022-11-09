@@ -107,10 +107,18 @@ $bbb: 1px solid green;
             @include gc;
             position: absolute;
             left: 0;
-            border: 2px solid red;
+            // border: 2px solid black;
             width: 100vw;
-            background-color: white;
+            background: transparent;
             padding: 15px 0;
+            z-index: 40 !important;
+            .white_background{
+                background-color: white;
+                width: 100vw;
+                @include gc;
+                padding-bottom: 10px;
+                border-bottom: 4px solid white;
+            }
 
             .click-extension{
                 background-color: #eeebeb;
@@ -179,6 +187,14 @@ $bbb: 1px solid green;
                         column-gap: 5px;
                         padding: 9px;
                     }
+            }
+            .modal{
+                border: 2px solid red;
+                position: relative;
+                top: 0;
+                height: 90vh;
+                background-color: rgba(0, 0, 0, 0.5); 
+                z-index: 40 !important;
             }
 
         }

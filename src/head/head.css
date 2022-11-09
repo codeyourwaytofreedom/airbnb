@@ -93,10 +93,19 @@
     align-items: center;
     position: absolute;
     left: 0;
-    border: 2px solid red;
     width: 100vw;
-    background-color: white;
+    background: transparent;
     padding: 15px 0;
+    z-index: 40 !important;
+  }
+  .hd_search_extension_to_center .white_background {
+    background-color: white;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 4px solid white;
   }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;
@@ -166,6 +175,14 @@
     -moz-column-gap: 5px;
          column-gap: 5px;
     padding: 9px;
+  }
+  .hd_search_extension_to_center .modal {
+    border: 2px solid red;
+    position: relative;
+    top: 0;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40 !important;
   }
   .hd_user {
     justify-items: end;

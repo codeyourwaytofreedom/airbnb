@@ -6,7 +6,9 @@ const Search_extension = () => {
         <>
                 
                 <div className="hd_search_extension_to_center">
-                    <div className="click-extension">
+                    <div>
+                        <div className='white_background'>
+                           <div className="click-extension">
                             <div className="stays_tab" tabIndex={1}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Where</div>
@@ -41,7 +43,11 @@ const Search_extension = () => {
                                         <span>Search</span>
                                     </button>
                                 </div>
-                            </div>                           
+                            </div>                         
+                        </div> 
+                        </div>
+                        
+                        <div className='modal'>HELLO MODAL</div>  
                     </div>
                 </div>
                 
