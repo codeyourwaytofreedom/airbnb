@@ -158,7 +158,7 @@
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown {
     display: grid;
     background-color: white;
-    padding: 20px 30px;
+    padding: 30px 30px;
     border-radius: 30px;
   }
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_options {
@@ -190,7 +190,7 @@
     display: grid;
     border: 2px solid black;
     justify-content: center;
-    height: 200px;
+    padding: 20px;
   }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;

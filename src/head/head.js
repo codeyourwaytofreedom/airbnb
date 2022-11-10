@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Signup from "./signup/signup-modal";
 import Search_extension from "./search/search_extension";
-import Modal from "../modals/modal_component";
 
 const Head = () => {
     const [open_drop, setOpen_drop] = useState(false);

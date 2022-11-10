@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faGlobe, faCircleUser, faBars } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
-import { useRef } from 'react';
+import { faSearch} from '@fortawesome/free-solid-svg-icons';
+import { useState,useRef } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+
 
 const Search_extension = () => {
 
@@ -122,11 +124,11 @@ const Search_extension = () => {
                                         </div>
                                         <div className='checkin_dropdown_calendar_shell'>
                                             <div className='calendar_left'>
-                                                <div>Month</div>
-                                                <div>Week</div>
-                                                <div>Days</div>
+                                                <Calendar/>
                                             </div>
-                                            <div className='calendar_right'>Right</div>
+                                            <div className='calendar_right'>
+                                                <Calendar/>
+                                            </div>
                                         </div>
                                         <div>Days</div>
                                     </div>
