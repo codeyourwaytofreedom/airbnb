@@ -1,6 +1,6 @@
 import { useState,useRef } from 'react';
 import { DatePicker } from 'antd';
-
+import "./calendar.css";
 
 
 const Calendar_comp = () => {
@@ -12,7 +12,11 @@ const Calendar_comp = () => {
     return ( 
 
             <div>
-                <RangePicker></RangePicker>
+                <RangePicker
+                open={true}
+                style={{ visibility: "hidden", width: 0 }}
+                // className={"ttt"}
+                ></RangePicker>
             </div>
      );
 }
