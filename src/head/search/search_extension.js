@@ -1,10 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faGlobe, faCircleUser, faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useRef } from 'react';
 
 const Search_extension = () => {
 
     const [search_kernel_index, setKernelindex] = useState(1);
+    const choose_dates = useRef();
+    const flexible = useRef();
 
     const handle_search_kernel = (e) =>{
         e.stopPropagation();
@@ -109,7 +112,14 @@ const Search_extension = () => {
                         <div className='modal_kernel'>
                                 <div className='modal_kernel_center'>
                                     <div className='checkin_dropdown'>
-                                        <div>Hello</div>
+                                        <div className='checkin_dropdown_options'>
+                                            <div tabIndex={1} ref={choose_dates}>
+                                                <button onClick={()=> choose_dates.current.focus()}>Choose dates</button>
+                                            </div>
+                                            <div tabIndex={2} ref={flexible}>
+                                                <button onClick={()=> flexible.current.focus()}>I'm flexible</button>
+                                            </div>
+                                        </div>
                                         <div>Calendar</div>
                                         <div>Days</div>
                                     </div>

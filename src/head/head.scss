@@ -168,6 +168,31 @@ $bbb: 1px solid green;
                             background-color: white;
                             padding: 20px 30px;
                             border-radius: 30px;
+                            &_options{
+                                display: flex;
+                                justify-self: center;
+                                background-color: #eeebeb;
+                                padding: 3px;
+                                border-radius: 20px;
+                                // border:2px solid red;
+                                div{
+                                    background-color: #eeebeb;
+                                    border-radius: 20px;                                    
+                                    // border:2px solid black;
+                                    
+                                    button{
+                                        background: transparent;
+                                        border: none;
+                                        padding: 10px 20px;
+                                        cursor: pointer;
+                                        font-weight: 600;
+                                    }
+                                    &:focus{
+                                        background-color: white;
+                                    }
+                                }
+
+                            }
                         }
                     }
                 }
