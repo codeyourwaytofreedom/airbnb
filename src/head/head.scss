@@ -172,8 +172,8 @@ $bbb: 1px solid green;
                                 display: flex;
                                 justify-self: center;
                                 background-color: #eeebeb;
-                                padding: 3px;
-                                border-radius: 20px;
+                                padding: 5px;
+                                border-radius: 25px;
                                 // border:2px solid red;
                                 div{
                                     background-color: #eeebeb;
@@ -183,7 +183,7 @@ $bbb: 1px solid green;
                                     button{
                                         background: transparent;
                                         border: none;
-                                        padding: 10px 20px;
+                                        padding: 10px 30px;
                                         cursor: pointer;
                                         font-weight: 600;
                                     }
@@ -192,6 +192,16 @@ $bbb: 1px solid green;
                                     }
                                 }
 
+                            }
+                            &_calendar_shell{
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                .calendar_left, .calendar_right{
+                                    display:grid;
+                                    border:2px solid black;
+                                    justify-content: center;
+                                    height: 200px;
+                                }
                             }
                         }
                     }

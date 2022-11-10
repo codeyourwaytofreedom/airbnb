@@ -165,8 +165,8 @@
     display: flex;
     justify-self: center;
     background-color: #eeebeb;
-    padding: 3px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 25px;
   }
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_options div {
     background-color: #eeebeb;
@@ -175,12 +175,22 @@
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_options div button {
     background: transparent;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 30px;
     cursor: pointer;
     font-weight: 600;
   }
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_options div:focus {
     background-color: white;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_calendar_shell {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_calendar_shell .calendar_left, .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_calendar_shell .calendar_right {
+    display: grid;
+    border: 2px solid black;
+    justify-content: center;
+    height: 200px;
   }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;

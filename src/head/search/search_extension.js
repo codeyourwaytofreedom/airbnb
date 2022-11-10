@@ -120,7 +120,14 @@ const Search_extension = () => {
                                                 <button onClick={()=> flexible.current.focus()}>I'm flexible</button>
                                             </div>
                                         </div>
-                                        <div>Calendar</div>
+                                        <div className='checkin_dropdown_calendar_shell'>
+                                            <div className='calendar_left'>
+                                                <div>Month</div>
+                                                <div>Week</div>
+                                                <div>Days</div>
+                                            </div>
+                                            <div className='calendar_right'>Right</div>
+                                        </div>
                                         <div>Days</div>
                                     </div>
                                 </div>
