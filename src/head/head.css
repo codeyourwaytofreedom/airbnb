@@ -190,7 +190,7 @@
     display: grid;
     border: 2px solid black;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 0;
   }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;

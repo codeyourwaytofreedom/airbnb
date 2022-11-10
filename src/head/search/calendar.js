@@ -1,13 +1,20 @@
+import { useState,useRef } from 'react';
+import { DatePicker } from 'antd';
 
 
 
-const Calendar = () => {
+const Calendar_comp = () => {
 
     const [value, onChange] = useState(new Date());
+    const { RangePicker } = DatePicker;
+
 
     return ( 
-                <Calendar onChange={onChange} value={value} />
+
+            <div>
+                <RangePicker></RangePicker>
+            </div>
      );
 }
  
-export default Calendar;
+export default Calendar_comp;
