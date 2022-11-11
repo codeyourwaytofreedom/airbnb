@@ -184,7 +184,6 @@
   }
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_calendar_shell {
     display: grid;
-    grid-template-columns: 1fr 1fr;
   }
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_calendar_shell .calendar_left, .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_calendar_shell .calendar_right {
     display: grid;

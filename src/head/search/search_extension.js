@@ -124,11 +124,7 @@ const Search_extension = () => {
                                             </div>
                                         </div>
                                         <div className='checkin_dropdown_calendar_shell'>
-                                            <div className='calendar_left'>
                                                 <Calendar_comp/>
-                                            </div>
-                                            <div className='calendar_right'>
-                                            </div>
                                         </div>
                                         <div>Days</div>
                                     </div>

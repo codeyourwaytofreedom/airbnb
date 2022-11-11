@@ -11,13 +11,15 @@ const Calendar_comp = () => {
 
     return ( 
 
-            <div>
+            
                 <RangePicker
                 open={true}
                 style={{ visibility: "hidden", width: 0 }}
-                // className={"ttt"}
+                className={"hhhhhhhhhh"}
+                popupClassName={"popp"}
+                
                 ></RangePicker>
-            </div>
+            
      );
 }
  
