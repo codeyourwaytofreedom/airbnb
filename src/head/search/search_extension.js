@@ -2,8 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch} from '@fortawesome/free-solid-svg-icons';
 import { useState,useRef } from 'react';
 import Calendar_comp from './calendar';
-import 'antd/dist/antd.css';
-
 
 
 const Search_extension = () => {
@@ -124,9 +122,9 @@ const Search_extension = () => {
                                             </div>
                                         </div>
                                         <div className='checkin_dropdown_calendar_shell'>
-                                                <Calendar_comp/>
+                                            <div className='calendar_left'><Calendar_comp/></div>
+                                            <div className='calendar_right'><Calendar_comp/></div>
                                         </div>
-                                        <div>Days</div>
                                     </div>
                                 </div>
                             </div>

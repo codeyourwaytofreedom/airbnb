@@ -195,11 +195,11 @@ $bbb: 1px solid green;
                             }
                             &_calendar_shell{
                                 display: grid;
-                                // grid-template-columns: 1fr 1fr;
+                                grid-template-columns: 1fr 1fr;
                                 .calendar_left, .calendar_right{
                                     display:grid;
                                     border:2px solid black;
-                                    justify-content: center;
+                                    justify-content: start;
                                     padding: 20px 0;
                                 }
                             }
