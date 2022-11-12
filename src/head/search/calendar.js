@@ -1,17 +1,18 @@
 import { useState,useRef } from 'react';
-import "./calendar.css";
+
+import 'react-dates/initialize';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 
 import Calendar from 'react-calendar';
 
 const Calendar_comp = () => {
-    const [value, onChange] = useState(new Date());
     
 
 
 
     return ( 
-                <Calendar onChange={onChange} value={value} />           
+                <div>Hello</div>
      );
 }
  
