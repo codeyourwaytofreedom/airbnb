@@ -17,16 +17,16 @@ const Calendar_comp = () => {
   
     const defaultFocusedInput = "startDate";
     const [focusedInput, setFocusedInput] = useState(defaultFocusedInput);
+
     const handleDatesChange = (dates) => {
       setDates(dates);
+      console.log(dates)      
     };
   
     const onFocusChange = (focusedInput) => {
       console.log(onFocusChange);
       setFocusedInput(focusedInput);
-    };
-
-
+    }
 
     return ( 
         <DayPickerRangeController

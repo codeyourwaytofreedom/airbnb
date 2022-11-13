@@ -186,6 +186,31 @@
     display: grid;
     justify-content: center;
   }
+  .hd_search_extension_to_center .modal_kernel_center .who_dropdown {
+    background-color: white;
+    display: grid;
+    justify-self: end;
+    padding: 30px 30px;
+    border-radius: 30px;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice {
+    display: flex;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice div {
+    display: grid;
+    align-items: center;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice .category {
+    row-gap: 5px;
+    padding-right: 70px;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice .short {
+    font-weight: 600;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice .detailed {
+    color: #4e4e4e;
+    font-size: 14px;
+  }
   .hd_search_extension_to_center .click-extension {
     background-color: #eeebeb;
     border: 1px solid silver;

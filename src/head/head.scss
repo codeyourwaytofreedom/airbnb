@@ -199,6 +199,33 @@ $bbb: 1px solid green;
 
                             }
                         }
+                        .who_dropdown{
+                            background-color: white;
+                            display: grid;
+                            justify-self: end;
+                            padding: 30px 30px;
+                            border-radius: 30px;
+                            .choice{
+                                display: flex;
+                                div{
+                                    display: grid;
+                                    align-items: center;
+                                }
+                                .category{
+                                    row-gap: 5px;
+                                    padding-right: 70px;
+                                }
+                                .short{
+                                    font-weight: 600;
+                                }
+                                .detailed{
+                                    color: #4e4e4e;
+                                    font-size: 14px;
+                                }
+
+                            }
+
+                        }
                     }
                 }
 
