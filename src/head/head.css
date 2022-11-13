@@ -193,6 +193,7 @@
     padding: 30px 30px;
     border-radius: 30px;
     row-gap: 50px;
+    width: 400px;
   }
   .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice {
     display: flex;
@@ -224,6 +225,8 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    width: 100%;
+    height: 100%;
   }
   .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice .minus:hover, .hd_search_extension_to_center .modal_kernel_center .who_dropdown .choice .plus:hover {
     border: 1px solid black;
