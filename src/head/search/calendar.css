@@ -1,3 +1,21 @@
 button.DayPickerKeyboardShortcuts_buttonReset {
   display: none;
+}
+
+.CalendarDay.CalendarDay_1.CalendarDay__default.CalendarDay__default_2 {
+  border: none;
+}
+
+.CalendarDay.CalendarDay_1.CalendarDay__default.CalendarDay__default_2:hover {
+  background-color: rgb(74, 207, 74);
+  border-radius: 50%;
+}
+
+.CalendarDay__selected {
+  background-color: red;
+  border-radius: 50%;
+}
+
+.CalendarDay__selected_span {
+  background-color: yellow;
 }/*# sourceMappingURL=calendar.css.map */
