@@ -7,15 +7,27 @@ button.DayPickerKeyboardShortcuts_buttonReset {
 }
 
 .CalendarDay.CalendarDay_1.CalendarDay__default.CalendarDay__default_2:hover {
-  background-color: rgb(74, 207, 74);
+  background-color: rgb(144, 145, 144);
   border-radius: 50%;
 }
 
 .CalendarDay__selected {
-  background-color: red;
+  background-color: rgb(72, 240, 72);
   border-radius: 50%;
+  border: none;
+}
+.CalendarDay__selected:hover {
+  background-color: rgb(72, 240, 72);
+  border-radius: 50%;
+  border: none;
 }
 
 .CalendarDay__selected_span {
-  background-color: yellow;
+  background-color: white;
+  color: black;
+}
+
+.CalendarDay__hovered_span {
+  background-color: white;
+  color: black;
 }/*# sourceMappingURL=calendar.css.map */
