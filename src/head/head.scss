@@ -205,15 +205,17 @@ $bbb: 1px solid green;
                             justify-self: end;
                             padding: 30px 30px;
                             border-radius: 30px;
+                            row-gap: 50px;
                             .choice{
                                 display: flex;
+                                column-gap: 15px;
                                 div{
                                     display: grid;
                                     align-items: center;
                                 }
                                 .category{
                                     row-gap: 5px;
-                                    padding-right: 70px;
+                                    width: 220px;
                                 }
                                 .short{
                                     font-weight: 600;
@@ -221,6 +223,20 @@ $bbb: 1px solid green;
                                 .detailed{
                                     color: #4e4e4e;
                                     font-size: 14px;
+                                }
+                                .minus, .plus {
+                                    border: 1px solid gray;
+                                    border-radius: 50%;
+                                    padding: 7px;
+                                    cursor: pointer;
+                                    button{
+                                        background: transparent;
+                                        border: none;
+                                        cursor: pointer;
+                                    }
+                                    &:hover{
+                                        border: 1px solid black;
+                                    }
                                 }
 
                             }

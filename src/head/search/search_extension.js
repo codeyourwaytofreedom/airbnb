@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
 import { useState,useRef } from 'react';
 import Calendar_comp from "./calendar";
+import Who from './who';
 
 const Search_extension = () => {
 
@@ -127,22 +128,19 @@ const Search_extension = () => {
                                 </div>
                             </div>
                         : search_kernel_index===4 ?
-
+                        
                         <div className='modal_kernel'>
-                                <div className='modal_kernel_center'>
-                                    <div className='who_dropdown'>
-                                       <div className='choice'>
-                                            <div className='category'>
-                                                <div className='short'>Adults</div>
-                                                <div className='detailed'>Ages 13 or above</div>
-                                            </div>
-                                            <div className='minus'>Two</div>
-                                            <div className='number'>Three</div>
-                                            <div className='plus'>Four</div>
-                                       </div>
-                                    </div>
+                            <div className='modal_kernel_center'>
+                                <div className='who_dropdown'>
+                                    <Who short={"Adults"} detailed={"Ages 13 or above"} />
+                                    <Who short={"Children"} detailed={"Ages 2–12"} />
+                                    <Who short={"Infants"} detailed={"Under 2"} />
+                                    <Who short={"Pets"} detailed={"Bringing a service animal?"} />
                                 </div>
                             </div>
+                        </div>
+                        
+                        
                         :
                         null
                         }
