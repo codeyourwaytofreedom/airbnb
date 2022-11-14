@@ -3,26 +3,50 @@ import { faSearch, faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
 import { useState,useRef } from 'react';
 import Calendar_comp from "./calendar";
 import Who from './who';
+import { useEffect } from 'react';
 
-const Search_extension = () => {
+
+const Search_extension = ({setExtension_vis}) => {
 
     const [search_kernel_index, setKernelindex] = useState(1);
     const choose_dates = useRef();
     const flexible = useRef();
+    const start_focus = useRef();
 
-    const handle_search_kernel = (e) =>{
-        e.stopPropagation();
-        console.log(e)
-    }
+    const [where_available, setWhereavailable] = useState(true)
+    const where = useRef();
+
+
+
+    useEffect(()=> {
+        start_focus.current.focus();
+    }, [])
+
+    useEffect(()=> {
+        const outside_where = (e) =>{
+            if(where.current && !where.current.contains(e.target))
+            {console.log("clicked where dropdown")
+                setWhereavailable(false)
+            }
+        }
+        document.addEventListener("mousedown", outside_where)
+
+    })
+
+
+
+
+
     return ( 
         <>
                 
                 <div className="hd_search_extension_to_center">
                     <div>
                         <div className='white_background'>
-                           <div className="click-extension">
-                            <div className="stays_tab" tabIndex={1} onClick={() => setKernelindex(1)}>
-                                <div className="stays_tab_shell">
+                           <div className="click-extension" >
+                            <div className="stays_tab" tabIndex={1} onClick={() => setKernelindex(1)} 
+                            ref={start_focus}>
+                                <div className="stays_tab_shell" onClick={() => setWhereavailable(true)}>
                                     <div className="top">Where</div>
                                     <div className="bottom">Search destinations</div>
                                 </div>                            
@@ -62,8 +86,10 @@ const Search_extension = () => {
                         {search_kernel_index===1 ?
                             <div className='modal_kernel'>
                                 <div className='modal_kernel_center'>
-                                    <div className='where_dropdown'>
-                                        <div>Search by region</div>
+                                    <div className='where_dropdown' ref={where} 
+                                    style={{display: where_available ? "grid" : "none"}}
+                                    >
+                                        <div className='search_by_region'>Search by region</div>
                                         <div className='regions'>
                                             <div className='region'>
                                                 <div className='image'>
@@ -108,13 +134,14 @@ const Search_extension = () => {
                                     </div>
                                 </div>
                             </div>
-                        : search_kernel_index===2 ?
+                        : search_kernel_index===2 || search_kernel_index===3 ?
 
                         <div className='modal_kernel'>
                                 <div className='modal_kernel_center'>
                                     <div className='checkin_dropdown'>
                                         <div className='checkin_dropdown_options'>
-                                            <div tabIndex={1} ref={choose_dates}>
+                                            <div tabIndex={1} ref={choose_dates} 
+                                            style={{backgroundColor: search_kernel_index===2 || search_kernel_index===3 ? "white" : "gray"}}>
                                                 <button onClick={()=> choose_dates.current.focus()}>Choose dates</button>
                                             </div>
                                             <div tabIndex={2} ref={flexible}>

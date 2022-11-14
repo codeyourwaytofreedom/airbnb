@@ -31,7 +31,7 @@ const Head = () => {
 
     useEffect( () => {
         const outclickhandler = (event) => {
-                                if (!drop_down_ref.current.contains(event.target))
+                                if (drop_down_ref.current && !drop_down_ref.current.contains(event.target))
                                 {
                                     setOpen_drop(false);
                                 }
@@ -127,7 +127,7 @@ const Head = () => {
 
 
 
-                {extension_visible?<Search_extension/>:null}
+                {extension_visible?<Search_extension setExtension_vis={setExtension_vis}/>:null}
 
 
 

@@ -110,7 +110,6 @@
   }
   .hd_search_extension_to_center .modal_kernel {
     position: absolute;
-    background-color: #FF385C;
     z-index: 60;
     width: 100vw;
     display: grid;
@@ -129,6 +128,10 @@
     display: grid;
     padding: 30px;
     row-gap: 30px;
+  }
+  .hd_search_extension_to_center .modal_kernel_center .where_dropdown .search_by_region {
+    font-size: 14px;
+    font-weight: 600;
   }
   .hd_search_extension_to_center .modal_kernel_center .where_dropdown .regions {
     display: grid;
@@ -178,9 +181,6 @@
     padding: 10px 30px;
     cursor: pointer;
     font-weight: 600;
-  }
-  .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_options div:focus {
-    background-color: white;
   }
   .hd_search_extension_to_center .modal_kernel_center .checkin_dropdown_calendar_shell {
     display: grid;
@@ -258,6 +258,7 @@
     padding: 17px 20px;
     border-radius: 50px;
     height: 100%;
+    cursor: pointer;
     box-sizing: border-box;
   }
   .hd_search_extension_to_center .click-extension .stays_tab_shell {
