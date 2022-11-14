@@ -132,10 +132,7 @@ const Search_extension = () => {
                         <div className='modal_kernel'>
                             <div className='modal_kernel_center'>
                                 <div className='who_dropdown'>
-                                    <Who short={"Adults"} detailed={"Ages 13 or above"} />
-                                    <Who short={"Children"} detailed={"Ages 2–12"} />
-                                    <Who short={"Infants"} detailed={"Under 2"} />
-                                    <Who short={"Pets"} detailed={"Bringing a service animal?"} />
+                                    <Who/>
                                 </div>
                             </div>
                         </div>
