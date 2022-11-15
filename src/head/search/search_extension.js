@@ -40,8 +40,12 @@ const Search_extension = ({setExtension_vis}) => {
             }
         }
         document.addEventListener("mousedown", outside_where)
-
     })
+
+    useEffect(()=> {
+            if(dates.startDate && !dates.endDate || dates.startDate && dates.endDate)
+            {setTab("checkout")}
+    }, [dates])
 
 
 
@@ -77,7 +81,7 @@ const Search_extension = ({setExtension_vis}) => {
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" tabIndex={3} onClick={() => {setTab("checkout") }}
+                            <div className="stays_tab" tabIndex={3} onClick={() => { setTab("checkout") }}
                                 style={{
                                     backgroundColor: selected_tab==="checkout" ? "white" : "#eeebeb",
                                     boxShadow: selected_tab==="checkout" ? "0px 8px 8px 8px rgb(240, 239, 239)" : "none"

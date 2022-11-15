@@ -244,6 +244,7 @@
     padding: 0;
     width: 760px;
     justify-self: center;
+    z-index: 5 !important;
   }
   .hd_search_extension_to_center .click-extension .buffer {
     width: 1px;
@@ -256,7 +257,6 @@
     align-items: center;
     padding: 17px 20px;
     border-radius: 50px;
-    height: 100%;
     cursor: pointer;
     box-sizing: border-box;
   }
