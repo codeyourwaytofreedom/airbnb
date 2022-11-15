@@ -21,7 +21,7 @@ const Search_extension = ({setExtension_vis}) => {
     const who = useRef();
     const modal_background = useRef();
 
-
+    const [dates, setDates] = useState({ startDate: null, endDate: null });
 
     useEffect(()=> {
         start_focus.current.focus();
@@ -73,7 +73,7 @@ const Search_extension = ({setExtension_vis}) => {
                             <div className="stays_tab" tabIndex={2} onClick={() => {setKernelindex(2); setCheckavailable(true)}}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Check-in</div>
-                                    <div className="bottom">Add dates</div>
+                                    <div className="bottom">{dates.startDate ? dates.startDate.format("MMM Do") : "Add dates"}</div>
                                 </div>
                                 
                             </div>
@@ -81,7 +81,7 @@ const Search_extension = ({setExtension_vis}) => {
                             <div className="stays_tab" tabIndex={3} onClick={() => {setKernelindex(3); setCheckavailable(true) }}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Check-out</div>
-                                    <div className="bottom">Add dates</div>
+                                    <div className="bottom">{dates.endDate ? dates.endDate.format("MMM Do") : "Add dates"}</div>
                                 </div>
                                 
                             </div>
@@ -164,7 +164,7 @@ const Search_extension = ({setExtension_vis}) => {
                                         </div>
                                     </div>
                                     <div className='checkin_dropdown_calendar_shell'>
-                                            <Calendar_comp/>
+                                            <Calendar_comp dates={dates} setDates={setDates}/>
                                     </div>
                                 </div>
 

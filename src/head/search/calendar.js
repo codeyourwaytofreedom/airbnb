@@ -11,20 +11,19 @@ import "./calendar.css";
 
 import Calendar from 'react-calendar';
 
-const Calendar_comp = () => {
+const Calendar_comp = ({dates, setDates}) => {
 
-    const [dates, setDates] = useState({ startDate: null, endDate: null });
+    // const [dates, setDates] = useState({ startDate: null, endDate: null });
   
     const defaultFocusedInput = "startDate";
     const [focusedInput, setFocusedInput] = useState(defaultFocusedInput);
 
     const handleDatesChange = (dates) => {
       setDates(dates);
-      console.log(dates)      
+      console.log(dates.startDate._d)      
     };
   
     const onFocusChange = (focusedInput) => {
-      console.log(onFocusChange);
       setFocusedInput(focusedInput);
     }
 
