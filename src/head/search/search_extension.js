@@ -29,6 +29,11 @@ const Search_extension = ({setExtension_vis}) => {
 
     useEffect(()=> {
         const outside_where = (e) =>{
+            if(!where.current && !check.current && !who.current && modal_background.current.contains(e.target))
+            {console.log("clicked on modal background while ")
+             setExtension_vis(false)
+            }
+
             if(where.current && !where.current.contains(e.target))
             {
                 setWhereavailable(false)
@@ -41,7 +46,6 @@ const Search_extension = ({setExtension_vis}) => {
             {
                 setWhoavailable(false)
             }
-            // if(!where.current && !check.current && !who.current && )
         }
         document.addEventListener("mousedown", outside_where)
 
@@ -58,32 +62,32 @@ const Search_extension = ({setExtension_vis}) => {
                     <div>
                         <div className='white_background'>
                            <div className="click-extension" >
-                            <div className="stays_tab" tabIndex={1} onClick={() => setKernelindex(1)} 
+                            <div className="stays_tab" tabIndex={1} onClick={() => {setKernelindex(1); setWhereavailable(true)}} 
                             ref={start_focus}>
-                                <div className="stays_tab_shell" onClick={() => setWhereavailable(true)}>
+                                <div className="stays_tab_shell">
                                     <div className="top">Where</div>
                                     <div className="bottom">Search destinations</div>
                                 </div>                            
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" tabIndex={2} onClick={() => setKernelindex(2)}>
-                                <div className="stays_tab_shell" onClick={() => setCheckavailable(true)}>
+                            <div className="stays_tab" tabIndex={2} onClick={() => {setKernelindex(2); setCheckavailable(true)}}>
+                                <div className="stays_tab_shell">
                                     <div className="top">Check-in</div>
                                     <div className="bottom">Add dates</div>
                                 </div>
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" tabIndex={3} onClick={() => setKernelindex(3)}>
-                                <div className="stays_tab_shell" onClick={() => setCheckavailable(true)}>
+                            <div className="stays_tab" tabIndex={3} onClick={() => {setKernelindex(3); setCheckavailable(true) }}>
+                                <div className="stays_tab_shell">
                                     <div className="top">Check-out</div>
                                     <div className="bottom">Add dates</div>
                                 </div>
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" id="who" tabIndex={4} onClick={() => setKernelindex(4)}>
-                                <div className="stays_tab_shell" onClick={() => setWhoavailable(true)}>
+                            <div className="stays_tab" id="who" tabIndex={4} onClick={() => {setKernelindex(4);setWhoavailable(true) }}>
+                                <div className="stays_tab_shell">
                                     <div className="top">Who</div>
                                     <div className="bottom">Add guests</div>
                                 </div>
