@@ -19,6 +19,7 @@ const Search_extension = ({setExtension_vis}) => {
     const where = useRef();
     const check = useRef();
     const who = useRef();
+    const modal_background = useRef();
 
 
 
@@ -40,6 +41,7 @@ const Search_extension = ({setExtension_vis}) => {
             {
                 setWhoavailable(false)
             }
+            // if(!where.current && !check.current && !who.current && )
         }
         document.addEventListener("mousedown", outside_where)
 
@@ -50,7 +52,7 @@ const Search_extension = ({setExtension_vis}) => {
 
 
     return ( 
-        <>
+    
                 
                 <div className="hd_search_extension_to_center">
                     <div>
@@ -95,98 +97,89 @@ const Search_extension = ({setExtension_vis}) => {
                             </div> 
                         </div>
 
-                        {where_available ?
-                            <div className='modal_kernel'>
-                                <div className='modal_kernel_center'>
-                                    <div className='where_dropdown' ref={where} 
-                                    style={{display: where_available ? "grid" : "none"}}
-                                    >
-                                        <div className='search_by_region'>Search by region</div>
-                                        <div className='regions'>
-                                            <div className='region'>
-                                                <div className='image'>
-                                                    <img src={require("./flexible.jpg")} alt="flex" />
-                                                </div>
-                                                <div className='text'>I am flexible</div> 
-                                            </div>
-                                            <div className='region'>
-                                                <div className='image'>
-                                                    <img src={require("./europe.webp")} alt="flex" />
-                                                </div>
-                                                <div className='text'>Europe</div> 
-                                            </div>
-                                            <div className='region'>
-                                                <div className='image'>
-                                                    <img src={require("./france.webp")} alt="flex" />
-                                                </div>
-                                                <div className='text'>France</div> 
-                                            </div>
-                                            <div className='region'>
-                                                <div className='image'>
-                                                    <img src={require("./flexible.jpg")} alt="flex" />
-                                                </div>
-                                                <div className='text'>United States</div> 
-                                            </div>
-                                            <div className='region'>
-                                                <div className='image'>
-                                                    <img src={require("./europe.webp")} alt="flex" />
-                                                </div>
-                                                <div className='text'>United Kingdom</div> 
-                                            </div>
-                                            <div className='region'>
-                                                <div className='image'>
-                                                    <img src={require("./france.webp")} alt="flex" />
-                                                </div>
-                                                <div className='text'>South America</div> 
-                                            </div>
-
-
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        : checkin_available ?
-
-                        <div className='modal_kernel'>
-                                <div className='modal_kernel_center'>
-                                    <div className='checkin_dropdown' ref={check}>
-                                        <div className='checkin_dropdown_options'>
-                                            <div tabIndex={1} ref={choose_dates} 
-                                            style={{backgroundColor: search_kernel_index===2 || search_kernel_index===3 ? "white" : "gray"}}>
-                                                <button onClick={()=> choose_dates.current.focus()}>Choose dates</button>
-                                            </div>
-                                            <div tabIndex={2} ref={flexible}>
-                                                <button onClick={()=> flexible.current.focus()}>I'm flexible</button>
-                                            </div>
-                                        </div>
-                                        <div className='checkin_dropdown_calendar_shell'>
-                                                <Calendar_comp/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        : who_available ?
-                        
                         <div className='modal_kernel'>
                             <div className='modal_kernel_center'>
-                                <div className='who_dropdown' ref={who}>
-                                    <Who/>
+                            {where_available ?
+
+                                <div className='where_dropdown' ref={where} 
+                                style={{display: where_available ? "grid" : "none"}}
+                                >
+                                    <div className='search_by_region'>Search by region</div>
+                                    <div className='regions'>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./flexible.jpg")} alt="flex" />
+                                            </div>
+                                            <div className='text'>I am flexible</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./europe.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>Europe</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./france.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>France</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./flexible.jpg")} alt="flex" />
+                                            </div>
+                                            <div className='text'>United States</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./europe.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>United Kingdom</div> 
+                                        </div>
+                                        <div className='region'>
+                                            <div className='image'>
+                                                <img src={require("./france.webp")} alt="flex" />
+                                            </div>
+                                            <div className='text'>South America</div> 
+                                        </div>
+
+
+                                    </div>
+                                    
                                 </div>
+
+                            : checkin_available ?
+                                <div className='checkin_dropdown' ref={check}>
+                                    <div className='checkin_dropdown_options'>
+                                        <div tabIndex={1} ref={choose_dates} 
+                                        style={{backgroundColor: search_kernel_index===2 || search_kernel_index===3 ? "white" : "gray"}}>
+                                            <button onClick={()=> choose_dates.current.focus()}>Choose dates</button>
+                                        </div>
+                                        <div tabIndex={2} ref={flexible}>
+                                            <button onClick={()=> flexible.current.focus()}>I'm flexible</button>
+                                        </div>
+                                    </div>
+                                    <div className='checkin_dropdown_calendar_shell'>
+                                            <Calendar_comp/>
+                                    </div>
+                                </div>
+
+                            : who_available ?
+                            <div className='who_dropdown' ref={who}>
+                                <Who/>
                             </div>
-                        </div>
-                        
-                        
-                        :
-                        null
-                        }
-                         
-                        <div className='modal'></div> 
+                            :
+                            null
+                            }
+                            </div>
+                        </div>                      
+                
+                    <div className='modal' ref={modal_background}></div> 
                           
                     </div>
                 </div>
                 
-        </>
+        
         
 
      );

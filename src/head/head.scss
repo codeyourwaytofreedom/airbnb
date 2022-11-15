@@ -127,7 +127,7 @@ $bbb: 1px solid green;
                     width: 100vw;
                     @include gc;
                     &_center{
-                        border: 2px solid black;
+                        // border: 2px solid black;
                         width: 760px;
                         display: grid;
                         .where_dropdown{
@@ -323,7 +323,7 @@ $bbb: 1px solid green;
                     }
             }
             .modal{
-                border: 2px solid red;
+                // border: 2px solid red;
                 position: relative;
                 top: 0;
                 height: 90vh;
