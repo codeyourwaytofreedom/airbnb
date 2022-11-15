@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faMinus, faPlus} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faMinus, faPlus, faClose} from '@fortawesome/free-solid-svg-icons';
 import { useState,useRef } from 'react';
 import Calendar_comp from "./calendar";
 import Who from './who';
@@ -77,6 +77,12 @@ const Search_extension = ({setExtension_vis}) => {
                                 <div className="stays_tab_shell">
                                     <div className="top">Check-in</div>
                                     <div className="bottom">{dates.startDate ? dates.startDate.format("MMM Do") : "Add dates"}</div>
+                                    <div className='cancel_select' 
+                                            onClick={(e)=> {setDates({ startDate: null, endDate: null })}}
+                                            style={{display: dates.startDate && selected_tab ==="checkin" ? "grid" : "none"}}
+                                            >
+                                        <FontAwesomeIcon icon={faClose} color={"white"} />
+                                    </div>
                                 </div>
                                 
                             </div>

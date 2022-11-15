@@ -291,6 +291,17 @@
     font-size: 12px;
     font-weight: 600;
   }
+  .hd_search_extension_to_center .click-extension .stays_tab .cancel_select {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
   .hd_search_extension_to_center .click-extension #who {
     grid-template-columns: 1fr 1fr;
     -moz-column-gap: 5px;

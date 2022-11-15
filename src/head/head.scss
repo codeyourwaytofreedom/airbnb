@@ -306,6 +306,15 @@ $bbb: 1px solid green;
                         font-size: 12px;
                         font-weight: 600;
                     }
+                    .cancel_select{
+                        width: 20px;
+                        height: 20px;
+                        background-color: gray;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: 5px;
+                        @include gc;
+                    }
 
                     
                 }
