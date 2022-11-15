@@ -291,10 +291,6 @@
     font-size: 12px;
     font-weight: 600;
   }
-  .hd_search_extension_to_center .click-extension .stays_tab:focus {
-    background-color: white;
-    box-shadow: 0px 8px 8px 8px rgb(240, 239, 239);
-  }
   .hd_search_extension_to_center .click-extension #who {
     grid-template-columns: 1fr 1fr;
     -moz-column-gap: 5px;

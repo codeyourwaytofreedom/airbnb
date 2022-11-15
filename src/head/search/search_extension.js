@@ -8,14 +8,10 @@ import { useEffect } from 'react';
 
 const Search_extension = ({setExtension_vis}) => {
 
-    const [search_kernel_index, setKernelindex] = useState(1);
-    const choose_dates = useRef();
     const flexible = useRef();
-    const start_focus = useRef();
 
-    const [where_available, setWhereavailable] = useState(true)
-    const [checkin_available, setCheckavailable] = useState(false)
-    const [who_available, setWhoavailable] = useState(false)
+    const [selected_tab, setTab] = useState("checkin")
+    
     const where = useRef();
     const check = useRef();
     const who = useRef();
@@ -24,27 +20,23 @@ const Search_extension = ({setExtension_vis}) => {
     const [dates, setDates] = useState({ startDate: null, endDate: null });
 
     useEffect(()=> {
-        start_focus.current.focus();
-    }, [])
-
-    useEffect(()=> {
         const outside_where = (e) =>{
-            if(!where.current && !check.current && !who.current && modal_background.current.contains(e.target))
+            if(!where.current && !check.current && !who.current && modal_background.current && modal_background.current.contains(e.target))
             {console.log("clicked on modal background while ")
              setExtension_vis(false)
             }
 
             if(where.current && !where.current.contains(e.target))
             {
-                setWhereavailable(false)
+                setTab("")
             }
             if(check.current && !check.current.contains(e.target))
             {
-                setCheckavailable(false)
+                setTab("")
             }
             if(who.current && !who.current.contains(e.target))
             {
-                setWhoavailable(false)
+                setTab("")
             }
         }
         document.addEventListener("mousedown", outside_where)
@@ -62,15 +54,22 @@ const Search_extension = ({setExtension_vis}) => {
                     <div>
                         <div className='white_background'>
                            <div className="click-extension" >
-                            <div className="stays_tab" tabIndex={1} onClick={() => {setKernelindex(1); setWhereavailable(true)}} 
-                            ref={start_focus}>
+                            <div className="stays_tab" tabIndex={1} onClick={() => {setTab("where")}} 
+                            style={{
+                                backgroundColor: selected_tab==="where" ? "white" : "#eeebeb",
+                                boxShadow: selected_tab==="where" ? "0px 8px 8px 8px rgb(240, 239, 239)" : "none"
+                            }}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Where</div>
                                     <div className="bottom">Search destinations</div>
                                 </div>                            
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" tabIndex={2} onClick={() => {setKernelindex(2); setCheckavailable(true)}}>
+                            <div className="stays_tab" tabIndex={2} onClick={() => {setTab("checkin")}}
+                                style={{
+                                    backgroundColor: selected_tab==="checkin" ? "white" : "#eeebeb",
+                                    boxShadow: selected_tab==="checkin" ? "0px 8px 8px 8px rgb(240, 239, 239)" : "none"
+                                }}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Check-in</div>
                                     <div className="bottom">{dates.startDate ? dates.startDate.format("MMM Do") : "Add dates"}</div>
@@ -78,7 +77,11 @@ const Search_extension = ({setExtension_vis}) => {
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" tabIndex={3} onClick={() => {setKernelindex(3); setCheckavailable(true) }}>
+                            <div className="stays_tab" tabIndex={3} onClick={() => {setTab("checkout") }}
+                                style={{
+                                    backgroundColor: selected_tab==="checkout" ? "white" : "#eeebeb",
+                                    boxShadow: selected_tab==="checkout" ? "0px 8px 8px 8px rgb(240, 239, 239)" : "none"
+                                }}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Check-out</div>
                                     <div className="bottom">{dates.endDate ? dates.endDate.format("MMM Do") : "Add dates"}</div>
@@ -86,7 +89,11 @@ const Search_extension = ({setExtension_vis}) => {
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" id="who" tabIndex={4} onClick={() => {setKernelindex(4);setWhoavailable(true) }}>
+                            <div className="stays_tab" id="who" tabIndex={4} onClick={() => {setTab("who") }}
+                                style={{
+                                    backgroundColor: selected_tab==="who" ? "white" : "#eeebeb",
+                                    boxShadow: selected_tab==="who" ? "0px 8px 8px 8px rgb(240, 239, 239)" : "none"
+                                }}>
                                 <div className="stays_tab_shell">
                                     <div className="top">Who</div>
                                     <div className="bottom">Add guests</div>
@@ -103,11 +110,9 @@ const Search_extension = ({setExtension_vis}) => {
 
                         <div className='modal_kernel'>
                             <div className='modal_kernel_center'>
-                            {where_available ?
+                            {selected_tab==="where" ?
 
-                                <div className='where_dropdown' ref={where} 
-                                style={{display: where_available ? "grid" : "none"}}
-                                >
+                                <div className='where_dropdown' ref={where}>
                                     <div className='search_by_region'>Search by region</div>
                                     <div className='regions'>
                                         <div className='region'>
@@ -152,12 +157,12 @@ const Search_extension = ({setExtension_vis}) => {
                                     
                                 </div>
 
-                            : checkin_available ?
+                            : selected_tab==="checkin" || selected_tab==="checkout" ?
                                 <div className='checkin_dropdown' ref={check}>
                                     <div className='checkin_dropdown_options'>
-                                        <div tabIndex={1} ref={choose_dates} 
-                                        style={{backgroundColor: search_kernel_index===2 || search_kernel_index===3 ? "white" : "gray"}}>
-                                            <button onClick={()=> choose_dates.current.focus()}>Choose dates</button>
+                                        <div tabIndex={1} 
+                                        style={{backgroundColor: selected_tab==="checkin" || selected_tab==="checkout" ? "white" : "gray"}}>
+                                            <button>Choose dates</button>
                                         </div>
                                         <div tabIndex={2} ref={flexible}>
                                             <button onClick={()=> flexible.current.focus()}>I'm flexible</button>
@@ -168,7 +173,7 @@ const Search_extension = ({setExtension_vis}) => {
                                     </div>
                                 </div>
 
-                            : who_available ?
+                            : selected_tab==="who" ?
                             <div className='who_dropdown' ref={who}>
                                 <Who/>
                             </div>
