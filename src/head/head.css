@@ -110,6 +110,7 @@
   }
   .hd_search_extension_to_center .modal_kernel {
     position: absolute;
+    background-color: #FF385C;
     z-index: 60;
     width: 100vw;
     display: grid;

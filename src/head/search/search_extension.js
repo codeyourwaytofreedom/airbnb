@@ -10,14 +10,16 @@ const Search_extension = ({setExtension_vis}) => {
 
     const flexible = useRef();
 
-    const [selected_tab, setTab] = useState("checkin")
+    const [selected_tab, setTab] = useState("")
     
     const where = useRef();
     const check = useRef();
     const who = useRef();
     const modal_background = useRef();
+    const outer_most = useRef();
 
     const [dates, setDates] = useState({ startDate: null, endDate: null });
+    const [total_night, setTotalnights] = useState(null)
 
     useEffect(()=> {
         const outside_where = (e) =>{
@@ -38,6 +40,8 @@ const Search_extension = ({setExtension_vis}) => {
             {
                 setTab("")
             }
+            if(outer_most.current && outer_most.current.contains(e.target) )
+            {setExtension_vis(false)}
         }
         document.addEventListener("mousedown", outside_where)
     })
@@ -46,6 +50,9 @@ const Search_extension = ({setExtension_vis}) => {
             if(dates.startDate && !dates.endDate || dates.startDate && dates.endDate)
             {setTab("checkout")}
     }, [dates])
+    useEffect(()=> {
+            setTab("checkin")
+    }, [])
 
 
 
@@ -55,7 +62,10 @@ const Search_extension = ({setExtension_vis}) => {
         {console.log(dates.startDate.format("MMM Do"))}
         else{setExtension_vis(false)}
         if(dates.startDate && dates.endDate)
-        {console.log(dates.endDate.diff(dates.startDate, "days"))}
+        {console.log(dates.endDate.diff(dates.startDate, "days"))
+            setTotalnights(dates.endDate.diff(dates.startDate, "days"))
+         }
+         setExtension_vis(false)
     }
 
     return ( 
@@ -118,14 +128,14 @@ const Search_extension = ({setExtension_vis}) => {
                                 <div className="stays_tab_search">
                                     <button id="search_button" onClick={(e)=>handle_day_count(e)}>
                                         <FontAwesomeIcon icon={faSearch} color={"white"} />
-                                        <span>Search</span>
+                                        <span>Search {total_night}</span>
                                     </button>
                                 </div>
                             </div>                         
                             </div> 
                         </div>
 
-                        <div className='modal_kernel'>
+                        <div className='modal_kernel' ref={modal_background}>
                             <div className='modal_kernel_center'>
                             {selected_tab==="where" ?
 
@@ -200,7 +210,7 @@ const Search_extension = ({setExtension_vis}) => {
                             </div>
                         </div>                      
                 
-                    <div className='modal' ref={modal_background}></div> 
+                    <div className='modal' ref={outer_most}></div> 
                           
                     </div>
                 </div>
