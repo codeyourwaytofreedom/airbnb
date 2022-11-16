@@ -22,7 +22,7 @@ const Search_extension = ({setExtension_vis}) => {
     useEffect(()=> {
         const outside_where = (e) =>{
             if(!where.current && !check.current && !who.current && modal_background.current && modal_background.current.contains(e.target))
-            {console.log("clicked on modal background while ")
+            {
              setExtension_vis(false)
             }
 
@@ -49,7 +49,12 @@ const Search_extension = ({setExtension_vis}) => {
 
 
 
-
+    const handle_day_count = (e) =>{
+        e.stopPropagation();
+        if(dates.startDate)
+        {console.log(dates.startDate.format("MMM Do"))}
+        else{setExtension_vis(false)}
+    }
 
     return ( 
     
@@ -99,7 +104,7 @@ const Search_extension = ({setExtension_vis}) => {
                                 
                             </div>
                             <div className="buffer"></div>
-                            <div className="stays_tab" id="who" tabIndex={4} onClick={() => {setTab("who") }}
+                            <div className="stays_tab" id="who" tabIndex={4} onClick={(e) => {e.stopPropagation();setTab("who") }}
                                 style={{
                                     backgroundColor: selected_tab==="who" ? "white" : "#eeebeb",
                                     boxShadow: selected_tab==="who" ? "0px 8px 8px 8px rgb(240, 239, 239)" : "none"
@@ -109,7 +114,7 @@ const Search_extension = ({setExtension_vis}) => {
                                     <div className="bottom">Add guests</div>
                                 </div>
                                 <div className="stays_tab_search">
-                                    <button id="search_button">
+                                    <button id="search_button" onClick={(e)=>handle_day_count(e)}>
                                         <FontAwesomeIcon icon={faSearch} color={"white"} />
                                         <span>Search</span>
                                     </button>

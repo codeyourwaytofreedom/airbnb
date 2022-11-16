@@ -281,6 +281,7 @@
     font-size: 16px;
     font-weight: 600;
     padding: 15px;
+    cursor: pointer;
   }
   .hd_search_extension_to_center .click-extension .stays_tab .bottom {
     font-size: 14px;
