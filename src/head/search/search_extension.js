@@ -23,6 +23,7 @@ const Search_extension = ({setExtension_vis}) => {
     const outer_most = useRef();
 
     const dispatch = useDispatch()
+    const testt = useSelector(state=> state.search_options_Slice.nigths.payload)
 
     const [dates, setDates] = useState({ startDate: null, endDate: null });
 
@@ -134,7 +135,7 @@ const Search_extension = ({setExtension_vis}) => {
                                 <div className="stays_tab_search">
                                     <button id="search_button" onClick={(e)=>handle_day_count(e)}>
                                         <FontAwesomeIcon icon={faSearch} color={"white"} />
-                                        <span>Search</span>
+                                        <span>Search {testt ? testt : null }</span>
                                     </button>
                                 </div>
                             </div>                         
