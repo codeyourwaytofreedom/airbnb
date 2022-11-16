@@ -4,6 +4,10 @@ import { useState,useRef } from 'react';
 import Calendar_comp from "./calendar";
 import Who from './who';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { save_nights } from "../../redux/search_options_Slice";
+
 
 
 const Search_extension = ({setExtension_vis}) => {
@@ -18,8 +22,9 @@ const Search_extension = ({setExtension_vis}) => {
     const modal_background = useRef();
     const outer_most = useRef();
 
+    const dispatch = useDispatch()
+
     const [dates, setDates] = useState({ startDate: null, endDate: null });
-    const [total_night, setTotalnights] = useState(null)
 
     useEffect(()=> {
         const outside_where = (e) =>{
@@ -50,22 +55,23 @@ const Search_extension = ({setExtension_vis}) => {
             if(dates.startDate && !dates.endDate || dates.startDate && dates.endDate)
             {setTab("checkout")}
     }, [dates])
+
     useEffect(()=> {
             setTab("checkin")
     }, [])
 
 
 
+
     const handle_day_count = (e) =>{
         e.stopPropagation();
-        if(dates.startDate)
-        {console.log(dates.startDate.format("MMM Do"))}
-        else{setExtension_vis(false)}
+
         if(dates.startDate && dates.endDate)
-        {console.log(dates.endDate.diff(dates.startDate, "days"))
-            setTotalnights(dates.endDate.diff(dates.startDate, "days"))
-         }
+        {
+            dispatch(save_nights(parseInt(dates.endDate.diff(dates.startDate, "days"))))
+        }
          setExtension_vis(false)
+         
     }
 
     return ( 
@@ -128,7 +134,7 @@ const Search_extension = ({setExtension_vis}) => {
                                 <div className="stays_tab_search">
                                     <button id="search_button" onClick={(e)=>handle_day_count(e)}>
                                         <FontAwesomeIcon icon={faSearch} color={"white"} />
-                                        <span>Search {total_night}</span>
+                                        <span>Search</span>
                                     </button>
                                 </div>
                             </div>                         

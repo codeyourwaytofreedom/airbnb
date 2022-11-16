@@ -20,7 +20,6 @@ const Calendar_comp = ({dates, setDates}) => {
 
     const handleDatesChange = (dates) => {
       setDates(dates);
-      console.log(dates.startDate._d)      
     };
   
     const onFocusChange = (focusedInput) => {

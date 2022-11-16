@@ -20,6 +20,7 @@ import { add_property_type } from "../redux/propertyTypeSlice";
 
 
 
+
 const Filters = ({setShow, setHowmany}) => {
     
     const dispatch = useDispatch();
