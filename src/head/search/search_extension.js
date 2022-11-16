@@ -54,6 +54,8 @@ const Search_extension = ({setExtension_vis}) => {
         if(dates.startDate)
         {console.log(dates.startDate.format("MMM Do"))}
         else{setExtension_vis(false)}
+        if(dates.startDate && dates.endDate)
+        {console.log(dates.endDate.diff(dates.startDate, "days"))}
     }
 
     return ( 
