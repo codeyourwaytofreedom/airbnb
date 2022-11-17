@@ -46,6 +46,8 @@ const Content = ({show_map}) => {
     const dispatch = useDispatch();
 
     // console.log(selected_property_types.payload)
+    const stay_length = useSelector(state=> state.search_options_Slice.nigths.payload)
+
 
 
     useEffect(()=>{    
@@ -162,7 +164,7 @@ const Content = ({show_map}) => {
                             location={element.location+", Turkey"}
                             hosttype={"Individual Host"}
                             dates={"2-7 Nov"}
-                            total={200}
+                            total={stay_length ? stay_length * element.price : element.price}
                         />
                 ) 
             }

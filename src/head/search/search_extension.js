@@ -135,7 +135,7 @@ const Search_extension = ({setExtension_vis}) => {
                                 <div className="stays_tab_search">
                                     <button id="search_button" onClick={(e)=>handle_day_count(e)}>
                                         <FontAwesomeIcon icon={faSearch} color={"white"} />
-                                        <span>Search {testt ? testt : null }</span>
+                                        <span>Search</span>
                                     </button>
                                 </div>
                             </div>                         
