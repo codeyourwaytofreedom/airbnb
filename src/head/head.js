@@ -127,7 +127,7 @@ const Head = () => {
 
 
 
-                {extension_visible?<Search_extension setExtension_vis={setExtension_vis}/>:null}
+                {extension_visible?<Search_extension extension_visible={extension_visible} setExtension_vis={setExtension_vis}/>:null}
 
 
 

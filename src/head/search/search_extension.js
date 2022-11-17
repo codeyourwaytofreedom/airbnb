@@ -10,7 +10,7 @@ import { save_nights } from "../../redux/search_options_Slice";
 
 
 
-const Search_extension = ({setExtension_vis}) => {
+const Search_extension = ({setExtension_vis, extension_visible}) => {
 
     const flexible = useRef();
 
@@ -49,7 +49,13 @@ const Search_extension = ({setExtension_vis}) => {
             if(outer_most.current && outer_most.current.contains(e.target) )
             {setExtension_vis(false)}
         }
+        const scrolled = () => {
+            setExtension_vis(false)
+            
+        }
         document.addEventListener("mousedown", outside_where)
+        document.addEventListener("scroll", scrolled)
+ 
     })
 
     useEffect(()=> {
@@ -80,8 +86,8 @@ const Search_extension = ({setExtension_vis}) => {
                 
                 <div className="hd_search_extension_to_center">
                     <div>
-                        <div className='white_background'>
-                           <div className="click-extension" >
+                        <div className='white_background' style={{transitionDelay:"2s"}}>
+                           <div className="click-extension">
                             <div className="stays_tab" tabIndex={1} onClick={() => {setTab("where")}} 
                             style={{
                                 backgroundColor: selected_tab==="where" ? "white" : "#eeebeb",

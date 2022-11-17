@@ -33,7 +33,6 @@ $bbb: 1px solid green;
      @include gc;
      width: 100vw;
      grid-template-columns: 10fr 11fr 10fr;
-    //  height: 80px;
      padding: 20px 40px;
      border-bottom: 1px solid #DDDDDD;
      white-space: nowrap;
@@ -120,6 +119,7 @@ $bbb: 1px solid green;
                 border-bottom: 4px solid white;
                 position: relative;
                 
+                
             }.modal_kernel{
                     position: absolute;
                     // background-color: #FF385C;
@@ -137,6 +137,8 @@ $bbb: 1px solid green;
                             display: grid;
                             padding: 30px;
                             row-gap: 30px;
+                            
+
                             .search_by_region{
                                 font-size: 14px;
                                 font-weight: 600;
