@@ -6,6 +6,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import Filters from "../filters/filters_modal";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 const Top_roll = () => {
 
@@ -25,6 +26,12 @@ const Top_roll = () => {
     
     let number_of_filters_in_place = 0;
 
+    const [track_index, setIndex] = useState(0);
+
+    const the_end = useRef();
+    const right_arrow = useRef();
+
+    //to calculate the number of total filters in place
     useEffect(()=> {
         
         if(entire.payload && entire.payload !== "y")
@@ -57,38 +64,45 @@ const Top_roll = () => {
             number_of_filters_in_place= number_of_filters_in_place+property_types.length
         }
 
-
-
-
         setHowmany(number_of_filters_in_place)
     }, [entire, priv, shared, number_of_rooms, number_of_beds, number_of_bathrooms, property_types])
 
+    // useEffect(()=> {
+    //     const compare = () =>{
+    //             if(the_end.current && right_arrow.current)
+    //             {
+    //                 console.log(right_arrow.current.offsetLeft-the_end.current.offsetLeft)
+    //             }
+    //     }
 
+    //         console.log(right_arrow.current.offsetLeft-the_end.current.offsetLeft)
+
+    //         window.addEventListener("resize",compare) 
+            
+    // }, [the_end.current,right_arrow.current])
 
     const moveElementsToEndOfArray = () => {
         let n = copy_array.length;
-        let first_2_elements = copy_array.slice(0, 2);
-        let remaining_elements = copy_array.slice(2, n);   
+        let first_2_elements = copy_array.slice(0, 1);
+        let remaining_elements = copy_array.slice(1, n);   
         setCopy([...remaining_elements, ...first_2_elements]);
         }
 
         const moveElementsTobeginningofArray = () => {
         let n = copy_array.length;
-        let last_2_elements = copy_array.slice(n-2, n);
-        let remaining_elements = copy_array.slice(0, n-2);
+        let last_2_elements = copy_array.slice(n-1, n);
+        let remaining_elements = copy_array.slice(0, n-1);
         setCopy([ ...last_2_elements, ...remaining_elements]);
         }    
         
     const handle_index_left = () => {
         moveElementsTobeginningofArray();
-        // setClick(times_clicked-1);
-
-
+        setIndex(track_index-1)
     }
 
     const handle_index_right = () => {
                 moveElementsToEndOfArray();
-                // setClick(times_clicked+1);
+                setIndex(track_index+1)
         }
 
     return ( 
@@ -107,34 +121,41 @@ const Top_roll = () => {
             <div className="top_roll_content">   
 
                 <div className="top_roll_content_test">
+                    <div className="top_roll_content_back" onClick={handle_index_left}>
+                        <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
+                    </div>
                     {
                     copy_array.map((o,index) => (
-                        <button className="top_roll_content_button">
+                        <button className="top_roll_content_button" key={index} ref={o.text ==="END" ? the_end : null}>
                             <div className="top_roll_content_button_kernel">
                                 <span className="top_roll_content_button_kernel_icon">
                                     <img src={o.icon} alt="x" />
                                 </span>
-                                <span className="top_roll_content_button_kernel_text">{o.text}</span>
+                                <span className="top_roll_content_button_kernel_text">{o.text==="END" && the_end.current ? the_end.current.offsetLeft : o.text}</span>
                             </div>
                         </button>
                     ))
                     }
+                    
                 </div>
             </div>
                     
-            <div className="top_roll_content_back" onClick={handle_index_left}>
+            {/* <div className="top_roll_content_back" onClick={handle_index_left}
+                style={{display: track_index===0 ? "none" : "grid"}}
+                >
                 <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
-            </div>
+            </div> */}
             
 {/* 
             <div className="shadow_left"></div>
             <div className="shadow_right"></div> */}
             
             
-            <div className="top_roll_control">
+            <div className="top_roll_control" ref={right_arrow}>
 
                         <div className="top_roll_control_arrow">
-                            <div className="top_roll_control_arrow_forth" onClick={handle_index_right}>
+                            <div className="top_roll_control_arrow_forth" onClick={handle_index_right}
+                            >
                                 <FontAwesomeIcon style={{color:"black"}} size={"xs"} icon={faChevronRight}/>
                             </div>
                         </div>
@@ -147,7 +168,7 @@ const Top_roll = () => {
                                 <div className="top_roll_control_filter_icon">
                                     <img src={require("../filters/filter.png")} alt="xx" />
                                 </div>
-                                <div className="top_roll_control_filter_text">Filters</div>    
+                                <div className="top_roll_control_filter_text">Search</div>    
                         </div>
             </div>
 

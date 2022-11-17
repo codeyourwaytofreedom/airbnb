@@ -50,20 +50,23 @@
 
         &_test{
             display: flex;
-            // grid-template-columns: repeat(6, 1fr);
             position: relative;
             z-index: 5;
-            left: -2.5vw;
+            // left: -2.5vw;
         }
 
         &_back{
-            @include grid-center;
+            // @include grid-center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border: 1px solid black;
             border-radius: 50%;
             width: 25px; height: 25px;
             z-index: 99;
-            position: absolute;
-            left:40px; top:5px;
+            // position: absolute;
+            // left:40px; top:5px;
+            cursor: pointer;
         }
         &_button{
             height: 80%;
@@ -130,6 +133,7 @@
             border-radius: 50%;
             width: 29px; height: 29px;
             cursor: pointer;
+            position: absolute;
             }
         }
 

@@ -39,20 +39,17 @@
   display: flex;
   position: relative;
   z-index: 5;
-  left: -2.5vw;
 }
 .top_roll_content_back {
-  display: grid;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
   border: 1px solid black;
   border-radius: 50%;
   width: 25px;
   height: 25px;
   z-index: 99;
-  position: absolute;
-  left: 40px;
-  top: 5px;
+  cursor: pointer;
 }
 .top_roll_content_button {
   height: 80%;
@@ -123,6 +120,7 @@
   width: 29px;
   height: 29px;
   cursor: pointer;
+  position: absolute;
 }
 .top_roll_control_filter {
   border: 1px solid silver;
