@@ -52,7 +52,7 @@
             display: flex;
             position: relative;
             z-index: 5;
-            // left: -2.5vw;
+            left: -0.5vw;
         }
 
         &_back{
@@ -60,12 +60,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid black;
+            border: 1px solid silver;
             border-radius: 50%;
-            width: 25px; height: 25px;
-            z-index: 99;
-            // position: absolute;
-            // left:40px; top:5px;
+            width: 29px; height: 29px;
+            z-index: 99 !important;
+            position: absolute;
+            left:6px; top:5px;
             cursor: pointer;
         }
         &_button{
@@ -73,7 +73,6 @@
             min-width: 100px !important;
             border: none;
             background: transparent;
-            // border: 2px solid red;
             font-size: 12px !important;
             font-weight: 600;
             color: gray;

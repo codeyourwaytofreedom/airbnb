@@ -39,16 +39,20 @@
   display: flex;
   position: relative;
   z-index: 5;
+  left: -0.5vw;
 }
 .top_roll_content_back {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid silver;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  z-index: 99;
+  width: 29px;
+  height: 29px;
+  z-index: 99 !important;
+  position: absolute;
+  left: 6px;
+  top: 5px;
   cursor: pointer;
 }
 .top_roll_content_button {

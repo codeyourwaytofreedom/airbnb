@@ -121,9 +121,11 @@ const Top_roll = () => {
             <div className="top_roll_content">   
 
                 <div className="top_roll_content_test">
+
                     <div className="top_roll_content_back" onClick={handle_index_left}>
-                        <FontAwesomeIcon style={{color:"black"}} size={"l"} icon={faChevronLeft}/>
+                        <FontAwesomeIcon style={{color:"black"}} size={"xs"} icon={faChevronLeft}/>
                     </div>
+
                     {
                     copy_array.map((o,index) => (
                         <button className="top_roll_content_button" key={index} ref={o.text ==="END" ? the_end : null}>
