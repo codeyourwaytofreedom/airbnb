@@ -67,19 +67,6 @@ const Top_roll = () => {
         setHowmany(number_of_filters_in_place)
     }, [entire, priv, shared, number_of_rooms, number_of_beds, number_of_bathrooms, property_types])
 
-    // useEffect(()=> {
-    //     const compare = () =>{
-    //             if(the_end.current && right_arrow.current)
-    //             {
-    //                 console.log(right_arrow.current.offsetLeft-the_end.current.offsetLeft)
-    //             }
-    //     }
-
-    //         console.log(right_arrow.current.offsetLeft-the_end.current.offsetLeft)
-
-    //         window.addEventListener("resize",compare) 
-            
-    // }, [the_end.current,right_arrow.current])
 
     const moveElementsToEndOfArray = () => {
         let n = copy_array.length;
@@ -133,7 +120,7 @@ const Top_roll = () => {
                                 <span className="top_roll_content_button_kernel_icon">
                                     <img src={o.icon} alt="x" />
                                 </span>
-                                <span className="top_roll_content_button_kernel_text">{o.text==="END" && the_end.current ? the_end.current.offsetLeft : o.text}</span>
+                                <span className="top_roll_content_button_kernel_text">{o.text}</span>
                             </div>
                         </button>
                     ))

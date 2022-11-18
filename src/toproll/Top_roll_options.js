@@ -99,10 +99,6 @@ const rolling_options =
         text:"Countryside",
         icon:  require("../images/countryside.jpg")
     },
-    {
-        text:"END",
-        icon:  require("../images/countryside.jpg")
-    },
     
 ]
 
